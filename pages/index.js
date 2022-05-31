@@ -3,11 +3,15 @@ import Head from 'next/head'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import Form from '../components/Form'
+import Cardlist from '../components/CardList'
+import Card from '../components/Card'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
   const [lat, setLat] = useState("");
   const [long, setLong] = useState("");
+  const [cardData, setCardData] = useState([]);
+  const [mainCard, setMainCard] = useState([]);
 
   const Map = dynamic(
     () => import('../components/Map'),
@@ -17,9 +21,17 @@ export default function Home() {
     }
   );
 
-  function getData(lat, long) {
+  function setCoords(lat, long) {
     setLat(lat);
     setLong(long)
+  }
+
+  function getData(data) {
+    setCardData(data);
+  }
+
+  function getMainCard(data){
+    setMainCard(data)
   }
 
   return (
@@ -31,10 +43,13 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-
-        <Form fallback={getData} />
+        <Form fallback={setCoords} returnData={getData} mainCardData={getMainCard} />
         <Map lat={lat} long={long}></Map>
       </main>
+
+      <section>
+      <Cardlist cardData={cardData} />
+      </section>
 
       <footer className={styles.footer}>
         <a

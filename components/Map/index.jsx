@@ -10,8 +10,9 @@ const ICON = icon({
   })
 
 const containerStyle = {
-    width: '100%',
-    height: '60vh'
+    minWidth: '80%',
+    maxWidth: '100vw',
+    height: '60vh',
 };
 
 const center = {
