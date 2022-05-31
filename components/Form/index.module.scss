@@ -1,9 +1,17 @@
-.form_wrapper {
+.wrapper{
+    max-width: 30%;
+    min-width: 30%;
+    margin-bottom: 20px;
+}
+
+.form {
     display: flex;
     flex-direction: column;
-    width: 30vw;
-    height: 30%;
     padding: 15px;
     background-color: lightblue;
     border-radius: 10px;
+
+    input, label, select {
+        margin-bottom: 10px;
+    }
 }
