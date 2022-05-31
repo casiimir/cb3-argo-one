@@ -1,16 +1,26 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import styles from '../styles/Home.module.css'
 import dynamic from 'next/dynamic'
+import Form from '../components/Form'
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
+  const [lat, setLat] = useState("");
+  const [long, setLong] = useState("");
+
   const Map = dynamic(
-    () => import('../components/Map'), 
+    () => import('../components/Map'),
     {
       loading: () => <p>A map is loading</p>,
-      ssr: false 
+      ssr: false
     }
   );
+
+  function getData(lat, long) {
+    setLat(lat);
+    setLong(long)
+  }
 
   return (
     <div className={styles.container}>
@@ -21,7 +31,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Map></Map>
+
+        <Form fallback={getData} />
+        <Map lat={lat} long={long}></Map>
       </main>
 
       <footer className={styles.footer}>
