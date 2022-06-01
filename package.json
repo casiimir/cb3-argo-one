@@ -9,9 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@date-io/date-fns": "^2.14.0",
     "@react-google-maps/api": "^2.11.9",
-    "@wojtekmaj/react-datetimerange-picker": "^3.5.0",
     "leaflet": "^1.8.0",
     "next": "12.1.6",
     "react-css-modules": "^4.7.11",
