@@ -4,8 +4,13 @@ const OptionGroup = ({
   data,
   onChangeFn,
   typeValue,
-  defaultValue,
+  defaultText,
   textValue,
+<<<<<<< Updated upstream
+  defaultValue,
+=======
+  label,
+>>>>>>> Stashed changes
 }) => {
   console.log(data);
   return (
@@ -19,14 +24,25 @@ const OptionGroup = ({
         name={typeValue}
         id={typeValue}
         onChange={onChangeFn}
+        required
       >
+<<<<<<< Updated upstream
         <optgroup classsName={styles.OptionGroup} label="Sicily's provinces">
+          <option className={styles.Option} value={defaultValue || "null"}>
+            {defaultText}
+=======
+        <optgroup classsName={styles.OptionGroup} label="choose">
           <option className={styles.Option} value="null">
             {defaultValue}
+>>>>>>> Stashed changes
           </option>
-          {data.map((city) => (
-            <option className={styles.Option} value={city.id} key={city.id}>
-              {city.name}
+          {data.map((element) => (
+            <option
+              className={styles.Option}
+              value={element.code || element.id}
+              key={element.url || element.name}
+            >
+              {element.name}
             </option>
           ))}
         </optgroup>

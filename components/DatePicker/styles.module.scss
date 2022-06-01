@@ -1,7 +1,6 @@
 .Container {
   display: flex;
   justify-content: space-around;
-  //gap: 10px;
   width: fit-content;
   background-color: white;
   border-radius: 16px;
@@ -23,12 +22,9 @@
 
   .Input::-webkit-datetime-edit {
     //Edita il Div del testo data
-    //-webkit-flex: 0 1;
-    //flex: 0 1 0;
     display: inline-block;
     min-width: 42vmin;
     overflow: hidden;
-    //padding-left: 10px;
     font-size: clamp(0.6em, 1em, 0.8em);
     text-align: center;
     font-family: "Outfit", sans-serif;
@@ -41,9 +37,10 @@
     -webkit-user-modify: read-only !important;
     display: inline-block;
     padding: 0px;
-    //width: 150px;
     height: 20px;
     white-space: pre-wrap;
+    font-size: 14px;
+    font-weight: 500;
   }
   .Input::-webkit-calendar-picker-indicator {
     font-size: 20px;
