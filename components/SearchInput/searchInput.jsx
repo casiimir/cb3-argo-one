@@ -15,14 +15,11 @@ import DatePicker from "../DatePicker";
 
 import styles from "./styles.module.scss";
 
-const SearchInput = () => {
-  const [lat_lon, setLat_lon] = useState();
+const SearchInput = (props) => {
+  const [lat_lon, setLat_lon] = useState([38.114, 13.355]);
   const [actualDate, SetActualDate] = useState((date) => [
     { fullDate: date, day: date, month: date },
   ]);
-  /*const [summedDate, setSummedDate] = useState((date) => [
-    { summedDay: date, summedMonth: date, replaceDay: date },
-  ]);*/
   const [selectedDateRange, setSelectedDateRange] = useState((e) => [
     { date_to: e, date_from: e },
   ]);
@@ -44,8 +41,11 @@ const SearchInput = () => {
     ]);
     setLat_lon([cityData.latitude, cityData.longitude]);
     setCityInfo([{ cityData: cityData }]);
-    console.log(lat_lon);
   };
+
+  useEffect(() => {
+    props.function(lat_lon)
+  },[lat_lon])
 
   //handling function on tipology select
   const handleClickOnTipology = async (e) => {
@@ -68,78 +68,6 @@ const SearchInput = () => {
       { date_to: prev[0].date_to, date_from: value },
     ]);
   };
-
-  //handling function on date select
-  /* const handleClickOnDate = (e) => {
-    //setFormattingDate();
-    const sentinel = "031";
-    if (actualDate[0].day >= sentinel) {
-      const resetData = [actualDate[0].fullDate, "01"];
-      SetActualDate((prev) => [
-        {
-          fullDate: resetData[0],
-          day: resetData[1],
-          month: prev[0].month,
-          year: prev[0].year,
-        },
-      ]);
-
-      const summedDay = `0${
-        parseInt(actualDate[0].day) + parseInt(e.target.value)
-      }`;
-      const summedMonth = `0${parseInt(actualDate[0].month) + 1}`;
-      const replaceData = actualDate[0].year.concat(
-        "-",
-        summedMonth,
-        "-",
-        summedDay
-      );
-      setSummedDate([
-        {
-          summedDay: summedDay,
-          summedMonth: summedMonth,
-          replaceDay: replaceData,
-        },
-      ]);
-      if (actualDate.month <= summedMonth) {
-        SetActualDate((prev) => [
-          {
-            fullDate: resetData[0],
-            day: resetData[1],
-            month: prev[0].month,
-            year: prev[0].year,
-          },
-        ]);
-        setSummedDate((prev) => [
-          {
-            summedDay: summedDay,
-            summedMonth: prev[0].summedMonth,
-            replaceDay: replaceData,
-          },
-        ]);
-        setRequestedDate([resetData[0], replaceData]);
-      }
-    } else {
-      const summedDay = `0${
-        parseInt(actualDate[0].day) + parseInt(e.target.value)
-      }`;
-      const replaceData = actualDate[0].year.concat(
-        "-",
-        summedDate[0].summedMonth,
-        "-",
-        summedDay
-      );
-      console.log("replaced", replaceData);
-      setSummedDate((prev) => [
-        {
-          summedDay: summedDay,
-          summedMonth: prev[0].summedMonth,
-          replaceDay: replaceData,
-        },
-      ]);
-      setRequestedDate([actualDate[0].fullDate, replaceData]);
-    }
-  };*/
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -187,19 +115,3 @@ const SearchInput = () => {
 };
 
 export default SearchInput;
-/*
-          <label htmlFor="timeLimit">
-            <select
-              className={styles.Select}
-              name="timeLimit"
-              id="timeLimi"
-              onChange={handleClickOnDate}
-            >
-              <optgroup label="Select duration range">
-                <option value="3">from 1 to 3 days</option>
-                <option value="5">from 1 to 5 days</option>
-                <option value="7">from 1 to 7 days</option>
-              </optgroup>
-            </select>
-          </label>
-        */

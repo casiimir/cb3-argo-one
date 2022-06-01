@@ -20,7 +20,7 @@ const OptionGroup = ({
         id={typeValue}
         onChange={onChangeFn}
       >
-        <optgroup classsName={styles.OptionGroup} label="Sicily's provinces">
+        <optgroup className={styles.OptionGroup} label="Choose your favorite:">
           <option className={styles.Option} value="null">
             {defaultValue}
           </option>

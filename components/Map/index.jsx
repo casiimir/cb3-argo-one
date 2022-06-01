@@ -2,7 +2,7 @@ import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 import { icon } from "leaflet"
 import 'leaflet/dist/leaflet.css'
 
-const Map = ({ lat, long }) => {
+const Map = ( {coords} ) => {
 
 const ICON = icon({
     iconUrl: "/marker.png",
@@ -16,8 +16,8 @@ const containerStyle = {
 };
 
 const center = {
-    lat: lat,
-    lng: long
+   lat: coords[0],
+   lng: coords[1] 
 };
 
     return (
@@ -32,6 +32,6 @@ const center = {
             </MapContainer>
         </>
     )
-}
+};
 
 export default Map;

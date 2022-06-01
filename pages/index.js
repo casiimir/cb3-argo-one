@@ -7,8 +7,7 @@ import styles from '../styles/Home.module.css'
 import SearchInput from "../components/SearchInput";
 
 export default function Home() {
-  const [lat, setLat] = useState("");
-  const [long, setLong] = useState("");
+  const [coords, setCoords] = useState({});
   const [cardData, setCardData] = useState([]);
   const [mainCard, setMainCard] = useState([]);
 
@@ -20,18 +19,10 @@ export default function Home() {
     }
   );
 
-  function setCoords(lat, long) {
-    setLat(lat);
-    setLong(long)
+  function sendCoords(data){
+    setCoords(data)
   }
 
-  function getData(data) {
-    setCardData(data);
-  }
-
-  function getMainCard(data){
-    setMainCard(data)
-  }
 
   return (
     <div className={styles.container}>
@@ -42,26 +33,15 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Map lat={lat} long={long}></Map>
-        <SearchInput />
+        <SearchInput function={sendCoords} />
+       <Map coords={coords} ></Map>
       </main>
 
       <section>
-      <Cardlist cardData={cardData} />
+      <Cardlist cardData={cardData}/>
       </section>
 
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="https://img.icons8.com/clouds/100/000000/google-earth.png" alt="Tricily Logo" width={30} height={30} />
-          </span>
-        </a>
-      </footer>
+    
     </div>
   );
 }
