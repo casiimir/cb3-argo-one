@@ -27,22 +27,13 @@ const MobileNavigation = () => {
   );
   const closeMobileMenu = () => setOpen(false);
 
-  return (
+  return (    
     <nav className={styles.MobileNavigation}>
-      {open ? closeBtn : hamburgerIcon}
-      {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} />}
+    {open ? closeBtn : hamburgerIcon}
+    {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} open={open} />}
     </nav>
-  );
+ );
 };
-
-
-    return (    
-        <nav className={styles.MobileNavigation}>
-        {open ? closeBtn : hamburgerIcon}
-        {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} open={open} />}
-        </nav>
-     );
-}
 
 export default MobileNavigation;
 
