@@ -1,0 +1,65 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+.contact{
+    position: relative;
+}
+.wrapper__form {
+  padding: 10px 300px;
+  border-bottom: none;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-family: $primary-font;
+  position: absolute;
+  z-index: 3;
+  top:15vw;
+  left:35%;
+  
+  
+
+  
+
+  ::placeholder {
+    color: $light-blue;
+    font-family: $primary-font;
+    padding: 5px;
+  }
+  input {
+    border:none;
+    font-family: $primary-font;
+    margin: 10px;
+    border-radius: 5%;
+    @include border-radius;
+    height: 30px;
+    box-shadow: 2px 3px 11px -5px;
+  }
+  textarea {
+    width: 394px;
+    height: 211px;
+    border-color: $yellow;
+    padding: 5px;
+    font-family: $primary-font;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 2px 3px 11px -5px;
+  }
+
+  button {
+    @include hover;
+    @include button;
+    box-shadow: 2px 3px 11px -5px;
+  }
+
+  h1 {
+    color: $light-blue;
+    padding: 0px 30px;
+    border-bottom: none;
+    font-family: $primary-font;
+    display: inline-block;
+  }
+
+  .name{
+
+  }
+}

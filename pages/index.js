@@ -6,6 +6,8 @@ import Form from '../components/Form'
 import Cardlist from '../components/CardList'
 import Card from '../components/Card'
 import styles from '../styles/Home.module.css'
+import ContactUs from './ContactUs'
+import Link from 'next/link'
 
 export default function Home() {
   const [lat, setLat] = useState("");
@@ -49,7 +51,11 @@ export default function Home() {
 
       <section>
       <Cardlist cardData={cardData} />
+      
+      <Link href={`/contactus`}><a>Clicca</a></Link>
       </section>
+
+  
 
       <footer className={styles.footer}>
         <a

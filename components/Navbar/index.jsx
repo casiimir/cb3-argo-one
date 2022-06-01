@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ContactUs from '../../pages/ContactUs'
 import styles from './styles.module.scss'
 
 export default function Navbar() {
@@ -8,6 +9,7 @@ export default function Navbar() {
                 <ul>
                     <h2>TRICILY</h2>
                         <Link href="/pages/ContactUs.jsx">
+                            <ContactUs/>
                             <a>CONTACT US</a>
                         </Link>
                         <Link href="#">
