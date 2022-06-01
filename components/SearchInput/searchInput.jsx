@@ -26,19 +26,8 @@ const SearchInput = () => {
   const [actualDate, SetActualDate] = useState((date) => [
     { fullDate: date, day: date, month: date },
   ]);
-<<<<<<< Updated upstream
+
   const [alert, setAlert] = useState(false);
-=======
-  const [selectedDateRange, setSelectedDateRange] = useState((e) => [
-    { date_to: e, date_from: e },
-  ]);
-  const [cityInfo, setCityInfo] = useState((e) => [
-    { cityData: e, cityEvent: e },
-  ]);
-  const [activitiesInfo, setActivitiesInfo] = useState((date) => [
-    { activities: categories, selectedActivity: date },
-  ]);
->>>>>>> Stashed changes
 
   //handling function on cities select
   const handleClickOnCities = async (event) => {
@@ -61,29 +50,14 @@ const SearchInput = () => {
     }
   };
 
-<<<<<<< Updated upstream
   const handleDateToPick = (event) => {
     setDateTo(event.target.value);
-=======
-  //handling function to date pick
-  const handleDateToPick = (e) => {
-    console.log(e.target.value);
-    const value = e.target.value;
-    setSelectedDateRange((prev) => [
-      { date_to: value, date_from: prev[0].date_from },
-    ]);
->>>>>>> Stashed changes
   };
   const handleDateFromPick = (event) => {
     setDateFrom(event.target.value);
   };
 
-<<<<<<< Updated upstream
   const handleSubmit = (event) => {
-=======
-  //handle function to sumbit
-  const handleSubmit = async (event) => {
->>>>>>> Stashed changes
     event.preventDefault();
     const selectedDateRange = [dataStore.date_to, dataStore.date_from];
 
