@@ -6,11 +6,7 @@ const OptionGroup = ({
   typeValue,
   defaultText,
   textValue,
-<<<<<<< Updated upstream
   defaultValue,
-=======
-  label,
->>>>>>> Stashed changes
 }) => {
   console.log(data);
   return (
@@ -26,15 +22,9 @@ const OptionGroup = ({
         onChange={onChangeFn}
         required
       >
-<<<<<<< Updated upstream
-        <optgroup classsName={styles.OptionGroup} label="Sicily's provinces">
+        <optgroup className={styles.OptionGroup} label="Sicily's provinces">
           <option className={styles.Option} value={defaultValue || "null"}>
             {defaultText}
-=======
-        <optgroup classsName={styles.OptionGroup} label="choose">
-          <option className={styles.Option} value="null">
-            {defaultValue}
->>>>>>> Stashed changes
           </option>
           {data.map((element) => (
             <option
