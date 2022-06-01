@@ -1,9 +1,19 @@
 import styles from "./styles.module.scss";
 
-const OptionGroup = ({ data, onChangeFn, typeValue, defaultValue }) => {
+const OptionGroup = ({
+  data,
+  onChangeFn,
+  typeValue,
+  defaultValue,
+  textValue,
+}) => {
   console.log(data);
   return (
-    <label htmlFor={typeValue}>
+    <div>
+      <label className={styles.Label} htmlFor={typeValue}>
+        {" "}
+        {textValue}{" "}
+      </label>
       <select
         className={styles.Select}
         name={typeValue}
@@ -21,7 +31,7 @@ const OptionGroup = ({ data, onChangeFn, typeValue, defaultValue }) => {
           ))}
         </optgroup>
       </select>
-    </label>
+    </div>
   );
 };
 

@@ -166,12 +166,14 @@ const SearchInput = () => {
           onChangeFn={handleClickOnCities}
           typeValue="cities"
           defaultValue="Select cities"
+          textValue="Select a city to Start"
         />
         <OptionGroup
           data={activitiesInfo[0].activities}
           onChangeFn={handleClickOnTipology}
           typeValue="tipology"
           defaultValue="Select activities"
+          textValue="Select an activities in zone"
         />
         <DatePicker
           firstDateFn={handleDateToPick}
