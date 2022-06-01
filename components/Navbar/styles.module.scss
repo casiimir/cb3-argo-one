@@ -1,25 +1,100 @@
-.navbar {
-    color: white;
-    background-color: #3C8DAD;
-    backdrop-filter: blur(10px);
-    position: fixed;
-    top: 0;
+.Navbar {
+    // background: #3C8DAD;
+    height: 90px;
     width: 100%;
-    ul{
-        margin: 0px 20px;
+    position: fixed;
+    z-index: 999;
+    opacity: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // padding: 20px;
+    padding-top: 2px;
+    font-family: 'Outfit', sans-serif;
+    color: #fff;
+    font-size: 20px;
+    background-image: linear-gradient(grey, transparent);
+    
+    a {
+        padding: 20px;
     }
-        h2{
-            font-size: 28px;
-            display: inline;
-        }
-        a{
-            float: right;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            padding: 10px 20px;
-            &:hover {
-            border: 1px solid #fff;
-            }
-        }
 }
+
+
+.Navbar .Navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Navbar nav ul {
+    padding: 0;
+}
+
+
+
+.Navbar .MobileNavigation {
+    display: None;
+}
+
+@media (max-width: 990px){
+    .Navbar .Navigation {
+        display: none;
+    }
+
+    .Navbar .MobileNavigation {
+        display: flex;
+        align-items: center;
+    }
+
+    .Navbar .MobileNavigation .Hamburger {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+        margin: 0%;
+    }
+
+    .Navbar nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        // padding: ;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        border-top: 2px solid #fff;
+
+    }
+
+    .Navbar nav ul a {
+        padding-left: 20%;
+        background-image: linear-gradient(grey, transparent);
+        width: 100%;
+        &:hover {
+        border-bottom: none;
+        color: #F5A962;
+        }
+    }
+}
+
+// .NavbarItems {
+//     font-family: 'Outfit', sans-serif;
+//     background: #3C8DAD;
+//     height: 80px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     font-size: 1.2rem;
+// }
+
+// .navbarLogo {
+//     color: #fff;
+//     justify-self: start;
+//     margin-left: 20px;
+//     // cursor: pointer;
+// }
+
+// .fa-react {
+//     margin-left: 0.5rem;
+//     font-size: 1.6rem;
+// }
