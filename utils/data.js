@@ -48,3 +48,13 @@ export const categories = [
     code: "adventure",
   },
 ];
+
+export const textData = [
+  "our traditions...",
+  "our food...",
+  "our nature...",
+  "our history...",
+  "our traditions",
+  "our beaches...",
+  "with us.",
+];
