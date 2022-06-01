@@ -12,7 +12,7 @@ export default function Navbar() {
                             <ContactUs/>
                             <a>CONTACT US</a>
                         </Link>
-                        <Link href="#">
+                        <Link href="/">
                             <a>ABOUT US</a>
                         </Link>
                         <Link href="#">
