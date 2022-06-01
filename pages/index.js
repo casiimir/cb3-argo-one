@@ -15,7 +15,8 @@ export default function Home() {
     () => import('../components/Map'),
     {
       loading: () => <p>A map is loading</p>,
-      ssr: falseg}
+      ssr: false
+    }
   );
 
   function sendCoords(data){
