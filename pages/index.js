@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import dynamic from 'next/dynamic'
-import Form from '../components/Form'
 import Cardlist from '../components/CardList'
 import Card from '../components/Card'
 import styles from '../styles/Home.module.css'
@@ -43,7 +42,6 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Form fallback={setCoords} returnData={getData} mainCardData={getMainCard} />
         <Map lat={lat} long={long}></Map>
       </main>
 
