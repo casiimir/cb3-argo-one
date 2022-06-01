@@ -1,0 +1,25 @@
+.navbar {
+    color: white;
+    background-color: #3C8DAD;
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    ul{
+        margin: 0px 20px;
+    }
+        h2{
+            font-size: 28px;
+            display: inline;
+        }
+        a{
+            float: right;
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            padding: 10px 20px;
+            &:hover {
+            border: 1px solid #fff;
+            }
+        }
+}
