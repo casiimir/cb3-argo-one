@@ -1,0 +1,41 @@
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+@mixin border-radius {
+    border-radius: 5px;
+} 
+
+@mixin button {
+    background-color: $yellow;
+    color: $white;
+    font-size: 1.2rem;
+    border-radius: 3px;
+    border: none;
+    width: 100px;
+    height: 40px;
+
+    @include hover {
+        cursor: pointer;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.214);
+    };
+}
+
+@mixin hover {
+  &:not([disabled]):hover {
+    @content;
+  }
+}
+
+//colors//
+
+$white: white;
+$dark-blue: #125D98;
+$light-blue: #3C8DAD;
+$yellow: #F5A962;
+
+//fonts//
+
+$primary-font: 'Outfit', sans-serif;
