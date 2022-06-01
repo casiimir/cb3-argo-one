@@ -1,0 +1,27 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.homepage {
+	position: relative;
+
+
+	&__wrapper {
+		position: relative;
+	}
+}
+
+.homepage__desc {
+    display: flex;
+	position: absolute;
+	color: $light-blue;
+	z-index: 2;
+    top: 15vw;
+    width: 25%;
+    right: 5%;
+    font-family: $primary-font;
+    font-size: 3.3vw;
+    text-align: right;
+    font-weight: 700;
+    flex-wrap: wrap;
+}
+
