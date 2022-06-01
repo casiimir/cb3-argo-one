@@ -1,3 +1,58 @@
 .Container {
   display: flex;
+  justify-content: space-around;
+  //gap: 10px;
+  width: fit-content;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  .Input {
+    -webkit-align-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+    font-family: "Outfit", sans-serif;
+    overflow: hidden;
+    border-radius: 16px;
+    justify-content: space-between;
+    outline: none;
+    border: none;
+
+    -webkit-padding-start: 1px;
+  }
+
+  .Input::-webkit-datetime-edit {
+    //Edita il Div del testo data
+    //-webkit-flex: 0 1;
+    //flex: 0 1 0;
+    display: inline-block;
+    min-width: 42vmin;
+    overflow: hidden;
+    //padding-left: 10px;
+    font-size: clamp(0.6em, 1em, 0.8em);
+    text-align: center;
+    font-family: "Outfit", sans-serif;
+  }
+  .Input::-webkit-datetime-edit-text {
+    padding: 10px;
+    order: 1;
+  }
+  .Input::-webkit-datetime-edit-fields-wrapper {
+    -webkit-user-modify: read-only !important;
+    display: inline-block;
+    padding: 0px;
+    //width: 150px;
+    height: 20px;
+    white-space: pre-wrap;
+  }
+  .Input::-webkit-calendar-picker-indicator {
+    font-size: 20px;
+    padding: 10px;
+    order: 0;
+
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
 }

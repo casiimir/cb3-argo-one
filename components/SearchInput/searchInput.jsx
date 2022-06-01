@@ -160,7 +160,7 @@ const SearchInput = () => {
 
   return (
     <div className={styles.Container}>
-      <form onSubmit={handleSubmit}>
+      <form className={styles.Form} onSubmit={handleSubmit}>
         <OptionGroup
           data={cities}
           onChangeFn={handleClickOnCities}
@@ -178,7 +178,7 @@ const SearchInput = () => {
           secondDateFn={handleDateFromPick}
         />
 
-        <input type="submit" value="Cerca" />
+        <input className={styles.Button} type="submit" value="Search" />
       </form>
     </div>
   );

@@ -10,10 +10,12 @@ const OptionGroup = ({ data, onChangeFn, typeValue, defaultValue }) => {
         id={typeValue}
         onChange={onChangeFn}
       >
-        <optgroup label="Sicily's provinces">
-          <option value="null">{defaultValue}</option>
+        <optgroup classsName={styles.OptionGroup} label="Sicily's provinces">
+          <option className={styles.Option} value="null">
+            {defaultValue}
+          </option>
           {data.map((city) => (
-            <option value={city.id} key={city.id}>
+            <option className={styles.Option} value={city.id} key={city.id}>
               {city.name}
             </option>
           ))}
