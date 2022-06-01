@@ -4,8 +4,8 @@ import Image from 'next/image'
 import dynamic from 'next/dynamic'
 import Form from '../components/Form'
 import Cardlist from '../components/CardList'
-import Card from '../components/Card'
 import styles from '../styles/Home.module.css'
+import SearchInput from "../components/SearchInput";
 
 export default function Home() {
   const [lat, setLat] = useState("");
@@ -45,6 +45,7 @@ export default function Home() {
       <main className={styles.main}>
         <Form fallback={setCoords} returnData={getData} mainCardData={getMainCard} />
         <Map lat={lat} long={long}></Map>
+        <SearchInput />
       </main>
 
       <section>
@@ -57,12 +58,12 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{' '}
+          Powered by{" "}
           <span className={styles.logo}>
             <Image src="https://img.icons8.com/clouds/100/000000/google-earth.png" alt="Tricily Logo" width={30} height={30} />
           </span>
         </a>
       </footer>
     </div>
-  )
+  );
 }
