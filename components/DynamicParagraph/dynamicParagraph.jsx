@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { textData } from "../../utils/data";
+import { slideData } from "../../utils/data";
 import styles from "./styles.module.scss";
 
 export const DynamicParagraph = () => {
@@ -8,14 +8,14 @@ export const DynamicParagraph = () => {
   const [sentinel, setSentinel] = useState(false);
 
   const handleTextSlide = () => {
-    if (counter < textData.length - 1) {
+    if (counter < slideData.textData.length - 1) {
       console.log(counter);
       setCounter((prev) => prev + 1);
-      setSlideText(textData[counter]);
+      setSlideText(slideData.textData[counter]);
       setSentinel((prev) => !prev);
     } else {
       setCounter(0);
-      setSlideText(textData[counter]);
+      setSlideText(slideData.textData[counter]);
       setSentinel((prev) => !prev);
     }
   };
