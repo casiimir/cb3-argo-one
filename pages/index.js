@@ -4,11 +4,21 @@ import dynamic from "next/dynamic";
 
 import { useState } from "react";
 
+<<<<<<< Updated upstream
 import SearchInput from "../components/SearchInput";
 import Cardlist from "../components/CardList";
 
 import styles from "../styles/Home.module.css";
 import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
+=======
+import DefaultLayout from "../components/Layout/DefautlLayout";
+
+import SearchInput from "../components/SearchInput";
+import Form from "../components/Form";
+import Cardlist from "../components/CardList";
+
+import styles from "../styles/Home.module.css";
+>>>>>>> Stashed changes
 
 export default function Home() {
   const [lat, setLat] = useState("");
@@ -42,6 +52,14 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+<<<<<<< Updated upstream
+=======
+        <Form
+          fallback={setCoords}
+          returnData={getData}
+          mainCardData={getMainCard}
+        />
+>>>>>>> Stashed changes
         <Map lat={lat} long={long}></Map>
         <SearchInput />
         <DynamicParagraph />
