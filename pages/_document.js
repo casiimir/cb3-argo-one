@@ -21,5 +21,9 @@ export default function Document() {
 			</body>
         </Html>
     );
+<<<<<<< HEAD
 }
 
+=======
+}
+>>>>>>> 46c7d8d (feat/created navbar component)
