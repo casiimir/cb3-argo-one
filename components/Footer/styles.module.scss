@@ -1,9 +1,12 @@
-@import "../../styles/mixin.scss";
+@import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-
 .footer {
+    position: relative;
     border-top: 1px solid $dark-blue;
+    bottom: 0;
+    width: 100%;
+    background-color: $white;
 }
 
 .upperFooter {
@@ -50,7 +53,7 @@
 
     a {
         display: flex;
-        margin:  0 8%;
+        margin:  0 3%;
         padding: 0 2%;
         justify-content: flex-end;
         font-size: 1.3rem;
@@ -59,6 +62,11 @@
 
     a:first-child {
         margin-top: 2%;
+    }
+
+    a:hover {
+        color: $yellow;
+        cursor: pointer;
     }
 }
 
@@ -84,6 +92,19 @@
         justify-content: center;
         gap: 50%;
         margin-top: 2%;
+    }
+
+    &__facebookIcon:hover {
+        color: $yellow;
+        cursor: pointer;
+    }
+    &__instagramIcon:hover {
+        color: $yellow;
+        cursor: pointer;
+    }
+    &__twitterIcon:hover {
+        color: $yellow;
+        cursor: pointer;
     }
 
 }

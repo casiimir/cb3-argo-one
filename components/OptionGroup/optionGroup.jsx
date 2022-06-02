@@ -1,13 +1,14 @@
 import styles from "./styles.module.scss";
 
 const OptionGroup = ({
-  data,
-  onChangeFn,
-  typeValue,
-  defaultText,
-  textValue,
-  defaultValue,
+	data,
+	onChangeFn,
+	typeValue,
+	defaultText,
+	textValue,
+	defaultValue,
 }) => {
+
 
   return (
     <div>
