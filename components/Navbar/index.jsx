@@ -1,26 +1,16 @@
-import Link from 'next/link'
+import NavLogo from "./NavLogo";
 import styles from './styles.module.scss'
+import React, {useState} from 'react'
+import Navigation from './Navigation'
+import MobileNavigation from './MobileNavigation'
 
 export default function Navbar() {
+
     return (
-        <nav className={styles.navbar}>
-            <div>
-                <ul>
-                    <h2>TRICILY</h2>
-                        <Link href="/pages/ContactUs.jsx">
-                            <a>CONTACT US</a>
-                        </Link>
-                        <Link href="#">
-                            <a>ABOUT US</a>
-                        </Link>
-                        <Link href="#">
-                            <a>EXPERIENCES</a>
-                        </Link>
-                        <Link href="#">
-                            <a>HOME</a>
-                        </Link>
-                </ul>
-            </div>
-        </nav>
+        <div className={styles.Navbar}>
+            <NavLogo />
+            <Navigation />
+            <MobileNavigation />
+        </div>
     )
 }

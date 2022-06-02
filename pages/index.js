@@ -1,10 +1,15 @@
-import { useState } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import dynamic from 'next/dynamic'
-import Cardlist from '../components/CardList'
-import styles from '../styles/Home.module.css'
+
+import Head from "next/head";
+import Image from "next/image";
+import dynamic from "next/dynamic";
+
+import { useState } from "react";
+
+
 import SearchInput from "../components/SearchInput";
+
+import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
+
 
 export default function Home() {
 
@@ -26,8 +31,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
+
         <SearchInput/>
        <Map></Map>
+
       </main>
 
       <section>
