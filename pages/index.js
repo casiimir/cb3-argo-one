@@ -8,7 +8,9 @@ import SearchInput from "../components/SearchInput";
 import Cardlist from "../components/CardList";
 
 import styles from "../styles/Home.module.css";
+
 import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
+
 
 export default function Home() {
   const [lat, setLat] = useState("");
