@@ -4,8 +4,9 @@ const OptionGroup = ({
 	data,
 	onChangeFn,
 	typeValue,
-	defaultValue,
+	defaultText,
 	textValue,
+	defaultValue,
 }) => {
 	console.log(data);
 	return (
@@ -19,21 +20,25 @@ const OptionGroup = ({
 				name={typeValue}
 				id={typeValue}
 				onChange={onChangeFn}
+				required
 			>
 				<optgroup
 					className={styles.OptionGroup}
 					label="Sicily's provinces"
 				>
-					<option className={styles.Option} value="null">
-						{defaultValue}
+					<option
+						className={styles.Option}
+						value={defaultValue || "null"}
+					>
+						{defaultText}
 					</option>
-					{data.map((city) => (
+					{data.map((element) => (
 						<option
 							className={styles.Option}
-							value={city.id}
-							key={city.id}
+							value={element.code || element.id}
+							key={element.url || element.name}
 						>
-							{city.name}
+							{element.name}
 						</option>
 					))}
 				</optgroup>

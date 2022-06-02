@@ -43,9 +43,9 @@ export const GetCategories = async (cityId) => {
 
 const GetActivityOption = (coord, codeType, date) =>
   new URLSearchParams({
-    available_from: date[0].date_to,
+    available_from: date[0],
     available_language_in: "en,it",
-    available_to: date[0].date_from,
+    available_to: date[1],
     category_in: codeType,
     //city_in: '0',
     coordinates: coord,
