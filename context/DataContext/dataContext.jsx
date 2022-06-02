@@ -19,6 +19,7 @@ const initialState = {
   date_to: "",
   date_from: "",
   loading: false,
+  setControl: false,
 };
 
 const DataContext = createContext(initialState);

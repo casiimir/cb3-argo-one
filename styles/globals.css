@@ -1,8 +1,8 @@
 html,
 body {
+  font-family: "Outfit", sans-serif;
   padding: 0;
   margin: 0;
-  font-family: "Outfit", sans-serif;
 }
 
 a {
