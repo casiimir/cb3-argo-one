@@ -13,7 +13,7 @@ export const http = async (APIurl, resource = "", options) => {
   if (result.status >= 200 && result.status <= 299) {
     return await result.json();
   } else {
-    console.log(result.status);
+  
 
     throw new Error("qualcosa è andato storto");
   }

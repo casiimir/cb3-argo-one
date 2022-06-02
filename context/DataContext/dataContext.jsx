@@ -10,7 +10,10 @@ import dataReducer from "./dataReducer";
 const initialState = {
   categories: [],
   cityData: [],
-  latLon: [],
+  latLon: {
+    lat: 38.114, 
+    lng: 13.355,
+  },
   selectedCategory: "",
   date_to: "",
   date_from: "",

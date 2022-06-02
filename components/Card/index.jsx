@@ -1,12 +1,12 @@
 import styles from './index.module.scss';
 
-const Card = ({ card }) => {
+const Card = () => {
 
-    const cards = card;
+    // const cards = card;
 
     return (
         <>
-            <div className={styles.cards}>
+            {/* <div className={styles.cards}>
                 <img className={styles.card_img}
                     src={cards.cover_image_url}
                     alt={cards.title}
@@ -15,7 +15,7 @@ const Card = ({ card }) => {
                     <h2 className={styles.title}>{cards.title}</h2>
                     <p className={styles.desc}>{cards.description}</p>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
