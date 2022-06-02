@@ -1,6 +1,8 @@
+import styles from './styles.module.scss';
+
 const NavLogo = () => {
     return (
-        <a>TRICILY</a>
+        <a className={styles.Title}>TRICILY</a>
     )
 
 }

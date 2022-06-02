@@ -9,11 +9,11 @@ const MobileNavigation = () => {
     const [open, setOpen] = useState(false);
 
     const hamburgerIcon = <FiMenu className={styles.Hamburger} 
-                            size='40px' color='white'
+                            size='40px' color='#125D98'
                             onClick={() => setOpen(!open)}
                             />
     const closeBtn = <ImCross className={styles.Hamburger} 
-                            size='40px' color='white'
+                            size='35px' color='#125D98'
                             onClick={() => setOpen(!open)}
                             />
     const closeMobileMenu = () => setOpen(false);

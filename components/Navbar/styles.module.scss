@@ -1,5 +1,7 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
 .Navbar {
-    // background: #3C8DAD;
     height: 90px;
     width: 100%;
     position: fixed;
@@ -8,18 +10,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // padding: 20px;
     padding-top: 2px;
-    font-family: 'Outfit', sans-serif;
+    font-family: $primary-font;
     color: #fff;
     font-size: 20px;
     background-image: linear-gradient(grey, transparent);
+    
     
     a {
         padding: 20px;
     }
 }
 
+.Title {
+    font-family: $primary-font;
+    font-size: 36px;
+}
 
 .Navbar .Navigation {
     display: flex;
@@ -38,6 +44,13 @@
 }
 
 @media (max-width: 990px){
+    .Navbar {
+        height: 60px;
+        color: #125D98;
+        font-size: 20px;
+        background: #fff;
+        border-bottom: 2px solid #125D98;
+    }
     .Navbar .Navigation {
         display: none;
     }
@@ -45,6 +58,7 @@
     .Navbar .MobileNavigation {
         display: flex;
         align-items: center;
+        text-align: center;
     }
 
     .Navbar .MobileNavigation .Hamburger {
@@ -58,17 +72,18 @@
         display: flex;
         flex-direction: column;
         position: absolute;
-        // padding: ;
-        top: 80px;
+        border-bottom: 2px solid #125D98;
+        border-left: 2px solid #125D98;
+        top: 40px;
         right: 0;
-        width: 100%;
-        border-top: 2px solid #fff;
-
+        width: 50%;
+        border-top: 2px solid #125D98;
     }
 
     .Navbar nav ul a {
-        padding-left: 20%;
-        background-image: linear-gradient(grey, transparent);
+        padding-left: 10px;
+        background-color: #fff;
+        color: #125D98;
         width: 100%;
         &:hover {
         border-bottom: none;
@@ -77,24 +92,26 @@
     }
 }
 
-// .NavbarItems {
-//     font-family: 'Outfit', sans-serif;
-//     background: #3C8DAD;
-//     height: 80px;
-//     display: flex;
-//     justify-content: center;
-//     align-items: center;
-//     font-size: 1.2rem;
-// }
+.Title {
+    font-family: $primary-font;
+    font-size: 30px;
+}
 
-// .navbarLogo {
-//     color: #fff;
-//     justify-self: start;
-//     margin-left: 20px;
-//     // cursor: pointer;
-// }
-
-// .fa-react {
-//     margin-left: 0.5rem;
-//     font-size: 1.6rem;
-// }
+@media (max-width: 300px){
+    .Navbar {
+        color: #125D98;
+        font-size: 20px;
+        background: #fff;
+    }
+    .Navbar .Navigation {
+        display: none;
+    }
+    .Navbar nav ul {
+        width: 100%;
+        border-left: none;
+    }
+}
+.Title {
+    font-family: $primary-font;
+    font-size: 30px;
+}
