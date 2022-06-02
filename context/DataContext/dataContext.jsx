@@ -11,13 +11,14 @@ const initialState = {
   categories: [],
   cityData: [],
   latLon: {
-    lat: 38.114, 
+    lat: 38.114,
     lng: 13.355,
   },
   selectedCategory: "",
   date_to: "",
   date_from: "",
   loading: false,
+  setControl: false,
 };
 
 const DataContext = createContext(initialState);
