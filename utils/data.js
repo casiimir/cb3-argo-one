@@ -1,7 +1,7 @@
 export const cities = [
   {
-    name: "Agrigento",
-    id: 265,
+    name: "Palermo",
+    id: 24,
   },
   {
     name: "Catania",
@@ -12,8 +12,12 @@ export const cities = [
     id: 572,
   },
   {
-    name: "Palermo",
-    id: 24,
+    name: "Agrigento",
+    id: 265,
+  },
+  {
+    name: "Trapani",
+    id: 587,
   },
   {
     name: "Ragusa",
@@ -22,10 +26,6 @@ export const cities = [
   {
     name: "Siracusa",
     id: 147,
-  },
-  {
-    name: "Trapani",
-    id: 587,
   },
 ];
 

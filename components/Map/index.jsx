@@ -5,7 +5,6 @@ import { useDataContext } from '../../context/DataContext/dataContext';
 import { icon } from "leaflet";
 import 'leaflet/dist/leaflet.css';
 
-
 const MapControl = (props) => {
     const map = useMap()
     const coords = props.coords;
@@ -14,7 +13,7 @@ const MapControl = (props) => {
         map.flyTo(coords, map.getZoom())
     })
     return null;
-}
+};
 
 const Map = () => {
     const { dataStore } = useDataContext();

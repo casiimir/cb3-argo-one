@@ -13,11 +13,6 @@ export default function Home() {
     ssr: false,
   });
 
-  function sendCoords(data){
-    setCoords(data)
-  }
-
-
   return (
     <>
       <Head>
@@ -33,8 +28,6 @@ export default function Home() {
       <section>
       <Cardlist/>
       </section>
-
-    
     </>
   );
 }
