@@ -1,85 +1,72 @@
 import React from "react";
 import { useState, useEffect } from "react";
-import {
-  GetCityById,
-  GET_ACTIVITY,
-  GetAvaiableActivity,
-  GetCategories,
-  setFormattingLocalDate,
-} from "../../utils/utils";
+import { setFormattingLocalDate } from "../../utils/utils";
 
-import { cities, categories } from "../../utils/data.js";
+import { useDataContext } from "../../context/DataContext/dataContext";
+
+import { cities } from "../../utils/data.js";
 
 import OptionGroup from "../OptionGroup";
 import DatePicker from "../DatePicker";
+import Alert from "../Alert";
 
 import styles from "./styles.module.scss";
 
-const SearchInput = (props) => {
-  const [lat_lon, setLat_lon] = useState([38.114, 13.355]);
+const SearchInput = () => {
+  const {
+    dataStore,
+    updateCategoriesData,
+    updateCityData,
+    updateActivitiesData,
+    setSelectedCategory,
+    setDateTo,
+    setDateFrom,
+  } = useDataContext();
+
   const [actualDate, SetActualDate] = useState((date) => [
     { fullDate: date, day: date, month: date },
   ]);
-  const [selectedDateRange, setSelectedDateRange] = useState((e) => [
-    { date_to: e, date_from: e },
-  ]);
-  const [cityInfo, setCityInfo] = useState((e) => [
-    { cityData: e, cityEvent: e },
-  ]);
-  const [activitiesInfo, setActivitiesInfo] = useState((date) => [
-    { activities: categories, selectedActivity: date },
-  ]);
+
+  const [alert, setAlert] = useState(false);
 
   //handling function on cities select
-  const handleClickOnCities = async (e) => {
-    const value = e.target.value;
-    const IDdata = await GetCategories(value);
-    const cityData = await GetCityById(value);
-    const verticals = await IDdata.map((type) => type);
-    setActivitiesInfo((prev) => [
-      { activities: verticals, selectedActivity: prev[0].selectedActivity },
-    ]);
-    setLat_lon([cityData.latitude, cityData.longitude]);
-    setCityInfo([{ cityData: cityData }]);
+  const handleClickOnCities = async (event) => {
+    const sentinel = event.target.value === "unselected";
+    if (sentinel) {
+      setAlert((prev) => !prev);
+    } else {
+      updateCategoriesData(event.target.value);
+      updateCityData(event.target.value);
+    }
   };
-
-  useEffect(() => {
-    props.function(lat_lon)
-  },[lat_lon])
 
   //handling function on tipology select
-  const handleClickOnTipology = async (e) => {
-    const value = e.target.value;
-    setActivitiesInfo((prev) => [
-      { activities: prev[0].activities, selectedActivity: value },
-    ]);
+  const handleClickOnTipology = async (event) => {
+    const sentinel = event.target.value === "null";
+    if (sentinel) {
+      setAlert((prev) => !prev);
+    } else {
+      setSelectedCategory(event.target.value);
+    }
   };
 
-  const handleDateToPick = (e) => {
-    console.log(e.target.value);
-    const value = e.target.value;
-    setSelectedDateRange((prev) => [
-      { date_to: value, date_from: prev[0].date_from },
-    ]);
+  const handleDateToPick = (event) => {
+    setDateTo(event.target.value);
   };
-  const handleDateFromPick = (e) => {
-    const value = e.target.value;
-    setSelectedDateRange((prev) => [
-      { date_to: prev[0].date_to, date_from: value },
-    ]);
+  const handleDateFromPick = (event) => {
+    setDateFrom(event.target.value);
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    const selectedDateRange = [dataStore.date_to, dataStore.date_from];
 
-    const result = await GetAvaiableActivity(
-      lat_lon,
-      activitiesInfo[0].selectedActivity,
+    updateActivitiesData(
+      dataStore.latLon,
+      dataStore.selectedCategory,
       selectedDateRange
     );
-    setCityInfo((prev) => [{ cityData: prev[0].cityData, cityEvent: result }]);
-    // i dati escono da qui
-    console.log(activitiesInfo.selectedActivity, result);
+    // i dati escono da qui e li trovi in dataStore nel context
   };
 
   useEffect(() => {
@@ -93,16 +80,31 @@ const SearchInput = (props) => {
           data={cities}
           onChangeFn={handleClickOnCities}
           typeValue="cities"
-          defaultValue="Select cities"
+          defaultText="Select cities"
           textValue="Select a city to Start"
+          defaultValue="unselected"
         />
+
         <OptionGroup
-          data={activitiesInfo[0].activities}
+          data={dataStore.categories}
           onChangeFn={handleClickOnTipology}
           typeValue="tipology"
-          defaultValue="Select activities"
+          defaultText="Select activities"
           textValue="Select an activities in zone"
         />
+
+        {alert && (
+          <div className={styles.Alert}>
+            <Alert
+              text="Select a cities first !"
+              value={alert}
+              setFn={setAlert}
+              time={3000}
+              classStyle="SearchBox"
+            />
+          </div>
+        )}
+
         <DatePicker
           firstDateFn={handleDateToPick}
           secondDateFn={handleDateFromPick}

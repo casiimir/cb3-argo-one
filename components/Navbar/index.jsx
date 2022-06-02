@@ -7,18 +7,18 @@ export default function Navbar() {
             <div>
                 <ul>
                     <h2>TRICILY</h2>
-                    <Link href="/pages/ContactUs">
-                        <a>CONTACT US</a>
-                    </Link>
-                    <Link href="#">
-                        <a>ABOUT US</a>
-                    </Link>
-                    <Link href="#">
-                        <a>EXPERIENCES</a>
-                    </Link>
-                    <Link href="#">
-                        <a>HOME</a>
-                    </Link>
+                        <Link href="/pages/ContactUs.jsx">
+                            <a>CONTACT US</a>
+                        </Link>
+                        <Link href="#">
+                            <a>ABOUT US</a>
+                        </Link>
+                        <Link href="#">
+                            <a>EXPERIENCES</a>
+                        </Link>
+                        <Link href="#">
+                            <a>HOME</a>
+                        </Link>
                 </ul>
             </div>
         </nav>
