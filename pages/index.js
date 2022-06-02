@@ -1,27 +1,25 @@
-
 import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
 
 import { useState } from "react";
 
-
 import SearchInput from "../components/SearchInput";
+import Cardlist from "../components/CardList";
 
 import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
 
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
-
   const Map = dynamic(() => import("../components/Map"), {
     loading: () => <p>A map is loading</p>,
     ssr: false,
   });
 
-  function sendCoords(data){
-    setCoords(data)
+  function sendCoords(data) {
+    setCoords(data);
   }
-
 
   return (
     <>
@@ -31,17 +29,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-
-        <SearchInput/>
-       <Map></Map>
-
+        <SearchInput />
+        <Map></Map>
       </main>
 
       <section>
-      <Cardlist/>
+        <Cardlist />
       </section>
-
-    
     </>
   );
 }
