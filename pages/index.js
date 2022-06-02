@@ -5,37 +5,23 @@ import dynamic from "next/dynamic";
 
 import { useState } from "react";
 
-import SearchInput from "../components/SearchInput";
-import Cardlist from "../components/CardList";
 
-import styles from "../styles/Home.module.css";
+import SearchInput from "../components/SearchInput";
 
 import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
 
 
 export default function Home() {
-  const [lat, setLat] = useState("");
-  const [long, setLong] = useState("");
-  const [cardData, setCardData] = useState([]);
-  const [mainCard, setMainCard] = useState([]);
 
   const Map = dynamic(() => import("../components/Map"), {
     loading: () => <p>A map is loading</p>,
     ssr: false,
   });
 
-  function setCoords(lat, long) {
-    setLat(lat);
-    setLong(long);
+  function sendCoords(data){
+    setCoords(data)
   }
 
-  function getData(data) {
-    setCardData(data);
-  }
-
-  function getMainCard(data) {
-    setMainCard(data);
-  }
 
   return (
     <>
@@ -45,14 +31,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Map lat={lat} long={long}></Map>
-        <SearchInput />
-        <DynamicParagraph />
+
+        <SearchInput/>
+       <Map></Map>
+
       </main>
 
       <section>
-        <Cardlist cardData={cardData} />
+      <Cardlist/>
       </section>
+
+    
     </>
   );
 }

@@ -8,7 +8,7 @@ const OptionGroup = ({
   textValue,
   defaultValue,
 }) => {
-  console.log(data);
+
   return (
     <div>
       <label className={styles.Label} htmlFor={typeValue}>

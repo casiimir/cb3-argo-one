@@ -7,7 +7,6 @@ export const cities = [
     name: "Catania",
     id: 15,
   },
-
   {
     name: "Messina",
     id: 572,
@@ -26,7 +25,7 @@ export const cities = [
   },
   {
     name: "Trapani",
-    id: 8,
+    id: 587,
   },
 ];
 
