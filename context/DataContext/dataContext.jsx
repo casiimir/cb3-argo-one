@@ -1,15 +1,16 @@
 import { createContext, useContext, useReducer } from "react";
 import {
   GetAvaiableActivity,
+  GetAvaiableExperience,
   GetCategories,
   GetCityById,
-  GetAvaiableExperience
 } from "../../utils/utils";
 
 import dataReducer from "./dataReducer";
 
 const initialState = {
   activities: [],
+  experiences: [],
   categories: [],
   cityData: [],
   latLon: {
@@ -64,18 +65,13 @@ export const DataContextProvider = ({ children }) => {
     }
   };
   //AGGIORNA I DATI ACTIVITIES NEL CONTEXT CON UNA FETCH
-  const updateActivitiesData = async (coord, codeType, date, cityIn) => {
+  const updateActivitiesData = async (coord, codeType, date) => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
-      const ActivitiesData = await GetAvaiableActivity(
-        coord,
-        codeType,
-        date,
-        cityIn
-      );
+      const activitiesData = await GetAvaiableActivity(coord, codeType, date);
       dispatch({
         type: "ACTIVITIES_FETCH_SUCCESS",
-        payload: ActivitiesData,
+        payload: activitiesData,
       });
     } catch (error) {
       dispatch({
@@ -119,6 +115,7 @@ export const DataContextProvider = ({ children }) => {
     updateCategoriesData,
     updateCityData,
     updateActivitiesData,
+    updateExperiencesData,
     setSelectedCategory,
     setDateTo,
     setDateFrom,

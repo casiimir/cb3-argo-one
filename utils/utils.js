@@ -39,19 +39,14 @@ export const GetCategories = async (cityId) => {
   return await result.json();
 };
 
-const GetActivityOption = (
-  coord,
-  codeType,
-  date,
-  cityIn //attivare le voci a propria scelta, aggiungendo un valore alle relative funzioni, ricordarsi di mettere un || ""
-) =>
+const GetActivityOption = (coord, codeType, date) =>
   new URLSearchParams({
-    available_from: date[0] || "",
+    available_from: date[0],
     available_language_in: "en,it",
-    available_to: date[1] || "",
-    category_in: codeType || "",
-    city_in: cityIn || "0",
-    coordinates: coord || "",
+    available_to: date[1],
+    category_in: codeType,
+    city_in: "0",
+    coordinates: coord,
     country_in: "IT,US",
     //default_price_range: '0,34.23',
     distance: "30KM",
@@ -78,17 +73,17 @@ const GetActivityOption = (
     //zero_terms_query: 'NONE'
   }).toString();
 
-  const GetExperienceOption = (cityIn) =>
+const GetExperienceOption = (cityIn) =>
   new URLSearchParams({
-    available_from: date[0] || "",
+    //available_from: date[0],
     available_language_in: "en,it",
-    available_to: date[1] || "",
-    category_in: codeType || "",
-    city_in: cityIn || "0",
-    coordinates: coord || "",
+    //available_to: date[1],
+    //category_in: codeType,
+    city_in: cityIn,
+    //coordinates: coord,
     country_in: "IT,US",
     //default_price_range: '0,34.23',
-    distance: "30KM",
+    //distance: "30KM",
     //discounted: 'NO',
     //duration_range: '2,8',
     //extend_content_fields: 'AUTO',
@@ -105,13 +100,12 @@ const GetActivityOption = (
     //text: "string",
     //text_operator: "AND",
     // service_in: 'pick-up,pet-friendly',
-    sort_by: "distance",
+    sort_by: "relevance",
     //temporary: 'NO',
     //venue_in: '0',
     //vertical_in: codeType,
     //zero_terms_query: 'NONE'
   }).toString();
-    
 
 export const GetCityById = (resource) =>
   http(CITY_URL, resource, {
@@ -135,20 +129,27 @@ export const GET_ACTIVITY = (cityID, resource) =>
     },
   });
 
-export const GetAvaiableActivity = (coord, codeType, date, cityIn) =>
-  http(
-    AVAIABLE_ACTIVITY_URL,
-    GetActivityOption(coord, codeType, date, cityIn),
-    {
-      method: "GET",
-      headers: {
-        "Accept-Language": "it",
-        "X-Musement-Application": "string",
-        "X-Musement-Market": "us",
-        "X-Musement-Version": "3.4.0",
-      },
-    }
-  );
+export const GetAvaiableActivity = (coord, codeType, date) =>
+  http(AVAIABLE_ACTIVITY_URL, GetActivityOption(coord, codeType, date), {
+    method: "GET",
+    headers: {
+      "Accept-Language": "it",
+      "X-Musement-Application": "string",
+      "X-Musement-Market": "us",
+      "X-Musement-Version": "3.4.0",
+    },
+  });
+
+export const GetAvaiableExperience = (cityIn) =>
+  http(AVAIABLE_ACTIVITY_URL, GetExperienceOption(cityIn), {
+    method: "GET",
+    headers: {
+      "Accept-Language": "it",
+      "X-Musement-Application": "string",
+      "X-Musement-Market": "us",
+      "X-Musement-Version": "3.4.0",
+    },
+  });
 
 export const setFormattingLocalDate = (setStateCallBack) => {
   const ISOdate = new Date();

@@ -8,13 +8,13 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
-	return (
-		<DataContextProvider>
-			<DefaultLayout>
-				<Component {...pageProps} />
-			</DefaultLayout>
-		</DataContextProvider>
-	);
+  return (
+    <DataContextProvider>
+      <DefaultLayout>
+        <Component {...pageProps} />
+      </DefaultLayout>
+    </DataContextProvider>
+  );
 }
 
 export default MyApp;

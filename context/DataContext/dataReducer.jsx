@@ -2,16 +2,17 @@ import {
   CITIES_FETCH_SUCCESS,
   CATEGORIES_FETCH_SUCCESS,
   ACTIVITIES_FETCH_SUCCESS,
+  EXPERIENCE_FETCH_SUCCESS,
   DATA_FETCH_REQUEST,
   DATA_FETCH_ERROR,
   DISCARD_ERROR,
-  EXPERIENCE_FETCH_SUCCESS,
   SET_SELECTED_CATEGORY,
   SET_DATE_TO,
   SET_DATE_FROM,
 } from "../constants";
 
 const dataReducer = (state, action) => {
+  console.log(action);
   switch (action.type) {
     case DATA_FETCH_REQUEST:
       return {
@@ -38,7 +39,7 @@ const dataReducer = (state, action) => {
         setControl: true,
         activities: action.payload,
       };
-      case EXPERIENCE_FETCH_SUCCESS:
+    case EXPERIENCE_FETCH_SUCCESS:
       return {
         ...state,
         loading: false,
