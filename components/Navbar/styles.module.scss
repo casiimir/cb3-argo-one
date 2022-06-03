@@ -16,7 +16,6 @@
     font-size: 20px;
     background-image: linear-gradient(grey, transparent);
     
-    
     a {
         padding: 20px;
     }
@@ -35,15 +34,39 @@
 
 .Navbar nav ul {
     padding: 0;
-}
+    a {
+        &:hover {
+            text-decoration: none;
+            border-bottom: none;
+            color: #F5A962;
+        }        
+    }
+    button {
+        border: none;
+        background: none;
+        padding-right: 30px;
+        button:hover {
+            text-decoration: none;
+            border-bottom: none;
+            color: #F5A962;
+            cursor: pointer;
+        }
+    }
 
+    // button:hover {
+    //     text-decoration: none;
+    //     border-bottom: none;
+    //     color: #F5A962;
+    //     cursor: pointer;
+    // }
+}
 
 
 .Navbar .MobileNavigation {
     display: None;
 }
 
-@media (max-width: 990px){
+@media (max-width: 900px){
     .Navbar {
         height: 60px;
         color: #125D98;
