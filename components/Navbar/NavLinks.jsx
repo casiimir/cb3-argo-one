@@ -7,9 +7,8 @@ import { cities } from "../../utils/data";
 const NavLinks = (props) => {
   const { updateExperiencesData } = useDataContext();
 
-  const handleClickOnExperience = (event) => {
+  const handleClickOnExperience = () => {
     const cityId = cities.map((city) => city.id);
-    event.preventDefault();
     updateExperiencesData(cityId);
     props.isMobile && props.closeMobileMenu();
   };
