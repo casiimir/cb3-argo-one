@@ -8,6 +8,7 @@ import {
 import dataReducer from "./dataReducer";
 
 const initialState = {
+  activities: [],
   categories: [],
   cityData: [],
   latLon: {
@@ -37,6 +38,7 @@ export const DataContextProvider = ({ children }) => {
         type: "CATEGORIES_FETCH_SUCCESS",
         payload: Categoriesdata,
       });
+      console.log(Categoriesdata)
     } catch (error) {
       dispatch({
         type: "DATA_FETCH_ERROR",
