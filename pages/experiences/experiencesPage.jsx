@@ -6,7 +6,7 @@ import styles from './index.module.scss'
 
 const Experiences = () => {
     const { dataStore } = useDataContext();
-    const experiences = dataStore.experiences.data;
+    const experiences = dataStore.experiences;
 
     const scrl = useRef(null);
     const slide = (cardWidth = 200) => {
