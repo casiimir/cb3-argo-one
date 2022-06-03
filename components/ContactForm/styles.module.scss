@@ -1,24 +1,19 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
-.contact{
-    position: relative;
+.contact {
+  position: relative;
 }
 .wrapper__form {
-  padding: 10px 300px;
   border-bottom: none;
   text-align: center;
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: column wrap;
   justify-content: center;
   font-family: $primary-font;
   position: absolute;
   z-index: 3;
-  top:15vw;
-  left:35%;
-  
-  
-
-  
+  top: 5vw;
+  left: 60%;
 
   ::placeholder {
     color: $light-blue;
@@ -26,7 +21,7 @@
     padding: 5px;
   }
   input {
-    border:none;
+    border: none;
     font-family: $primary-font;
     margin: 10px;
     border-radius: 5%;
@@ -43,12 +38,15 @@
     margin: 10px;
     border-radius: 5px;
     box-shadow: 2px 3px 11px -5px;
+    resize: none;
   }
 
   button {
     @include hover;
     @include button;
     box-shadow: 2px 3px 11px -5px;
+    background-color:$light-blue;
+    font-family: $primary-font;
   }
 
   h1 {
@@ -57,7 +55,13 @@
     border-bottom: none;
     font-family: $primary-font;
     display: inline-block;
+    position: relative;
   }
-
-  
 }
+@media only screen and (max-width: 375px) {
+  .title h1{
+    color: $light-blue;
+  }
+}
+  
+
