@@ -38,7 +38,7 @@ export const DataContextProvider = ({ children }) => {
         type: "CATEGORIES_FETCH_SUCCESS",
         payload: Categoriesdata,
       });
-      console.log(Categoriesdata)
+      console.log(Categoriesdata);
     } catch (error) {
       dispatch({
         type: "DATA_FETCH_ERROR",
@@ -63,10 +63,15 @@ export const DataContextProvider = ({ children }) => {
     }
   };
   //AGGIORNA I DATI ACTIVITIES NEL CONTEXT CON UNA FETCH
-  const updateActivitiesData = async (coord, codeType, date) => {
+  const updateActivitiesData = async (coord, codeType, date, cityIn) => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
-      const ActivitiesData = await GetAvaiableActivity(coord, codeType, date);
+      const ActivitiesData = await GetAvaiableActivity(
+        coord,
+        codeType,
+        date,
+        cityIn
+      );
       dispatch({
         type: "ACTIVITIES_FETCH_SUCCESS",
         payload: ActivitiesData,
