@@ -4,21 +4,21 @@ import styles from "./styles.module.scss";
 
 const DynamicParagraph = ({ setCount }) => {
   const [slideText, setSlideText] = useState("Enjoy");
-  const [counter, setCounter] = useState(0);
+  const [txtIndexCounter, setTxtIndexCounter] = useState(0);
   const [sentinel, setSentinel] = useState(false);
   const [classes, setClasses] = useState(styles.Dynamic);
 
   const handleTextSlide = () => {
-    if (counter < slideData.textData.length - 1) {
+    if (txtIndexCounter < slideData.textData.length - 1) {
       console.log(counter);
-      setCounter((prev) => prev + 1);
-      setSlideText(slideData.textData[counter]);
+      setTxtIndexCounter((prev) => prev + 1);
+      setSlideText(slideData.textData[txtIndexCounter]);
       setSentinel((prev) => !prev);
       setClasses(styles.Slide);
       setTimeout(() => setClasses(styles.Dynamic), 80);
     } else {
       setCounter(0);
-      setSlideText(slideData.textData[counter]);
+      setSlideText(slideData.textData[txtIndexCounter]);
       setSentinel((prev) => !prev);
       setClasses(styles.Slide);
       setTimeout(() => setClasses(styles.Dynamic), 80);

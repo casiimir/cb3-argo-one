@@ -39,21 +39,19 @@ export const GetCategories = async (cityId) => {
   return await result.json();
 };
 
-const GetActivityOption = (coord, codeType, date, cityIn) =>
+const GetActivityOption = (
+  coord,
+  codeType,
+  date,
+  cityIn //attivare le voci a propria scelta, aggiungendo un valore alle relative funzioni, ricordarsi di mettere un || ""
+) =>
   new URLSearchParams({
     available_from: date[0] || "",
     available_language_in: "en,it",
     available_to: date[1] || "",
     category_in: codeType || "",
     city_in: cityIn || "0",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     coordinates: coord || "",
-=======
-=======
->>>>>>> Stashed changes
-    coordinates: coord,
->>>>>>> Stashed changes
     country_in: "IT,US",
     //default_price_range: '0,34.23',
     distance: "30KM",
@@ -102,16 +100,20 @@ export const GET_ACTIVITY = (cityID, resource) =>
     },
   });
 
-export const GetAvaiableActivity = (coord, codeType, date) =>
-  http(AVAIABLE_ACTIVITY_URL, GetActivityOption(coord, codeType, date), {
-    method: "GET",
-    headers: {
-      "Accept-Language": "it",
-      "X-Musement-Application": "string",
-      "X-Musement-Market": "us",
-      "X-Musement-Version": "3.4.0",
-    },
-  });
+export const GetAvaiableActivity = (coord, codeType, date, cityIn) =>
+  http(
+    AVAIABLE_ACTIVITY_URL,
+    GetActivityOption(coord, codeType, date, cityIn),
+    {
+      method: "GET",
+      headers: {
+        "Accept-Language": "it",
+        "X-Musement-Application": "string",
+        "X-Musement-Market": "us",
+        "X-Musement-Version": "3.4.0",
+      },
+    }
+  );
 
 export const setFormattingLocalDate = (setStateCallBack) => {
   const ISOdate = new Date();
