@@ -8,13 +8,18 @@ import {
 import dataReducer from "./dataReducer";
 
 const initialState = {
+  activities: [],
   categories: [],
   cityData: [],
-  latLon: [],
+  latLon: {
+    lat: 38.114,
+    lng: 13.355,
+  },
   selectedCategory: "",
   date_to: "",
   date_from: "",
   loading: false,
+  setControl: false,
 };
 
 const DataContext = createContext(initialState);
@@ -33,6 +38,7 @@ export const DataContextProvider = ({ children }) => {
         type: "CATEGORIES_FETCH_SUCCESS",
         payload: Categoriesdata,
       });
+      console.log(Categoriesdata)
     } catch (error) {
       dispatch({
         type: "DATA_FETCH_ERROR",

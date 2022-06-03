@@ -11,7 +11,6 @@ import {
 } from "../constants";
 
 const dataReducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case DATA_FETCH_REQUEST:
       return {
@@ -19,14 +18,12 @@ const dataReducer = (state, action) => {
         loading: true,
       };
     case CATEGORIES_FETCH_SUCCESS:
-      console.log("success", action);
       return {
         ...state,
         loading: false,
         categories: action.payload,
       };
     case CITIES_FETCH_SUCCESS:
-      console.log("success", action);
       return {
         ...state,
         loading: false,
@@ -37,6 +34,7 @@ const dataReducer = (state, action) => {
       return {
         ...state,
         loading: false,
+        setControl: true,
         activities: action.payload,
       };
 
