@@ -1,5 +1,4 @@
 import NavLinks from "./NavLinks";
-
 import styles from './styles.module.scss';
 import {FiMenu} from 'react-icons/fi';
 import {ImCross} from 'react-icons/im';
