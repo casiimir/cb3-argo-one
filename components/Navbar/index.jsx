@@ -12,5 +12,6 @@ export default function Navbar() {
             <Navigation />
             <MobileNavigation />
         </div>
+
     )
 }
