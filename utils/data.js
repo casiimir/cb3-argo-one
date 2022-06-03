@@ -52,10 +52,11 @@ export const slideData = {
   textData: [
     "our food...",
     "our nature...",
-    "our traditions...",
+    "our places",
     "our color...",
     "our beaches...",
     "our agriculture",
+    "our traditions...",
     "our history...",
   ],
   imgUrl: [

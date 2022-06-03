@@ -44,7 +44,9 @@ export default function Home() {
           <Image
             src={slideData.imgUrl[imgCount]}
             alt="welcome to sicily"
-            layout="fill"
+            width={2400}
+            height={2400}
+            layout="responsive"
             placeholder="empty"
             className={imgClasses}
           />
@@ -54,7 +56,9 @@ export default function Home() {
           <Image
             src={slideData.imgUrl[imgCount]}
             alt="welcome to sicily"
-            layout="fill"
+            layout="responsive"
+            width={2400}
+            height={2400}
             placeholder="empty"
             className={imgClasses}
           />
