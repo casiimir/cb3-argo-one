@@ -1,6 +1,11 @@
+
+import styles from './index.module.scss'
+
 const Experiences = () => {
     return (
-        <div></div>
+        <div className={styles.wrapper}>
+            
+        </div>
     )
 }
 

@@ -1,3 +1,3 @@
-import Experience from "./datepicker";
+import Experiences from "./experiencesPage";
 
-export default Experience;
+export default Experiences;
