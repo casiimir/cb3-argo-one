@@ -18,7 +18,7 @@ export default function About() {
 					placeholder="empty"
 					objectFit="cover"
 					className={styles.about__title}
-				/>
+				></Image>
 
 				<article className={styles.about__descWrapper}>
 					<h1 className={styles.about__title}>About us</h1>
