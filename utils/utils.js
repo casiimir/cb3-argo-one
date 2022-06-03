@@ -46,7 +46,14 @@ const GetActivityOption = (coord, codeType, date, cityIn) =>
     available_to: date[1] || "",
     category_in: codeType || "",
     city_in: cityIn || "0",
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
     coordinates: coord || "",
+=======
+=======
+>>>>>>> Stashed changes
+    coordinates: coord,
+>>>>>>> Stashed changes
     country_in: "IT,US",
     //default_price_range: '0,34.23',
     distance: "30KM",
