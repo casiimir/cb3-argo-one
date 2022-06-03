@@ -18,7 +18,7 @@ const NavLinks = (props) => {
       <div>
         <ul>
           <Link
-            href="/"
+            href="/homepage"
             onClick={() => props.isMobile && props.closeMobileMenu()}
           >
             <a>HOME</a>
