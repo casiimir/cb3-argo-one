@@ -1,8 +1,7 @@
 const baseURL = "https://sandbox.musement.com/api/v3/cities";
 
 const musApi = "https://api.musement.com/api/v3/cities";
-const query = new URLSearchParams({limit: '15'}).toString()
-
+const query = new URLSearchParams({ limit: "15" }).toString();
 
 const getActivitiesInCity = async (cityId) => {
   const res = await fetch(`${baseURL}/${cityId}/` + "activities", {
@@ -17,7 +16,7 @@ const getActivitiesInCity = async (cityId) => {
   }
 };
 
-const getCategoriesForCity = async(cityId) => {
+const getCategoriesForCity = async (cityId) => {
   const res = await fetch(`${musApi}/${cityId}/categories/?${query}`, {
     method: "GET",
     headers: {
@@ -29,8 +28,5 @@ const getCategoriesForCity = async(cityId) => {
     return await res.json();
   }
 };
-  
 
-
-
-export { getActivitiesInCity, getCategoriesForCity }  
+export { getActivitiesInCity, getCategoriesForCity };
