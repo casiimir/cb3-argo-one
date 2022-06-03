@@ -2,12 +2,16 @@ import Link from "next/link";
 import { useDataContext } from "../../context/DataContext/dataContext";
 import { FaShoppingCart } from "react-icons/fa";
 
+import { cities } from "../../utils/data";
+
 const NavLinks = (props) => {
-  const { updateActivitiesData } = useDataContext();
-  const handleCliclOnExperience = (event) => {
-    console.log(event);
+  const { updateExperiencesData } = useDataContext();
+
+  const handleClickOnExperience = (event) => {
+    const cityId = cities.map((city) => city.id);
     event.preventDefault();
-    updateActivitiesData(coord, codeType, date, cityIn); // passa i vari valori in base alle tue necessità, se te ne dovessero servire altri vai in utils -> getActivitiesOptions
+    updateExperiencesData(cityId);
+    props.isMobile && props.closeMobileMenu();
   };
 
   return (
@@ -22,9 +26,9 @@ const NavLinks = (props) => {
           </Link>
           <Link
             href="/experiences"
-            onClick={() => props.isMobile && props.closeMobileMenu()}
+            //onClick={() => props.isMobile && props.closeMobileMenu()} <--- devi wrapparle in una funzione
           >
-            <a onClick={handleCliclOnExperience}>EXPERIENCES</a>
+            <a onClick={handleClickOnExperience}>EXPERIENCES</a>
           </Link>
           <Link
             href="/about"
