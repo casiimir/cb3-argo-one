@@ -3,6 +3,7 @@ import {
   GetAvaiableActivity,
   GetCategories,
   GetCityById,
+  GetAvaiableExperience
 } from "../../utils/utils";
 
 import dataReducer from "./dataReducer";
@@ -83,6 +84,21 @@ export const DataContextProvider = ({ children }) => {
       });
     }
   };
+  const updateExperiencesData = async (cityIn) => {
+    dispatch({ type: "DATA_FETCH_REQUEST" });
+    try {
+      const experiencesData = await GetAvaiableExperience(cityIn);
+      dispatch({
+        type: "EXPERIENCE_FETCH_SUCCESS",
+        payload: experiencesData,
+      });
+    } catch (error) {
+      dispatch({
+        type: "DATA_FETCH_ERROR",
+        payload: "",
+      });
+    }
+  };
   // SETTA LA CATEGORIA SELEZIONATA
   const setSelectedCategory = (value) => {
     dispatch({ type: "SET_SELECTED_CATEGORY", payload: value });
@@ -106,6 +122,7 @@ export const DataContextProvider = ({ children }) => {
     setSelectedCategory,
     setDateTo,
     setDateFrom,
+    updateExperiencesData
   };
 
   return (

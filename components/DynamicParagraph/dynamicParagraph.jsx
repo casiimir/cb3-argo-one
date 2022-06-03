@@ -17,7 +17,7 @@ const DynamicParagraph = ({ setCount }) => {
       setClasses(styles.Slide);
       setTimeout(() => setClasses(styles.Dynamic), 80);
     } else {
-      setCounter(0);
+      setTxtIndexCounter(0);
       setSlideText(slideData.textData[txtIndexCounter]);
       setSentinel((prev) => !prev);
       setClasses(styles.Slide);

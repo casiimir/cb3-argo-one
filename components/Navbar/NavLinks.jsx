@@ -1,13 +1,18 @@
 import Link from "next/link";
 import { useDataContext } from "../../context/DataContext/dataContext";
 import { FaShoppingCart } from "react-icons/fa";
+import { cities } from "../../utils/data";
 
 const NavLinks = (props) => {
-  const { updateActivitiesData } = useDataContext();
+  const { updateExperiencesData } = useDataContext();
+
+  const arr = cities;
+  const cityArr = arr.map((city) => city.id)
+
   const handleCliclOnExperience = (event) => {
     console.log(event);
     event.preventDefault();
-    updateActivitiesData(coord, codeType, date, cityIn); // passa i vari valori in base alle tue necessità, se te ne dovessero servire altri vai in utils -> getActivitiesOptions
+    updateExperiencesData(cityArr); // passa i vari valori in base alle tue necessità, se te ne dovessero servire altri vai in utils -> getActivitiesOptions
   };
 
   return (

@@ -9,11 +9,11 @@ config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
 	return (
-		<DefaultLayout>
-			<DataContextProvider>
+		<DataContextProvider>
+			<DefaultLayout>
 				<Component {...pageProps} />
-			</DataContextProvider>
-		</DefaultLayout>
+			</DefaultLayout>
+		</DataContextProvider>
 	);
 }
 

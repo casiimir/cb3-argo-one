@@ -78,6 +78,41 @@ const GetActivityOption = (
     //zero_terms_query: 'NONE'
   }).toString();
 
+  const GetExperienceOption = (cityIn) =>
+  new URLSearchParams({
+    available_from: date[0] || "",
+    available_language_in: "en,it",
+    available_to: date[1] || "",
+    category_in: codeType || "",
+    city_in: cityIn || "0",
+    coordinates: coord || "",
+    country_in: "IT,US",
+    //default_price_range: '0,34.23',
+    distance: "30KM",
+    //discounted: 'NO',
+    //duration_range: '2,8',
+    //extend_content_fields: 'AUTO',
+    //extend_other_languages: 'AUTO',
+    //feature_in: 'free,skip',
+    //fuzziness_level: 'AUTO',
+    //include_facets: 'feature,service',
+    limit: "15",
+    offset: "0",
+    //pickup_in: '497f6eca-6276-4993-bfeb-53cbbbba6f08',
+    //preferred_seller_boost: '1000',
+    //preferred_seller_code: 'Direct',
+    //seller_in: 'Direct',
+    //text: "string",
+    //text_operator: "AND",
+    // service_in: 'pick-up,pet-friendly',
+    sort_by: "distance",
+    //temporary: 'NO',
+    //venue_in: '0',
+    //vertical_in: codeType,
+    //zero_terms_query: 'NONE'
+  }).toString();
+    
+
 export const GetCityById = (resource) =>
   http(CITY_URL, resource, {
     method: "GET",
