@@ -4,7 +4,6 @@ import {FiMenu} from 'react-icons/fi';
 import {ImCross} from 'react-icons/im';
 import {useState} from 'react';
 
-
 const MobileNavigation = () => {
 
     const [open, setOpen] = useState(false);
