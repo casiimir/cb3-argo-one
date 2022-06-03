@@ -13,8 +13,6 @@ export const http = async (APIurl, resource = "", options) => {
   if (result.status >= 200 && result.status <= 299) {
     return await result.json();
   } else {
-  
-
     throw new Error("qualcosa è andato storto");
   }
 };
@@ -41,14 +39,14 @@ export const GetCategories = async (cityId) => {
   return await result.json();
 };
 
-const GetActivityOption = (coord, codeType, date) =>
+const GetActivityOption = (coord, codeType, date, cityIn) =>
   new URLSearchParams({
-    available_from: date[0],
+    available_from: date[0] || "",
     available_language_in: "en,it",
-    available_to: date[1],
-    category_in: codeType,
-    //city_in: '0',
-    coordinates: coord,
+    available_to: date[1] || "",
+    category_in: codeType || "",
+    city_in: cityIn || "0",
+    coordinates: coord || "",
     country_in: "IT,US",
     //default_price_range: '0,34.23',
     distance: "30KM",
@@ -68,7 +66,7 @@ const GetActivityOption = (coord, codeType, date) =>
     //text: "string",
     //text_operator: "AND",
     // service_in: 'pick-up,pet-friendly',
-    sort_by: "relevance",
+    sort_by: "distance",
     //temporary: 'NO',
     //venue_in: '0',
     //vertical_in: codeType,
