@@ -102,7 +102,7 @@ const GetExperienceOption = (cityIn) =>
     //text: "string",
     //text_operator: "AND",
     // service_in: 'pick-up,pet-friendly',
-    sort_by: "relevance",
+    sort_by: "rating",
     //temporary: 'NO',
     //venue_in: '0',
     //vertical_in: codeType,
