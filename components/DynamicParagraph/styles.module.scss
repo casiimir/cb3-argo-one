@@ -1,11 +1,21 @@
 .Container {
   text-align: right;
+  font-size: clamp(3em, 1em, 4em);
+  white-space: nowrap;
+  text-shadow: 0.5px 0.5px 1px #000000, -0.5px 0.5px 1px #000000,
+    0.5px -0.5px 1px #000000, -0.5px -0.5px 1px #000000;
 
   .Dynamic {
     animation: 1s ease-out 0s 1 slideText;
   }
   .Slide {
     opacity: 0;
+  }
+}
+
+@media all and (max-width: 660px) {
+  .Container {
+    font-size: clamp(2em, 1em, 4em);
   }
 }
 

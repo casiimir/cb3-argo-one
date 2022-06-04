@@ -3,14 +3,13 @@
 
 .homepage {
   position: relative;
-  width: 100vw;
-  height: 80vw;
+  overflow: hidden;
+
   .Dynamic {
     position: relative;
     animation: 1s ease-out 0s 1 slideText !important;
-    //width: clamp(100vw, 1vw, 100vh);
-    height: clamp(80vw, 1vw, 100vh);
-    transition: all 1s ease-out;
+    width: 100vw;
+    height: 100vh;
   }
   .Slide {
     position: relative;
@@ -25,15 +24,33 @@
   position: absolute;
   color: $light-blue;
   z-index: 2;
-  top: 15vw;
-  width: 25%;
+  top: 20vh;
+  //width: 25%;
   height: clamp(60vw, 1vw, 100vh);
   right: 5%;
   font-family: $primary-font;
-  font-size: 3.3vw;
+  //font-size: 3.3vw;
   text-align: right;
   font-weight: 700;
   flex-wrap: wrap;
+}
+@media all and (max-width: 660px) {
+  .homepage {
+    .Dynamic {
+      width: 200vw;
+      height: 100vh;
+      right: 40%;
+    }
+    .Slide {
+      width: 200vw;
+      height: 100vh;
+    }
+  }
+  .homepage__desc {
+    top: 30vh;
+
+    right: 5%;
+  }
 }
 
 @keyframes slideText {
