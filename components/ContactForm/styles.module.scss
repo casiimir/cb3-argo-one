@@ -1,0 +1,130 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px red solid;
+ 
+  .wrapper__form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    border: 2px red solid;
+    gap: 10px;
+    ::placeholder {
+      color: $light-blue;
+      font-family: $primary-font;
+      padding: 5px;
+    }
+    input {
+      flex: 0 0 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-color: $yellow;
+      padding: 5px;
+      font-family: $primary-font;
+      border-radius: 5px;
+      box-shadow: 2px 3px 11px -5px;
+    }
+    .message {
+      flex: 0 0 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+
+      textarea {
+        width: 80%;
+        height: 15vw;
+        border-color: $yellow;
+        padding: 5px;
+        font-family: $primary-font;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 2px 3px 11px -5px;
+        resize: none;
+      }
+    }
+
+    button {
+      @include hover;
+      @include button;
+      box-shadow: 2px 3px 11px -5px;
+      background-color: $light-blue;
+      font-family: $primary-font;
+    }
+
+    
+
+  
+    
+
+  
+  }
+
+
+      .title{
+
+          h1 {
+      color: $light-blue;
+      padding: 0px 30px;
+      border-bottom: none;
+      font-family: $primary-font;
+      display: inline-block;
+      font-size: clamp(1.6em, 1em, 0.8em);
+    
+    }
+      }
+
+
+
+
+}
+@media only screen and (max-width: 375px) {
+  
+  .wrapper__form {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+
+    input {
+      border-color: none;
+    }
+
+
+
+  }
+
+
+}
+// @media only screen and (max-width: 1024px) {
+//   .wrapper__form {
+//     border-bottom: none;
+//     text-align: center;
+//     display: flex;
+//     flex-flow: column wrap;
+//     justify-content: center;
+//     font-family: $primary-font;
+//     position: absolute;
+//     z-index: 3;
+//     top: 20vw;
+//     left: 70%;}
+// }
+// @media only screen and (max-width: 768px){
+//   .wrapper__form {
+//     border-bottom: none;
+//     text-align: center;
+//     display: flex;
+//     flex-flow: column wrap;
+//     justify-content: center;
+//     font-family: $primary-font;
+//     position: absolute;
+//     z-index: 3;
+//     top: 20vw;
+//     left: 70%;}
+
+// }

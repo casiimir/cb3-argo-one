@@ -6,6 +6,11 @@ import styles from './index.module.scss';
 const Cardlist = () => {
     const { dataStore } = useDataContext();
     const activities = [dataStore.activities]
+<<<<<<< HEAD
+
+    const classes = dataStore.setControl === true ? styles.title : styles.hide;
+=======
+>>>>>>> dev
 
     const classes = dataStore.setControl === true ? styles.title : styles.hide;
 console.log(activities)
