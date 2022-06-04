@@ -16,7 +16,10 @@
     font-size: 20px;
     background-image: linear-gradient(grey, transparent);
     
+<<<<<<< HEAD
     
+=======
+>>>>>>> dev
     a {
         padding: 20px;
     }
@@ -35,6 +38,7 @@
 
 .Navbar nav ul {
     padding: 0;
+<<<<<<< HEAD
 }
 
 
@@ -90,6 +94,87 @@
         color: #F5A962;
         }
     }
+=======
+    a {
+        &:hover {
+            text-decoration: none;
+            border-bottom: none;
+            color: #F5A962;
+        }        
+    }
+    button {
+        border: none;
+        background: none;
+        padding-right: 30px;
+        button:hover {
+            text-decoration: none;
+            border-bottom: none;
+            color: #F5A962;
+            cursor: pointer;
+        }
+    }
+
+    // button:hover {
+    //     text-decoration: none;
+    //     border-bottom: none;
+    //     color: #F5A962;
+    //     cursor: pointer;
+    // }
+}
+
+
+.Navbar .MobileNavigation {
+    display: None;
+}
+
+@media (max-width: 900px){
+    .Navbar {
+        height: 60px;
+        color: #125D98;
+        font-size: 20px;
+        background: #fff;
+        border-bottom: 2px solid #125D98;
+    }
+    .Navbar .Navigation {
+        display: none;
+    }
+
+    .Navbar .MobileNavigation {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Navbar .MobileNavigation .Hamburger {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+        margin: 0%;
+    }
+
+    .Navbar nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        border-bottom: 2px solid #125D98;
+        border-left: 2px solid #125D98;
+        top: 40px;
+        right: 0;
+        width: 50%;
+        border-top: 2px solid #125D98;
+    }
+
+    .Navbar nav ul a {
+        padding-left: 10px;
+        background-color: #fff;
+        color: #125D98;
+        width: 100%;
+        &:hover {
+        border-bottom: none;
+        color: #F5A962;
+        }
+    }
+>>>>>>> dev
 }
 
 .Title {

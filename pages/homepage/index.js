@@ -1,26 +1,73 @@
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { slideData } from "../../utils/data";
+
+import DynamicParagraph from "../../components/DynamicParagraph/dynamicParagraph";
+
 import styles from "./styles.module.scss";
 
-const scalaDeiTurchiImg =
-	"https://i.ibb.co/fC37R1m/davide-ragusa-Qb-Dkh-VZ80-To-unsplash.jpg";
-
 export default function Home() {
-	return (
-		<div className={styles.homepage}>
-			<header className={styles.homepage__wrapper}>
-				<Image
-					src={scalaDeiTurchiImg}
-					alt="scala-dei-turchi"
-					width={2400}
-					height={1598}
-					layout="responsive"
-					placeholder="empty"
-					className="background-img"
-				/>
-			</header>
-			<p className={styles.homepage__desc}>
-				Discover Sicily through our beaches{" "}
-			</p>
-		</div>
-	);
+  const [imgClasses, setImgClasses] = useState(styles.Dynamic);
+  const [imgCount, setImgCount] = useState(0);
+  const [fadeIn, setFadeIn] = useState(false);
+
+  const handleImgSlide = () => {
+    if (imgCount < slideData.imgUrl.length - 1) {
+      setImgCount((prev) => prev + 1);
+      setImgClasses(styles.Slide);
+      setFadeIn((prev) => !prev);
+
+      setTimeout(() => {
+        setImgClasses(styles.Dynamic);
+      }, 80);
+    } else {
+      setImgCount(0);
+
+      setImgClasses(styles.Slide);
+      setFadeIn((prev) => !prev);
+
+      setTimeout(() => {
+        setImgClasses(styles.Dynamic);
+      }, 80);
+    }
+  };
+
+  useEffect(() => {
+    setFadeIn(true);
+    fadeIn && setTimeout(handleImgSlide, 3000);
+  }, [fadeIn]);
+
+  return (
+    <div className={styles.homepage}>
+      {fadeIn ? (
+        <header className={styles.Styles}>
+          <Image
+            src={slideData.imgUrl[imgCount]}
+            alt="welcome to sicily"
+            width={2400}
+            height={2400}
+            layout="responsive"
+            placeholder="empty"
+            className={imgClasses}
+          />
+        </header>
+      ) : (
+        <header className={styles.Dynamic}>
+          <Image
+            src={slideData.imgUrl[imgCount]}
+            alt="welcome to sicily"
+            layout="responsive"
+            width={2400}
+            height={2400}
+            placeholder="empty"
+            className={imgClasses}
+          />
+        </header>
+      )}
+
+      <div className={styles.homepage__desc}>
+        <DynamicParagraph />
+      </div>
+    </div>
+  );
 }
