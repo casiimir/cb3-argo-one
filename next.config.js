@@ -1,11 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
+  reactStrictMode: true,
 };
 
 module.exports = {
-	optimizeFonts: true,
-	images: {
-		domains: ["img.icons8.com", "i.ibb.co"],
-	},
+  optimizeFonts: true,
+  images: {
+    domains: ["img.icons8.com", "i.ibb.co", "images.musement.com"],
+  },
 };
