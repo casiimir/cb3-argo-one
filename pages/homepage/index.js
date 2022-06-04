@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useWindowSize } from "../../utils/utils";
 import Image from "next/image";
 import { slideData } from "../../utils/data";
 
@@ -10,6 +11,8 @@ export default function Home() {
   const [imgClasses, setImgClasses] = useState(styles.Dynamic);
   const [imgCount, setImgCount] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
+
+  const size = useWindowSize();
 
   const handleImgSlide = () => {
     if (imgCount < slideData.imgUrl.length - 1) {
@@ -40,16 +43,28 @@ export default function Home() {
   return (
     <div className={styles.homepage}>
       <section className={imgClasses}>
-        <Image
-          src={slideData.imgUrl[imgCount]}
-          alt="welcome to sicily"
-          width={1920}
-          height={1080}
-          layout="fill"
-          placeholder="empty"
-          priority
-          //className={imgClasses}
-        />
+        {size.width >= 475 ? (
+          <Image
+            src={slideData.imgUrl[imgCount]}
+            alt="welcome to sicily"
+            width={2048}
+            height={1152}
+            layout="responsive"
+            placeholder="empty"
+            priority
+            className={styles.Hero_img}
+          />
+        ) : (
+          <Image
+            src={slideData.imgUrl[imgCount]}
+            alt="welcome to sicily"
+            width={1152}
+            height={2048}
+            layout="responsive"
+            placeholder="empty"
+            priority
+          />
+        )}
       </section>
 
       <div className={styles.homepage__desc}>
