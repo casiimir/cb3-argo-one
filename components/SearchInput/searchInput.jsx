@@ -74,7 +74,7 @@ const SearchInput = () => {
   }, []);
 
   return (
-    <div className={styles.Container}>
+    <div className={styles.Filter_Container}>
       <form className={styles.Form} onSubmit={handleSubmit}>
         <OptionGroup
           data={cities}

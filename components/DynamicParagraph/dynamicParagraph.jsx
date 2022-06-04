@@ -37,7 +37,7 @@ const DynamicParagraph = () => {
   }, [fadeIn]);
 
   return (
-    <div className={styles.Container}>
+    <div className={styles.Modal_Container}>
       <p>Discover Sicily</p>
       <p>through</p>
       <p className={classes}>{slideText}</p>
