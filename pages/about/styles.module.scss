@@ -3,21 +3,20 @@
 
 .about {
 	position: relative;
-	
+
 	&__wrapper {
 		position: relative;
 		display: block;
 		margin: 0;
-        width: 100%;
+		width: 100%;
 	}
-
 
 	&__title {
 		position: absolute;
 		width: 100%;
-		top: -10%;
+		top: 8%;
 		left: 2%;
-		z-index: 2;
+		z-index: 5;
 		font-size: 3.3vw;
 		color: $dark-blue;
 	}
@@ -30,7 +29,7 @@
 		background-color: rgba(255, 255, 255, 0.453);
 		margin: 0;
 		width: 60%;
-		height: 60%;
+		height: 80%;
 		z-index: 2;
 		top: 15vw;
 		left: 0;
@@ -40,6 +39,7 @@
 		font-weight: 400;
 		flex-wrap: wrap;
 		@include border-radius;
+		overflow: hidden;
 	}
 
 	&__descContainer {
@@ -49,51 +49,32 @@
 
 	&__photos {
 		display: flex;
+		position: relative;
 		flex-direction: row;
+		justify-content: space-around;
+		gap: 2%;
 		flex-wrap: wrap;
-		justify-content: center;
+		margin-top: 10%;
 	}
 
-	&__square {
-		z-index: 3;
-		width: 200px;
-		height: 200px;
-		background-color: $dark-blue;
-		margin: 5%;
+	&__photos a {
+		display: contents;
 	}
 
-	&__square1 {
-		z-index: 3;
-		width: 200px;
-		height: 200px;
-		background-color: $dark-blue;
-		margin: 5%;
+	&__photos img {
+		padding: 2%;
+		width: 25%;
+		transition: all .2s ease-in-out; 
 	}
 
-	&__square2 {
-		z-index: 3;
-		width: 200px;
-		height: 200px;
-		background-color: $dark-blue;
-		margin: 5%;
-	}
-
-	&__square3 {
-		z-index: 3;
-		width: 200px;
-		height: 200px;
-		background-color: $dark-blue;
-		margin: 5%;
-	}
-
-	&__square4 {
-		z-index: 3;
-		width: 200px;
-		height: 200px;
-		background-color: $dark-blue;
-		margin: 5%;
+	&__photos img:hover {
+		transform: scale(1.1);
+		opacity: 0.9;
 	}
 }
+
+
+/* smartphones, iPhone, tablets */
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2) {
 	.about {
@@ -102,27 +83,28 @@
 		position: relative;
 		width: 100%;
 
-		&__img {
-			width: 100%;
-		}
-
 		&__wrapper {
 			display: flex;
 			flex-direction: column;
 			width: 100%;
-			height: 100%;
+			height: 100vh;
 			position: relative;
+			background: $bg-color;
+			background: $bg-gradient;
+		}
+
+		&__img {
+			display: none !important;
 		}
 
 		&__title {
 			position: absolute;
 			width: 100%;
-			top: -75px;
+			top: 7%;
 			left: 2%;
-			z-index: 2;
+			z-index: 5;
 			font-size: 30px;
 			color: $dark-blue;
-
 		}
 
 		&__descWrapper {
@@ -131,10 +113,10 @@
 			color: $light-blue;
 			background-color: rgba(255, 255, 255, 0.453);
 			margin: 0;
-			width: 80%;
-			height: 75%;
+			width: 85%;
+			height: 80vh;
 			z-index: 2;
-			top: 33vw;
+			top: 15vh;
 			left: 0;
 			font-family: $primary-font;
 			font-size: 1.5rem;
@@ -162,21 +144,71 @@
 			line-height: 25px;
 			color: $dark-blue;
 			font-size: 20px;
-			height: 400px;
 			overflow: scroll;
 		}
 
 		&__photos {
 			display: flex;
 			position: relative;
+			flex-direction: row;
+			justify-content: space-around;
 			flex-wrap: wrap;
-			width: 100%;
+			margin-top: 5%;
 		}
-		
-		&__photos > img {
-			width: 100px;
-			height: auto;
+
+		&__photos img {
+			padding: 2%;
+			width: 35%;
+			transition: all .2s ease-in-out; 
 		}
-		
+
+		&__photos img:hover {
+			transform: scale(1.1);
+		}
+	}
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) and (-webkit-min-device-pixel-ratio: 2){
+	
+	.about__photos {
+		display: flex;
+		position: relative;
+		flex-direction: row;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		margin-top: 5%;
+	}
+
+	.about__photos img {
+		width: 24%;
+	}
+
+	.about__photos img:hover {
+		transform: scale(1.1);
+	
+	}
+}
+
+
+/* hi-res laptops and desktops */
+@media (min-width: 1281px) {
+
+	.about__title {
+		top: 6%;
+		left: 2%;
+		z-index: 5;
+		font-size: 50px;
+		color: $dark-blue;
+	}
+}
+
+/* 4K desktops */
+@media (min-width: 2560px) {
+	.about__title {
+		top: 6%;
+		left: 2%;
+		z-index: 2;
+		font-size: 80px;
+		color: $dark-blue;
 	}
 }
