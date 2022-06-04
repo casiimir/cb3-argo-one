@@ -2,104 +2,88 @@
 @import "../../styles/variables.scss";
 
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border: 2px red solid;
- 
-  .wrapper__form {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    border: 2px red solid;
-    gap: 10px;
-    ::placeholder {
-      color: $light-blue;
-      font-family: $primary-font;
-      padding: 5px;
-    }
-    input {
-      flex: 0 0 50%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      border-color: $yellow;
-      padding: 5px;
-      font-family: $primary-font;
-      border-radius: 5px;
-      box-shadow: 2px 3px 11px -5px;
-    }
-    .message {
-      flex: 0 0 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 10px;
+  position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 
-      textarea {
-        width: 80%;
-        height: 15vw;
-        border-color: $yellow;
-        padding: 5px;
-        font-family: $primary-font;
-        margin: 10px;
-        border-radius: 5px;
-        box-shadow: 2px 3px 11px -5px;
-        resize: none;
-      }
-    }
+	&__title {
+    position: absolute;
+    top: 200px;
+		color: $light-blue;
+		padding: 0px 30px;
+		border-bottom: none;
+		font-family: $primary-font;
+		display: inline-block;
+		font-size: clamp(1.6em, 1em, 0.8em);
+	}
 
-    button {
-      @include hover;
-      @include button;
-      box-shadow: 2px 3px 11px -5px;
-      background-color: $light-blue;
-      font-family: $primary-font;
-    }
+	&__form {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+		border: 2px red solid;
+		gap: 10px;
+		::placeholder {
+			color: $light-blue;
+			font-family: $primary-font;
+			padding: 5px;
+		}
 
-    
+		&__inputAll {
+			flex: 0 0 50%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-color: $yellow;
+			padding: 5px;
+			font-family: $primary-font;
+			border-radius: 5px;
+			box-shadow: 2px 3px 11px -5px;
+		}
 
-  
-    
+		&__input {
+		}
 
-  
-  }
+		&__message {
+			flex: 0 0 100%;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin: 10px;
 
+			&__textarea {
+				width: 80%;
+				height: 15vw;
+				border-color: $yellow;
+				padding: 5px;
+				font-family: $primary-font;
+				margin: 10px;
+				border-radius: 5px;
+				box-shadow: 2px 3px 11px -5px;
+				resize: none;
+			}
+		}
 
-      .title{
-
-          h1 {
-      color: $light-blue;
-      padding: 0px 30px;
-      border-bottom: none;
-      font-family: $primary-font;
-      display: inline-block;
-      font-size: clamp(1.6em, 1em, 0.8em);
-    
-    }
-      }
-
-
-
-
+		button {
+			@include hover;
+			@include button;
+			box-shadow: 2px 3px 11px -5px;
+			background-color: $light-blue;
+			font-family: $primary-font;
+		}
+	}
 }
 @media only screen and (max-width: 375px) {
-  
-  .wrapper__form {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-   
+	.wrapper__form {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
 
-    input {
-      border-color: none;
-    }
-
-
-
-  }
-
-
+		input {
+			border-color: none;
+		}
+	}
 }
 // @media only screen and (max-width: 1024px) {
 //   .wrapper__form {
