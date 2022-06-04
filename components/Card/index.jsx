@@ -2,8 +2,8 @@ import styles from './index.module.scss';
 
 const Card = ({cards}) => {
 
-    const card = cards.data;
-    
+     const card = cards.data;
+
     return (
         <>
             {card && card.map((single, index) => (
