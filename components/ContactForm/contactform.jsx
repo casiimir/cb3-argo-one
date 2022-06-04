@@ -3,10 +3,11 @@ import styles from "./styles.module.scss";
 export default function Contact() {
   return (
     <div className={styles.wrapper}>
-      <form className={styles.wrapper__form}>
-        <div className={styles.title}>
+      <div className={styles.title}>
           <h1> Send us a message </h1>
         </div>
+      <form className={styles.wrapper__form}>
+        
         <div className={styles.input}>
           <label htmlFor="Name"></label>
           <input
@@ -15,6 +16,8 @@ export default function Contact() {
             id="name"
             placeholder="Your name..."
           ></input>
+          </div>
+          <div className={styles.input}>
           <label htmlFor="Email"></label>
           <input
             className={styles.wrapper__input}

@@ -1,7 +1,16 @@
-import  '../styles/globals.css'
+import { DataContextProvider } from "../context/DataContext/dataContext";
+import DefaultLayout from "../components/Layout";
+import Home from "./homepage";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+	return (
+		<DefaultLayout>
+			<DataContextProvider>
+				<Component {...pageProps} />
+			</DataContextProvider>
+		</DefaultLayout>
+	);
 }
 
-export default MyApp
+export default MyApp;

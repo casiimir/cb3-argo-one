@@ -1,25 +1,117 @@
-.navbar {
-    color: white;
-    background-color: #3C8DAD;
-    backdrop-filter: blur(10px);
-    position: fixed;
-    top: 0;
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.Navbar {
+    height: 90px;
     width: 100%;
-    ul{
-        margin: 0px 20px;
+    position: fixed;
+    z-index: 999;
+    opacity: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2px;
+    font-family: $primary-font;
+    color: #fff;
+    font-size: 20px;
+    background-image: linear-gradient(grey, transparent);
+    
+    
+    a {
+        padding: 20px;
     }
-        h2{
-            font-size: 28px;
-            display: inline;
+}
+
+.Title {
+    font-family: $primary-font;
+    font-size: 36px;
+}
+
+.Navbar .Navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.Navbar nav ul {
+    padding: 0;
+}
+
+
+
+.Navbar .MobileNavigation {
+    display: None;
+}
+
+@media (max-width: 990px){
+    .Navbar {
+        height: 60px;
+        color: #125D98;
+        font-size: 20px;
+        background: #fff;
+        border-bottom: 2px solid #125D98;
+    }
+    .Navbar .Navigation {
+        display: none;
+    }
+
+    .Navbar .MobileNavigation {
+        display: flex;
+        align-items: center;
+        text-align: center;
+    }
+
+    .Navbar .MobileNavigation .Hamburger {
+        position: absolute;
+        right: 5%;
+        cursor: pointer;
+        margin: 0%;
+    }
+
+    .Navbar nav ul {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        border-bottom: 2px solid #125D98;
+        border-left: 2px solid #125D98;
+        top: 40px;
+        right: 0;
+        width: 50%;
+        border-top: 2px solid #125D98;
+    }
+
+    .Navbar nav ul a {
+        padding-left: 10px;
+        background-color: #fff;
+        color: #125D98;
+        width: 100%;
+        &:hover {
+        border-bottom: none;
+        color: #F5A962;
         }
-        a{
-            float: right;
-            display: block;
-            text-align: center;
-            text-decoration: none;
-            padding: 10px 20px;
-            &:hover {
-            border: 1px solid #fff;
-            }
-        }
+    }
+}
+
+.Title {
+    font-family: $primary-font;
+    font-size: 30px;
+}
+
+@media (max-width: 300px){
+    .Navbar {
+        color: #125D98;
+        font-size: 20px;
+        background: #fff;
+    }
+    .Navbar .Navigation {
+        display: none;
+    }
+    .Navbar nav ul {
+        width: 100%;
+        border-left: none;
+    }
+}
+.Title {
+    font-family: $primary-font;
+    font-size: 30px;
 }

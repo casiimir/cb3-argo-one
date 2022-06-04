@@ -5,14 +5,16 @@ export default function ContactUs() {
   return (
     <div className={styles.wrapper}>
       <div className={styles.contactImg}>
-        <img
+        <Image
           src="https://i.ibb.co/xML1pGy/lapacontactus.jpg"
           alt="lapacontactus"
-          width={2048}
-          height={1280}
+          width={2400}
+          height={1598}
+          layout="responsive"
+     
          
           className={styles.backimg}
-        ></img>
+        ></Image>
       </div>
       <div className={styles.contact}>
         <Contact />
