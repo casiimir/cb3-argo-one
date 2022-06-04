@@ -10,15 +10,6 @@ config.autoAddCss = false;
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
-<<<<<<< Updated upstream
-	return (
-		<DataContextProvider>
-			<DefaultLayout>
-				<Component {...pageProps} />
-			</DefaultLayout>
-		</DataContextProvider>
-	);
-=======
   return (
     <ModalContextProvider>
       <DataContextProvider>
@@ -28,7 +19,6 @@ function MyApp({ Component, pageProps }) {
       </DataContextProvider>
     </ModalContextProvider>
   );
->>>>>>> Stashed changes
 }
 
 export default MyApp;
