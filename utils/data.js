@@ -50,13 +50,14 @@ export const categories = [
 
 export const slideData = {
   textData: [
-    "our traditions...",
     "our food...",
     "our nature...",
-    "our history...",
-    "our traditions",
+    "our places",
+    "our color...",
     "our beaches...",
-    "with us.",
+    "our agriculture",
+    "our traditions...",
+    "our history...",
   ],
   imgUrl: [
     "https://i.ibb.co/hKkLvz1/33105324400-1c1a6921c0-o.jpg",

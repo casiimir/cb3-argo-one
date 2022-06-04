@@ -2,6 +2,7 @@ import {
   CITIES_FETCH_SUCCESS,
   CATEGORIES_FETCH_SUCCESS,
   ACTIVITIES_FETCH_SUCCESS,
+  EXPERIENCE_FETCH_SUCCESS,
   DATA_FETCH_REQUEST,
   DATA_FETCH_ERROR,
   DISCARD_ERROR,
@@ -11,6 +12,7 @@ import {
 } from "../constants";
 
 const dataReducer = (state, action) => {
+  console.log(action);
   switch (action.type) {
     case DATA_FETCH_REQUEST:
       return {
@@ -36,6 +38,12 @@ const dataReducer = (state, action) => {
         loading: false,
         setControl: true,
         activities: action.payload,
+      };
+    case EXPERIENCE_FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        experiences: action.payload,
       };
 
     case DATA_FETCH_ERROR:

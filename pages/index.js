@@ -1,15 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-
-import { useState } from "react";
-
 import SearchInput from "../components/SearchInput";
 import Cardlist from "../components/CardList";
-
 import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
-
 import styles from "../styles/Home.module.css";
+
 
 export default function Home() {
   const Map = dynamic(() => import("../components/Map"), {
@@ -17,9 +13,6 @@ export default function Home() {
     ssr: false,
   });
 
-  function sendCoords(data) {
-    setCoords(data);
-  }
 
   return (
     <>
