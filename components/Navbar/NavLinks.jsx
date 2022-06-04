@@ -1,4 +1,50 @@
 import Link from "next/link";
+<<<<<<< HEAD
+
+const NavLinks = (props) => {
+	return (
+		<nav>
+			<div>
+				<ul>
+					<Link
+						href="/"
+						onClick={() =>
+							props.isMobile && props.closeMobileMenu()
+						}
+					>
+						<a>HOME</a>
+					</Link>
+					<Link
+						href="/"
+						onClick={() =>
+							props.isMobile && props.closeMobileMenu()
+						}
+					>
+						<a>EXPERIENCES</a>
+					</Link>
+					<Link
+						href="/about"
+						onClick={() =>
+							props.isMobile && props.closeMobileMenu()
+						}
+					>
+						<a>ABOUT</a>
+					</Link>
+					<Link
+						href="/"
+						onClick={() =>
+							props.isMobile && props.closeMobileMenu()
+						}
+					>
+						<a>CONTACTS</a>
+					</Link>
+				</ul>
+			</div>
+		</nav>
+	);
+};
+
+=======
 import { useDataContext } from "../../context/DataContext/dataContext";
 import { FaShoppingCart } from "react-icons/fa";
 
@@ -53,4 +99,5 @@ const NavLinks = (props) => {
   );
 };
 
+>>>>>>> dev
 export default NavLinks;
