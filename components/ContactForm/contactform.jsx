@@ -31,13 +31,15 @@ export default function Contact() {
 
         <div className={styles.message}>
           <label htmlFor="Message"></label>
-          <textarea
+          <textarea className={styles.textarea}
             type="text"
             id="message"
             placeholder="Your message..."
           ></textarea>
           <br />
-          <button>Send</button>
+          <div className={styles.button}>
+          <button className={styles.button}>Send</button>
+          </div>
         </div>
       </form>
     </div>
