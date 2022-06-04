@@ -5,14 +5,13 @@ import SearchInput from "../components/SearchInput";
 import Cardlist from "../components/CardList";
 import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
 import styles from "../styles/Home.module.css";
-
+import Modal from "../components/Modal/modal";
 
 export default function Home() {
   const Map = dynamic(() => import("../components/Map"), {
     loading: () => <p>A map is loading</p>,
     ssr: false,
   });
-
 
   return (
     <>
@@ -24,6 +23,7 @@ export default function Home() {
       <main className={styles.main}>
         <SearchInput />
         <Map></Map>
+        <Modal />
       </main>
 
       <section>

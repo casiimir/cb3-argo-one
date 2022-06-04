@@ -39,31 +39,18 @@ export default function Home() {
 
   return (
     <div className={styles.homepage}>
-      {fadeIn ? (
-        <header className={styles.Styles}>
-          <Image
-            src={slideData.imgUrl[imgCount]}
-            alt="welcome to sicily"
-            width={2400}
-            height={2400}
-            layout="responsive"
-            placeholder="empty"
-            className={imgClasses}
-          />
-        </header>
-      ) : (
-        <header className={styles.Dynamic}>
-          <Image
-            src={slideData.imgUrl[imgCount]}
-            alt="welcome to sicily"
-            layout="responsive"
-            width={2400}
-            height={2400}
-            placeholder="empty"
-            className={imgClasses}
-          />
-        </header>
-      )}
+      <section className={imgClasses}>
+        <Image
+          src={slideData.imgUrl[imgCount]}
+          alt="welcome to sicily"
+          width={1920}
+          height={1080}
+          layout="fill"
+          placeholder="empty"
+          priority
+          //className={imgClasses}
+        />
+      </section>
 
       <div className={styles.homepage__desc}>
         <DynamicParagraph />
