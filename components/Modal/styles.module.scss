@@ -1,0 +1,32 @@
+.Modal_Background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: 1s ease-out 0s 1 popUp;
+  border: 2px solid red;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  order: 50;
+  .Modal_Container {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    height: 90vh;
+    border: 2px solid red;
+    .Actv_Image {
+      width: 50vw;
+    }
+  }
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0%, 0%);
+  }
+  100% {
+    transform: scale(100%, 100%);
+  }
+}

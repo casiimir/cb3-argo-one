@@ -1,25 +1,42 @@
-import styles from './index.module.scss';
+import { useModalContext } from "../../context/ModalContext/modalContext";
 
-const Card = ({cards}) => {
+import styles from "./index.module.scss";
 
-     const card = cards.data;
+const Card = ({ cards }) => {
+  const { setOpenModal } = useModalContext();
+  const card = cards.data;
 
-    return (
-        <>
-            {card && card.map((single, index) => (
-                <div className={styles.cards} key={index}>
-                    <img className={styles.card_img}
-                        src={single.cover_image_url}
-                        alt={single.title}
-                    />
-                    <div className={styles.text}>
-                        <h2 className={styles.title}>{single.title}</h2>
-                        <p className={styles.desc}>{single.description}</p>
-                    </div>
-                </div>
-            ))}
-        </>
-    )
-}
+  const handleClickOnCard = (cardData) => {
+    setOpenModal(cardData, true);
+  };
+
+  return (
+    <>
+      {card &&
+        card.map((single, index) => (
+          <div
+            className={styles.cards}
+            key={index}
+            onClick={() => handleClickOnCard(single)}
+          >
+            <img
+              className={styles.card_img}
+              src={single.cover_image_url}
+              alt={single.title}
+            />
+            <div className={styles.text}>
+              <h2 className={styles.title}>
+                {single.title.split(" ").slice(0, 4).join(" ") + "..."}
+              </h2>
+              <p className={styles.desc}>
+                {single.description &&
+                  single.description.split(" ").slice(0, 30).join(" ") + "..."}
+              </p>
+            </div>
+          </div>
+        ))}
+    </>
+  );
+};
 
 export default Card;

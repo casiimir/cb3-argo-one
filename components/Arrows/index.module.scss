@@ -1,0 +1,154 @@
+@import '../../styles/variables.scss';
+
+.arrow_dx {
+    cursor: pointer;
+    height: 120px;
+    left: 98%;
+    position: absolute;
+    bottom: -100px;
+    transform: translateX(-50%) translateY(-50%);
+    transition: transform 0.1s;
+    width: 80px;
+    z-index: 3;
+  
+    $transition-time: 0.15s;
+  
+    &_top,
+    &_bottom {
+      background-color: $light-blue;
+      height: 4px;
+      left: -5px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+  
+      &:after {
+        background-color: #fff;
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transition: all $transition-time;
+      }
+    }
+  
+    &_top {
+      transform: rotate(45deg);
+      transform-origin: bottom right;
+  
+      &:after {
+        left: 100%;
+        right: 0;
+        transition-delay: 0s;
+      }
+    }
+  
+    &_bottom {
+      transform: rotate(-45deg);
+      transform-origin: top right;
+  
+      &:after {
+        left: 0;
+        right: 100%;
+        transition-delay: $transition-time;
+      }
+    }
+  
+    &:hover & {
+      &_top:after {
+        left: 0;
+        transition-delay: $transition-time;
+      }
+  
+      &_bottom:after {
+        right: 0;
+        transition-delay: 0s;
+      }
+    }
+  
+    &:active {
+      transform: translateX(-50%) translateY(-50%) scale(0.9);
+    }
+  }
+  
+  .arrow_sx {
+    cursor: pointer;
+      height: 120px;
+      left: 1%;
+      position: absolute;
+      top: -76px;
+      transform: translateX(-50%) translateY(-50%);
+      transition: transform 0.1s;
+      width: 80px;
+      z-index: 3;
+      transform: scale(-1);
+  
+    $transition-time: 0.15s;
+  
+    &_top,
+    &_bottom {
+      background-color: $light-blue;
+      height: 4px;
+      left: -5px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+  
+      &:after {
+        background-color: #fff;
+        content: "";
+        height: 100%;
+        position: absolute;
+        top: 0;
+        transition: all $transition-time;
+      }
+    }
+  
+    &_top {
+      transform: rotate(45deg);
+      transform-origin: bottom right;
+  
+      &:after {
+        left: 100%;
+        right: 0;
+        transition-delay: 0s;
+      }
+    }
+  
+    &_bottom {
+      transform: rotate(-45deg);
+      transform-origin: top right;
+  
+      &:after {
+        left: 0;
+        right: 100%;
+        transition-delay: $transition-time;
+      }
+    }
+  
+    &:hover & {
+      &_top:after {
+        left: 0;
+        transition-delay: $transition-time;
+      }
+  
+      &_bottom:after {
+        right: 0;
+        transition-delay: 0s;
+      }
+    }
+  
+    &:active {
+      transform: translateX(-50%) translateY(-50%) scale(0.9);
+      transform: scale(-1);
+    }
+  }
+  
+
+  @media all and (max-width: 767px){
+    .arrow_dx, .arrow_sx{
+        display: none;
+    }
+  }
+      
+  
