@@ -3,6 +3,7 @@ import modalReducer from "./modalReducer";
 
 const initialState = {
   modalData: [],
+  cart: [],
   openModal: false,
 };
 
@@ -23,9 +24,17 @@ export const ModalContextProvider = ({ children }) => {
     });
   };
 
+  const addToCart = (element) => {
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: element,
+    });
+  };
+
   const modalStore = {
     modalStore: state,
     setOpenModal,
+    addToCart,
   };
 
   return (
