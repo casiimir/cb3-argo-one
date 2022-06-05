@@ -6,6 +6,12 @@ const nextConfig = {
 module.exports = {
   optimizeFonts: true,
   images: {
-    domains: ["img.icons8.com", "i.ibb.co", "images.musement.com"],
+    domains: [
+      "img.icons8.com",
+      "i.ibb.co",
+      "images.musement.com",
+      "images.unsplash.com",
+      "cdn.pixabay.com",
+    ],
   },
 };

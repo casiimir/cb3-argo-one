@@ -1,24 +1,193 @@
-.Modal_Background {
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.Modal_Container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   animation: 1s ease-out 0s 1 popUp;
-  border: 2px solid red;
   display: flex;
-  justify-content: center;
-  width: 100vw;
-  height: 100vh;
-  order: 50;
-  .Modal_Container {
+  flex-direction: column;
+  align-items: center;
+  top: 60%;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+
+  .Modal_Wrapper {
     display: flex;
     flex-direction: column;
-    width: 90vw;
-    height: 90vh;
-    border: 2px solid red;
-    .Actv_Image {
-      width: 50vw;
+    align-items: center;
+    padding: 2.5vh;
+    background-color: $white;
+    z-index: 1004;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.8);
+    width: 90%;
+    border-radius: 3px;
+
+    .Actv_Image_Container {
+      width: 90vw;
+      height: 40vw;
+      margin-bottom: 1vh;
+      overflow: hidden;
+      position: relative;
+      border-radius: 8px;
+      filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.8));
+
+      .Actv_Image {
+        border-radius: 8px;
+        filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.8));
+      }
+      .Prices_p {
+        position: relative;
+        width: fit-content;
+        color: $white;
+        bottom: 138%;
+        left: 82%;
+        padding: clamp(0.8%, 2vw, 1%);
+        background-color: $yellow;
+        font-weight: 600;
+        font-family: $primary-font;
+        font-size: clamp(0.8rem, 2vw, 1.5rem);
+        border-radius: 3px;
+        white-space: nowrap;
+      }
     }
+    .Info_Container {
+      display: flex;
+      flex-direction: column;
+      color: $dark-blue;
+      .Title {
+        text-align: center;
+        font-size: clamp(1rem, 5vw, 2rem);
+        margin: 0;
+        padding: 0;
+      }
+
+      .Place {
+        margin: 0;
+        padding: 0;
+        font-size: clamp(0.5rem, 4vw, 1rem);
+        font-weight: 200;
+      }
+    }
+
+    .About {
+      margin: 0;
+      padding: 4vh;
+      font-size: clamp(0.8rem, 4vw, 1.3rem);
+      color: $dark-blue;
+    }
+    .highlights {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      border: 2px solid $light-blue;
+      border-radius: 30px;
+      background-color: $yellow;
+      color: $dark-blue;
+      font-weight: 600;
+      gap: 3vh;
+      padding-top: 10px;
+      clip-path: ellipse(60% 70% at 50% 25%);
+
+      .highlights_ul {
+        flex: 0 0 45%;
+        @include reset-list;
+        text-align: center;
+
+        .highlights_li {
+          padding: 1vh;
+        }
+      }
+      .included_ul {
+        flex: 1 0 45%;
+        @include reset-list;
+        text-align: center;
+
+        .included_li {
+          padding: 1vh;
+        }
+      }
+      .lang_Container {
+        flex: 0 0 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding-bottom: 7vh;
+        .lang_title {
+          margin: 0;
+          padding: 0;
+        }
+        .lang_ul {
+          flex: 0 0 100%;
+          text-align: center;
+          @include reset-list;
+        }
+      }
+    }
+
+    .Button_Container {
+      display: flex;
+      gap: 15px;
+
+      .Button {
+        padding: 10px 20px;
+        color: $white;
+        border: none;
+        border-radius: 3px;
+        background-color: $yellow;
+        font-size: 1.2rem;
+        font-weight: 600;
+        font-family: $primary-font;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .Modal_Background {
+    //font-family: $primary-font;
+
+    position: fixed;
+
+    background-color: rgba($color: #171717b6, $alpha: 0.5);
+    backdrop-filter: blur(12px);
+
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1002;
+  }
+}
+
+@media all and (min-width: 760px) {
+  .Prices_p {
+    bottom: 135% !important;
+    left: 87% !important;
+    padding: clamp(0.8%, 2vw, 1%);
+
+    font-family: $primary-font;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+  }
+}
+@media all and (min-width: 1440px) {
+  .Prices_p {
+    bottom: 135% !important;
+    left: 89% !important;
+    padding: clamp(0.8%, 2vw, 1%);
+
+    font-family: $primary-font;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
+  }
+}
+@media all and (min-width: 2560px) {
+  .Prices_p {
+    bottom: 135% !important;
+    left: 93% !important;
+    padding: clamp(0.8%, 2vw, 1%);
+
+    font-family: $primary-font;
+    font-size: clamp(0.8rem, 2vw, 1.5rem);
   }
 }
 
