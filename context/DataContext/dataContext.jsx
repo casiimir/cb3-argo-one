@@ -10,13 +10,7 @@ import dataReducer from "./dataReducer";
 
 const initialState = {
   activities: [],
-<<<<<<< HEAD
-
   experiences: { cities: [], city1: [], city2: [], city3: [] },
-
-=======
-  experiences: { cities: [], city1: [], city2: [], city3: [] },
->>>>>>> FEAT: cart & context for exp
   categories: [],
   cityData: [],
   latLon: {
