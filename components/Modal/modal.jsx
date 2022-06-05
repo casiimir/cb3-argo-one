@@ -6,14 +6,18 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 const Modal = () => {
-  const { modalStore, setOpenModal } = useModalContext();
+  const { modalStore, setOpenModal, addToCart } = useModalContext();
   const {} = useDataContext();
 
   const activitiesData = modalStore.modalData;
-  console.log(activitiesData.verticals);
+  console.log(modalStore.cart);
 
   const handleClickOnBckground = () => {
     setOpenModal("", false);
+  };
+
+  const handleAddToCart = () => {
+    addToCart(activitiesData);
   };
 
   return (
@@ -64,7 +68,14 @@ const Modal = () => {
             </div>
 
             <div className={styles.Button_Container}>
-              <button className={styles.Button}>Add to cart</button>
+              <button
+                className={styles.Button}
+                onClick={() => {
+                  handleAddToCart();
+                }}
+              >
+                Add to cart
+              </button>
               <button
                 className={styles.Button}
                 onClick={() => handleClickOnBckground()}
