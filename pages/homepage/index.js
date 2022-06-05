@@ -43,8 +43,8 @@ export default function Home() {
         <Image
           src={slideData.imgUrl[imgCount]}
           alt="welcome to sicily"
-          width={1920}
-          height={1080}
+          width={1280}
+          height={720}
           layout="fill"
           placeholder="empty"
           priority
