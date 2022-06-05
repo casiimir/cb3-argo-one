@@ -10,6 +10,7 @@ import dataReducer from "./dataReducer";
 
 const initialState = {
   activities: [],
+  data:[],
   experiences: [],
   categories: [],
   cityData: [],
@@ -119,6 +120,7 @@ export const DataContextProvider = ({ children }) => {
     setSelectedCategory,
     setDateTo,
     setDateFrom,
+    updateExperiencesData
   };
 
   return (

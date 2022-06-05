@@ -43,12 +43,12 @@ const Modal = () => {
             <div className={styles.highlights}>
               <ul className={styles.highlights_ul}>
                 {activitiesData.highlights.map((highlight) => (
-                  <li className={styles.highlights_li}>{highlight}</li>
+                  <li className={styles.highlights_li} key={activitiesData.id}>{highlight}</li>
                 ))}
               </ul>
               <ul className={styles.included_ul}>
                 {activitiesData.included.map((feat) => (
-                  <li className={styles.included_li}>{feat}</li>
+                  <li className={styles.included_li} key={activitiesData.id}>{feat}</li>
                 ))}
               </ul>
               <div className={styles.lang_Container}>
