@@ -56,13 +56,14 @@ export default function Home() {
           />
         ) : (
           <Image
-            src={slideData.imgUrl[imgCount]}
+            src={slideData.mobileImgUrl[imgCount]}
             alt="welcome to sicily"
             width={1152}
             height={2048}
             layout="responsive"
             placeholder="empty"
             priority
+            className={styles.Hero_img}
           />
         )}
       </section>
