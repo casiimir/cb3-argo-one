@@ -52,7 +52,7 @@ const Modal = () => {
                 ))}
               </ul>
               <div className={styles.lang_Container}>
-                <p className={styles.lang_title}>Avaiable Languages</p>
+                <p className={styles.lang_title}>Available Languages</p>
                 <ul className={styles.lang_ul}>
                   {activitiesData.languages.map((lang) => (
                     <li className={styles.lang_li} key={lang.code}>
