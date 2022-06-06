@@ -102,7 +102,7 @@ export const DataContextProvider = ({ children }) => {
           });
           break;
         }
-        case 572:
+        case 265:
           const city3Data = await GetAvaiableExperience(cityIn);
           dispatch({
             type: "EXPERIENCE_CITY3_FETCH_SUCCESS",
