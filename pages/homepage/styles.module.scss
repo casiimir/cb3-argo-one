@@ -1,6 +1,30 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+.homepage {
+  position: relative;
+
+  .Dynamic {
+    position: relative;
+    animation: 1s ease-out 0s 1 slideText !important;
+  }
+  &__Hero_img {
+    filter: drop-shadow(30px 10px 4px #fbfbfb4d);
+    border-radius: 24px;
+    box-shadow: 2px 2px 2px black;
+  }
+  .Slide {
+    position: relative;
+    opacity: 0 !important;
+  }
+}
+
+>>>>>>> a5114354ef0679a97151cd455bc465256997be7f
+>>>>>>> e5f624d4c41ac8317aee5053dd3657ade473ab7b
 .homepage__desc {
   display: flex;
   position: absolute;
