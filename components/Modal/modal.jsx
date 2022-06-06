@@ -7,9 +7,12 @@ import styles from "./styles.module.scss";
 const Modal = () => {
   const { modalStore, setOpenModal, addToCart } = useModalContext();
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
   const {} = useDataContext();
 >>>>>>> FEAT: created context fn for cart
+=======
+>>>>>>> FEAT: cart & context for exp
 
   const activitiesData = modalStore.modalData;
   console.log(modalStore.cart);
@@ -20,13 +23,19 @@ const Modal = () => {
 
   const handleAddToCart = () => {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> FEAT: cart & context for exp
     addToCart({
       title: activitiesData.title,
       price: activitiesData.retail_price.formatted_value,
     });
+<<<<<<< HEAD
 =======
     addToCart(activitiesData);
 >>>>>>> FEAT: created context fn for cart
+=======
+>>>>>>> FEAT: cart & context for exp
   };
 
   return (
