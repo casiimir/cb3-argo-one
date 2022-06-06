@@ -1,19 +1,24 @@
 import { useModalContext } from "../../context/ModalContext/modalContext";
-import { useDataContext } from "../../context/DataContext/dataContext";
 
 import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
 const Modal = () => {
-  const { modalStore, setOpenModal } = useModalContext();
-  const {} = useDataContext();
+  const { modalStore, setOpenModal, addToCart } = useModalContext();
 
   const activitiesData = modalStore.modalData;
-  console.log(activitiesData.verticals);
+  console.log(modalStore.cart);
 
   const handleClickOnBckground = () => {
     setOpenModal("", false);
+  };
+
+  const handleAddToCart = () => {
+    addToCart({
+      title: activitiesData.title,
+      price: activitiesData.retail_price.formatted_value,
+    });
   };
 
   return (
@@ -64,7 +69,14 @@ const Modal = () => {
             </div>
 
             <div className={styles.Button_Container}>
-              <button className={styles.Button}>Add to cart</button>
+              <button
+                className={styles.Button}
+                onClick={() => {
+                  handleAddToCart();
+                }}
+              >
+                Add to cart
+              </button>
               <button
                 className={styles.Button}
                 onClick={() => handleClickOnBckground()}
