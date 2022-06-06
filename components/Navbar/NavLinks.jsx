@@ -3,6 +3,10 @@ import { useDataContext } from "../../context/DataContext/dataContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { cities } from "../../utils/data";
 import styles from "./styles.module.scss";
+<<<<<<< HEAD
+=======
+
+>>>>>>> FEAT: cart & context for exp
 
 const NavLinks = (props) => {
   const { updateExperiencesData } = useDataContext();

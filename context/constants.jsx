@@ -5,10 +5,19 @@ export const CITIES_FETCH_SUCCESS = "CITIES_FETCH_SUCCESS";
 export const ACTIVITIES_FETCH_SUCCESS = "ACTIVITIES_FETCH_SUCCESS";
 
 export const EXPERIENCE_FETCH_SUCCESS = "EXPERIENCE_FETCH_SUCCESS";
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> FEAT: cart & context for exp
 export const EXPERIENCE_CITY1_FETCH_SUCCESS = "EXPERIENCE_CITY1_FETCH_SUCCESS";
 export const EXPERIENCE_CITY2_FETCH_SUCCESS = "EXPERIENCE_CITY2_FETCH_SUCCESS";
 export const EXPERIENCE_CITY3_FETCH_SUCCESS = "EXPERIENCE_CITY3_FETCH_SUCCESS";
 
+<<<<<<< HEAD
+=======
+>>>>>>> FEAT: cart & context for exp
+>>>>>>> FEAT: cart & context for exp
 export const DATA_FETCH_ERROR = "DATA_FETCH_ERROR";
 
 export const DISCARD_ERROR = "DISCARD_ERROR";
