@@ -3,12 +3,12 @@ import { useRef } from 'react';
 import { useDataContext } from '../../context/DataContext/dataContext';
 import styles from './index.module.scss';
 
-const ExpCard = ( props ) => {
+const ExpCard = ( {result} ) => {
 
-    const results = props.results;
+    const data = result;
 
     const scrl = useRef(null);
-    const slide = (cardWidth = 200) => {
+    const slide = (cardWidth = 450) => {
         const numberVisibleCard = Math.floor(scrl.current.offsetWidth / cardWidth);
         return numberVisibleCard * cardWidth;
     };
@@ -22,7 +22,7 @@ const ExpCard = ( props ) => {
                 />
             </div>
             <div className={styles.wrapper} ref={scrl}>
-                {results && results.map((single, index) => (
+                {data && data.map((single, index) => (
                     <div className={styles.cards} key={index}>
                         <img className={styles.card_img}
                             src={single.cover_image_url}
