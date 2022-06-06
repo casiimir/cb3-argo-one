@@ -10,7 +10,7 @@ import dataReducer from "./dataReducer";
 
 const initialState = {
   activities: [],
-  experiences: [],
+  experiences: { cities: [], city1: [], city2: [], city3: [] },
   categories: [],
   cityData: [],
   latLon: {
@@ -82,12 +82,41 @@ export const DataContextProvider = ({ children }) => {
   };
   const updateExperiencesData = async (cityIn) => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
+    console.log(cityIn);
     try {
-      const experiencesData = await GetAvaiableExperience(cityIn);
-      dispatch({
-        type: "EXPERIENCE_FETCH_SUCCESS",
-        payload: experiencesData,
-      });
+      switch (cityIn) {
+        case 24: {
+          console.log(cityIn);
+          const city1Data = await GetAvaiableExperience(cityIn);
+          dispatch({
+            type: "EXPERIENCE_CITY1_FETCH_SUCCESS",
+            payload: city1Data,
+          });
+          break;
+        }
+        case 15: {
+          const city2Data = await GetAvaiableExperience(cityIn);
+          dispatch({
+            type: "EXPERIENCE_CITY2_FETCH_SUCCESS",
+            payload: city2Data,
+          });
+          break;
+        }
+        case 572:
+          const city3Data = await GetAvaiableExperience(cityIn);
+          dispatch({
+            type: "EXPERIENCE_CITY3_FETCH_SUCCESS",
+            payload: city3Data,
+          });
+          break;
+        default:
+          const citiesData = await GetAvaiableExperience(cityIn);
+          dispatch({
+            type: "EXPERIENCE_FETCH_SUCCESS",
+            payload: citiesData,
+          });
+          break;
+      }
     } catch (error) {
       dispatch({
         type: "DATA_FETCH_ERROR",
