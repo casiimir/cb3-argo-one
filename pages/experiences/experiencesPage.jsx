@@ -3,7 +3,8 @@ import ExpCard from '../../components/ExpCard';
 import styles from './index.module.scss'
 
 const Experiences = () => {
- 
+
+    const { dataStore } = useDataContext();
 
     const [palermo, setPalermo] = useState([]);
     const [catania, setCatania] = useState([]);
