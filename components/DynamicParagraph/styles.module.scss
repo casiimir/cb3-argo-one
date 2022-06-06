@@ -1,6 +1,8 @@
-.Modal_Container {
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+.Paragraph_Container {
   text-align: right;
-  font-size: clamp(3em, 1em, 4em);
+  font-size: clamp(5vw, 1vw, 5vw);
   white-space: nowrap;
   text-shadow: 0.5px 0.5px 1px #000000, -0.5px 0.5px 1px #000000,
     0.5px -0.5px 1px #000000, -0.5px -0.5px 1px #000000;
@@ -12,13 +14,17 @@
     opacity: 0;
   }
 }
-
-@media all and (max-width: 660px) {
-  .Container {
-    font-size: clamp(2em, 1em, 4em);
+/*
+@media all and (max-width: 770px) {
+  .Paragraph_Container {
+    font-size: clamp(2rem, 1em, 4em);
+  }
+}*/
+@media all and (max-width: 425px) {
+  .Paragraph_Container {
+    font-size: clamp(10vw, 1vw, 10vw);
   }
 }
-
 @keyframes slideText {
   0% {
     transform: translateX(-100%);

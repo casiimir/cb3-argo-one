@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { useDataContext } from "../../context/DataContext/dataContext";
 import { FaShoppingCart } from "react-icons/fa";
-
 import { cities } from "../../utils/data";
+
 
 const NavLinks = (props) => {
 	const { updateExperiencesData } = useDataContext();

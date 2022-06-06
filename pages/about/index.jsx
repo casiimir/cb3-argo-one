@@ -46,7 +46,7 @@ export default function About() {
 							maxime saepe itaque voluptatibus aliquid
 							reprehenderit nisi nihil perspiciatis nam? Omnis?
 						</p>
-
+					
 						<div className={styles.about__photos}>
 							<a href="https://www.linkedin.com/in/elenia-centamore-ba6200116/">
 								<img
