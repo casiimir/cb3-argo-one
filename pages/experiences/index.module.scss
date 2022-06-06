@@ -1,4 +1,18 @@
-.wrapper{
+.global {
     position: relative;
-    top: 20vh;
+    top: 100px;
+}
+
+.title {
+    margin-top: 0;
+    position: relative;
+    top: 10vh;
+    font-size: 30px;
+    color: #5C9DDE;
+    text-align: center;
+}
+
+
+.exp__wrapper {
+    margin-top: 100px;
 }
