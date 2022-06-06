@@ -2,31 +2,18 @@ import Link from "next/link";
 import { useDataContext } from "../../context/DataContext/dataContext";
 import { FaShoppingCart } from "react-icons/fa";
 import { cities } from "../../utils/data";
-<<<<<<< HEAD
 import styles from "./styles.module.scss";
-=======
->>>>>>> feat: more page structure
 
 
 const NavLinks = (props) => {
   const { updateExperiencesData } = useDataContext();
 
-<<<<<<< HEAD
   const handleClickOnExperience = () => {
     const cityId = cities.map((city) => city.id);
     updateExperiencesData(cityId);
     updateExperiencesData(24);
     updateExperiencesData(15);
     props.isMobile && props.closeMobileMenu();
-=======
-  const arr = cities;
-  const cityArr = arr.map((city) => city.id)
-
-  const handleCliclOnExperience = (event) => {
-    console.log(event);
-    event.preventDefault();
-    updateExperiencesData(cityArr); // passa i vari valori in base alle tue necessità, se te ne dovessero servire altri vai in utils -> getActivitiesOptions
->>>>>>> feat: more page structure
   };
 
   return (
