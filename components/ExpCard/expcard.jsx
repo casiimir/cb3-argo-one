@@ -1,9 +1,9 @@
+import { useUserContext } from "../../context/UserContext/userContext";
+import { useRef } from "react";
 import Arrows from "../Arrows";
 import Link from "next/link";
 import styles from "./index.module.scss";
-import { useRef } from "react";
-import { useUserContext } from "../../context/UserContext/userContext";
-import { useDataContext } from "../../context/DataContext/dataContext";
+
 
 const ExpCard = ({ result }) => {
   const { setSelectedActivityByUuid } = useUserContext();
