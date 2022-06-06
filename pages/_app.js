@@ -10,6 +10,7 @@ config.autoAddCss = false;
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
+<<<<<<< HEAD
   return (
     <ModalContextProvider>
       <DataContextProvider>
@@ -19,6 +20,15 @@ function MyApp({ Component, pageProps }) {
       </DataContextProvider>
     </ModalContextProvider>
   );
+=======
+	return (
+		<DataContextProvider>
+			<DefaultLayout>
+				<Component {...pageProps} />
+			</DefaultLayout>
+		</DataContextProvider>
+	);
+>>>>>>> feat: more page structure
 }
 
 export default MyApp;
