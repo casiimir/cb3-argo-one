@@ -2,139 +2,138 @@
 @import "../../styles/variables.scss";
 
 .Navbar {
-    height: 90px;
-    width: 100%;
-    position: fixed;
-    z-index: 999;
-    opacity: 20;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2px;
-    font-family: $primary-font;
-    color: #fff;
-    font-size: 20px;
-    background-image: linear-gradient(grey, transparent);
-    
-    a {
-        padding: 20px;
-    }
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  opacity: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2px;
+  font-family: $primary-font;
+  color: #fff;
+  font-size: 20px;
+  background-image: linear-gradient(grey, transparent);
+
+  a {
+    padding: 20px;
+  }
 }
 
 .Title {
-    font-family: $primary-font;
-    font-size: 36px;
+  font-family: $primary-font;
+  font-size: 36px;
 }
 
 .Navbar .Navigation {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .Navbar nav ul {
-    padding: 0;
-    a {
-        &:hover {
-            text-decoration: none;
-            border-bottom: none;
-            color: #F5A962;
-        }        
+  padding: 0;
+  a {
+    &:hover {
+      text-decoration: none;
+      border-bottom: none;
+      color: #f5a962;
     }
-    button {
-        border: none;
-        background: none;
-        padding-right: 30px;
-        button:hover {
-            text-decoration: none;
-            border-bottom: none;
-            color: #F5A962;
-            cursor: pointer;
-        }
+  }
+  .button {
+    border: none;
+    background: none;
+    padding-right: 30px;
+    .button:hover {
+      text-decoration: none;
+      border-bottom: none;
+      color: #f5a962;
+      cursor: pointer;
     }
+  }
 
-    // button:hover {
-    //     text-decoration: none;
-    //     border-bottom: none;
-    //     color: #F5A962;
-    //     cursor: pointer;
-    // }
+  // button:hover {
+  //     text-decoration: none;
+  //     border-bottom: none;
+  //     color: #F5A962;
+  //     cursor: pointer;
+  // }
 }
-
 
 .Navbar .MobileNavigation {
-    display: None;
+  display: None;
 }
 
-@media (max-width: 900px){
-    .Navbar {
-        height: 60px;
-        color: #125D98;
-        font-size: 20px;
-        background: #fff;
-        border-bottom: 2px solid #125D98;
-    }
-    .Navbar .Navigation {
-        display: none;
-    }
+@media (max-width: 900px) {
+  .Navbar {
+    height: 60px;
+    color: #125d98;
+    font-size: 20px;
+    background: #fff;
+    border-bottom: 2px solid #125d98;
+  }
+  .Navbar .Navigation {
+    display: none;
+  }
 
-    .Navbar .MobileNavigation {
-        display: flex;
-        align-items: center;
-        text-align: center;
-    }
+  .Navbar .MobileNavigation {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
 
-    .Navbar .MobileNavigation .Hamburger {
-        position: absolute;
-        right: 5%;
-        cursor: pointer;
-        margin: 0%;
-    }
+  .Navbar .MobileNavigation .Hamburger {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+    margin: 0%;
+  }
 
-    .Navbar nav ul {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        border-bottom: 2px solid #125D98;
-        border-left: 2px solid #125D98;
-        top: 40px;
-        right: 0;
-        width: 50%;
-        border-top: 2px solid #125D98;
-    }
+  .Navbar nav ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    border-bottom: 2px solid #125d98;
+    border-left: 2px solid #125d98;
+    top: 40px;
+    right: 0;
+    width: 50%;
+    border-top: 2px solid #125d98;
+  }
 
-    .Navbar nav ul a {
-        padding-left: 10px;
-        background-color: #fff;
-        color: #125D98;
-        width: 100%;
-        &:hover {
-        border-bottom: none;
-        color: #F5A962;
-        }
+  .Navbar nav ul a {
+    padding-left: 10px;
+    background-color: #fff;
+    color: #125d98;
+    width: 100%;
+    &:hover {
+      border-bottom: none;
+      color: #f5a962;
     }
+  }
 }
 
 .Title {
-    font-family: $primary-font;
-    font-size: 30px;
+  font-family: $primary-font;
+  font-size: 30px;
 }
 
-@media (max-width: 300px){
-    .Navbar {
-        color: #125D98;
-        font-size: 20px;
-        background: #fff;
-    }
-    .Navbar .Navigation {
-        display: none;
-    }
-    .Navbar nav ul {
-        width: 100%;
-        border-left: none;
-    }
+@media (max-width: 300px) {
+  .Navbar {
+    color: #125d98;
+    font-size: 20px;
+    background: #fff;
+  }
+  .Navbar .Navigation {
+    display: none;
+  }
+  .Navbar nav ul {
+    width: 100%;
+    border-left: none;
+  }
 }
 .Title {
-    font-family: $primary-font;
-    font-size: 30px;
+  font-family: $primary-font;
+  font-size: 30px;
 }

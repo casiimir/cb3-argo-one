@@ -1,5 +1,4 @@
 import { useModalContext } from "../../context/ModalContext/modalContext";
-import { useDataContext } from "../../context/DataContext/dataContext";
 
 import Image from "next/image";
 
@@ -7,7 +6,6 @@ import styles from "./styles.module.scss";
 
 const Modal = () => {
   const { modalStore, setOpenModal, addToCart } = useModalContext();
-  const {} = useDataContext();
 
   const activitiesData = modalStore.modalData;
   console.log(modalStore.cart);
@@ -17,7 +15,10 @@ const Modal = () => {
   };
 
   const handleAddToCart = () => {
-    addToCart(activitiesData);
+    addToCart({
+      title: activitiesData.title,
+      price: activitiesData.retail_price.formatted_value,
+    });
   };
 
   return (

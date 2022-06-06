@@ -14,7 +14,10 @@ const modalReducer = (state, action) => {
       return {
         ...state,
 
-        cart: [...state.cart, { ...action.payload }],
+        cart: [
+          ...state.cart,
+          { title: action.payload.title, price: action.payload.price },
+        ],
       };
 
     default:

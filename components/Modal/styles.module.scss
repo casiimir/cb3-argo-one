@@ -174,7 +174,6 @@
   .Prices_p {
     bottom: 135% !important;
     left: 89% !important;
-    padding: clamp(0.8%, 2vw, 1%);
 
     font-family: $primary-font;
     font-size: clamp(0.8rem, 2vw, 1.5rem);
@@ -184,7 +183,6 @@
   .Prices_p {
     bottom: 135% !important;
     left: 93% !important;
-    padding: clamp(0.8%, 2vw, 1%);
 
     font-family: $primary-font;
     font-size: clamp(0.8rem, 2vw, 1.5rem);
@@ -195,6 +193,7 @@
   0% {
     transform: scale(0%, 0%);
   }
+
   100% {
     transform: scale(100%, 100%);
   }

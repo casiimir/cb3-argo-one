@@ -96,7 +96,7 @@ const SearchInput = () => {
         {alert && (
           <div className={styles.Alert}>
             <Alert
-              text="Select a cities first !"
+              text="Select an options first !"
               value={alert}
               setFn={setAlert}
               time={3000}

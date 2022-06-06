@@ -25,9 +25,10 @@ export const ModalContextProvider = ({ children }) => {
   };
 
   const addToCart = (element) => {
+    console.log(element);
     dispatch({
       type: "ADD_TO_CART",
-      payload: element,
+      payload: { title: element.title, price: element.price },
     });
   };
 
