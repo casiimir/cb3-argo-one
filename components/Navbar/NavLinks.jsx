@@ -7,6 +7,7 @@ import styles from "./styles.module.scss";
 =======
 >>>>>>> feat: more page structure
 
+
 const NavLinks = (props) => {
   const { updateExperiencesData } = useDataContext();
 
