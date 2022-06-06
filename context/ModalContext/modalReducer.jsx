@@ -15,13 +15,19 @@ const modalReducer = (state, action) => {
         ...state,
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> FEAT: cart & context for exp
         cart: [
           ...state.cart,
           { title: action.payload.title, price: action.payload.price },
         ],
+<<<<<<< HEAD
 =======
         cart: [...state.cart, { ...action.payload }],
 >>>>>>> FEAT: created context fn for cart
+=======
+>>>>>>> FEAT: cart & context for exp
       };
 
     default:
