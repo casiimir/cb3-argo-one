@@ -3,35 +3,39 @@ import styles from "./styles.module.scss";
 export default function Contact() {
 	return (
 		<div className={styles.wrapper}>
-			<h1 className={styles.wrapper__title}>Send us a message</h1>
+			<div className={styles.title}>
+				<h1> Send us a message </h1>
+			</div>
 			<form className={styles.wrapper__form}>
-				<div className={styles.wrapper__inputAll}>
+				<div className={styles.input}>
+					<label htmlFor="Name"></label>
 					<input
 						className={styles.wrapper__input}
 						type="text"
 						id="name"
 						placeholder="Your name..."
-						required
 					></input>
+				</div>
+				<div className={styles.input}>
+					<label htmlFor="Email"></label>
 					<input
 						className={styles.wrapper__input}
 						type="text"
 						id="email"
 						placeholder="Your email..."
-						required
 					></input>
 				</div>
 
-				<div className={styles.wrapper__message}>
+				<br />
+
+				<div className={styles.message}>
 					<label htmlFor="Message"></label>
 					<textarea
 						type="text"
 						id="message"
 						placeholder="Your message..."
-						required
-						className={styles.wrapper__textarea}
 					></textarea>
-
+					<br />
 					<button>Send</button>
 				</div>
 			</form>
