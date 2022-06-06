@@ -26,6 +26,7 @@ export const ModalContextProvider = ({ children }) => {
 
   const addToCart = (element) => {
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(element);
     dispatch({
       type: "ADD_TO_CART",
@@ -35,6 +36,12 @@ export const ModalContextProvider = ({ children }) => {
       type: "ADD_TO_CART",
       payload: element,
 >>>>>>> FEAT: created context fn for cart
+=======
+    console.log(element);
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: { title: element.title, price: element.price },
+>>>>>>> FEAT: cart & context for exp
     });
   };
 
