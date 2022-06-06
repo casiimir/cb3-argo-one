@@ -1,6 +1,5 @@
 import Arrows from "../Arrows";
 import { useRef } from "react";
-import { useDataContext } from "../../context/DataContext/dataContext";
 import styles from "./index.module.scss";
 import Link from "next/link";
 import { useUserContext } from "../../context/UserContext/userContext";
