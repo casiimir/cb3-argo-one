@@ -10,12 +10,7 @@ import dataReducer from "./dataReducer";
 
 const initialState = {
   activities: [],
-<<<<<<< HEAD
-  data:[],
-  experiences: [],
-=======
   experiences: { cities: [], city1: [], city2: [], city3: [] },
->>>>>>> FEAT: cart & context for exp
   categories: [],
   cityData: [],
   latLon: {
@@ -153,7 +148,7 @@ export const DataContextProvider = ({ children }) => {
     setSelectedCategory,
     setDateTo,
     setDateFrom,
-    updateExperiencesData
+    updateExperiencesData,
   };
 
   return (
