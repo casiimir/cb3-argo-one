@@ -4,6 +4,10 @@ import { FaShoppingCart } from "react-icons/fa";
 import { cities } from "../../utils/data";
 import styles from "./styles.module.scss";
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a5114354ef0679a97151cd455bc465256997be7f
 const NavLinks = (props) => {
   const { updateExperiencesData } = useDataContext();
 
