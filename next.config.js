@@ -12,6 +12,7 @@ module.exports = {
       "images.musement.com",
       "images.unsplash.com",
       "cdn.pixabay.com",
+      "tricily.imgix.net",
     ],
   },
 };
