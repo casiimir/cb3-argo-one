@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState, } from 'react';
 // import { useWindowScroll } from 'react';
 import {FaArrowCircleUp} from 'react-icons/fa';
@@ -31,3 +32,4 @@ const ScrollUp = () => {
 }
 
 export default ScrollUp
+

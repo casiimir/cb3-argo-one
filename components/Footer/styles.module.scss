@@ -2,109 +2,104 @@
 @import "../../styles/variables.scss";
 
 .footer {
-    position: relative;
-    border-top: 1px solid $dark-blue;
-    bottom: 0;
-    width: 100%;
-    background-color: $white;
+  border-top: 1px solid $dark-blue;
+  bottom: 0;
+  width: 100%;
+  background-color: $white;
 }
 
 .upperFooter {
-    display: flex;
-    flex-direction: row;
-    font-family: $primary-font;
-    color: $dark-blue;
-    @include reset-list;
+  display: flex;
+  flex-direction: row;
+  font-family: $primary-font;
+  color: $dark-blue;
+  @include reset-list;
 }
 
 .upperFooterLeft {
-    width: 50%;
-    height: 100%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__logo {
     display: flex;
     flex-direction: column;
+    width: 50%;
+  }
 
-    &__logo {
-        display: flex;
-        flex-direction: column;
-        width: 50%;
-        
-        }
+  &__title {
+    display: block;
+    padding: 2%;
+    margin: 3% 8% 0;
+    font-size: 1.8rem;
+  }
 
-    &__title {
-        display: block;
-        padding: 2%;
-        margin: 3% 8% 0;
-        font-size: 1.8rem;
-    }
-
-    p {
-        width: 50%;
-        margin: 0 8%;
-        padding: 0 2%;
-        font-size: 1.3rem;
-    }
-
+  p {
+    width: 50%;
+    margin: 0 8%;
+    padding: 0 2%;
+    font-size: 1.3rem;
+  }
 }
 
 .upperFooterRight {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+
+  a {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    margin: 0 3%;
+    padding: 0 2%;
+    justify-content: flex-end;
+    font-size: 1.3rem;
+    line-height: 40px;
+  }
 
-    a {
-        display: flex;
-        margin:  0 3%;
-        padding: 0 2%;
-        justify-content: flex-end;
-        font-size: 1.3rem;
-        line-height: 40px;
-    } 
+  a:first-child {
+    margin-top: 2%;
+  }
 
-    a:first-child {
-        margin-top: 2%;
-    }
-
-    a:hover {
-        color: $yellow;
-        cursor: pointer;
-    }
+  a:hover {
+    color: $yellow;
+    cursor: pointer;
+  }
 }
 
-
 .bottomFooter {
-    width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: $dark-blue;
+
+  &__line {
+    width: 95%;
+    border: 0;
+    height: 2px;
+    background: $dark-blue;
+    background-image: linear-gradient(to right, #ccc, $dark-blue, #ccc);
+  }
+
+  &__icons {
+    font-size: 2rem;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: $dark-blue;
+    justify-content: center;
+    gap: 50%;
+    margin-top: 2%;
+  }
 
-    &__line {
-        width: 95%;
-        border: 0;
-        height: 2px;
-        background: $dark-blue;
-        background-image: linear-gradient(to right, #ccc, $dark-blue, #ccc);
-    }
-
-    &__icons {
-        font-size: 2rem;
-        display: flex;
-        justify-content: center;
-        gap: 50%;
-        margin-top: 2%;
-    }
-
-    &__facebookIcon:hover {
-        color: $yellow;
-        cursor: pointer;
-    }
-    &__instagramIcon:hover {
-        color: $yellow;
-        cursor: pointer;
-    }
-    &__twitterIcon:hover {
-        color: $yellow;
-        cursor: pointer;
-    }
-
+  &__facebookIcon:hover {
+    color: $yellow;
+    cursor: pointer;
+  }
+  &__instagramIcon:hover {
+    color: $yellow;
+    cursor: pointer;
+  }
+  &__twitterIcon:hover {
+    color: $yellow;
+    cursor: pointer;
+  }
 }

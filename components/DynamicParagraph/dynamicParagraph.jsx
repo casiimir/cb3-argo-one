@@ -1,35 +1,48 @@
 import { useState, useEffect } from "react";
 import { slideData } from "../../utils/data";
+
 import styles from "./styles.module.scss";
 
-export const DynamicParagraph = () => {
-  const [slideText, setSlideText] = useState("Enjoy");
-  const [counter, setCounter] = useState(0);
-  const [sentinel, setSentinel] = useState(false);
+const DynamicParagraph = () => {
+  const [slideText, setSlideText] = useState("our beaches");
+  const [txtIndexCounter, setTxtIndexCounter] = useState(0);
+  const [fadeIn, setFadeIn] = useState(false);
+  const [classes, setClasses] = useState(styles.Dynamic);
 
   const handleTextSlide = () => {
-    if (counter < slideData.textData.length - 1) {
-      console.log(counter);
-      setCounter((prev) => prev + 1);
-      setSlideText(slideData.textData[counter]);
-      setSentinel((prev) => !prev);
+    if (txtIndexCounter < slideData.textData.length - 1) {
+      setTxtIndexCounter((prev) => prev + 1);
+      setSlideText(slideData.textData[txtIndexCounter]);
+      setClasses(styles.Slide);
+      setFadeIn((prev) => !prev);
+
+      setTimeout(() => {
+        setClasses(styles.Dynamic);
+      }, 80);
     } else {
-      setCounter(0);
-      setSlideText(slideData.textData[counter]);
-      setSentinel((prev) => !prev);
+      setTxtIndexCounter(0);
+      setSlideText(slideData.textData[txtIndexCounter]);
+      setClasses(styles.Slide);
+      setFadeIn((prev) => !prev);
+
+      setTimeout(() => {
+        setClasses(styles.Dynamic);
+      }, 80);
     }
   };
 
   useEffect(() => {
-    setSentinel(true);
-    sentinel && setTimeout(handleTextSlide, 2000);
-  }, [sentinel]);
+    setFadeIn(true);
+    fadeIn && setTimeout(handleTextSlide, 3000);
+  }, [fadeIn]);
 
   return (
-    <div className={styles.Container}>
+    <div className={styles.Paragraph_Container}>
       <p>Discover Sicily</p>
-      <p>trhough</p>
-      <p>{slideText}</p>
+      <p>through</p>
+      <p className={classes}>{slideText}</p>
     </div>
   );
 };
+
+export default DynamicParagraph;

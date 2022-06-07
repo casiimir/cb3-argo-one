@@ -1,4 +1,3 @@
-
 import { useDataContext } from '../../context/DataContext/dataContext';
 import Card from "../Card";
 import styles from './index.module.scss';

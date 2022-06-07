@@ -3,6 +3,7 @@ import Navbar from "../Navbar/index";
 import ScrollUp from "../ScrollUp/index";
 
 const DefaultLayout = ({ children }) => {
+
 	return (
 		<div>
 			<Navbar />
@@ -11,6 +12,7 @@ const DefaultLayout = ({ children }) => {
 			<Footer />
 		</div>
 	);
+
 };
 
 export default DefaultLayout;
