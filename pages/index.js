@@ -7,6 +7,7 @@ import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagrap
 import styles from "../styles/Home.module.css";
 import Modal from "../components/Modal/modal";
 
+
 export default function Home() {
   const Map = dynamic(() => import("../components/Map"), {
     loading: () => <p>A map is loading</p>,
