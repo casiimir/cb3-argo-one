@@ -4,7 +4,7 @@ import { slideData } from "../../utils/data";
 import styles from "./styles.module.scss";
 
 const DynamicParagraph = () => {
-  const [slideText, setSlideText] = useState("our history");
+  const [slideText, setSlideText] = useState("our beaches");
   const [txtIndexCounter, setTxtIndexCounter] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
   const [classes, setClasses] = useState(styles.Dynamic);

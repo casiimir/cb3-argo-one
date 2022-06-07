@@ -3,6 +3,9 @@ import { useWindowSize } from "../../utils/utils";
 import { slideData } from "../../utils/data";
 import Image from "next/image";
 
+import DynamicParagraph from "../DynamicParagraph";
+import StaticParagraph from "../StaticParagraph";
+
 import styles from "./styles.module.scss";
 
 const Hero = () => {
@@ -39,31 +42,45 @@ const Hero = () => {
   }, [fadeIn]);
 
   return (
-    <section className={imgClasses}>
+    <>
       {size.width >= 475 ? (
-        <Image
-          src={slideData.imgUrl[imgCount]}
-          alt="welcome to sicily"
-          width={2048}
-          height={1152}
-          layout="responsive"
-          placeholder="empty"
-          priority
-          className={styles.Hero_img}
-        />
+        <section>
+          <div className={imgClasses}>
+            <Image
+              src={slideData.imgUrl[imgCount]}
+              alt="welcome to sicily"
+              width={2048}
+              height={1152}
+              layout="responsive"
+              placeholder="empty"
+              priority
+              className={styles.Hero_img}
+            />
+          </div>
+          <div className={styles.homepage__desc}>
+            <DynamicParagraph />
+          </div>
+        </section>
       ) : (
-        <Image
-          src={slideData.mobileImgUrl[imgCount]}
-          alt="welcome to sicily"
-          width={1152}
-          height={2048}
-          layout="responsive"
-          placeholder="empty"
-          priority
-          className={styles.Hero_img}
-        />
+        <section>
+          <div className={styles.Static}>
+            <Image
+              src={slideData.mobileImgUrl[0]}
+              alt="welcome to sicily"
+              width={1152}
+              height={2048}
+              layout="responsive"
+              placeholder="empty"
+              priority
+              className={styles.Hero_img}
+            />
+          </div>
+          <div className={styles.homepage__desc}>
+            <StaticParagraph />
+          </div>
+        </section>
       )}
-    </section>
+    </>
   );
 };
 

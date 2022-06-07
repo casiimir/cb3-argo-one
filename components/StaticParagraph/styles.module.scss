@@ -1,0 +1,13 @@
+.Container_Paragraph {
+  text-align: right;
+  font-size: clamp(5vw, 1vw, 5vw);
+  white-space: nowrap;
+  text-shadow: 0.5px 0.5px 1px #000000, -0.5px 0.5px 1px #000000,
+    0.5px -0.5px 1px #000000, -0.5px -0.5px 1px #000000;
+}
+
+@media all and (max-width: 425px) {
+  .Paragraph_Container {
+    font-size: clamp(10vw, 1vw, 10vw);
+  }
+}
