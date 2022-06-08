@@ -36,10 +36,19 @@ export const ModalContextProvider = ({ children }) => {
     });
   };
 
+  const storeItemsOnLocal = (title, price, imgUrl) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    cartItems.push({ title: title, price: price, imgUrl: imgUrl });
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
+
   const modalStore = {
     modalStore: state,
     setOpenModal,
     addToCart,
+    storeItemsOnLocal,
   };
 
   return (

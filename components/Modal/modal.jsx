@@ -5,7 +5,8 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 const Modal = () => {
-  const { modalStore, setOpenModal, addToCart } = useModalContext();
+  const { modalStore, setOpenModal, addToCart, storeItemsOnLocal } =
+    useModalContext();
 
   const activitiesData = modalStore.modalData;
 
@@ -13,13 +14,13 @@ const Modal = () => {
     setOpenModal("", false);
   };
 
-  const storeItemsOnLocal = (title, price, imgUrl) => {
+  /*const storeItemsOnLocal = (title, price, imgUrl) => {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
     cartItems.push({ title: title, price: price, imgUrl: imgUrl });
 
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
-  };
+  };*/
 
   const handleAddToCart = () => {
     addToCart({

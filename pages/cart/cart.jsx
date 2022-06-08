@@ -1,18 +1,53 @@
-import { useModalContext } from "../../context/ModalContext/modalContext";
 import { useState, useEffect } from "react";
 
 import Image from "next/image";
 
+import { BsFillBagCheckFill } from "react-icons/bs";
+import { ImPriceTag, ImPlus, ImMinus } from "react-icons/im";
+
 import styles from "./styles.module.scss";
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState({ cartItem: [], total: [] });
-  const { modalStore } = useModalContext();
+  const [cart, setCart] = useState({ cartItems: [], total: [] });
+  const [refresh, setRefresh] = useState(false);
+
+  const storeCartOnLocal = (groupedItems, cartTotal) => {
+    localStorage.removeItem("groupedCart");
+    const cartItems = JSON.parse(localStorage.getItem("groupedCart")) || [];
+
+    cartItems.push({ cartItems: groupedItems, cartTotal: cartTotal });
+
+    localStorage.setItem("groupedCart", JSON.stringify(cartItems));
+  };
+
+  const handleClickonMinus = (title) => {
+    const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    const itemIndex = storedCartItems.findIndex((item) => title == item.title);
+
+    storedCartItems.splice(itemIndex, 1);
+
+    localStorage.setItem("cartItems", JSON.stringify(storedCartItems));
+
+    setRefresh((prev) => !prev);
+  };
+
+  const handleClickonPlus = (title) => {
+    const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    const newItem = storedCartItems.filter((item) => title === item.title);
+
+    storedCartItems.push(newItem[0]);
+
+    localStorage.setItem("cartItems", JSON.stringify(storedCartItems));
+
+    setRefresh((prev) => !prev);
+  };
 
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
 
-    const filteredItem = storedCartItems.reduce(
+    const filteredItems = storedCartItems.reduce(
       (a, { title, price, imgUrl }) => {
         const obj = a.get(title) || {
           title,
@@ -26,29 +61,35 @@ const Cart = () => {
           parseInt(pack.price.split(" ")[1])
         );
 
-        const total = priceNumValue.reduce((prev, post) => prev + post);
+        const totalsSingleItems = priceNumValue.reduce(
+          (prev, post) => prev + post
+        );
 
-        obj.totalPrice.push(total);
+        obj.totalPrice.push(totalsSingleItems);
 
         return a.set(title, obj);
       },
       new Map()
     );
 
-    const groupedItem = [...filteredItem.values()];
+    const groupedItems = [...filteredItems.values()];
 
-    const totals = groupedItem.map((item) =>
+    const totalsSingleItems = groupedItems.map((item) =>
       item.totalPrice.slice(-1).reduce((prev, post) => prev + post)
     );
 
-    console.log(groupedItem);
-    //if (totals.length >= 1) {
-    const total = totals.reduce((prev, post) => prev + post);
-    //}
-    setCartItems({ cartItem: groupedItem, total: total });
-    console.log(cartItems);
-  }, []);
-  console.log(cartItems);
+    const cartTotal = totalsSingleItems.reduce((prev, post) => prev + post);
+
+    storeCartOnLocal(groupedItems, cartTotal);
+
+    const storedCart = JSON.parse(localStorage.getItem("groupedCart"));
+    console.log(storedCart);
+
+    setCart({
+      cartItems: storedCart[0].cartItems,
+      cartTotal: storedCart[0].cartTotal,
+    });
+  }, [refresh]);
 
   return (
     <>
@@ -59,9 +100,9 @@ const Cart = () => {
             <h2 className={styles.Wrapper_Head__Title}>Cart</h2>
             <hr className={styles.Wrapper_Head__Breaker} />
           </div>
-          {cartItems &&
-            cartItems.cartItem.map((item) => (
-              <div className={styles.Container__Cart__Item}>
+          {cart &&
+            cart.cartItems.map((item, index) => (
+              <div className={styles.Container__Cart__Item} key={index}>
                 <div className={styles.Bagde}>
                   <div className={styles.ImgContainer}>
                     <Image
@@ -77,23 +118,42 @@ const Cart = () => {
                       className={styles.ImgContainer__image}
                     />
                   </div>
-                  <div>
-                    <p className={styles.Bagde__title}>
-                      {item.title.split(" ").slice(0, 5).join(" ") + "..."}
-                    </p>
-                    <p>{item.price}</p>
+                  <div className={styles.Container_Info}>
+                    <div className={styles.Wrapper_title}>
+                      <BsFillBagCheckFill
+                        className={styles.Wrapper_title__Bookmark}
+                      />
+                      <p className={styles.Wrapper_title__titleP}>
+                        {item.title.split(" ").slice(0, 5).join(" ") + "..."}
+                      </p>
+                    </div>
+                    <div className={styles.Wrapper_Price}>
+                      <ImPriceTag className={styles.Wrapper_Price__PriceTag} />
+                      <p className={styles.Wrapper_Price__text}>{item.price}</p>
+                    </div>
                   </div>
                 </div>
                 <div className={styles.Container_count}>
                   <div className={styles.Wrapper_Counter}>
-                    <button>-</button>
+                    <button
+                      className={styles.Cart_Button__Minus}
+                      onClick={() => handleClickonMinus(item.title)}
+                    >
+                      {" "}
+                      <ImMinus />
+                    </button>
                     <input
                       type="text"
                       readOnly
-                      value={1}
+                      value={item.packs.length}
                       className={styles.Wrapper_Counter__Input}
                     />
-                    <button>+</button>
+                    <button
+                      className={styles.Cart_Button__Plus}
+                      onClick={() => handleClickonPlus(item.title)}
+                    >
+                      <ImPlus />
+                    </button>
                   </div>
                   <p className={styles.Container_count__p}>
                     $ {item.totalPrice.slice(-1)}
@@ -102,10 +162,15 @@ const Cart = () => {
               </div>
             ))}
         </div>
+        <hr className={styles.Wrapper_Head__Breaker} />
         <div className={styles.Wrapper_Total}>
-          <p>Total</p>
-          <p>$ {cartItems.total}</p>
-          <button>Proceed</button>
+          <div className={styles.Wrapper_Total__Container}>
+            <h3 className={styles.Wrapper_Total__Container__title}>Total</h3>
+            <p className={styles.Wrapper_Total__Container__text}>
+              $ {cart.cartTotal}
+            </p>
+          </div>
+          <button className={styles.Cart_Button__Checkout}>To checkout</button>
         </div>
       </section>
     </>

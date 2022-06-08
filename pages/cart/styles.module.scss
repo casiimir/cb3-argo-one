@@ -8,7 +8,8 @@
 }
 .Container {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
 
   .Wrapper_Head {
     &__Breaker {
@@ -34,37 +35,81 @@
     display: flex;
     flex-direction: column;
     gap: 2em;
-    flex: 1 0 25%;
-    max-width: 70%;
+
     background-color: $white;
     padding: 2em 0;
 
     &__Item {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       align-items: center;
+      gap: 5em;
       padding: 1.5em;
       border: 2px solid $yellow;
       border-radius: 6px;
-      box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.3);
-      justify-content: space-between;
+      box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.2);
+
+      width: 85vw;
 
       .Bagde {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
         gap: 1em;
+        flex: 0 0 80%;
 
-        &__title {
-          color: $dark-blue;
-          font-weight: 600;
+        .Container_Info {
+          display: flex;
+          flex-direction: column;
+
+          //min-width: 0%;
+
+          .Wrapper_title {
+            display: flex;
+            align-items: center;
+
+            gap: 0.5em;
+
+            &__Bookmark {
+              //width: 1em;
+              color: green;
+              font-size: 1.3em;
+            }
+
+            &__titleP {
+              color: $dark-blue;
+              font-weight: 600;
+            }
+          }
+
+          .Wrapper_Price {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+
+            &__PriceTag {
+              //width: 1.5em;
+              color: $yellow;
+              font-size: 1.3em;
+            }
+
+            &__text {
+              letter-spacing: 0.15em;
+              font-weight: 600;
+              color: rgba(0, 0, 0, 0.7);
+            }
+          }
         }
       }
 
       .ImgContainer {
         position: relative;
+
         border-radius: 6px;
-        width: 20vw;
-        height: 10vw;
-        box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.5);
+        width: 30vmax;
+        height: 15vmax;
+        box-shadow: 0 0 6px rgba($color: #000000, $alpha: 0.3);
         &__image {
           border-radius: 6px;
         }
@@ -80,23 +125,86 @@
 
     .Wrapper_Counter {
       display: flex;
+      gap: 0.5em;
 
       &__Input {
-        width: 20px;
+        width: 2em;
+        padding: 0.3em 0;
+        text-align: center;
+        border-radius: 3px;
+        border: 2px $light-blue solid;
+        outline: none;
+        cursor: inherit;
       }
     }
 
     &__p {
-      padding-right: 1em;
+      letter-spacing: 0.15em;
       margin: 0;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.7);
     }
   }
   .Wrapper_Total {
+    width: 80%;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     padding: 1.5em;
+
+    &__Container {
+      flex: 0 0 70%;
+      text-align: center;
+
+      &__title {
+        color: $dark-blue;
+        letter-spacing: 0.25em;
+        font-weight: 900;
+      }
+
+      &__text {
+        letter-spacing: 0.15em;
+        font-weight: 600;
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+}
+.Cart_Button {
+  &__Minus {
+    background-color: $yellow;
+    border: none;
+
+    width: 2.5em;
+    border-radius: 3px;
+    box-shadow: 0 0 3px rgba($color: #666666, $alpha: 0.3);
+    font-weight: 600;
+    color: $white;
+    cursor: pointer;
+  }
+
+  &__Plus {
+    background-color: $yellow;
+    border: none;
+    border-radius: 3px;
+    width: 2.5em;
+    box-shadow: 0 0 3px rgba($color: #666666, $alpha: 0.3);
+    font-weight: 400;
+    color: $white;
+    cursor: pointer;
+  }
+
+  &__Checkout {
+    background-color: $yellow;
+    border: none;
+    padding: 1em 1.2em;
+    border-radius: 3px;
+    box-shadow: 0 0 6px rgba($color: #666666, $alpha: 0.3);
+    font-weight: 800;
+    color: $white;
+    letter-spacing: 0.25em;
+    cursor: pointer;
   }
 }
 
