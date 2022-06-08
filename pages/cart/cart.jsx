@@ -1,5 +1,3 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
 
 import Image from "next/image";
@@ -92,113 +90,6 @@ const Cart = () => {
       cartTotal: storedCart[0].cartTotal,
     });
   }, [refresh]);
-=======
-import { useModalContext } from "../../context/ModalContext/modalContext";
-=======
->>>>>>> Stashed changes
-import { useState, useEffect } from "react";
-
-import Image from "next/image";
-
-import { BsFillBagCheckFill } from "react-icons/bs";
-import { ImPriceTag, ImPlus, ImMinus } from "react-icons/im";
-
-import styles from "./styles.module.scss";
-
-const Cart = () => {
-  const [cart, setCart] = useState({ cartItems: [], total: [] });
-  const [refresh, setRefresh] = useState(false);
-
-  const storeCartOnLocal = (groupedItems, cartTotal) => {
-    localStorage.removeItem("groupedCart");
-    const cartItems = JSON.parse(localStorage.getItem("groupedCart")) || [];
-
-    cartItems.push({ cartItems: groupedItems, cartTotal: cartTotal });
-
-    localStorage.setItem("groupedCart", JSON.stringify(cartItems));
-  };
-
-  const handleClickonMinus = (title) => {
-    const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-    const itemIndex = storedCartItems.findIndex((item) => title == item.title);
-
-    storedCartItems.splice(itemIndex, 1);
-
-    localStorage.setItem("cartItems", JSON.stringify(storedCartItems));
-
-    setRefresh((prev) => !prev);
-  };
-
-  const handleClickonPlus = (title) => {
-    const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-
-    const newItem = storedCartItems.filter((item) => title === item.title);
-
-    storedCartItems.push(newItem[0]);
-
-    localStorage.setItem("cartItems", JSON.stringify(storedCartItems));
-
-    setRefresh((prev) => !prev);
-  };
-
-  useEffect(() => {
-    const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
-
-    const filteredItems = storedCartItems.reduce(
-      (a, { title, price, imgUrl }) => {
-        const obj = a.get(title) || {
-          title,
-          price,
-          imgUrl,
-          totalPrice: [],
-          packs: [],
-        };
-        obj.packs.push({ title, price });
-        const priceNumValue = obj.packs.map((pack) =>
-          parseInt(pack.price.split(" ")[1])
-        );
-
-        const totalsSingleItems = priceNumValue.reduce(
-          (prev, post) => prev + post
-        );
-
-        obj.totalPrice.push(totalsSingleItems);
-
-        return a.set(title, obj);
-      },
-      new Map()
-    );
-
-    const groupedItems = [...filteredItems.values()];
-
-    const totalsSingleItems = groupedItems.map((item) =>
-      item.totalPrice.slice(-1).reduce((prev, post) => prev + post)
-    );
-
-    const cartTotal = totalsSingleItems.reduce((prev, post) => prev + post);
-
-    storeCartOnLocal(groupedItems, cartTotal);
-
-<<<<<<< Updated upstream
-    setItems((prev) => [
-      { actualItem: groupedItem, storedItem: prev.storedItem },
-    ]);
-    /*setTotal((prev) => [
-      { tot: prev.tot, storedTotal: localStorage.getItem("total") },
-    ]);*/
-  }, []);
->>>>>>> dev
-=======
-    const storedCart = JSON.parse(localStorage.getItem("groupedCart"));
-    console.log(storedCart);
-
-    setCart({
-      cartItems: storedCart[0].cartItems,
-      cartTotal: storedCart[0].cartTotal,
-    });
-  }, [refresh]);
->>>>>>> Stashed changes
 
   useEffect(() => {
     localStorage.setItem("items", JSON.stringify(items[0].actualItem));
@@ -215,10 +106,6 @@ const Cart = () => {
   return (
     <>
       <div className={styles.Empty}></div>
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-=======
->>>>>>> Stashed changes
       <section className={styles.Container}>
         <div className={styles.Container__Cart}>
           <div className={styles.Wrapper_Head}>
@@ -256,7 +143,6 @@ const Cart = () => {
                       <ImPriceTag className={styles.Wrapper_Price__PriceTag} />
                       <p className={styles.Wrapper_Price__text}>{item.price}</p>
                     </div>
-<<<<<<< Updated upstream
                   </div>
                 </div>
                 <div className={styles.Container_count}>
@@ -297,67 +183,6 @@ const Cart = () => {
             </p>
           </div>
           <button className={styles.Cart_Button__Checkout}>To checkout</button>
-=======
-      <section className={styles.Container_Cart}>
-        <div className={styles.Container_Cart__Wrapper}>
-          {items[0].actualItem
-            ? items[0].actualItem.map((item) => (
-                <div
-                  className={styles.Container_Cart__Wrapper__Badge}
-                  key={item.price}
-                >
-                  <div className={styles.Wrapper_Badge__Item}>
-                    <p>{item.title.split(" ").slice(0, 4).join(" ") + "..."}</p>
-                    <p>{item.price}</p>
-=======
->>>>>>> Stashed changes
-                  </div>
-                </div>
-                <div className={styles.Container_count}>
-                  <div className={styles.Wrapper_Counter}>
-                    <button
-                      className={styles.Cart_Button__Minus}
-                      onClick={() => handleClickonMinus(item.title)}
-                    >
-                      {" "}
-                      <ImMinus />
-                    </button>
-                    <input
-                      type="text"
-                      readOnly
-                      value={item.packs.length}
-                      className={styles.Wrapper_Counter__Input}
-                    />
-                    <button
-                      className={styles.Cart_Button__Plus}
-                      onClick={() => handleClickonPlus(item.title)}
-                    >
-                      <ImPlus />
-                    </button>
-                  </div>
-                  <p className={styles.Container_count__p}>
-                    $ {item.totalPrice.slice(-1)}
-                  </p>
-                </div>
-              </div>
-            ))}
-        </div>
-<<<<<<< Updated upstream
-        <div className={styles.Container_Cart__Wrapper_Total}>
-          <p>Total</p>
-          <p>${total.tot}</p>
->>>>>>> dev
-=======
-        <hr className={styles.Wrapper_Head__Breaker} />
-        <div className={styles.Wrapper_Total}>
-          <div className={styles.Wrapper_Total__Container}>
-            <h3 className={styles.Wrapper_Total__Container__title}>Total</h3>
-            <p className={styles.Wrapper_Total__Container__text}>
-              $ {cart.cartTotal}
-            </p>
-          </div>
-          <button className={styles.Cart_Button__Checkout}>To checkout</button>
->>>>>>> Stashed changes
         </div>
       </section>
     </>

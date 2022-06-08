@@ -1,39 +1,5 @@
-<<<<<<< Updated upstream
-<<<<<<< HEAD
-import { useState, useEffect } from "react";
-import ExpCard from "../../components/ExpCard";
-import styles from "./index.module.scss";
-
-const Experiences = () => {
-  const [palermo, setPalermo] = useState([]);
-  const [catania, setCatania] = useState([]);
-  const [messina, setMessina] = useState([]);
-
-  useEffect(() => {});
-
-  return (
-    <>
-      <h2 className={styles.title}>
-        {"Here's the best experience in Tricily!"}
-      </h2>
-      <div className={styles.global}>
-        <div className={styles.wrapper}>
-          <ExpCard />
-          <ExpCard />
-          <ExpCard />
-          <ExpCard />
-        </div>
-      </div>
-    </>
-  );
-};
-=======
-import { useState, useEffect } from 'react';
-import { useDataContext } from '../../context/DataContext/dataContext';
-=======
 import { useState, useEffect } from "react";
 import { useDataContext } from "../../context/DataContext/dataContext";
->>>>>>> Stashed changes
 import { cities, mainCities } from "../../utils/data";
 import { GetActivitiesByCity } from "../../utils/utils";
 import ExpCard from "../../components/ExpCard";
@@ -96,15 +62,8 @@ const Experiences = () => {
           </div>
         </div>
       </div>
-<<<<<<< Updated upstream
-    </div >
-  )
-}
->>>>>>> dev
-=======
     </div>
   );
 };
->>>>>>> Stashed changes
 
 export default Experiences;

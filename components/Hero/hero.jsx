@@ -53,16 +53,8 @@ const Hero = () => {
               height={1152}
               layout="responsive"
               placeholder="empty"
-<<<<<<< Updated upstream
-<<<<<<< HEAD
               quality={100}
               sizes="2048w"
-=======
->>>>>>> dev
-=======
-              quality={100}
-              sizes="2048w"
->>>>>>> Stashed changes
               priority
               className={styles.Hero_img}
             />
@@ -81,16 +73,8 @@ const Hero = () => {
               height={2048}
               layout="responsive"
               placeholder="empty"
-<<<<<<< Updated upstream
-<<<<<<< HEAD
               quality={100}
               sizes="2048w"
-=======
->>>>>>> dev
-=======
-              quality={100}
-              sizes="2048w"
->>>>>>> Stashed changes
               priority
               className={styles.Hero_img}
             />
