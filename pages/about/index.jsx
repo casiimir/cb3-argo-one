@@ -6,7 +6,7 @@ const oliveBranchImg =
 	"https://i.ibb.co/hFkrYbq/vilija-valeisaite-x-TZpip-USEj8-unsplash.jpg";
 
 const avatar_federica = "https://i.ibb.co/yY8WxBP/Federica-Centorbi-round.png";
-const avatar_elenia = "https://i.ibb.co/HBcQ7ch/Elenia-round.png";
+const avatar_elenia = "https://i.ibb.co/y543nbf/Elenia-round.png";
 const avatar_nicolo = "https://i.ibb.co/xX2cpyG/Nicolo-round.png";
 const avatar_paolo = "https://i.ibb.co/bHyrKXv/Paolo-round.png";
 const avatar_andrea = "https://i.ibb.co/34KChFn/Andrea-round.png";
