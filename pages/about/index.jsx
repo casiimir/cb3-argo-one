@@ -32,20 +32,31 @@ export default function About() {
 					<div className={styles.about__descContainer}>
 						<h2 className={styles.about__descTitle}>Who we are</h2>
 						<p className={styles.about__desc}>
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Optio eveniet rem, sint architecto soluta
-							iusto libero doloremque placeat numquam maxime saepe
-							itaque voluptatibus aliquid reprehenderit nisi nihil
-							perspiciatis nam? Omnis? Lorem ipsum dolor sit amet
-							consectetur adipisicing elit. Optio eveniet rem,
-							sint architecto soluta iusto libero doloremque
-							placeat numquam maxime saepe itaque voluptatibus
-							aliquid reprehenderit nisi nihil perspiciatis nam?
-							Omnis? Lorem ipsum dolor sit amet consectetur
-							adipisicing elit. Optio eveniet rem, sint architecto
-							soluta iusto libero doloremque placeat numquam
-							maxime saepe itaque voluptatibus aliquid
-							reprehenderit nisi nihil perspiciatis nam? Omnis?
+							Tricily is what happens when five people who love to
+							travel and have a passion for code meet.
+							<br />
+							We thought about our motherland, Sicily, and
+							realized that at some point we all have left it only
+							to come back to it later because we found out
+							there's something here that you won't find anywhere
+							else. <br />
+							<br />
+							Either it's the food or the beautiful, sunny
+							weather, or the joyful predisposition of its people,
+							Sicily is simply a land we are sure you won't
+							forget.
+							<br />
+							<br /> Our aim is to present to you a fine array of
+							events and experiences to enjoy in and around the
+							best sicilian cities. Whether you choose to take a
+							cooking class in Palermo or to hike on Mount Etna,
+							we are confident you'll want to come back and have
+							more. <br />
+							<br />
+							<strong>
+								More of our rich history, more of our pristine
+								beaches, more of our colors.
+							</strong>
 						</p>
 
 						<div className={styles.about__photos}>
