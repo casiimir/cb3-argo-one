@@ -54,6 +54,8 @@ const Hero = () => {
 							layout="responsive"
 							placeholder="empty"
 							priority
+							quality={100}
+							sizes="2048w"
 							className={styles.Hero_img}
 						/>
 					</div>
@@ -72,6 +74,8 @@ const Hero = () => {
 							layout="responsive"
 							placeholder="empty"
 							priority
+							quality={100}
+							sizes="2048w"
 							className={styles.Hero_img}
 						/>
 					</div>
