@@ -53,6 +53,11 @@ const Hero = () => {
               height={1152}
               layout="responsive"
               placeholder="empty"
+<<<<<<< HEAD
+              quality={100}
+              sizes="2048w"
+=======
+>>>>>>> dev
               priority
               className={styles.Hero_img}
             />
@@ -71,6 +76,11 @@ const Hero = () => {
               height={2048}
               layout="responsive"
               placeholder="empty"
+<<<<<<< HEAD
+              quality={100}
+              sizes="2048w"
+=======
+>>>>>>> dev
               priority
               className={styles.Hero_img}
             />
