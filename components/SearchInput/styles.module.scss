@@ -139,3 +139,28 @@
     font-size: 1.5rem;
   }
 }
+
+@media all and (max-width: 768px),
+(max-width: 1024px) {
+  .Form {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .Filter_Container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .Button {
+    width: 30vw;
+  }
+}
+
+// @media all and (min-width: 1440px) {
+
+// }
+// @media all and (min-width: 2560px) {
+
+// }

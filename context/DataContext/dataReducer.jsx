@@ -65,7 +65,6 @@ const dataReducer = (state, action) => {
         ...state,
         loading: false,
       };
-
     case DATA_FETCH_ERROR:
       return {
         ...state,
