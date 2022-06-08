@@ -5,15 +5,14 @@ import { cities } from "../../utils/data";
 import styles from "./styles.module.scss";
 
 
-
 const NavLinks = (props) => {
   const { updateExperiencesData } = useDataContext();
 
   const handleClickOnExperience = () => {
-    const cityId = cities.map((city) => city.id);
-    updateExperiencesData(cityId);
-    updateExperiencesData(24);
-    updateExperiencesData(15);
+    // const cityId = cities.map((city) => city.id);
+    // updateExperiencesData(cityId);
+    // updateExperiencesData(24);
+    // updateExperiencesData(15);
     props.isMobile && props.closeMobileMenu();
   };
 
