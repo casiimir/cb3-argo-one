@@ -1,39 +1,10 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
-import ExpCard from "../../components/ExpCard";
-import styles from "./index.module.scss";
-
-const Experiences = () => {
-  const [palermo, setPalermo] = useState([]);
-  const [catania, setCatania] = useState([]);
-  const [messina, setMessina] = useState([]);
-
-  useEffect(() => {});
-
-  return (
-    <>
-      <h2 className={styles.title}>
-        {"Here's the best experience in Tricily!"}
-      </h2>
-      <div className={styles.global}>
-        <div className={styles.wrapper}>
-          <ExpCard />
-          <ExpCard />
-          <ExpCard />
-          <ExpCard />
-        </div>
-      </div>
-    </>
-  );
-};
-=======
-import { useState, useEffect } from 'react';
-import { useDataContext } from '../../context/DataContext/dataContext';
+import { useDataContext } from "../../context/DataContext/dataContext";
 import { cities, mainCities } from "../../utils/data";
-import { GetActivitiesByCity } from '../../utils/utils';
-import ExpCard from '../../components/ExpCard';
-import Image from 'next/image';
-import styles from './index.module.scss'
+import { GetActivitiesByCity } from "../../utils/utils";
+import ExpCard from "../../components/ExpCard";
+import Image from "next/image";
+import styles from "./index.module.scss";
 
 const Experiences = () => {
   const { fetchRequest } = useDataContext();
@@ -43,33 +14,41 @@ const Experiences = () => {
 
   useEffect(() => {
     fetchRequest();
-    GetActivitiesByCity(mainCities[0].id)
-      .then(res => setFixedActivities1(res.data));
-    GetActivitiesByCity(mainCities[1].id)
-      .then(res => setFixedActivities2(res.data));
-    GetActivitiesByCity(cities.filter((city) => mainCities.indexOf(city.id) === -1).map(city => city.id))
-      .then(res => setActivities(res.data));
+    GetActivitiesByCity(mainCities[0].id).then((res) =>
+      setFixedActivities1(res.data)
+    );
+    GetActivitiesByCity(mainCities[1].id).then((res) =>
+      setFixedActivities2(res.data)
+    );
+    GetActivitiesByCity(
+      cities
+        .filter((city) => mainCities.indexOf(city.id) === -1)
+        .map((city) => city.id)
+    ).then((res) => setActivities(res.data));
   }, []);
 
   return (
     <div className={styles.div}>
       <div className={styles.global}>
         <div className={styles.imgDiv}>
-          <Image src={"https://i.ibb.co/fC37R1m/davide-ragusa-Qb-Dkh-VZ80-To-unsplash.jpg"}
+          <Image
+            src={
+              "https://i.ibb.co/fC37R1m/davide-ragusa-Qb-Dkh-VZ80-To-unsplash.jpg"
+            }
             alt="welcome to sicily"
             width={1920}
             height={720}
             layout="responsive"
             placeholder="empty"
             priority
-            className={styles.Hero_img} />
+            className={styles.Hero_img}
+          />
 
-          <blockquote className={styles.quote}>{`"Io sono nato in Sicilia e lì l’uomo nasce isola nell’isola e rimane tale fino alla morte, anche vivendo lontano dall’aspra terra natìa circondata dal mare immenso e geloso"`}
+          <blockquote className={styles.quote}>
+            {`"Io sono nato in Sicilia e lì l’uomo nasce isola nell’isola e rimane tale fino alla morte, anche vivendo lontano dall’aspra terra natìa circondata dal mare immenso e geloso"`}
             <br />
             {`- Luigi Pirandello`}
           </blockquote>
-
-
         </div>
         <h2 className={styles.title}>{"Our finds for you"}</h2>
         <div className={styles.wrapper}>
@@ -83,9 +62,8 @@ const Experiences = () => {
           </div>
         </div>
       </div>
-    </div >
-  )
-}
->>>>>>> dev
+    </div>
+  );
+};
 
 export default Experiences;
