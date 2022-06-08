@@ -1,6 +1,5 @@
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import Image from "next/image";
-
 import { useModalContext } from "../../context/ModalContext/modalContext";
 import styles from './index.module.scss'
 import Link from 'next/link';
@@ -28,6 +27,8 @@ const Detail = () => {
                             alt="welcome to sicily"
                             width={1200}
                             height={720}
+                            quality={100}
+                            sizes="2048w"
                             layout="responsive"
                             placeholder="empty"
                             className={styles.Actv_Image}

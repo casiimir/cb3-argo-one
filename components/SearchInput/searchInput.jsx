@@ -75,43 +75,43 @@ const SearchInput = () => {
 
   return (
     <div className={styles.Filter_Container}>
-      <form className={styles.Form} onSubmit={handleSubmit}>
-        <OptionGroup
-          data={cities}
-          onChangeFn={handleClickOnCities}
-          typeValue="cities"
-          defaultText="Select cities"
-          textValue="Select a city to Start"
-          defaultValue="unselected"
-        />
+        <form className={styles.Form} onSubmit={handleSubmit}>
+          <OptionGroup
+            data={cities}
+            onChangeFn={handleClickOnCities}
+            typeValue="cities"
+            defaultText="Select cities"
+            textValue="Select a city to Start"
+            defaultValue="unselected"
+          />
 
-        <OptionGroup
-          data={dataStore.categories}
-          onChangeFn={handleClickOnTipology}
-          typeValue="tipology"
-          defaultText="Select activities"
-          textValue="Select an activities in zone"
-        />
+          <OptionGroup
+            data={dataStore.categories}
+            onChangeFn={handleClickOnTipology}
+            typeValue="tipology"
+            defaultText="Select activities"
+            textValue="Select an activities in zone"
+          />
 
-        {alert && (
-          <div className={styles.Alert}>
-            <Alert
-              text="Select an options first !"
-              value={alert}
-              setFn={setAlert}
-              time={3000}
-              classStyle="SearchBox"
-            />
-          </div>
-        )}
+          {alert && (
+            <div className={styles.Alert}>
+              <Alert
+                text="Select an options first !"
+                value={alert}
+                setFn={setAlert}
+                time={3000}
+                classStyle="SearchBox"
+              />
+            </div>
+          )}
 
-        <DatePicker
-          firstDateFn={handleDateToPick}
-          secondDateFn={handleDateFromPick}
-        />
+          <DatePicker
+            firstDateFn={handleDateToPick}
+            secondDateFn={handleDateFromPick}
+          />
 
-        <input className={styles.Button} type="submit" value="Search" />
-      </form>
+          <input className={styles.Button} type="submit" value="Search" />
+        </form>
     </div>
   );
 };

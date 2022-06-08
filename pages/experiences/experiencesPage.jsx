@@ -36,25 +36,23 @@ const Experiences = () => {
                         className={styles.Hero_img} />
 
                     <blockquote className={styles.quote}>{`"Io sono nato in Sicilia e lì l’uomo nasce isola nell’isola e rimane tale fino alla morte, anche vivendo lontano dall’aspra terra natìa circondata dal mare immenso e geloso"`}
-                    <br />
-                    {`- Luigi Pirandello`}
+                        <br />
+                        {`- Luigi Pirandello`}
                     </blockquote>
-                    
-                  
-            </div>
-            <h2 className={styles.title}>{"Our finds for you"}</h2>
-            <div className={styles.wrapper}>
-                <h2 className={styles.cities}>{"Palermo"}</h2>
-                <ExpCard result={fixedActivities1} />
-                <h2 className={styles.cities}>{"Catania"}</h2>
-                <ExpCard result={fixedActivities2} />
-                <div className={styles.lastSlide}>
-                    <h2 className={styles.cities}>{"Other cities"}</h2>
-                    <ExpCard result={activities} />
+                </div>
+                <h2 className={styles.title}>{"Our finds for you"}</h2>
+                <div className={styles.wrapper}>
+                    <h2 className={styles.cities}>{"Palermo"}</h2>
+                    <ExpCard result={fixedActivities1} />
+                    <h2 className={styles.cities}>{"Catania"}</h2>
+                    <ExpCard result={fixedActivities2} />
+                    <div className={styles.lastSlide}>
+                        <h2 className={styles.cities}>{"Other cities"}</h2>
+                        <ExpCard result={activities} />
+                    </div>
                 </div>
             </div>
         </div>
-        </div >
     )
 }
 

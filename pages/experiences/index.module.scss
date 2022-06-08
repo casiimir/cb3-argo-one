@@ -1,6 +1,10 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+.div{
+    background-color: #f3f4f5;
+}
+
 .imgDiv {
     position: relative;
     top: 0;
@@ -41,7 +45,8 @@
     position: absolute;
     top: 25vh;
     left: 70vw;
-    color: black;
+    color: $light-blue;
+    text-align: right;
     font-size: 25px;
     font-style: italic;
     width: 20vw;
@@ -52,12 +57,12 @@
 }
 
 .wrapper {
-    width: 65%;
+    width: 69%;
     margin: 0 auto;
 }
 
 .lastSlide {
-    margin-bottom: 20vh;
+    margin-bottom: 50vh;
 }
 
 @media all and (min-width: 320px) and (max-width: 425px) {

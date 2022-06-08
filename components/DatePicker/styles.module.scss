@@ -2,69 +2,65 @@
 @import '../../styles/mixins.scss';
 
 
-.Container {
-  display: flex;
-  justify-content: space-around;
-  width: fit-content;
-  height: 6vh;
-  background-color: white;
-  border-radius: 8px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+
+
+.Container > input{
+  width: 255px;
+  height: 5vh;
+  border: 1px solid #ebebeb;
+  margin-right: 15px;
+  border-radius: 10px;
+  padding: 2vh;
 }
-  .Input {
-    -webkit-align-items: center;
-    display: flex;
-    font-family: "Outfit", sans-serif;
-    overflow: hidden;
-    border-radius: 16px;
-    border: none;
-    -webkit-padding-start: 1px;
-    flex-direction: row-reverse;
+
+
+
+@media all and (min-width: 320px) and (max-width: 425px) {
+  .Container > input{
+    width: 90vw;
+    margin: 0 auto;
+    margin: 1vh 0 1vh 0;
+  }
+  .Container > input[type="date"]:not(.has-value):before{
+    color: black;
+    content: attr(placeholder);
+  }
+}
+
+@media all and (min-width: 426px) and (max-width: 768px) {
+  .Container > input{
+    width: 20vw;
+    margin: 1vh 1vw 1vh 0;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  .Container > input{
+    width: 20vw;
+    margin: 1vh 1vw 1vh 0;
+  }
+}
+
+@media all and (min-width: 1025px) and (max-width: 1440px) {
+  .Container > input{
+    width: 15vw;
+    margin: 0;
+    margin: 1vh 1vh 1vh 0;
+  }
+}
+
+@media all and (min-width: 1441px) and (max-width: 1920px) {
+  .Container > input{
+    width: 15vw;
+    margin: 0;
+    margin: 1vh 1vh 1vh 0;
+  }
+}
+
+@media all and (min-width: 1921px) and (max-width: 2560px) {
+  .Container > input{
     width: 10vw;
-    justify-content: center;
-    flex-wrap: wrap;
-    -webkit-padding-start: 1px;
+    margin: 0;
+    margin: 1vh 1vh 1vh 0;
   }
-
-  .Input::-webkit-datetime-edit {
-    //Edita il Div del testo data
-    display: inline-block;
-    min-width: 42vmin;
-    overflow: hidden;
-    font-size: clamp(0.6em, 1em, 0.8em);
-    text-align: center;
-    font-family: "Outfit", sans-serif;
-  }
-  .Input::-webkit-datetime-edit-text {
-    padding: 10px;
-    order: 1;
-  }
-  .Input::-webkit-datetime-edit-fields-wrapper {
-    -webkit-user-modify: read-only !important;
-    display: inline-block;
-    padding: 0px;
-    height: 20px;
-    white-space: pre-wrap;
-    font-size: 14px;
-    font-weight: 500;
-  }
-  .Input::-webkit-calendar-picker-indicator {
-    font-size: 20px;
-    padding: 10px;
-    order: 0;
-    cursor: pointer;
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-
-@media all and (max-width: 320px),
-(max-width: 425px) {
-  .Container {
-    width: 85vw;
-  }
-  .Input{
-    width: 100vw;
-  }
-
 }

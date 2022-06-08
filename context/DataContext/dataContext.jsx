@@ -14,8 +14,8 @@ const initialState = {
   categories: [],
   cityData: [],
   latLon: {
-    lat: 38.114,
-    lng: 13.355,
+    lat: 37.3111,
+    lng: 13.6333,
   },
   selectedCategory: "",
   date_to: "",
