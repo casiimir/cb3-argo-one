@@ -92,3 +92,16 @@
     font-size: 1.3rem;
   }
 }
+
+@media all and (min-width: 2560px) {
+  .Filter_Container {
+    width: 50%;
+  }
+
+  .Button {
+    margin-top: 1vh;
+    width: 6vw;
+    height: 5vh;
+    font-size: 13px;
+  }
+}
