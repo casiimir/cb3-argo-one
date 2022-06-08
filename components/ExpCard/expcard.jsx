@@ -2,13 +2,20 @@ import Arrows from '../Arrows';
 import { useRef } from 'react';
 import { useDataContext } from '../../context/DataContext/dataContext';
 import styles from './index.module.scss';
+import Link from 'next/link';
+import { useModalContext } from '../../context/ModalContext/modalContext';
 
-const ExpCard = ( {result} ) => {
+const ExpCard = ({ result }) => {
+
+    const { setOpenModal } = useModalContext();
+    const handleClickOnCard = (cardData) => {
+        setOpenModal(cardData, true);
+    };
 
     const data = result;
 
     const scrl = useRef(null);
-    const slide = (cardWidth = 450) => {
+    const slide = (cardWidth = 350) => {
         const numberVisibleCard = Math.floor(scrl.current.offsetWidth / cardWidth);
         return numberVisibleCard * cardWidth;
     };
@@ -23,11 +30,15 @@ const ExpCard = ( {result} ) => {
             </div>
             <div className={styles.wrapper} ref={scrl}>
                 {data && data.map((single, index) => (
-                    <div className={styles.cards} key={index}>
-                        <img className={styles.card_img}
-                            src={single.cover_image_url}
-                            alt={single.title}
-                        />
+
+                    <div className={styles.cards} key={index} onClick={() => handleClickOnCard(single)}>
+                        <Link href={`/detail/${single.slug_id}`}><a>
+                            <img className={styles.card_img}
+                                src={single.cover_image_url.split("?")[0] + "?q=100&fm=jpg&fit=crop&w=1280&h=720"}
+                                alt={single.title}
+                            />
+                        </a></Link>
+
                         <div className={styles.text}>
                             <h2 className={styles.card_title}>{single.title}</h2>
                             <p className={styles.desc}>{single.description}</p>

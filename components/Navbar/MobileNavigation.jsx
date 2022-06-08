@@ -1,4 +1,5 @@
 import NavLinks from "./NavLinks";
+
 import styles from "./styles.module.scss";
 import { FiMenu } from "react-icons/fi";
 import { ImCross } from "react-icons/im";
@@ -28,7 +29,13 @@ const MobileNavigation = () => {
   return (
     <nav className={styles.MobileNavigation}>
       {open ? closeBtn : hamburgerIcon}
-      {open && <NavLinks isMobile={true} closeMobileMenu={closeMobileMenu} />}
+      {open && (
+        <NavLinks
+          isMobile={true}
+          closeMobileMenu={closeMobileMenu}
+          open={open}
+        />
+      )}
     </nav>
   );
 };

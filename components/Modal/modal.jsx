@@ -38,7 +38,7 @@ const Modal = () => {
 
   return (
     <>
-      {modalStore.openModal && (
+      {/* {modalStore.openModal && (
         <div className={styles.Modal_Container}>
           <div className={styles.Modal_Wrapper}>
             <div className={styles.Actv_Image_Container}>
@@ -114,7 +114,7 @@ const Modal = () => {
             onClick={() => handleClickOnBckground()}
           ></div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

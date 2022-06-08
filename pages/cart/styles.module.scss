@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
+=======
+>>>>>>> dev
 .Empty {
   height: 90px;
   top: 0;
   width: 100%;
 }
+<<<<<<< HEAD
 .Container {
   display: flex;
   flex-direction: column;
@@ -205,6 +209,33 @@
     color: $white;
     letter-spacing: 0.25em;
     cursor: pointer;
+=======
+.Container_Cart {
+  display: flex;
+  flex-direction: column;
+
+  &__Wrapper {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid black;
+    &__Badge {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5vh;
+      gap: 2vh;
+
+      &__Item {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  &__Wrapper_Total {
+    display: flex;
+    justify-content: space-between;
+    padding: 5vh;
+>>>>>>> dev
   }
 }
 
