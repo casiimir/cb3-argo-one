@@ -29,10 +29,13 @@ export const cities = [
 	},
 ];
 
+
+
 export const mainCities = [
   cities[0],
   cities[1],
 ];
+
 
 export const categories = [
 	{
