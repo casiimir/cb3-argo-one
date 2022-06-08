@@ -28,14 +28,27 @@ export const ModalContextProvider = ({ children }) => {
     console.log(element);
     dispatch({
       type: "ADD_TO_CART",
-      payload: { title: element.title, price: element.price },
+      payload: {
+        title: element.title,
+        price: element.price,
+        imgUrl: element.img,
+      },
     });
+  };
+
+  const storeItemsOnLocal = (title, price, imgUrl) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    cartItems.push({ title: title, price: price, imgUrl: imgUrl });
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
   const modalStore = {
     modalStore: state,
     setOpenModal,
     addToCart,
+    storeItemsOnLocal,
   };
 
   return (

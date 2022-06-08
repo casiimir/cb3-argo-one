@@ -5,6 +5,7 @@ import { FaShoppingCart } from 'react-icons/fa';
 import Link from 'next/link';
 import styles from './index.module.scss';
 
+
 const ExpCard = ({ result }) => {
     const data = result;
 

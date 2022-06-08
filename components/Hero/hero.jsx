@@ -53,6 +53,8 @@ const Hero = () => {
               height={1152}
               layout="responsive"
               placeholder="empty"
+              quality={100}
+              sizes="2048w"
               priority
               className={styles.Hero_img}
             />
@@ -71,6 +73,8 @@ const Hero = () => {
               height={2048}
               layout="responsive"
               placeholder="empty"
+              quality={100}
+              sizes="2048w"
               priority
               className={styles.Hero_img}
             />

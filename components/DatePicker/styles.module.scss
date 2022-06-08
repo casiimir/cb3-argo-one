@@ -4,7 +4,7 @@
 
 
 
-.Container > input{
+.Container>input {
   width: 255px;
   height: 5vh;
   border: 1px solid #ebebeb;
@@ -16,33 +16,34 @@
 
 
 @media all and (min-width: 320px) and (max-width: 425px) {
-  .Container > input{
+  .Container>input {
     width: 90vw;
     margin: 0 auto;
     margin: 1vh 0 1vh 0;
   }
-  .Container > input[type="date"]:not(.has-value):before{
+
+  .Container>input[type="date"]:not(.has-value):before {
     color: black;
     content: attr(placeholder);
   }
 }
 
 @media all and (min-width: 426px) and (max-width: 768px) {
-  .Container > input{
+  .Container>input {
     width: 20vw;
     margin: 1vh 1vw 1vh 0;
   }
 }
 
 @media all and (min-width: 769px) and (max-width: 1024px) {
-  .Container > input{
+  .Container>input {
     width: 20vw;
     margin: 1vh 1vw 1vh 0;
   }
 }
 
 @media all and (min-width: 1025px) and (max-width: 1440px) {
-  .Container > input{
+  .Container>input {
     width: 15vw;
     margin: 0;
     margin: 1vh 1vh 1vh 0;
@@ -50,15 +51,26 @@
 }
 
 @media all and (min-width: 1441px) and (max-width: 1920px) {
-  .Container > input{
+  .Container>input {
     width: 15vw;
     margin: 0;
     margin: 1vh 1vh 1vh 0;
   }
 }
 
+@media all and (max-width: 320px) and (max-width: 425px) {
+  .Container {
+    width: 85vw;
+  }
+
+  .Input {
+    width: 100vw;
+  }
+
+}
+
 @media all and (min-width: 1921px) and (max-width: 2560px) {
-  .Container > input{
+  .Container>input {
     width: 10vw;
     margin: 0;
     margin: 1vh 1vh 1vh 0;
