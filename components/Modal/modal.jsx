@@ -5,20 +5,35 @@ import Image from "next/image";
 import styles from "./styles.module.scss";
 
 const Modal = () => {
-  const { modalStore, setOpenModal, addToCart } = useModalContext();
+  const { modalStore, setOpenModal, addToCart, storeItemsOnLocal } =
+    useModalContext();
 
   const activitiesData = modalStore.modalData;
-  console.log(modalStore.cart);
 
   const handleClickOnBckground = () => {
     setOpenModal("", false);
   };
 
+  /*const storeItemsOnLocal = (title, price, imgUrl) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    cartItems.push({ title: title, price: price, imgUrl: imgUrl });
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };*/
+
   const handleAddToCart = () => {
     addToCart({
       title: activitiesData.title,
       price: activitiesData.retail_price.formatted_value,
+      img: activitiesData.cover_image_url,
     });
+
+    storeItemsOnLocal(
+      activitiesData.title,
+      activitiesData.retail_price.formatted_value,
+      activitiesData.cover_image_url
+    );
   };
 
   return (
