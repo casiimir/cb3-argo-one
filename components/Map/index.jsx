@@ -17,33 +17,36 @@ const MapControl = (props) => {
     return null;
 };
 
-const markerCoordinates = {
-    
-     agr: {
-        lat: '37.289',
-        lng: '13.6'
-    },
-    mess: {
-        lat: '38.196',
-        lng: '15.554'
-    },
-    cat: {
-        lat: '37.508',
-        lng: '15.086'
-    },
-    rag: {
-        lat: '44.698',
-        lng: '8.523'
-    },
-    sir: {
-        lat: '37.075',
-        lng: '15.286'
-    },
-    trp: {
-        lat: '38.0175',
-        lng: '12.515'
-    },
-}
+const markerCoordinates = [
+    [
+        38.121065,
+        13.349032
+    ],
+    [
+        37.289,
+        13.6,
+    ],
+    [
+        38.196,
+        15.554,
+    ],
+    [
+        37.508,
+        15.086,
+    ],
+    [
+        44.698,
+        8.523,
+    ],
+    [
+        37.075,
+        15.286,
+    ],
+    [
+        38.0175,
+        12.515,
+    ],
+];
 
 const Map = () => {
     const { dataStore } = useDataContext();
@@ -61,21 +64,26 @@ const Map = () => {
     };
 
     return (
-            <MapContainer className={styles.map} center={dataStore.latLon} zoom={7.2} scrollWheelZoom={false} style={containerStyle}>
-                <MapControl coords={coords} />
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker icon={ICON} position={dataStore.latLon}/>
-                <Marker icon={ICON} position={markerCoordinates.agr}/>
-                <Marker icon={ICON} position={markerCoordinates.mess}/>
-                <Marker icon={ICON} position={markerCoordinates.cat}/>
-                <Marker icon={ICON} position={markerCoordinates.rag}/>
-                <Marker icon={ICON} position={markerCoordinates.sir}/>
-                <Marker icon={ICON} position={markerCoordinates.trp}/>
-            </MapContainer>
-        
+        <MapContainer
+            className={styles.map}
+            center={coords}
+            zoom={8.2}
+            scrollWheelZoom={false}
+            doubleClickZoom={true}
+            style={containerStyle}
+        >
+            <MapControl coords={coords} />
+            <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            />
+            {
+                markerCoordinates.map((item, index) => (
+                    <Marker icon={ICON} key={`marker-${index}`} position={item}/>
+                ))
+            }
+        </MapContainer>
+
     )
 };
 

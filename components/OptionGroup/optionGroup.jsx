@@ -11,7 +11,7 @@ const OptionGroup = ({
 
 
   return (
-    <div>
+    <>
       <label className={styles.Label} htmlFor={typeValue}>
         {" "}
         {textValue}{" "}
@@ -38,7 +38,7 @@ const OptionGroup = ({
           ))}
         </optgroup>
       </select>
-    </div>
+    </>
   );
 };
 
