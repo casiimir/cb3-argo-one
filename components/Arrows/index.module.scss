@@ -3,7 +3,7 @@
 .arrow_dx {
     cursor: pointer;
     height: 120px;
-    left: 98%;
+    left: 76vw;
     position: absolute;
     bottom: -100px;
     transform: translateX(-50%) translateY(-50%);
@@ -15,7 +15,7 @@
   
     &_top,
     &_bottom {
-      background-color: $light-blue;
+      background-color: $dark-blue;
       height: 4px;
       left: -5px;
       position: absolute;
@@ -23,7 +23,7 @@
       width: 100%;
   
       &:after {
-        background-color: #fff;
+        background-color: $yellow;
         content: "";
         height: 100%;
         position: absolute;
@@ -74,7 +74,7 @@
   .arrow_sx {
     cursor: pointer;
       height: 120px;
-      left: 1%;
+      left: -5%;
       position: absolute;
       top: -76px;
       transform: translateX(-50%) translateY(-50%);
@@ -87,15 +87,15 @@
   
     &_top,
     &_bottom {
-      background-color: $light-blue;
+      background-color: $dark-blue;
       height: 4px;
-      left: -5px;
+      left: -15px;
       position: absolute;
       top: 50%;
       width: 100%;
   
       &:after {
-        background-color: #fff;
+        background-color: $yellow;
         content: "";
         height: 100%;
         position: absolute;
@@ -144,11 +144,50 @@
     }
   }
   
-
-  @media all and (max-width: 767px){
+  @media all and (max-width: 375px) and (max-width: 425px){
     .arrow_dx, .arrow_sx{
         display: none;
     }
   }
+      
+  @media all and (max-width: 768px){
+    .arrow_dx, .arrow_sx{
+        display: none;
+    }
+  }
+
+  @media all and (min-width: 769px) and (max-width: 1024px) {
+    .arrow_sx{
+      left: -10%;
+      top: -16vh;
+    }
+    .arrow_dx{
+      left: 104%;
+      top: -9vh;
+    }
+  }
+
+  @media all and (min-width: 1025px) and (max-width: 1440px) {
+    .arrow_sx{
+      left: -10%;
+      top: -15vh;
+    }
+    .arrow_dx{
+      left: 105%;
+      top: -9vh;
+    }
+  }
+  
+  @media all and (min-width: 1441px) and (max-width: 2560px) {
+    .arrow_sx{
+      left: -6%;
+      top: -10vh;
+    }
+    .arrow_dx{
+      left: 103%;
+      top: -4vh;
+    }
+  }
+  
       
   

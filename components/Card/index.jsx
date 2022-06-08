@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useModalContext } from "../../context/ModalContext/modalContext";
 
 import styles from "./index.module.scss";
@@ -19,11 +20,13 @@ const Card = ({ cards }) => {
             key={index}
             onClick={() => handleClickOnCard(single)}
           >
+            <Link href={`/detail/${single.slug_id}`}><a>
             <img
               className={styles.card_img}
               src={single.cover_image_url}
               alt={single.title}
             />
+            </a></Link>
             <div className={styles.text}>
               <h2 className={styles.title}>
                 {single.title.split(" ").slice(0, 4).join(" ") + "..."}

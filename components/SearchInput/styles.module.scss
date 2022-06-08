@@ -2,50 +2,84 @@
 @import "../../styles/variables.scss";
 
 .Filter_Container {
-  font-family: $primary-font;
-  width: 90vmin;
+  font-family: "Outfit", sans-serif;
+  width: 50%;
   padding: 1em;
-  display: flex;
-  flex-direction: column;
+  position: relative;
   align-items: center;
-  gap: 10vh;
+  top: 65vh;
   margin: 0 auto;
-  background-color: $light-blue;
-  border-radius: 16px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  .Form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5vh;
+  border-radius: 10px;
+  background-color: rgba(60, 141, 173, 0.4705882353);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 10%);
+  z-index: 1001;
 
-    .Button {
-      border-radius: 3px;
-      background-color: $yellow;
-      padding: 25px 85px;
-      font-size: 1.2rem;
-      font-weight: 900;
-      color: $white;
-      border: none;
-      box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.214),
-        -2px 2px 4px rgba(0, 0, 0, 0.214), 2px -2px 4px rgba(0, 0, 0, 0.214),
-        -2px -2px 4px rgba(0, 0, 0, 0.214);
-      /* box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.679),
-        -1px -1px 4px rgba(0, 0, 0, 0.679), 1px -1px 4px rgba(0, 0, 0, 0.679),
-        -1px 1px 4px rgba(0, 0, 0, 0.679);*/
-      cursor: pointer;
-      transition: all 0.4s ease-in-out;
-      //@include button;
-    }
-    .Button:hover {
-      /*  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.679),
-        -1px -1px 4px rgba(0, 0, 0, 0.679), 1px -1px 4px rgba(0, 0, 0, 0.679),
-        -1px 1px 4px rgba(0, 0, 0, 0.679);*/
-
-      box-shadow: none;
-    }
-  }
   .Alert {
     margin-top: -50px;
   }
 }
+
+.Button {
+  border-radius: 3px;
+  background-color: #f5a962;
+  width: 8vw;
+  height: 6vh;
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(0 0 0 / 21%), -2px 2px 4px rgb(0 0 0 / 21%), 2px -2px 4px rgb(0 0 0 / 21%), -2px -2px 4px rgb(0 0 0 / 21%);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.Form {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 5vh;
+}
+
+@media all and (max-width: 320px),
+(max-width: 425px) {
+  .Form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .Filter_Container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .Button {
+    width: 30vw;
+  }
+}
+
+@media all and (max-width: 768px),
+(max-width: 1024px) {
+  .Form {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .Filter_Container {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .Button {
+    width: 30vw;
+  }
+}
+
+// @media all and (min-width: 1440px) {
+
+// }
+// @media all and (min-width: 2560px) {
+
+// }

@@ -8,6 +8,7 @@ import {
   EXPERIENCE_CITY3_FETCH_SUCCESS,
   DATA_FETCH_REQUEST,
   DATA_FETCH_ERROR,
+  DATA_FETCH_SUCCESS,
   DISCARD_ERROR,
   SET_SELECTED_CATEGORY,
   SET_DATE_TO,
@@ -70,6 +71,12 @@ const dataReducer = (state, action) => {
         loading: false,
         experiences: { ...state.experiences, city3: action.payload },
       };
+    case DATA_FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+      
     case DATA_FETCH_ERROR:
       return {
         ...state,
