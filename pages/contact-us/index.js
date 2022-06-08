@@ -1,4 +1,4 @@
-// import Contact from "../../components/ContactForm";
+
 import styles from "./style.module.scss";
 import Image from "next/image";
 
@@ -9,6 +9,7 @@ export default function ContactUs() {
       <div className={styles.contactImg}>
         <Image
           src="https://i.ibb.co/xML1pGy/lapacontactus.jpg"
+         
           alt="lapacontactus"
           width={2400}
           height={1598}
@@ -25,12 +26,14 @@ export default function ContactUs() {
                 className={styles.wrapper__input}
                 type="text"
                 id="name"
+                autoComplete="off"
                 placeholder="Your name..."
               ></input>
               <input
                 className={styles.wrapper__input}
                 type="text"
                 id="email"
+                autoComplete="off"
                 placeholder="Your email..."
               ></input>
             </div>
@@ -40,6 +43,7 @@ export default function ContactUs() {
                 className={styles.textarea}
                 type="text"
                 id="message"
+                autoComplete="off"
                 placeholder="Your message..."
               ></textarea>
               <button className={styles.button}>Send</button>
