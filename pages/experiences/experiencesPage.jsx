@@ -8,26 +8,22 @@ import styles from "./index.module.scss";
 import SkeletonLoading from "../../components/SkeletonLoading";
 
 const Experiences = () => {
-  const { dataStore, fetchRequest, fetchCompleted } = useDataContext();
-  const [fixedActivities1, setFixedActivities1] = useState([]);
-  const [fixedActivities2, setFixedActivities2] = useState([]);
-  const [activities, setActivities] = useState([]);
+    const { fetchRequest, dataStore } = useDataContext();
+    const [fixedActivities1, setFixedActivities1] = useState([]);
+    const [fixedActivities2, setFixedActivities2] = useState([]);
+    const [activities, setActivities] = useState([]);
 
-  useEffect(() => {
-    fetchRequest();
-    GetActivitiesByCity(mainCities[0].id).then((res) =>
-      setFixedActivities1(res.data)
-    );
-    GetActivitiesByCity(mainCities[1].id).then((res) =>
-      setFixedActivities2(res.data)
-    );
-    GetActivitiesByCity(
-      cities
-        .filter((city) => mainCities.indexOf(city.id) === -1)
-        .map((city) => city.id)
-    ).then((res) => setActivities(res.data));
-    setTimeout(() => fetchCompleted(), 80);
-  }, []);
+    useEffect(() => {
+        fetchRequest();
+        GetActivitiesByCity(mainCities[0].id, dataStore.language)
+            .then(res => setFixedActivities1(res.data));
+        GetActivitiesByCity(mainCities[1].id, dataStore.language)
+            .then(res => setFixedActivities2(res.data));
+        GetActivitiesByCity(
+            cities.filter((city) => mainCities.indexOf(city.id) === -1).map(city => city.id),
+            dataStore.language
+        ).then(res => setActivities(res.data));
+    }, [dataStore.language]);
 
   return (
     <div className={styles.div}>

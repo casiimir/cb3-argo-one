@@ -21,6 +21,7 @@ const initialState = {
   date_to: "",
   date_from: "",
   loading: false,
+  language: 'en-US',
   setControl: false,
 };
 
@@ -81,22 +82,9 @@ export const DataContextProvider = ({ children }) => {
     }
   };
 
-  const updateActivityDataByUuid = async (ActivityUuid) => {
-    console.log(ActivityUuid);
-    dispatch({ type: "DATA_FETCH_REQUEST" });
-    try {
-      const activityData = await GetActivitiesByUuid(ActivityUuid);
-      dispatch({
-        type: "ACTIVITY_UUID_FETCH_SUCCESS",
-        payload: activityData,
-      });
-    } catch (error) {
-      dispatch({
-        type: "DATA_FETCH_ERROR",
-        payload: error,
-      });
-    }
-  };
+  const setLanguage = (lang) => {
+    dispatch({ type: "SET_LANGUAGE", payload: lang });
+  }
 
   const fetchRequest = () => {
     dispatch({ type: "DATA_FETCH_REQUEST" });

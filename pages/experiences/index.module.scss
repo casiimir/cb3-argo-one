@@ -1,8 +1,9 @@
 @import '../../styles/variables.scss';
 @import '../../styles/mixins.scss';
 
+
 .div{
-    background-color: #f3f4f5;
+    background-color: #f7f7f7;
 }
 
 .imgDiv {
@@ -57,7 +58,7 @@
 }
 
 .wrapper {
-    width: 69%;
+    width: 72%;
     margin: 0 auto;
 }
 
@@ -91,7 +92,7 @@
     }
 
     .lastSlide {
-        margin-bottom: 5vh;
+        margin-bottom: 10vh;
     }
 }
 
@@ -106,7 +107,7 @@
     }
 
     .wrapper {
-        width: 90%
+        width: 92%
     }
 
     @keyframes test {
@@ -120,7 +121,7 @@
     }
 }
 
-@media all and (min-width: 769px) and (max-width: 1024px) {
+@media all and (min-width: 769px) and (max-width: 820px){
 
     .quote {
         width: 50vw;
@@ -132,7 +133,7 @@
     }
 
     .wrapper {
-        width: 85%
+        width: 80%
     }
 
     .lastSlide {
@@ -141,7 +142,18 @@
 
 }
 
-@media all and (min-width: 1025px) and (max-width: 1440px) {
+@media all and (min-width: 820px) and (max-width: 1024px){
+    .quote {
+        width: 50vw;
+        font-size: 18px;
+        top: 15vh;
+        left: 40vw;
+        animation-name: test;
+        animation-iteration-count: 0;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1440px) {
     .quote {
         width: 50vw;
         font-size: 25px;
