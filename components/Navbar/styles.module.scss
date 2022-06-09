@@ -37,24 +37,26 @@
     .MobileNavigation {
         display: None;
     }
-    
+
     ul {
         padding: 0;
-        a { 
+
+        a {
             padding: 22px;
             transition: 1s;
+
             &:hover {
                 text-decoration: none;
                 border-bottom: none;
                 color: $yellow;
-            }        
-        }  
+            }
+        }
     }
 }
 
 // MOBILE //
 
-@media (max-width: 840px){
+@media (max-width: 840px) {
     .Navbar {
         height: 60px;
         color: $dark-blue;
@@ -99,9 +101,10 @@
                 background-color: $white;
                 color: $dark-blue;
                 width: 100%;
+
                 &:hover {
-                border-bottom: none;
-                color: $yellow;
+                    border-bottom: none;
+                    color: $yellow;
                 }
             }
         }
@@ -113,7 +116,7 @@
     }
 }
 
-@media (max-width: 300px){
+@media (max-width: 300px) {
     .Navbar {
         color: $dark-blue;
         font-size: 20px;
@@ -132,10 +135,9 @@
             font-family: $primary-font;
             font-size: 30px;
         }
-    }   
+    }
 }
 
 // @keyframes scrollLeft {
 
 // }
-
