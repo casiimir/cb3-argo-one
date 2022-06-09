@@ -1,31 +1,140 @@
-.Filter_Container {
-  width: 90vmin;
-  padding: 1em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10vh;
-  margin: 0 auto;
-  background-color: #3c8dad;
-  border-radius: 16px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  .Form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5vh;
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
 
-    .Button {
-      border-radius: 3px;
-      background-color: #f5a962;
-      padding: 25px 85px;
-      font-weight: 900;
-      color: white;
-      border: none;
-      cursor: pointer;
-    }
+.Filter_Container {
+  font-family: "Outfit", sans-serif;
+  width: 50%;
+  height: 112px;
+  position: relative;
+  top: 65vh;
+  background-color: rgba(60, 141, 173, 0.4705882353);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 10%);
+  margin: 0 auto;
+  margin-bottom: 10px;
+  border-radius: 20px;
+  border: 1px solid #ebebeb;
+  -webkit-box-shadow: 0px 0px 0px 8px rgb(255 255 255 / 20%);
+  box-shadow: 0px 0px 0px 8px rgb(255 255 255 / 20%);
+  padding: 30px 20px 30px 20px;
+  z-index: 1001;
+}
+
+.Form {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: -0.5vh;
+}
+
+
+.Button {
+  border-radius: 3px;
+  background-color: #f5a962;
+  width: 5vw;
+  height: 5vh;
+  font-size: 16px;
+  font-weight: 900;
+  color: white;
+  border-radius: 10px;
+  margin-left: 10px;
+  border: none;
+  box-shadow: 2px 2px 4px rgb(0 0 0 / 21%), -2px 2px 4px rgb(0 0 0 / 21%), 2px -2px 4px rgb(0 0 0 / 21%), -2px -2px 4px rgb(0 0 0 / 21%);
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+
+@media all and (min-width: 320px) and (max-width: 425px) {
+  .Filter_Container {
+    width: 100%;
+    height: 100%;
   }
-  .Alert {
-    margin-top: -50px;
+
+  .Button {
+    margin-top: 2vh;
+    width: 50vw;
+    height: 5vh;
+  }
+}
+
+@media all and (min-width: 426px) and (max-width: 768px) {
+  .Filter_Container {
+    width: 100%;
+  }
+
+  .Button {
+    margin-top: 1vh;
+    width: 12vw;
+    height: 5vh;
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 769px) and (max-width: 1024px) {
+  .Filter_Container {
+    width: 100%;
+  }
+
+  .Button {
+    margin-top: 1vh;
+    width: 9vw;
+    height: 5vh;
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 1025px) and (max-width: 1440px) {
+  .Filter_Container {
+    width: 80%;
+  }
+
+  .Button {
+    margin-top: 1vh;
+    width: 8vw;
+    height: 5vh;
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 1441px) and (max-width: 1920px) {
+  .Filter_Container {
+    width: 80%;
+  }
+
+  .Button {
+    margin-top: 1vh;
+    width: 8vw;
+    height: 5vh;
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 1921px) and (max-width: 2559px) {
+  .Filter_Container {
+    width: 70%;
+  }
+
+  .Button {
+    margin-top: 1vh;
+    width: 8vw;
+    height: 5vh;
+    font-size: 13px;
+  }
+}
+
+@media all and (min-width: 2560px) {
+  .Filter_Container {
+    width: 50%;
+  }
+
+  .Button {
+    margin-top: 1vh;
+    width: 6vw;
+    height: 5vh;
+    font-size: 13px;
   }
 }

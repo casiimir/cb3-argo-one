@@ -3,8 +3,12 @@ import {
   CATEGORIES_FETCH_SUCCESS,
   ACTIVITIES_FETCH_SUCCESS,
   EXPERIENCE_FETCH_SUCCESS,
+  EXPERIENCE_CITY1_FETCH_SUCCESS,
+  EXPERIENCE_CITY2_FETCH_SUCCESS,
+  EXPERIENCE_CITY3_FETCH_SUCCESS,
   DATA_FETCH_REQUEST,
   DATA_FETCH_ERROR,
+  DATA_FETCH_SUCCESS,
   DISCARD_ERROR,
   SET_SELECTED_CATEGORY,
   SET_DATE_TO,
@@ -40,12 +44,39 @@ const dataReducer = (state, action) => {
         activities: action.payload,
       };
     case EXPERIENCE_FETCH_SUCCESS:
+      console.log(action.payload);
       return {
         ...state,
         loading: false,
-        experiences: action.payload,
+        experiences: { ...state.experiences, cities: action.payload },
       };
-
+    case EXPERIENCE_CITY1_FETCH_SUCCESS:
+      console.log(action.payload);
+      return {
+        ...state,
+        loading: false,
+        experiences: { ...state.experiences, city1: action.payload },
+      };
+    case EXPERIENCE_CITY2_FETCH_SUCCESS:
+      console.log(action.payload);
+      return {
+        ...state,
+        loading: false,
+        experiences: { ...state.experiences, city2: action.payload },
+      };
+    case EXPERIENCE_CITY3_FETCH_SUCCESS:
+      console.log(action.payload);
+      return {
+        ...state,
+        loading: false,
+        experiences: { ...state.experiences, city3: action.payload },
+      };
+    case DATA_FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
+      
     case DATA_FETCH_ERROR:
       return {
         ...state,

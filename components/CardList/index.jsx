@@ -1,4 +1,3 @@
-
 import { useDataContext } from '../../context/DataContext/dataContext';
 import Card from "../Card";
 import styles from './index.module.scss';
@@ -8,7 +7,7 @@ const Cardlist = () => {
     const activities = [dataStore.activities]
 
     const classes = dataStore.setControl === true ? styles.title : styles.hide;
-console.log(activities)
+
     return (
         <div>
             <h2 className={classes}>{"Here's your results:"}</h2>

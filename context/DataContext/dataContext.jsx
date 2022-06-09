@@ -1,7 +1,7 @@
 import { createContext, useContext, useReducer } from "react";
 import {
-  GetAvaiableActivity,
-  GetAvaiableExperience,
+  GetAvailableActivity,
+  GetActivitiesByCity,
   GetCategories,
   GetCityById,
 } from "../../utils/utils";
@@ -10,12 +10,12 @@ import dataReducer from "./dataReducer";
 
 const initialState = {
   activities: [],
-  experiences: [],
+  experiences: { cities: [], city1: [], city2: [], city3: [] },
   categories: [],
   cityData: [],
   latLon: {
-    lat: 38.114,
-    lng: 13.355,
+    lat: 37.3111,
+    lng: 13.6333,
   },
   selectedCategory: "",
   date_to: "",
@@ -68,7 +68,7 @@ export const DataContextProvider = ({ children }) => {
   const updateActivitiesData = async (coord, codeType, date) => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
-      const activitiesData = await GetAvaiableActivity(coord, codeType, date);
+      const activitiesData = await GetAvailableActivity(coord, codeType, date);
       dispatch({
         type: "ACTIVITIES_FETCH_SUCCESS",
         payload: activitiesData,
@@ -80,20 +80,9 @@ export const DataContextProvider = ({ children }) => {
       });
     }
   };
-  const updateExperiencesData = async (cityIn) => {
+
+  const fetchRequest = () => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
-    try {
-      const experiencesData = await GetAvaiableExperience(cityIn);
-      dispatch({
-        type: "EXPERIENCE_FETCH_SUCCESS",
-        payload: experiencesData,
-      });
-    } catch (error) {
-      dispatch({
-        type: "DATA_FETCH_ERROR",
-        payload: "",
-      });
-    }
   };
   // SETTA LA CATEGORIA SELEZIONATA
   const setSelectedCategory = (value) => {
@@ -115,7 +104,7 @@ export const DataContextProvider = ({ children }) => {
     updateCategoriesData,
     updateCityData,
     updateActivitiesData,
-    updateExperiencesData,
+    fetchRequest,
     setSelectedCategory,
     setDateTo,
     setDateFrom,

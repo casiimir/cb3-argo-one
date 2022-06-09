@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import styles from "./styles.module.scss";
 import Image from "next/image";
 
@@ -48,44 +49,58 @@ export default function About() {
 						</p>
 
 						<div className={styles.about__photos}>
-							<a href="https://www.linkedin.com/in/elenia-centamore-ba6200116/">
-								<img
-									src={avatar_elenia}
-									alt="Elenia Centamore"
-									title="Elenia Centamore"
-								></img>
-							</a>
+							<picture className={styles.about__pic}>
+								<p>Elenia Centamore</p>
+								<a href="https://www.linkedin.com/in/elenia-centamore-ba6200116/">
+									<img
+										src={avatar_elenia}
+										alt="Elenia Centamore"
+										title="Elenia Centamore"
+									></img>
+								</a>
+							</picture>
+							<picture className={styles.about__pic}>
+								<p>Nicolò Piccolo</p>
+								<a href="https://www.linkedin.com/in/nicolo-piccolo-nickpick77/">
+									<img
+										src={avatar_nicolo}
+										alt="Nicolo Piccolo"
+										title="Nicolò Piccolo"
+									></img>
+								</a>
+							</picture>
 
-							<a href="https://www.linkedin.com/in/nicolo-piccolo-nickpick77/">
-								<img
-									src={avatar_nicolo}
-									alt="Nicolo Piccolo"
-									title="Nicolò Piccolo"
-								></img>
-							</a>
+							<picture className={styles.about__pic}>
+								<p>Paolo Rotondo</p>
+								<a href="https://www.linkedin.com/in/paolo-rotondo/">
+									<img
+										src={avatar_paolo}
+										alt="Paolo Rotondo"
+										title="Paolo Rotondo"
+									></img>
+								</a>
+							</picture>
 
-							<a href="https://www.linkedin.com/in/paolo-rotondo/">
-								<img
-									src={avatar_paolo}
-									alt="Paolo Rotondo"
-									title="Paolo Rotondo"
-								></img>
-							</a>
-							<a href="https://www.linkedin.com/in/federica-centorbi/">
-								<img
-									src={avatar_federica}
-									alt="Federica Centorbi"
-									title="Federica Centorbi"
-								></img>
-							</a>
-
-							<a href="https://www.linkedin.com/in/cicala-andrea/">
-								<img
-									src={avatar_andrea}
-									alt="Andrea Cicala"
-									title="Andrea Cicala"
-								></img>
-							</a>
+							<picture className={styles.about__pic}>
+								<p>Federica Centorbi</p>
+								<a href="https://www.linkedin.com/in/federica-centorbi/">
+									<img
+										src={avatar_federica}
+										alt="Federica Centorbi"
+										title="Federica Centorbi"
+									></img>
+								</a>
+							</picture>
+							<picture className={styles.about__pic}>
+								<p>Andrea Cicala</p>
+								<a href="https://www.linkedin.com/in/cicala-andrea/">
+									<img
+										src={avatar_andrea}
+										alt="Andrea Cicala"
+										title="Andrea Cicala"
+									></img>
+								</a>
+							</picture>
 						</div>
 					</div>
 				</article>

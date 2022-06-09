@@ -1,3 +1,5 @@
+import { useState, useEffect } from "react";
+
 const CITY_URL = `https://api.musement.com/api/v3/cities/`;
 
 const CITIES_ACTIVITY_URL = (cityId) =>
@@ -6,7 +8,7 @@ const CITIES_ACTIVITY_URL = (cityId) =>
 const CITIES_CATEGORY_URL = (cityId) =>
   `https://api.musement.com/api/v3/cities/${cityId}/categories?`;
 
-const AVAIABLE_ACTIVITY_URL = `https://api.musement.com/api/v3/activities?`;
+const AVAILABLE_ACTIVITY_URL = `https://api.musement.com/api/v3/activities?`;
 
 export const http = async (APIurl, resource = "", options) => {
   const result = await fetch(`${APIurl}${resource}`, options);
@@ -129,8 +131,8 @@ export const GET_ACTIVITY = (cityID, resource) =>
     },
   });
 
-export const GetAvaiableActivity = (coord, codeType, date) =>
-  http(AVAIABLE_ACTIVITY_URL, GetActivityOption(coord, codeType, date), {
+export const GetAvailableActivity = (coord, codeType, date) =>
+  http(AVAILABLE_ACTIVITY_URL, GetActivityOption(coord, codeType, date), {
     method: "GET",
     headers: {
       "Accept-Language": "it",
@@ -140,8 +142,8 @@ export const GetAvaiableActivity = (coord, codeType, date) =>
     },
   });
 
-export const GetAvaiableExperience = (cityIn) =>
-  http(AVAIABLE_ACTIVITY_URL, GetExperienceOption(cityIn), {
+export const GetActivitiesByCity = (cityIn) =>
+  http(AVAILABLE_ACTIVITY_URL, GetExperienceOption(cityIn), {
     method: "GET",
     headers: {
       "Accept-Language": "it",
@@ -159,4 +161,36 @@ export const setFormattingLocalDate = (setStateCallBack) => {
   const year = date[0].split("-")[0];
   const yearMonth = date[0].split("-")[0] + "-" + date[0].split("-")[1];
   setStateCallBack([{ fullDate: date[0], day: day, month: month, year: year }]);
+};
+
+export const useWindowSize = () => {
+  // Initialize state with undefined width/height so server and client renders match
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    if (typeof window !== "undefined") {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
 };

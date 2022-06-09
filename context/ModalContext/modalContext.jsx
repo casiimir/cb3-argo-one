@@ -3,6 +3,7 @@ import modalReducer from "./modalReducer";
 
 const initialState = {
   modalData: [],
+  cart: [],
   openModal: false,
 };
 
@@ -23,9 +24,31 @@ export const ModalContextProvider = ({ children }) => {
     });
   };
 
+  const addToCart = (element) => {
+    console.log(element);
+    dispatch({
+      type: "ADD_TO_CART",
+      payload: {
+        title: element.title,
+        price: element.price,
+        imgUrl: element.img,
+      },
+    });
+  };
+
+  const storeItemsOnLocal = (title, price, imgUrl) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+    cartItems.push({ title: title, price: price, imgUrl: imgUrl });
+
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };
+
   const modalStore = {
     modalStore: state,
     setOpenModal,
+    addToCart,
+    storeItemsOnLocal,
   };
 
   return (

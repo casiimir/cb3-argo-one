@@ -7,8 +7,6 @@ import "../styles/globals.css";
 
 config.autoAddCss = false;
 
-config.autoAddCss = false;
-
 function MyApp({ Component, pageProps }) {
   return (
     <ModalContextProvider>

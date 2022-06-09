@@ -1,0 +1,284 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+
+.global {
+  display: flex;
+  flex-direction: row;
+}
+
+.main_title {
+  color: $dark-blue;
+  font-size: 30px;
+  margin: 0 auto;
+}
+
+.eleniaèscarsaepurecretina {
+  display: flex;
+  width: 80%;
+  padding-top: 2%;
+  padding-bottom: 5%;
+  gap: 8%;
+  margin: 0 auto;
+  align-content: center;
+}
+
+.Actv_Image_Container {
+  width: 30vw;
+  margin: 0 auto;
+  padding-top: 10vh;
+  overflow: hidden;
+  border-radius: 8px;
+  object-fit: cover;
+  filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.8));
+
+  .Actv_Image{
+    border-radius: 8px;
+  }
+}
+
+.Info_Container {
+  display: flex;
+  flex-direction: column;
+  color: #125d98;
+  margin: 20px auto 20px auto;
+  border-radius: 10px;
+  ;
+
+  .Title {
+    text-align: center;
+    font-size: clamp(1rem, 5vw, 2rem);
+    margin: 10px 0;
+  }
+
+  .Prices_p {
+    margin-left: auto;
+    padding: 10px 20px;
+    color: $white;
+    border: none;
+    border-radius: 3px;
+    background-color: $light-blue;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: $primary-font;
+  }
+
+  .Place {
+    width: fit-content;
+    margin: 0;
+    padding: 0;
+    font-size: clamp(0.5rem, 4vw, 1rem);
+    font-weight: 200;
+  }
+}
+
+.desc {
+  margin: 80px 0 0 auto;
+  text-align: right;
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  border: 1px solid $light-blue;
+  border-radius: 10px;
+}
+
+.About {
+  margin: 0;
+  width: 100%;
+  padding: 2vh;
+  font-size: clamp(0.8rem, 4vw, 1.3rem);
+  color: white;
+  border: 1px solid #125d98;
+  border-radius: 5px 5px 0 0;
+  text-align: left;
+  background-color: #3c8dad;
+}
+
+.divAbout {
+  width: 100%;
+  height: auto;
+}
+
+.optionsDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: center;
+  gap: 4vw;
+}
+
+.span_title {
+  color: $dark-blue;
+  font-size: 18px;
+}
+
+.highlights {
+  width: 100%;
+  padding: 1vh;
+  color: #3c8dad;
+  font-weight: 600;
+
+  .highlights_ul {
+    padding-inline-start: 0;
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 3%;
+    border-radius: 30px 30px 0 0;
+    text-align: center;
+
+    .highlights_li {
+      padding: 1vh;
+    }
+  }
+
+  .included_ul {
+    width: fit-content;
+    margin: 0;
+    text-align: left;
+
+    .included_li {
+      padding: 6px;
+    }
+  }
+
+  .lang_Container {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    color: $yellow;
+
+    .lang_title {
+      margin: 0;
+      padding: 0;
+      font-size: 18px;
+    }
+
+    .lang_ul {
+
+      text-align: left;
+    }
+
+    .lang_li {
+      padding: 6px;
+    }
+  }
+}
+
+.Button_Container {
+  display: flex;
+  gap: 15px;
+  margin-top: 40px;
+
+  .Button {
+    @include hover;
+    padding: 10px 20px;
+    color: $white;
+    border: none;
+    border-radius: 3px;
+    background-color: $yellow;
+    font-size: 1.2rem;
+    font-weight: 600;
+    font-family: $primary-font;
+    transition: all 150ms ease-in;
+    cursor: pointer;
+  }
+}
+
+.Button:hover {
+  transform: scale(1.05);
+}
+
+@media all and (max-width: 320px),
+(max-width: 425px) {
+
+
+  .eleniaèscarsaepurecretina {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .Prices_p {
+    width: 100%;
+  }
+
+  .Button_Container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .Actv_Image_Container {
+    width: 60vw;
+  }
+
+  .Actv_Image {
+    width: 60%;
+  }
+
+  .desc {
+    text-align: center;
+  }
+
+  .About {
+    font-size: 16px;
+  }
+
+  .sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+  }
+
+  .Info_Container {
+    width: 100%;
+  }
+
+  .optionsDiv {
+    margin-top: 5vh;
+    flex-direction: column
+  }
+}
+
+@media all and (max-width: 768px),
+(max-width: 1024px) {
+
+  .global{
+    width: 100%;
+  }
+
+  .eleniaèscarsaepurecretina {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+  
+  .Modal_Wrapper{
+    margin: 0 auto;
+  }
+
+  .Actv_Image_Container {
+    padding-top: 15vh;
+    width: 60vw;
+  }
+
+  .Info_Container {
+    width: 100%;
+  }
+
+   .sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2vh;
+  }
+}
+
+// @media all and (min-width: 1440px) {
+
+// }
+// @media all and (min-width: 2560px) {
+
+// }

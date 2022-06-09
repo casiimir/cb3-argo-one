@@ -1,0 +1,45 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.Dynamic {
+  position: relative;
+  animation: 1s ease-out 0s 1 slideText !important;
+}
+.Hero_img {
+  filter: drop-shadow(30px 10px 4px #fbfbfb4d);
+  border-radius: 24px;
+  box-shadow: 2px 2px 2px black;
+}
+.Slide {
+  position: relative;
+  opacity: 0 !important;
+}
+
+.Static {
+  position: relative;
+}
+
+//passa i valori al paragrafo
+.homepage__desc {
+  display: flex;
+  position: absolute;
+  color: $light-blue;
+  z-index: 2;
+  top: 10vh;
+  height: clamp(60vw, 1vw, 100vh);
+  right: 5%;
+  font-family: $primary-font;
+  //font-size: 3.3vw;
+  text-align: right;
+  font-weight: 700;
+  flex-wrap: wrap;
+}
+
+@keyframes slideText {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

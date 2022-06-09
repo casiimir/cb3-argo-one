@@ -13,7 +13,6 @@ export default function ContactUs() {
           width={2400}
           height={1598}
           layout="responsive"
-          objectFit="cover"
           className={styles.backimg}
          
     

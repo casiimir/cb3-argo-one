@@ -1,4 +1,4 @@
-import { SET_OPEN_MODAL } from "./costants";
+import { SET_OPEN_MODAL, ADD_TO_CART } from "./costants";
 
 const modalReducer = (state, action) => {
   console.log(action);
@@ -8,6 +8,16 @@ const modalReducer = (state, action) => {
         ...state,
         modalData: action.payload.actvData,
         openModal: action.payload.openValue,
+      };
+
+    case ADD_TO_CART:
+      return {
+        ...state,
+
+        cart: [
+          ...state.cart,
+          { title: action.payload.title, price: action.payload.price },
+        ],
       };
 
     default:
