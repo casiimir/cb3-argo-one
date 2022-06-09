@@ -1,6 +1,5 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import Cardlist from "../components/CardList";
 import Homepage from "../pages/homepage";
 import styles from "../styles/Home.module.css";
 
