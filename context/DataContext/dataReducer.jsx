@@ -12,6 +12,7 @@ import {
   SET_SELECTED_CATEGORY,
   SET_DATE_TO,
   SET_DATE_FROM,
+  SET_LANGUAGE,
 } from "./constants";
 
 const dataReducer = (state, action) => {
@@ -65,7 +66,6 @@ const dataReducer = (state, action) => {
         ...state,
         loading: false,
       };
-
     case DATA_FETCH_ERROR:
       return {
         ...state,
@@ -88,7 +88,11 @@ const dataReducer = (state, action) => {
         ...state,
         date_from: action.payload,
       };
-
+    case SET_LANGUAGE:
+      return {
+        ...state,
+        language: action.payload,
+      };
     default:
       throw new Error("Controlla bene i parametri scelti");
   }

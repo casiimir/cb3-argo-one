@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-
+import CartModal from "../../components/CartModal/CartModal";
 import Image from "next/image";
 
 import { BsFillBagCheckFill } from "react-icons/bs";
@@ -95,6 +95,7 @@ const Cart = () => {
 
   return (
     <>
+      <CartModal />
       <section className={styles.CartPage}>
         <div className={styles.Container}>
           <div className={styles.Container__Cart}>
