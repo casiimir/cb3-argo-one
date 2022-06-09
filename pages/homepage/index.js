@@ -5,6 +5,7 @@ import SearchInput from "../../components/SearchInput";
 import dynamic from "next/dynamic";
 import Hero from "../../components/Hero/hero";
 import CardList from "../../components/CardList";
+import ExperienceFinder from "../../components/ExperienceFinder/ExperienceFinder";
 import styles from "./styles.module.scss";
 
 export default function Homepage() {
@@ -17,8 +18,7 @@ export default function Homepage() {
 		<div className={styles.homepage}>
 			<Hero />
 			<div className={styles.homepage__map}>
-				<SearchInput />
-				<Map />
+				<ExperienceFinder />
 			</div>
 			<CardList />
 		</div>

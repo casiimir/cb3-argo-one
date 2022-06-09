@@ -1,0 +1,21 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.wrapper {
+     position: relative;
+
+    &__map {
+       filter: saturate(2);
+        padding: 0.7% 0.7% 0 0.7%;
+
+    }
+
+    &__finder {
+        display: flex;
+        justify-content: row;
+        flex-wrap: nowrap;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
