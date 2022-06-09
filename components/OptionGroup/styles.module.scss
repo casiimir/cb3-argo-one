@@ -11,10 +11,12 @@
 .Select {
   width: 255px;
   height: 5vh;
-  border: 1px solid #ebebeb;
+  border: 1px solid $white;
   border-radius: 10px;
   margin: 0 10px 0 0;
   padding: 1vh;
+  font-family: $primary-font;
+  font-size: 1rem;
 }
 
 @media all and (min-width: 320px) and (max-width: 425px) {

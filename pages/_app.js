@@ -8,15 +8,15 @@ import "../styles/globals.css";
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
-  return (
-    <ModalContextProvider>
-      <DataContextProvider>
-        <DefaultLayout>
-          <Component {...pageProps} />
-        </DefaultLayout>
-      </DataContextProvider>
-    </ModalContextProvider>
-  );
+	return (
+		<ModalContextProvider>
+			<DataContextProvider>
+				<DefaultLayout>
+					<Component {...pageProps} />
+				</DefaultLayout>
+			</DataContextProvider>
+		</ModalContextProvider>
+	);
 }
 
 export default MyApp;

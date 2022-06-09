@@ -1,6 +1,10 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
 .title {
-    font-size: 18px;
-    color: #3385D6;
+    font-size: 1.3rem;
+    color: $dark-blue;
+    padding: 0 5px;
 }
 
 .cards {
@@ -16,16 +20,16 @@
     height: 150px;
     margin: 15px auto 5px;
     box-shadow: 0px 15px 20px -14px;
-    ;
     border-radius: 10px;
     object-fit: cover;
     cursor: pointer;
 }
 
 .desc {
-    color: #5C9DDE;
-    font-weight: 600;
-    font-size: 14px;
+    color: $dark-blue;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 0 5px;
 }
 
 .text {

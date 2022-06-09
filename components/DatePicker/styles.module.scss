@@ -2,17 +2,16 @@
 @import '../../styles/mixins.scss';
 
 
-
-
 .Container>input {
   width: 255px;
   height: 5vh;
-  border: 1px solid #ebebeb;
+  border: 1px solid $white;
   margin-right: 15px;
   border-radius: 10px;
   padding: 2vh;
+  font-family: $primary-font;
+  font-size: 1rem;
 }
-
 
 
 @media all and (min-width: 320px) and (max-width: 425px) {
