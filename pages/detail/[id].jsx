@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 import { useDataContext } from "../../context/DataContext/dataContext";
 
@@ -25,6 +25,7 @@ const Detail = () => {
 
   useEffect(() => {
     query.uuid && updateActivityDataByUuid(query.uuid);
+    //eslint-disable-next-line
   }, [query.uuid]);
 
   return (

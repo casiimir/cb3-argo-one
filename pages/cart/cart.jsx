@@ -119,6 +119,7 @@ const Cart = () => {
                         quality={100}
                         width="2048"
                         layout="fill"
+                        alt="Item"
                         objectFit
                         sizes="20w"
                         className={styles.ImgContainer__image}
