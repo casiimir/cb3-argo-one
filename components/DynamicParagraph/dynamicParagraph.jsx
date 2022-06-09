@@ -33,7 +33,7 @@ const DynamicParagraph = () => {
 
   useEffect(() => {
     setFadeIn(true);
-    fadeIn && setTimeout(handleTextSlide, 3000);
+    fadeIn && setTimeout(handleTextSlide, 5000);
   }, [fadeIn]);
 
   return (

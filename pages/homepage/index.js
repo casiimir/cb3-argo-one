@@ -1,26 +1,28 @@
-import { useState, useEffect } from "react";
-import { useWindowSize } from "../../utils/utils";
-import Image from "next/image";
-import SearchInput from "../../components/SearchInput";
 import dynamic from "next/dynamic";
+import { useDataContext } from "../../context/DataContext/dataContext";
+
 import Hero from "../../components/Hero/hero";
 import CardList from "../../components/CardList";
 import ExperienceFinder from "../../components/ExperienceFinder/ExperienceFinder";
+import SkeletonLoading from "../../components/SkeletonLoading";
+
 import styles from "./styles.module.scss";
 
 export default function Homepage() {
-	const Map = dynamic(() => import("../../components/Map"), {
-		loading: () => <p>A map is loading</p>,
-		ssr: false,
-	});
+  const { dataStore } = useDataContext();
+  const Map = dynamic(() => import("../../components/Map"), {
+    loading: () => <p>A map is loading</p>,
+    ssr: false,
+  });
 
-	return (
-		<div className={styles.homepage}>
-			<Hero />
-			<div className={styles.homepage__map}>
-				<ExperienceFinder />
-			</div>
-			<CardList />
-		</div>
-	);
+  return (
+    <section className={styles.homepage}>
+      <Hero />
+      <section className={styles.homepage__map}>
+        <ExperienceFinder />
+        {dataStore.loading && <SkeletonLoading />}
+      </section>
+      <CardList />
+    </section>
+  );
 }

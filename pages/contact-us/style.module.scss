@@ -96,7 +96,7 @@
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+@media only screen and (max-device-width: 768px) {
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -106,9 +106,9 @@
     background: $bg-color;
     background: $bg-gradient;
     resize: none;
-   &__title{
-     top: 15%;
-   }
+    &__title {
+      top: 15%;
+    }
     .backimg {
       display: none !important;
     }
@@ -139,12 +139,11 @@
           height: 20vh;
         }
       }
-      
     }
-  } 
+  }
 }
 
-@media screen  and (min-device-width: 2560px) {
+@media screen and (min-device-width: 2560px) {
   .wrapper {
     h1 {
       top: 15%;
@@ -152,7 +151,7 @@
     }
     .form {
       width: 50vw;
-     
+
       h2 {
         font-size: 70px;
       }

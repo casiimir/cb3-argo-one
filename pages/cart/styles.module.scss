@@ -15,9 +15,6 @@
     z-index: 2;
     width: 100vw;
     height: 100vh;
-
-    &__Image {
-    }
   }
   .Container {
     display: flex;
@@ -46,6 +43,7 @@
         );
       }
       &__Title {
+        font-family: $primary-font;
         margin: 0;
         color: $dark-blue;
         letter-spacing: 0.3em;
@@ -100,6 +98,7 @@
               &__titleP {
                 color: $dark-blue;
                 font-weight: 600;
+                font-family: $primary-font;
               }
             }
 
@@ -118,6 +117,7 @@
                 letter-spacing: 0.15em;
                 font-weight: 600;
                 color: rgba(0, 0, 0, 0.7);
+                font-family: $primary-font;
               }
             }
           }
@@ -155,6 +155,7 @@
           border: 2px $light-blue solid;
           outline: none;
           cursor: inherit;
+          font-family: $primary-font;
         }
       }
 
@@ -163,6 +164,7 @@
         margin: 0;
         font-weight: 600;
         color: rgba(0, 0, 0, 0.7);
+        font-family: $primary-font;
       }
     }
     .Wrapper_Total {
@@ -186,12 +188,14 @@
           color: $dark-blue;
           letter-spacing: 0.25em;
           font-weight: 900;
+          font-family: $primary-font;
         }
 
         &__text {
           letter-spacing: 0.15em;
           font-weight: 600;
           color: rgba(0, 0, 0, 0.7);
+          font-family: $primary-font;
         }
       }
     }
@@ -200,7 +204,6 @@
     &__Minus {
       background-color: $yellow;
       border: none;
-
       width: 2.5em;
       border-radius: 3px;
       box-shadow: 0 0 3px rgba($color: #666666, $alpha: 0.3);
@@ -229,6 +232,7 @@
       font-weight: 800;
       color: $white;
       letter-spacing: 0.25em;
+      font-family: $primary-font;
       cursor: pointer;
     }
   }

@@ -21,7 +21,7 @@ const initialState = {
   date_to: "",
   date_from: "",
   loading: false,
-  language: 'en-US',
+  language: "en-US",
   setControl: false,
 };
 
@@ -100,7 +100,7 @@ export const DataContextProvider = ({ children }) => {
 
   const setLanguage = (lang) => {
     dispatch({ type: "SET_LANGUAGE", payload: lang });
-  }
+  };
 
   const fetchRequest = () => {
     dispatch({ type: "DATA_FETCH_REQUEST" });

@@ -16,7 +16,6 @@ import {
 } from "./constants";
 
 const dataReducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case DATA_FETCH_REQUEST:
       return {
@@ -91,8 +90,8 @@ const dataReducer = (state, action) => {
     case SET_LANGUAGE:
       return {
         ...state,
-        language: action.payload
-      }
+        language: action.payload,
+      };
     default:
       throw new Error("Controlla bene i parametri scelti");
   }
