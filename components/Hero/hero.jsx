@@ -38,7 +38,7 @@ const Hero = () => {
 
   useEffect(() => {
     setFadeIn(true);
-    fadeIn && setTimeout(handleImgSlide, 3000);
+    fadeIn && setTimeout(handleImgSlide, 5000);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fadeIn]);
 
