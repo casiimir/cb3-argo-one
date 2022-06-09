@@ -1,19 +1,10 @@
-import { useModalContext } from "../../context/ModalContext/modalContext";
+import { useModalContext } from "../../context/UserContext/userContext";
 
 import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
 const Modal = () => {
-  const { modalStore, setOpenModal, addToCart, storeItemsOnLocal } =
-    useModalContext();
-
-  const activitiesData = modalStore.modalData;
-
-  const handleClickOnBckground = () => {
-    setOpenModal("", false);
-  };
-
   /*const storeItemsOnLocal = (title, price, imgUrl) => {
     const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
