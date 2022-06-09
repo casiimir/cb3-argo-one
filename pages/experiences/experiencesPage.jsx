@@ -28,6 +28,7 @@ const Experiences = () => {
       dataStore.language
     ).then((res) => setActivities(res.data));
     setTimeout(() => fetchCompleted(), 80);
+    //eslint-disable-next-line
   }, [dataStore.language]);
 
   return (
