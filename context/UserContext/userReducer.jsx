@@ -1,13 +1,12 @@
-import { SET_OPEN_MODAL, ADD_TO_CART } from "./costants";
+import { SET_USER_SELECTION, ADD_TO_CART } from "./costants";
 
-const modalReducer = (state, action) => {
+const userReducer = (state, action) => {
   console.log(action);
   switch (action.type) {
-    case SET_OPEN_MODAL:
+    case SET_USER_SELECTION:
       return {
         ...state,
-        modalData: action.payload.actvData,
-        openModal: action.payload.openValue,
+        activityUuidSelected: action.payload,
       };
 
     case ADD_TO_CART:
@@ -25,4 +24,4 @@ const modalReducer = (state, action) => {
   }
 };
 
-export default modalReducer;
+export default userReducer;

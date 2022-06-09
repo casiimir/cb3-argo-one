@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useEffect } from "react";
 
 import Image from "next/image";
@@ -46,10 +45,11 @@ const Cart = () => {
   };
 
   useEffect(() => {
-    const storedCartItems = JSON.parse(localStorage.getItem("cartItems"));
+    const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    const filteredItems = storedCartItems.reduce(
-      (a, { title, price, imgUrl }) => {
+    const filteredItems =
+      storedCartItems.lenght >= 1 &&
+      storedCartItems.reduce((a, { title, price, imgUrl }) => {
         const obj = a.get(title) || {
           title,
           price,
@@ -69,9 +69,7 @@ const Cart = () => {
         obj.totalPrice.push(totalsSingleItems);
 
         return a.set(title, obj);
-      },
-      new Map()
-    );
+      }, new Map());
 
     const groupedItems = [...filteredItems.values()];
 
@@ -79,7 +77,9 @@ const Cart = () => {
       item.totalPrice.slice(-1).reduce((prev, post) => prev + post)
     );
 
-    const cartTotal = totalsSingleItems.reduce((prev, post) => prev + post);
+    const cartTotal =
+      totalsSingleItems.length >= 1 &&
+      totalsSingleItems.reduce((prev, post) => prev + post);
 
     storeCartOnLocal(groupedItems, cartTotal);
 
@@ -91,185 +91,94 @@ const Cart = () => {
       cartTotal: storedCart[0].cartTotal,
     });
   }, [refresh]);
-=======
-import { useModalContext } from "../../context/ModalContext/modalContext";
-import { useState, useEffect } from "react";
 
-import styles from "./styles.module.scss";
-
-const Cart = () => {
-  const [items, setItems] = useState((item) => [
-    { actualItem: item, storedItem: item },
-  ]);
-  const [total, setTotal] = useState((value) => [
-    { tot: value, storedTotal: value },
-  ]);
-  const { modalStore } = useModalContext();
-
-  useEffect(() => {
-    const filteredItem = modalStore.cart.reduce((a, { title, price }) => {
-      const obj = a.get(title) || { title, price, totalPrice: [], packs: [] };
-      obj.packs.push({ title, price });
-      const sumPrice = obj.packs.map((pack) => pack.price.split(" "));
-      const sumValue = sumPrice.map((e) => parseInt(e[1]));
-      const total = sumValue.reduce((prev, post) => prev + post);
-
-      obj.totalPrice.push(total);
-
-      return a.set(title, obj);
-    }, new Map());
-
-    const groupedItem = [...filteredItem.values()];
-
-    //setItems({ actualItem: groupedItem });
-
-    const totals = groupedItem.map((item) =>
-      item.totalPrice.slice(-1).reduce((prev, post) => prev + post)
-    );
-    if (totals.length >= 1) {
-      const total = totals.reduce((prev, post) => prev + post);
-
-      setTotal((prev) => [{ tot: total, storedItem: prev.storedItem }]);
-    }
-
-    //console.log(itemStorage);
-
-    setItems((prev) => [
-      { actualItem: groupedItem, storedItem: prev.storedItem },
-    ]);
-    /*setTotal((prev) => [
-      { tot: prev.tot, storedTotal: localStorage.getItem("total") },
-    ]);*/
-  }, []);
->>>>>>> dev
-
-  useEffect(() => {
-    localStorage.setItem("items", JSON.stringify(items[0].actualItem));
-    localStorage.setItem("total", JSON.stringify(total.tot));
-    const itemStorage = localStorage.getItem("items");
-    setItems((prev) => [
-      { actualItem: prev.actualItem, storedItem: itemStorage },
-    ]);
-    setTotal((prev) => [
-      { tot: prev.tot, storedTotal: localStorage.getItem("total") },
-    ]);
-  }, [items]);
-  console.log(items, total);
   return (
     <>
-      <div className={styles.Empty}></div>
-<<<<<<< HEAD
-      <section className={styles.Container}>
-        <div className={styles.Container__Cart}>
-          <div className={styles.Wrapper_Head}>
-            <h2 className={styles.Wrapper_Head__Title}>Cart</h2>
-            <hr className={styles.Wrapper_Head__Breaker} />
-          </div>
-          {cart &&
-            cart.cartItems.map((item, index) => (
-              <div className={styles.Container__Cart__Item} key={index}>
-                <div className={styles.Bagde}>
-                  <div className={styles.ImgContainer}>
-                    <Image
-                      src={
-                        item.imgUrl.split("?")[0] +
-                        "?q=100&fm=jpg&fit=crop&w=2048&h=1152"
-                      }
-                      quality={100}
-                      width="2048"
-                      layout="fill"
-                      objectFit
-                      sizes="20w"
-                      className={styles.ImgContainer__image}
-                    />
-                  </div>
-                  <div className={styles.Container_Info}>
-                    <div className={styles.Wrapper_title}>
-                      <BsFillBagCheckFill
-                        className={styles.Wrapper_title__Bookmark}
+      <section className={styles.CartPage}>
+        <div className={styles.Container}>
+          <div className={styles.Container__Cart}>
+            <div className={styles.Wrapper_Head}>
+              <h2 className={styles.Wrapper_Head__Title}>Cart</h2>
+              <hr className={styles.Wrapper_Head__Breaker} />
+            </div>
+            {cart &&
+              cart.cartItems.map((item, index) => (
+                <div className={styles.Container__Cart__Item} key={index}>
+                  <div className={styles.Bagde}>
+                    <div className={styles.ImgContainer}>
+                      <Image
+                        src={
+                          item.imgUrl.split("?")[0] +
+                          "?q=100&fm=jpg&fit=crop&w=2048&h=1152"
+                        }
+                        quality={100}
+                        width="2048"
+                        layout="fill"
+                        objectFit
+                        sizes="20w"
+                        className={styles.ImgContainer__image}
                       />
-                      <p className={styles.Wrapper_title__titleP}>
-                        {item.title.split(" ").slice(0, 5).join(" ") + "..."}
-                      </p>
                     </div>
-                    <div className={styles.Wrapper_Price}>
-                      <ImPriceTag className={styles.Wrapper_Price__PriceTag} />
-                      <p className={styles.Wrapper_Price__text}>{item.price}</p>
+                    <div className={styles.Container_Info}>
+                      <div className={styles.Wrapper_title}>
+                        <BsFillBagCheckFill
+                          className={styles.Wrapper_title__Bookmark}
+                        />
+                        <p className={styles.Wrapper_title__titleP}>
+                          {item.title.split(" ").slice(0, 5).join(" ") + "..."}
+                        </p>
+                      </div>
+                      <div className={styles.Wrapper_Price}>
+                        <ImPriceTag
+                          className={styles.Wrapper_Price__PriceTag}
+                        />
+                        <p className={styles.Wrapper_Price__text}>
+                          {item.price}
+                        </p>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className={styles.Container_count}>
-                  <div className={styles.Wrapper_Counter}>
-                    <button
-                      className={styles.Cart_Button__Minus}
-                      onClick={() => handleClickonMinus(item.title)}
-                    >
-                      {" "}
-                      <ImMinus />
-                    </button>
-                    <input
-                      type="text"
-                      readOnly
-                      value={item.packs.length}
-                      className={styles.Wrapper_Counter__Input}
-                    />
-                    <button
-                      className={styles.Cart_Button__Plus}
-                      onClick={() => handleClickonPlus(item.title)}
-                    >
-                      <ImPlus />
-                    </button>
+                  <div className={styles.Container_count}>
+                    <div className={styles.Wrapper_Counter}>
+                      <button
+                        className={styles.Cart_Button__Minus}
+                        onClick={() => handleClickonMinus(item.title)}
+                      >
+                        {" "}
+                        <ImMinus />
+                      </button>
+                      <input
+                        type="text"
+                        readOnly
+                        value={item.packs.length}
+                        className={styles.Wrapper_Counter__Input}
+                      />
+                      <button
+                        className={styles.Cart_Button__Plus}
+                        onClick={() => handleClickonPlus(item.title)}
+                      >
+                        <ImPlus />
+                      </button>
+                    </div>
+                    <p className={styles.Container_count__p}>
+                      $ {item.totalPrice.slice(-1)}
+                    </p>
                   </div>
-                  <p className={styles.Container_count__p}>
-                    $ {item.totalPrice.slice(-1)}
-                  </p>
-                </div>
-              </div>
-            ))}
-        </div>
-        <hr className={styles.Wrapper_Head__Breaker} />
-        <div className={styles.Wrapper_Total}>
-          <div className={styles.Wrapper_Total__Container}>
-            <h3 className={styles.Wrapper_Total__Container__title}>Total</h3>
-            <p className={styles.Wrapper_Total__Container__text}>
-              $ {cart.cartTotal}
-            </p>
-          </div>
-          <button className={styles.Cart_Button__Checkout}>To checkout</button>
-=======
-      <section className={styles.Container_Cart}>
-        <div className={styles.Container_Cart__Wrapper}>
-          {items[0].actualItem
-            ? items[0].actualItem.map((item) => (
-                <div
-                  className={styles.Container_Cart__Wrapper__Badge}
-                  key={item.price}
-                >
-                  <div className={styles.Wrapper_Badge__Item}>
-                    <p>{item.title.split(" ").slice(0, 4).join(" ") + "..."}</p>
-                    <p>{item.price}</p>
-                  </div>
-                  <p>${item.totalPrice.slice(-1)}</p>
-                </div>
-              ))
-            : items[0].storedItem &&
-              items.storedItem.map((item) => (
-                <div
-                  className={styles.Container_Cart__Wrapper__Badge}
-                  key={item.price}
-                >
-                  <div className={styles.Wrapper_Badge__Item}>
-                    <p>{item.title.split(" ").slice(0, 4).join(" ") + "..."}</p>
-                    <p>{item.price}</p>
-                  </div>
-                  <p>${item.totalPrice.slice(-1)}</p>
                 </div>
               ))}
-        </div>
-        <div className={styles.Container_Cart__Wrapper_Total}>
-          <p>Total</p>
-          <p>${total.tot}</p>
->>>>>>> dev
+          </div>
+          <hr className={styles.Wrapper_Head__Breaker} />
+          <div className={styles.Wrapper_Total}>
+            <div className={styles.Wrapper_Total__Container}>
+              <h3 className={styles.Wrapper_Total__Container__title}>Total</h3>
+              <p className={styles.Wrapper_Total__Container__text}>
+                $ {cart.cartTotal}
+              </p>
+            </div>
+            <button className={styles.Cart_Button__Checkout}>
+              To checkout
+            </button>
+          </div>
         </div>
       </section>
     </>

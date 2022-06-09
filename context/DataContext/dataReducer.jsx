@@ -3,9 +3,7 @@ import {
   CATEGORIES_FETCH_SUCCESS,
   ACTIVITIES_FETCH_SUCCESS,
   EXPERIENCE_FETCH_SUCCESS,
-  EXPERIENCE_CITY1_FETCH_SUCCESS,
-  EXPERIENCE_CITY2_FETCH_SUCCESS,
-  EXPERIENCE_CITY3_FETCH_SUCCESS,
+  ACTIVITY_UUID_FETCH_SUCCESS,
   DATA_FETCH_REQUEST,
   DATA_FETCH_ERROR,
   DATA_FETCH_SUCCESS,
@@ -13,7 +11,7 @@ import {
   SET_SELECTED_CATEGORY,
   SET_DATE_TO,
   SET_DATE_FROM,
-} from "../constants";
+} from "./constants";
 
 const dataReducer = (state, action) => {
   console.log(action);
@@ -44,39 +42,24 @@ const dataReducer = (state, action) => {
         activities: action.payload,
       };
     case EXPERIENCE_FETCH_SUCCESS:
-      console.log(action.payload);
       return {
         ...state,
         loading: false,
         experiences: { ...state.experiences, cities: action.payload },
       };
-    case EXPERIENCE_CITY1_FETCH_SUCCESS:
-      console.log(action.payload);
+    case ACTIVITY_UUID_FETCH_SUCCESS:
       return {
         ...state,
         loading: false,
-        experiences: { ...state.experiences, city1: action.payload },
+        activity: action.payload,
       };
-    case EXPERIENCE_CITY2_FETCH_SUCCESS:
-      console.log(action.payload);
-      return {
-        ...state,
-        loading: false,
-        experiences: { ...state.experiences, city2: action.payload },
-      };
-    case EXPERIENCE_CITY3_FETCH_SUCCESS:
-      console.log(action.payload);
-      return {
-        ...state,
-        loading: false,
-        experiences: { ...state.experiences, city3: action.payload },
-      };
+
     case DATA_FETCH_SUCCESS:
       return {
         ...state,
         loading: false,
       };
-      
+
     case DATA_FETCH_ERROR:
       return {
         ...state,

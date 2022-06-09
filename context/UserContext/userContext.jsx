@@ -1,26 +1,23 @@
 import { createContext, useContext, useReducer } from "react";
-import modalReducer from "./modalReducer";
+import userReducer from "./userReducer";
 
 const initialState = {
-  modalData: [],
+  activityUuidSelected: [],
   cart: [],
   openModal: false,
 };
 
-const ModalContext = createContext(initialState);
+const UserContext = createContext(initialState);
 
-export const useModalContext = () => useContext(ModalContext);
+export const useUserContext = () => useContext(UserContext);
 
-export const ModalContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(modalReducer, initialState);
+export const UserContextProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(userReducer, initialState);
 
-  const setOpenModal = (data, value) => {
+  const setSelectedActivityByUuid = (ActivityUuiD) => {
     dispatch({
-      type: "SET_OPEN_MODAL",
-      payload: {
-        actvData: data,
-        openValue: value,
-      },
+      type: "SET_USER_SELECTION",
+      payload: ActivityUuiD,
     });
   };
 
@@ -44,14 +41,14 @@ export const ModalContextProvider = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
-  const modalStore = {
-    modalStore: state,
-    setOpenModal,
+  const userStore = {
+    userStore: state,
+    setSelectedActivityByUuid,
     addToCart,
     storeItemsOnLocal,
   };
 
   return (
-    <ModalContext.Provider value={modalStore}>{children}</ModalContext.Provider>
+    <UserContext.Provider value={userStore}>{children}</UserContext.Provider>
   );
 };

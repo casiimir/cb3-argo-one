@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 
 const CITY_URL = `https://api.musement.com/api/v3/cities/`;
 
-const CITIES_ACTIVITY_URL = (cityId) =>
-  `https://api.musement.com/api/v3/cities/${cityId}/activities?`;
-
 const CITIES_CATEGORY_URL = (cityId) =>
   `https://api.musement.com/api/v3/cities/${cityId}/categories?`;
+
+const ACTIVITY_BY_UUID = "https://api.musement.com/api/v3/activities/";
 
 const AVAILABLE_ACTIVITY_URL = `https://api.musement.com/api/v3/activities?`;
 
@@ -19,7 +18,7 @@ export const http = async (APIurl, resource = "", options) => {
   }
 };
 
-const GetCategoryOptions = () =>
+const CategoryOptions = () =>
   new URLSearchParams({
     //coordinates: `${latLon}`,
     limit: "8",
@@ -29,7 +28,7 @@ const GetCategoryOptions = () =>
   }).toString();
 
 export const GetCategories = async (cityId) => {
-  const result = await fetch(CITIES_CATEGORY_URL(cityId), GetCategoryOptions, {
+  const result = await fetch(CITIES_CATEGORY_URL(cityId), CategoryOptions, {
     method: "GET",
     headers: {
       "Accept-Language": "it",
@@ -41,7 +40,7 @@ export const GetCategories = async (cityId) => {
   return await result.json();
 };
 
-const GetActivityOption = (coord, codeType, date) =>
+const ActivityOption = (coord, codeType, date) =>
   new URLSearchParams({
     available_from: date[0],
     available_language_in: "en,it",
@@ -75,7 +74,7 @@ const GetActivityOption = (coord, codeType, date) =>
     //zero_terms_query: 'NONE'
   }).toString();
 
-const GetExperienceOption = (cityIn) =>
+const ExperienceOption = (cityIn) =>
   new URLSearchParams({
     //available_from: date[0],
     available_language_in: "en,it",
@@ -120,19 +119,8 @@ export const GetCityById = (resource) =>
     },
   });
 
-export const GET_ACTIVITY = (cityID, resource) =>
-  http(CITIES_ACTIVITY_URL(cityID), resource, {
-    method: "GET",
-    headers: {
-      "Accept-Language": "it",
-      "X-Musement-Application": "string",
-      "X-Musement-Market": "us",
-      "X-Musement-Version": "3.4.0",
-    },
-  });
-
 export const GetAvailableActivity = (coord, codeType, date) =>
-  http(AVAILABLE_ACTIVITY_URL, GetActivityOption(coord, codeType, date), {
+  http(AVAILABLE_ACTIVITY_URL, ActivityOption(coord, codeType, date), {
     method: "GET",
     headers: {
       "Accept-Language": "it",
@@ -143,7 +131,18 @@ export const GetAvailableActivity = (coord, codeType, date) =>
   });
 
 export const GetActivitiesByCity = (cityIn) =>
-  http(AVAILABLE_ACTIVITY_URL, GetExperienceOption(cityIn), {
+  http(AVAILABLE_ACTIVITY_URL, ExperienceOption(cityIn), {
+    method: "GET",
+    headers: {
+      "Accept-Language": "it",
+      "X-Musement-Application": "string",
+      "X-Musement-Market": "us",
+      "X-Musement-Version": "3.4.0",
+    },
+  });
+
+export const GetActivitiesByUuid = (ActivityUuid) =>
+  http(ACTIVITY_BY_UUID, ActivityUuid, {
     method: "GET",
     headers: {
       "Accept-Language": "it",
