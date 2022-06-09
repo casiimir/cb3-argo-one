@@ -45,44 +45,46 @@ export default function About() {
           />
         )}
 
-				<article className={styles.about__descWrapper}>
-					<div className={styles.about__descContainer}>
-						<h2 className={styles.about__descTitle}>Who we are</h2>
-						<p className={styles.about__desc}>
-						<Translator word="about desc1" type="fwupper"/>
-							<br />
-							<Translator word="about desc2" type="fwupper"/><br />
-							<br />
-							<Translator word="about desc3" type="fwupper"/>
-							<br />
-							<br /> 
-							<Translator word="about desc4" type="fwupper"/><br />
-							<br />
-							<strong>
-							<Translator word="about desc5" type="fwupper"/>
-							</strong>
-						</p>
-						<div className={styles.about__photos}>
-							<picture className={styles.about__pic}>
-								<p>Elenia Centamore</p>
-								<a href="https://www.linkedin.com/in/elenia-centamore-ba6200116/">
-									<img
-										src={avatar_elenia}
-										alt="Elenia Centamore"
-										title="Elenia Centamore"
-									></img>
-								</a>
-							</picture>
-							<picture className={styles.about__pic}>
-								<p>Nicolò Piccolo</p>
-								<a href="https://www.linkedin.com/in/nicolo-piccolo-nickpick77/">
-									<img
-										src={avatar_nicolo}
-										alt="Nicolo Piccolo"
-										title="Nicolò Piccolo"
-									></img>
-								</a>
-							</picture>
+        <article className={styles.about__descWrapper}>
+          <div className={styles.about__descContainer}>
+            <h2 className={styles.about__descTitle}>Who we are</h2>
+            <p className={styles.about__desc}>
+              <Translator word="about desc1" type="fwupper" />
+              <br />
+              <Translator word="about desc2" type="fwupper" />
+              <br />
+              <br />
+              <Translator word="about desc3" type="fwupper" />
+              <br />
+              <br />
+              <Translator word="about desc4" type="fwupper" />
+              <br />
+              <br />
+              <strong>
+                <Translator word="about desc5" type="fwupper" />
+              </strong>
+            </p>
+            <div className={styles.about__photos}>
+              <picture className={styles.about__pic}>
+                <p>Elenia Centamore</p>
+                <a href="https://www.linkedin.com/in/elenia-centamore-ba6200116/">
+                  <img
+                    src={avatar_elenia}
+                    alt="Elenia Centamore"
+                    title="Elenia Centamore"
+                  ></img>
+                </a>
+              </picture>
+              <picture className={styles.about__pic}>
+                <p>Nicolò Piccolo</p>
+                <a href="https://www.linkedin.com/in/nicolo-piccolo-nickpick77/">
+                  <img
+                    src={avatar_nicolo}
+                    alt="Nicolo Piccolo"
+                    title="Nicolò Piccolo"
+                  ></img>
+                </a>
+              </picture>
 
               <picture className={styles.about__pic}>
                 <p>Paolo Rotondo</p>
