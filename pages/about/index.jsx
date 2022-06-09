@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import styles from "./styles.module.scss";
 import Image from "next/image";
+import { useWindowSize } from "../../utils/utils";
 
 const oliveBranchImg =
   "https://i.ibb.co/hFkrYbq/vilija-valeisaite-x-TZpip-USEj8-unsplash.jpg";
@@ -12,21 +13,36 @@ const avatar_paolo = "https://i.ibb.co/bHyrKXv/Paolo-round.png";
 const avatar_andrea = "https://i.ibb.co/34KChFn/Andrea-round.png";
 
 export default function About() {
+  const { width } = useWindowSize();
   return (
     <div className={styles.about}>
       <h1 className={styles.about__title}>About us</h1>
       <div className={styles.about__wrapper}>
-        <Image
-          src={oliveBranchImg}
-          alt="ramo ulivo"
-          border="0"
-          width={1280}
-          height={1280}
-          layout="responsive"
-          placeholder="empty"
-          objectFit="cover"
-          className={styles.about__img}
-        ></Image>
+        {width >= 475 ? (
+          <Image
+            src={oliveBranchImg}
+            alt="ramo ulivo"
+            border="0"
+            width={2048}
+            height={1152}
+            layout="responsive"
+            placeholder="empty"
+            objectFit="cover"
+            className={styles.about__img}
+          />
+        ) : (
+          <Image
+            src={oliveBranchImg}
+            alt="ramo ulivo"
+            border="0"
+            width={1152}
+            height={2048}
+            layout="responsive"
+            placeholder="empty"
+            objectFit="cover"
+            className={styles.about__img}
+          />
+        )}
 
         <article className={styles.about__descWrapper}>
           <div className={styles.about__descContainer}>

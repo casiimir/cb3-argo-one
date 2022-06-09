@@ -9,7 +9,8 @@
   z-index: 9999;
   display: flex;
   justify-content: center;
-  top: 100%;
+  top: 50%;
+  transform: translateY(-50%);
   align-items: center;
   filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.553));
 

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import CartModal from "../../components/CartModal/CartModal";
 import Image from "next/image";
+import { useUserContext } from "../../context/UserContext/userContext";
 
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { ImPriceTag, ImPlus, ImMinus } from "react-icons/im";
@@ -11,6 +12,8 @@ const Cart = () => {
   const [cart, setCart] = useState({ cartItems: [], total: [] });
   const [refresh, setRefresh] = useState(false);
   const [checkout, setCheckout] = useState(false);
+
+  const { userStore, setRefreshCartBadge } = useUserContext();
 
   const storeCartOnLocal = (groupedItems, cartTotal) => {
     localStorage.removeItem("groupedCart");
@@ -31,6 +34,7 @@ const Cart = () => {
     localStorage.setItem("cartItems", JSON.stringify(storedCartItems));
 
     setRefresh((prev) => !prev);
+    setRefreshCartBadge();
   };
 
   const handleClickonPlus = (title) => {
@@ -43,9 +47,11 @@ const Cart = () => {
     localStorage.setItem("cartItems", JSON.stringify(storedCartItems));
 
     setRefresh((prev) => !prev);
+    setRefreshCartBadge();
   };
+
   const handleCheckout = () => {
-    setCheckout(true);
+    setCheckout((prev) => !prev);
   };
 
   useEffect(() => {

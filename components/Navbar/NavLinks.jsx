@@ -4,12 +4,18 @@ import { FaShoppingCart } from "react-icons/fa";
 import { RiUser3Fill } from "react-icons/ri";
 import Translator from "../Translator";
 import Flag from "../Translator/flag";
+import { useState, useEffect } from "react";
+import { useUserContext } from "../../context/UserContext/userContext";
 
 const NavLinks = (props) => {
-  const handleOnClick = () => {
-    props.isMobile && props.closeMobileMenu();
-  };
-
+  const [itemCounter, setItemCounter] = useState(0);
+  const { userStore } = useUserContext();
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(userStore);
+    item ? setItemCounter(item.length) : setItemCounter(0);
+    //eslint-next-line-disable
+  }, [userStore]);
   return (
     <nav>
       <ul className={props.open ? styles.MenuOpener : null}>
@@ -38,12 +44,19 @@ const NavLinks = (props) => {
             <RiUser3Fill className={styles.NavbarIcons} />
           </a>
         </Link>
-        <Flag />
+
         <Link href="/cart">
-          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
-            <FaShoppingCart className={styles.NavbarIcons} />
+          <a
+            className={styles.Cart_Container}
+            onClick={() => props.isMobile && props.closeMobileMenu()}
+          >
+            <div className={styles.Cart_Container__Badge}>
+              <p>{itemCounter}</p>
+            </div>
+            <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
           </a>
         </Link>
+        <Flag />
       </ul>
     </nav>
   );
