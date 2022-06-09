@@ -69,19 +69,6 @@
 
   .Button {
     margin-top: 1vh;
-    width: 12vw;
-    height: 5vh;
-    font-size: 13px;
-  }
-}
-
-@media all and (min-width: 769px) and (max-width: 1024px) {
-  .Filter_Container {
-    width: 100%;
-  }
-
-  .Button {
-    margin-top: 1vh;
     width: 9vw;
     height: 5vh;
     font-size: 13px;
@@ -97,7 +84,7 @@
     margin-top: 1vh;
     width: 8vw;
     height: 5vh;
-    font-size: 1rem;
+    font-size: 13px;
   }
 }
 
@@ -110,7 +97,7 @@
     margin-top: 1vh;
     width: 8vw;
     height: 5vh;
-    font-size: 1.3rem;
+    font-size: 13px;
   }
 }
 
@@ -123,7 +110,7 @@
     margin-top: 1vh;
     width: 8vw;
     height: 5vh;
-    font-size: 1.5rem;
+    font-size: 13px;
   }
 }
 
@@ -136,6 +123,6 @@
     margin-top: 1vh;
     width: 6vw;
     height: 5vh;
-    font-size: 1.5rem;
+    font-size: 13px;
   }
 }
