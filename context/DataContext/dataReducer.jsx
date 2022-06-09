@@ -91,8 +91,8 @@ const dataReducer = (state, action) => {
     case SET_LANGUAGE:
       return {
         ...state,
-        language: action.payload
-      }
+        language: action.payload,
+      };
     default:
       throw new Error("Controlla bene i parametri scelti");
   }

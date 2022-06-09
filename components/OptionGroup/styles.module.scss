@@ -1,5 +1,5 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .Label {
   color: $dark-blue;
@@ -17,10 +17,11 @@
   padding: 1vh;
   font-family: $primary-font;
   font-size: 1rem;
+  outline: none;
 }
 
 @media all and (min-width: 320px) and (max-width: 425px) {
-  .Select{
+  .Select {
     width: 100vw;
     margin: 0;
     margin: 1vh 0 1vh 0;
@@ -28,7 +29,7 @@
 }
 
 @media all and (min-width: 426px) and (max-width: 768px) {
-  .Select{
+  .Select {
     width: 15vw;
     margin: 0;
     margin: 1vh 1vw 1vh 0;
@@ -36,21 +37,21 @@
 }
 
 @media all and (min-width: 769px) and (max-width: 1024px) {
-  .Select{
+  .Select {
     width: 16vw;
     margin: 0;
     margin: 1vh 1vh 1vh 0;
   }
 }
 @media all and (min-width: 1025px) and (max-width: 1920px) {
-  .Select{
+  .Select {
     width: 15vw;
     margin: 0;
     margin: 1vh 1vh 1vh 0;
   }
 }
 @media all and (min-width: 1921px) and (max-width: 2560px) {
-  .Select{
+  .Select {
     width: 10vw;
     margin: 0;
     margin: 1vh 1vh 1vh 0;
