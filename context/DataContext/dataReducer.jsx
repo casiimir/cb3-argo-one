@@ -16,7 +16,6 @@ import {
 } from "./constants";
 
 const dataReducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case DATA_FETCH_REQUEST:
       return {

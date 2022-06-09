@@ -6,56 +6,41 @@ import Translator from "../Translator";
 import Flag from "../Translator/flag";
 
 const NavLinks = (props) => {
+  const handleOnClick = () => {
+    props.isMobile && props.closeMobileMenu();
+  };
 
   return (
     <nav>
       <ul className={props.open ? styles.MenuOpener : null}>
-        <Link
-          href="/"
-          onClick={() => props.isMobile && props.closeMobileMenu()}
-        >
-          <a>
-          <Translator word="home" type="upper"/>
+        <Link href="/">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="home" type="upper" />
           </a>
         </Link>
-        <Link
-          href="/experiences"
-          onClick={() => props.isMobile && props.closeMobileMenu()}
-        >
-          <a>
-            <Translator word="experiences" type="upper"/>
+        <Link href="/experiences">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="experiences" type="upper" />
           </a>
         </Link>
-        <Link
-          href="/about"
-          onClick={() => props.isMobile && props.closeMobileMenu()}
-        >
-          <a>
-          <Translator word="about" type="upper"/>
+        <Link href="/about">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="about" type="upper" />
           </a>
         </Link>
-        <Link
-          href="/contact-us"
-          onClick={() => props.isMobile && props.closeMobileMenu()}
-        >
-          <a>
-          <Translator word="contacts" type="upper"/>
+        <Link href="/contact-us">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="contacts" type="upper" />
           </a>
         </Link>
-        <Link
-          href="/"
-          onClick={() => props.isMobile && props.closeMobileMenu()}
-        >
-          <a>
+        <Link href="/">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
             <RiUser3Fill className={styles.NavbarIcons} />
           </a>
         </Link>
-        <Flag/>
-        <Link
-          href="/cart"
-          onClick={() => props.isMobile && props.closeMobileMenu()}
-        >
-          <a>
+        <Flag />
+        <Link href="/cart">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
             <FaShoppingCart className={styles.NavbarIcons} />
           </a>
         </Link>
