@@ -8,7 +8,7 @@ import styles from "./index.module.scss";
 import SkeletonLoading from "../../components/SkeletonLoading";
 
 const Experiences = () => {
-    const { fetchRequest, dataStore } = useDataContext();
+    const { fetchRequest, dataStore, fetchCompleted } = useDataContext();
     const [fixedActivities1, setFixedActivities1] = useState([]);
     const [fixedActivities2, setFixedActivities2] = useState([]);
     const [activities, setActivities] = useState([]);
@@ -23,6 +23,7 @@ const Experiences = () => {
             cities.filter((city) => mainCities.indexOf(city.id) === -1).map(city => city.id),
             dataStore.language
         ).then(res => setActivities(res.data));
+        setTimeout(() => fetchCompleted(), 80);
     }, [dataStore.language]);
 
   return (

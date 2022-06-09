@@ -5,11 +5,8 @@ const CITY_URL = `https://api.musement.com/api/v3/cities/`;
 const CITIES_CATEGORY_URL = (cityId) =>
   `https://api.musement.com/api/v3/cities/${cityId}/categories?`;
 
-<<<<<<< HEAD
 const ACTIVITY_BY_UUID = "https://api.musement.com/api/v3/activities/";
 
-=======
->>>>>>> feat: added pages media queries
 const AVAILABLE_ACTIVITY_URL = `https://api.musement.com/api/v3/activities?`;
 
 export const http = async (APIurl, resource = "", options) => {
@@ -133,13 +130,8 @@ export const GetAvailableActivity = (coord, codeType, date) =>
     },
   });
 
-<<<<<<< HEAD
 export const GetActivitiesByCity = (cityIn) =>
   http(AVAILABLE_ACTIVITY_URL, ExperienceOption(cityIn), {
-=======
-export const GetAvailableActivity = (coord, codeType, date) =>
-  http(AVAILABLE_ACTIVITY_URL, GetActivityOption(coord, codeType, date), {
->>>>>>> feat: added pages media queries
     method: "GET",
     headers: {
       "Accept-Language": "en-US",
@@ -149,13 +141,8 @@ export const GetAvailableActivity = (coord, codeType, date) =>
     },
   });
 
-<<<<<<< HEAD
 export const GetActivitiesByUuid = (ActivityUuid) =>
   http(ACTIVITY_BY_UUID, ActivityUuid, {
-=======
-export const GetActivitiesByCity = (cityIn) =>
-  http(AVAILABLE_ACTIVITY_URL, GetExperienceOption(cityIn), {
->>>>>>> feat: added pages media queries
     method: "GET",
     headers: {
       "Accept-Language": "en-US",

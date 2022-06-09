@@ -81,6 +81,22 @@ export const DataContextProvider = ({ children }) => {
       });
     }
   };
+  const updateActivityDataByUuid = async (ActivityUuid) => {
+    console.log(ActivityUuid);
+    dispatch({ type: "DATA_FETCH_REQUEST" });
+    try {
+      const activityData = await GetActivitiesByUuid(ActivityUuid);
+      dispatch({
+        type: "ACTIVITY_UUID_FETCH_SUCCESS",
+        payload: activityData,
+      });
+    } catch (error) {
+      dispatch({
+        type: "DATA_FETCH_ERROR",
+        payload: error,
+      });
+    }
+  };
 
   const setLanguage = (lang) => {
     dispatch({ type: "SET_LANGUAGE", payload: lang });
@@ -127,6 +143,7 @@ export const DataContextProvider = ({ children }) => {
     setDateTo,
     setDateFrom,
     storeItemsOnLocal,
+    setLanguage,
   };
 
   return (

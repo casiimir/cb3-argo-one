@@ -29,14 +29,10 @@ export const cities = [
 	},
 ];
 
-<<<<<<< HEAD
-export const mainCities = [cities[0], cities[1]];
-=======
 export const mainCities = [
   cities[0],
   cities[1],
 ];
->>>>>>> feat: added pages media queries
 
 export const categories = [
 	{

@@ -1,11 +1,13 @@
 import Arrows from "../Arrows";
-import { useRef } from "react";
-import styles from "./index.module.scss";
 import Link from "next/link";
+import styles from "./index.module.scss";
+import { useRef } from "react";
 import { useUserContext } from "../../context/UserContext/userContext";
+import { useDataContext } from "../../context/DataContext/dataContext";
 
 const ExpCard = ({ result }) => {
   const { setSelectedActivityByUuid } = useUserContext();
+
   const handleClickOnCard = (ActivityUuiD) => {
     console.log(ActivityUuiD);
     setSelectedActivityByUuid(ActivityUuiD);
@@ -28,13 +30,9 @@ const ExpCard = ({ result }) => {
         />
       </div>
       <div className={styles.wrapper} ref={scrl}>
-        {data &&
-          data.map((single, index) => (
-            <div
-              className={styles.cards}
-              key={index}
-              onClick={() => handleClickOnCard(single.uuid)}
-            >
+        {data && data.map((single, index) => (
+          <div className={styles.cards} key={index} onClick={() => handleClickOnCard(single)}>
+            <div className={styles.wrapImgText}>
               <Link href={`/detail/${single.slug_id}?uuid=${single.uuid}`}>
                 <a>
                   <img
@@ -47,16 +45,33 @@ const ExpCard = ({ result }) => {
                   />
                 </a>
               </Link>
-
               <div className={styles.text}>
-                <h2 className={styles.card_title}>{single.title}</h2>
+                <h2 className={styles.card_title}>{single.title.split(" ").slice(0, 20).join(" ") + "..."}</h2>
                 <p className={styles.desc}>{single.description}</p>
               </div>
             </div>
-          ))}
+            <div className={styles.wrapSubItems}>
+              <div className={styles.cartDiv}>
+                <button className={styles.btnCart} >
+                  <a>
+                    <p>Add to Cart</p>
+                  </a>
+                </button>
+              </div>
+              <div className={styles.tags}>
+                {single.verticals.map((item) => (
+                  <div className={styles.slug_item} key={item.id}>
+                    {`${item.name}`}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+
       </div>
     </>
-  );
-};
+  )
+}
 
 export default ExpCard;

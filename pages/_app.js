@@ -8,17 +8,6 @@ import "../styles/globals.css";
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
-<<<<<<< HEAD
-	return (
-		<ModalContextProvider>
-			<DataContextProvider>
-				<DefaultLayout>
-					<Component {...pageProps} />
-				</DefaultLayout>
-			</DataContextProvider>
-		</ModalContextProvider>
-	);
-=======
   return (
     <UserContextProvider>
       <DataContextProvider>
@@ -28,7 +17,6 @@ function MyApp({ Component, pageProps }) {
       </DataContextProvider>
     </UserContextProvider>
   );
->>>>>>> 8fcf5b659782df116183fe0b9223c5dd49b8e25a
 }
 
 export default MyApp;

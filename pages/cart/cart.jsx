@@ -53,7 +53,6 @@ const Cart = () => {
 			JSON.parse(localStorage.getItem("cartItems")) || [];
 
 		const filteredItems =
-			storedCartItems.lenght >= 1 &&
 			storedCartItems.reduce((a, { title, price, imgUrl }) => {
 				const obj = a.get(title) || {
 					title,

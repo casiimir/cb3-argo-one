@@ -13,7 +13,7 @@ import {
   SET_DATE_TO,
   SET_DATE_FROM,
   SET_LANGUAGE,
-} from "../constants";
+} from "./constants";
 
 const dataReducer = (state, action) => {
   console.log(action);
