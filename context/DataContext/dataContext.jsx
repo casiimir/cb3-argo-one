@@ -21,6 +21,7 @@ const initialState = {
   date_to: "",
   date_from: "",
   loading: false,
+  language: 'en-US',
   setControl: false,
 };
 
@@ -80,7 +81,6 @@ export const DataContextProvider = ({ children }) => {
       });
     }
   };
-
   const updateActivityDataByUuid = async (ActivityUuid) => {
     console.log(ActivityUuid);
     dispatch({ type: "DATA_FETCH_REQUEST" });
@@ -97,6 +97,10 @@ export const DataContextProvider = ({ children }) => {
       });
     }
   };
+
+  const setLanguage = (lang) => {
+    dispatch({ type: "SET_LANGUAGE", payload: lang });
+  }
 
   const fetchRequest = () => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
@@ -139,6 +143,7 @@ export const DataContextProvider = ({ children }) => {
     setDateTo,
     setDateFrom,
     storeItemsOnLocal,
+    setLanguage,
   };
 
   return (
