@@ -15,6 +15,8 @@ export default function ContactUs() {
           layout="responsive"
           objectFit="cover"
           className={styles.backimg}
+         
+    
         ></Image>
 
         <div className={styles.form}>
@@ -25,12 +27,14 @@ export default function ContactUs() {
                 className={styles.wrapper__input}
                 type="text"
                 id="name"
+                autoComplete="off"
                 placeholder="Your name..."
               ></input>
               <input
                 className={styles.wrapper__input}
                 type="text"
                 id="email"
+                autoComplete="off"
                 placeholder="Your email..."
               ></input>
             </div>
@@ -40,6 +44,7 @@ export default function ContactUs() {
                 className={styles.textarea}
                 type="text"
                 id="message"
+                autoComplete="off"
                 placeholder="Your message..."
               ></textarea>
               <button className={styles.button}>Send</button>

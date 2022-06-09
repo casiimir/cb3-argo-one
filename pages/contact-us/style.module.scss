@@ -4,25 +4,22 @@
 .wrapper {
   top: 10px;
   position: relative;
-  &__title
-    {
-      position: absolute;
-      width: 100%;
-      top:8%;
-      left: 2%;
-      z-index: 5;
-      font-size: 3.3vw;
-      color: $dark-blue;
-    }
-  .contactimg{
-   
+  &__title {
+    position: absolute;
+    top: 8%;
+    left: 2%;
+    z-index: 5;
+    font-size: 3.3vw;
+    color: $dark-blue;
+  }
+  .contactimg {
     display: block;
     margin: 0;
     width: 100%;
   }
 
-  .form { 
-    position:absolute;
+  .form {
+    position: absolute;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -32,35 +29,31 @@
     align-items: center;
     right: 2%;
     width: 50%;
-    .lapa{
+    .lapa {
       width: 100%;
-     
     }
     ::placeholder {
       color: $light-blue;
       font-family: $primary-font;
       padding: 10px;
       margin-top: 5px;
-      font-size:  1rem;
+      font-size: 1rem;
     }
     .input {
       display: flex;
-      flex-direction:row;
+      flex-direction: row;
       gap: 2%;
       justify-content: center;
-      
-      input{
-         height: 6vh;
-         border-color: $yellow;
-       width: 47%;
-      font-family: $primary-font;
-      border-radius: 5px;
-      box-shadow: 2px 3px 11px -5px;
-     padding: 8px; 
-      
+
+      input {
+        height: 6vh;
+        border-color: $yellow;
+        width: 47%;
+        font-family: $primary-font;
+        border-radius: 5px;
+        box-shadow: 2px 3px 11px -5px;
+        padding: 8px;
       }
-     
-      
     }
     .message {
       flex: 0 0 100%;
@@ -85,106 +78,93 @@
       box-shadow: 2px 3px 11px -5px;
       background-color: $light-blue;
       font-family: $primary-font;
-      width: 10vw;
     }
   }
-    h1 {
-      color: $light-blue;
-      border-bottom: none;
-      font-family: $primary-font;
-      display: inline-block;
-      font-size: clamp(2.6em, 2em, 0.8em);
-    }
-    h2{
-      color: $light-blue;
-      border-bottom: none;
-      font-family: $primary-font;
-      display: inline-block;
-      font-size: clamp(2.6em, 2em, 0.8em);
-    }
+  h1 {
+    color: $light-blue;
+    border-bottom: none;
+    font-family: $primary-font;
+    display: inline-block;
+    font-size: clamp(2.6em, 2em, 0.8em);
+  }
+  h2 {
+    color: $light-blue;
+    border-bottom: none;
+    font-family: $primary-font;
+    display: inline-block;
+    font-size: clamp(2.6em, 2em, 0.8em);
+  }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 768px){
-  .wrapper{
+@media only screen and (min-device-width: 320px) and (max-device-width: 768px) {
+  .wrapper {
     display: flex;
     flex-direction: column;
-			width: 100vw;
-			height: 100vh;
-			position: relative;
-			background: $bg-color;
-			background: $bg-gradient;
-      h1{
-        font-size: 30px; 
-      }
-      .backimg{
-    display: none!important;
-    
-  }
-  .form{
-     top: 20%;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background: $bg-color;
+    background: $bg-gradient;
+    resize: none;
+   &__title{
+     top: 15%;
+   }
+    .backimg {
+      display: none !important;
+    }
+    .form {
+      top: 30%;
       width: 80vw;
       right: 10%;
-     h2{
-       font-size:20px;
-     }
-      .lapa{
-        ::placeholder{
+      h2 {
+        font-size: clamp(1.6em, 1em, 0.8em);
+      }
+      .lapa {
+        ::placeholder {
           font-size: 0.8rem;
-        } 
+        }
       }
-      .input{
-        align-items:center;
-      input{
-        border:0;
-        border-color:$white;
-        height: 4vh;
+      .input {
+        align-items: center;
+        input {
+          border: 0;
+          border-color: $white;
+          height: 4vh;
+        }
       }
-    }
-    .message{
-      textarea{
-        border: 0;
-        border-color: $white;
-        height: 30vh;
+      .message {
+        textarea {
+          border: 0;
+          border-color: $white;
+          height: 20vh;
+        }
       }
-    }
-     button{
-       width: 80px;
-     }
+      
     }
   } 
-  
 }
 
-
-
-@media  screen and (max-device-width: 2560px) {
-  .wrapper{
-      h1{
-        top: 15%;
-        font-size: 110px;
+@media screen  and (min-device-width: 2560px) {
+  .wrapper {
+    h1 {
+      top: 15%;
+      font-size: 80px;
+    }
+    .form {
+      width: 50vw;
+     
+      h2 {
+        font-size: 70px;
       }
-      .form {
-   
-          h2{
-            font-size: 80px;
-          }
-          ::placeholder{
-            font-size: 40px;
-          }
+      ::placeholder {
+        font-size: 10px;
+      }
 
-
-          .button{
-              height: 7vh;
-              width: 12vw;
-              font-size: 40px;
-          }
-        }
-       
+      .button {
+        height: 7vh;
+        width: 12vw;
+        font-size: 20px;
+      }
+    }
   }
- 
 }
-
-
-
-
-
