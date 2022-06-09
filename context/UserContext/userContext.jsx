@@ -4,6 +4,7 @@ import userReducer from "./userReducer";
 const initialState = {
   activityUuidSelected: [],
   cart: [],
+  refreshCartBadge: false,
   openModal: false,
 };
 
@@ -22,7 +23,6 @@ export const UserContextProvider = ({ children }) => {
   };
 
   const addToCart = (element) => {
-    console.log(element);
     dispatch({
       type: "ADD_TO_CART",
       payload: {
@@ -30,6 +30,12 @@ export const UserContextProvider = ({ children }) => {
         price: element.price,
         imgUrl: element.img,
       },
+    });
+  };
+
+  const setRefreshCartBadge = () => {
+    dispatch({
+      type: "REFRESH_CART_BADGE",
     });
   };
 
@@ -44,6 +50,7 @@ export const UserContextProvider = ({ children }) => {
   const userStore = {
     userStore: state,
     setSelectedActivityByUuid,
+    setRefreshCartBadge,
     addToCart,
     storeItemsOnLocal,
   };

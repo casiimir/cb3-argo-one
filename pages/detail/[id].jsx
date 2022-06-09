@@ -11,7 +11,7 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 
 const Detail = () => {
-  const { storeItemsOnLocal } = useUserContext();
+  const { storeItemsOnLocal, setRefreshCartBadge } = useUserContext();
   const { dataStore, updateActivityDataByUuid } = useDataContext();
   const { query } = useRouter();
 
@@ -21,6 +21,7 @@ const Detail = () => {
       dataStore.activity.retail_price.formatted_value,
       dataStore.activity.cover_image_url
     );
+    setRefreshCartBadge();
   };
 
   useEffect(() => {

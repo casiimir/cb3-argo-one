@@ -1,4 +1,8 @@
-import { SET_USER_SELECTION, ADD_TO_CART } from "./costants";
+import {
+  SET_USER_SELECTION,
+  ADD_TO_CART,
+  REFRESH_CART_BADGE,
+} from "./costants";
 
 const userReducer = (state, action) => {
   console.log(action);
@@ -7,6 +11,12 @@ const userReducer = (state, action) => {
       return {
         ...state,
         activityUuidSelected: action.payload,
+      };
+
+    case REFRESH_CART_BADGE:
+      return {
+        ...state,
+        refreshCartBadge: !state.refreshCartBadge,
       };
 
     case ADD_TO_CART:

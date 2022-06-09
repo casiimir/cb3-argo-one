@@ -4,6 +4,7 @@
 .wrapper {
   top: 10px;
   position: relative;
+
   &__title {
     position: absolute;
     top: 8%;
@@ -12,10 +13,13 @@
     font-size: 3.3vw;
     color: $dark-blue;
   }
-  .contactimg {
+  .contactImg {
     display: block;
     margin: 0;
     width: 100%;
+    > span {
+      height: 100vh !important;
+    }
   }
 
   .form {
@@ -109,8 +113,9 @@
     &__title {
       top: 15%;
     }
+
     .backimg {
-      display: none !important;
+      //display: none !important;
     }
     .form {
       top: 30%;
