@@ -10,6 +10,7 @@ import styles from "./styles.module.scss";
 const Cart = () => {
   const [cart, setCart] = useState({ cartItems: [], total: [] });
   const [refresh, setRefresh] = useState(false);
+  const [checkout, setCheckout] = useState(false);
 
   const storeCartOnLocal = (groupedItems, cartTotal) => {
     localStorage.removeItem("groupedCart");
@@ -42,6 +43,9 @@ const Cart = () => {
     localStorage.setItem("cartItems", JSON.stringify(storedCartItems));
 
     setRefresh((prev) => !prev);
+  };
+  const handleCheckout = () => {
+    setCheckout(true);
   };
 
   useEffect(() => {
@@ -95,7 +99,6 @@ const Cart = () => {
 
   return (
     <>
-      <CartModal />
       <section className={styles.CartPage}>
         <div className={styles.Container}>
           <div className={styles.Container__Cart}>
@@ -116,6 +119,7 @@ const Cart = () => {
                         quality={100}
                         width="2048"
                         layout="fill"
+                        alt="Item"
                         objectFit
                         sizes="20w"
                         className={styles.ImgContainer__image}
@@ -177,12 +181,16 @@ const Cart = () => {
                 $ {cart.cartTotal}
               </p>
             </div>
-            <button className={styles.Cart_Button__Checkout}>
+            <button
+              className={styles.Cart_Button__Checkout}
+              onClick={handleCheckout}
+            >
               To checkout
             </button>
           </div>
         </div>
       </section>
+      {checkout && <CartModal setCheckout={setCheckout} />}
     </>
   );
 };
