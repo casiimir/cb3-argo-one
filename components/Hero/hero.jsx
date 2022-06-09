@@ -39,6 +39,7 @@ const Hero = () => {
 	useEffect(() => {
 		setFadeIn(true);
 		fadeIn && setTimeout(handleImgSlide, 3000);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [fadeIn]);
 
 	return (
@@ -54,6 +55,8 @@ const Hero = () => {
 							layout="responsive"
 							placeholder="empty"
 							priority
+							quality={100}
+							sizes="2048w"
 							className={styles.Hero_img}
 						/>
 					</div>
@@ -72,6 +75,8 @@ const Hero = () => {
 							layout="responsive"
 							placeholder="empty"
 							priority
+							quality={100}
+							sizes="2048w"
 							className={styles.Hero_img}
 						/>
 					</div>
