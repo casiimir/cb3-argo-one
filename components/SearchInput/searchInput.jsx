@@ -75,6 +75,7 @@ const SearchInput = () => {
 
 	return (
 		<div className={styles.Filter_Container}>
+			<h2 className={styles.Title}>Looking for an experience?</h2>
 			<form className={styles.Form} onSubmit={handleSubmit}>
 				<OptionGroup
 					data={cities}
