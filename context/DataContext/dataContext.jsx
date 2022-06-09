@@ -21,7 +21,7 @@ const initialState = {
   date_to: "",
   date_from: "",
   loading: false,
-  language: "en-US",
+  language: 'en-US',
   setControl: false,
 };
 
