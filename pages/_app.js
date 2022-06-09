@@ -1,5 +1,5 @@
 import { DataContextProvider } from "../context/DataContext/dataContext";
-import { ModalContextProvider } from "../context/ModalContext/modalContext";
+import { UserContextProvider } from "../context/UserContext/userContext";
 import DefaultLayout from "../components/Layout";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
@@ -8,15 +8,15 @@ import "../styles/globals.css";
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps }) {
-	return (
-		<ModalContextProvider>
-			<DataContextProvider>
-				<DefaultLayout>
-					<Component {...pageProps} />
-				</DefaultLayout>
-			</DataContextProvider>
-		</ModalContextProvider>
-	);
+  return (
+    <UserContextProvider>
+      <DataContextProvider>
+        <DefaultLayout>
+          <Component {...pageProps} />
+        </DefaultLayout>
+      </DataContextProvider>
+    </UserContextProvider>
+  );
 }
 
 export default MyApp;
