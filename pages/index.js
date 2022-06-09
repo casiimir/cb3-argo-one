@@ -1,14 +1,16 @@
 import Head from "next/head";
-import Image from "next/image";
+
 import dynamic from "next/dynamic";
 import SearchInput from "../components/SearchInput";
 import Cardlist from "../components/CardList";
-import { DynamicParagraph } from "../components/DynamicParagraph/dynamicParagraph";
+
 import styles from "../styles/Home.module.css";
 import Modal from "../components/Modal/modal";
-
+import SkeletonLoading from "../components/SkeletonLoading";
+import { useDataContext } from "../context/DataContext/dataContext";
 
 export default function Home() {
+  const { dataStore } = useDataContext();
   const Map = dynamic(() => import("../components/Map"), {
     loading: () => <p>A map is loading</p>,
     ssr: false,
@@ -26,6 +28,7 @@ export default function Home() {
         <Map></Map>
         <Modal />
       </main>
+      {dataStore.loading && <SkeletonLoading />}
 
       <section>
         <Cardlist />

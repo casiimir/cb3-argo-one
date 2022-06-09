@@ -5,6 +5,7 @@ import {
   EXPERIENCE_FETCH_SUCCESS,
   ACTIVITY_UUID_FETCH_SUCCESS,
   DATA_FETCH_REQUEST,
+  DATA_FETCH_COMPLETED,
   DATA_FETCH_ERROR,
   DATA_FETCH_SUCCESS,
   DISCARD_ERROR,
@@ -20,6 +21,11 @@ const dataReducer = (state, action) => {
       return {
         ...state,
         loading: true,
+      };
+    case DATA_FETCH_COMPLETED:
+      return {
+        ...state,
+        loading: false,
       };
     case CATEGORIES_FETCH_SUCCESS:
       return {

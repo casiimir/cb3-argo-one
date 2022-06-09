@@ -47,9 +47,8 @@ const Cart = () => {
   useEffect(() => {
     const storedCartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-    const filteredItems =
-      storedCartItems.lenght >= 1 &&
-      storedCartItems.reduce((a, { title, price, imgUrl }) => {
+    const filteredItems = storedCartItems.reduce(
+      (a, { title, price, imgUrl }) => {
         const obj = a.get(title) || {
           title,
           price,
@@ -69,7 +68,9 @@ const Cart = () => {
         obj.totalPrice.push(totalsSingleItems);
 
         return a.set(title, obj);
-      }, new Map());
+      },
+      new Map()
+    );
 
     const groupedItems = [...filteredItems.values()];
 

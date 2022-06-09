@@ -5,9 +5,10 @@ import { GetActivitiesByCity } from "../../utils/utils";
 import ExpCard from "../../components/ExpCard";
 import Image from "next/image";
 import styles from "./index.module.scss";
+import SkeletonLoading from "../../components/SkeletonLoading";
 
 const Experiences = () => {
-  const { fetchRequest } = useDataContext();
+  const { dataStore, fetchRequest, fetchCompleted } = useDataContext();
   const [fixedActivities1, setFixedActivities1] = useState([]);
   const [fixedActivities2, setFixedActivities2] = useState([]);
   const [activities, setActivities] = useState([]);
@@ -25,6 +26,7 @@ const Experiences = () => {
         .filter((city) => mainCities.indexOf(city.id) === -1)
         .map((city) => city.id)
     ).then((res) => setActivities(res.data));
+    setTimeout(() => fetchCompleted(), 80);
   }, []);
 
   return (
@@ -51,16 +53,20 @@ const Experiences = () => {
           </blockquote>
         </div>
         <h2 className={styles.title}>{"Our finds for you"}</h2>
-        <div className={styles.wrapper}>
-          <h2 className={styles.cities}>{"Palermo"}</h2>
-          <ExpCard result={fixedActivities1} />
-          <h2 className={styles.cities}>{"Catania"}</h2>
-          <ExpCard result={fixedActivities2} />
-          <div className={styles.lastSlide}>
-            <h2 className={styles.cities}>{"Other cities"}</h2>
-            <ExpCard result={activities} />
+        {dataStore.loading ? (
+          <SkeletonLoading />
+        ) : (
+          <div className={styles.wrapper}>
+            <h2 className={styles.cities}>{"Palermo"}</h2>
+            <ExpCard result={fixedActivities1} />
+            <h2 className={styles.cities}>{"Catania"}</h2>
+            <ExpCard result={fixedActivities2} />
+            <div className={styles.lastSlide}>
+              <h2 className={styles.cities}>{"Other cities"}</h2>
+              <ExpCard result={activities} />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

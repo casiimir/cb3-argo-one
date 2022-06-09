@@ -33,7 +33,7 @@ export const DataContextProvider = ({ children }) => {
 
   //AGGIORNA I DATI CATEGORIES NEL CONTEXT CON UNA FETCH
   const updateCategoriesData = async (value) => {
-    dispatch({ type: "DATA_FETCH_REQUEST" });
+    //dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
       const Categoriesdata = await GetCategories(value);
       dispatch({
@@ -50,7 +50,7 @@ export const DataContextProvider = ({ children }) => {
   };
   //AGGIORNA I DATI CITYDATA NEL CONTEXT CON UNA FETCH
   const updateCityData = async (value) => {
-    dispatch({ type: "DATA_FETCH_REQUEST" });
+    //dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
       const CityData = await GetCityById(value);
       dispatch({
@@ -101,6 +101,10 @@ export const DataContextProvider = ({ children }) => {
   const fetchRequest = () => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
   };
+
+  const fetchCompleted = () => {
+    dispatch({ type: "DATA_FETCH_COMPLETED" });
+  };
   // SETTA LA CATEGORIA SELEZIONATA
   const setSelectedCategory = (value) => {
     dispatch({ type: "SET_SELECTED_CATEGORY", payload: value });
@@ -130,6 +134,7 @@ export const DataContextProvider = ({ children }) => {
     updateActivitiesData,
     updateActivityDataByUuid,
     fetchRequest,
+    fetchCompleted,
     setSelectedCategory,
     setDateTo,
     setDateFrom,

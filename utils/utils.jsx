@@ -31,7 +31,7 @@ export const GetCategories = async (cityId) => {
   const result = await fetch(CITIES_CATEGORY_URL(cityId), CategoryOptions, {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
@@ -112,7 +112,7 @@ export const GetCityById = (resource) =>
   http(CITY_URL, resource, {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
@@ -123,7 +123,7 @@ export const GetAvailableActivity = (coord, codeType, date) =>
   http(AVAILABLE_ACTIVITY_URL, ActivityOption(coord, codeType, date), {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
@@ -134,7 +134,7 @@ export const GetActivitiesByCity = (cityIn) =>
   http(AVAILABLE_ACTIVITY_URL, ExperienceOption(cityIn), {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
@@ -145,7 +145,7 @@ export const GetActivitiesByUuid = (ActivityUuid) =>
   http(ACTIVITY_BY_UUID, ActivityUuid, {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
