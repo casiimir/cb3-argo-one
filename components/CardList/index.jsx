@@ -28,9 +28,13 @@ const Cardlist = () => {
         {<Translator word="experiences" type="upper" />}
       </h2>
       <div className={styles.card_wrapper}>
-        {dataStore.activities.data.map((card, index) => (
-          <Card card={card} key={index} />
-        ))}
+        {dataStore.loading ? (
+          <SkeletonLoading />
+        ) : (
+          dataStore.activities.data.map((card, index) => (
+            <Card card={card} key={index} />
+          ))
+        )}
       </div>
     </div>
   ) : (
