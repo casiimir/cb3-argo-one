@@ -39,7 +39,7 @@ const NavLinks = (props) => {
             <Translator word="contacts" type="upper" />
           </a>
         </Link>
-        <Link href="/">
+        <Link href="/login">
           <a onClick={() => props.isMobile && props.closeMobileMenu()}>
             <RiUser3Fill className={styles.NavbarIcons} />
           </a>
