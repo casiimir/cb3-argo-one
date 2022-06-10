@@ -18,6 +18,7 @@ const NavLinks = (props) => {
   }, [userStore]);
   return (
     <nav>
+      <div className={styles.navDiv}>
       <ul className={props.open ? styles.MenuOpener : null}>
         <Link href="/">
           <a onClick={() => props.isMobile && props.closeMobileMenu()}>
@@ -57,6 +58,7 @@ const NavLinks = (props) => {
         </Link>
         <Flag />
       </ul>
+      </div>
     </nav>
   );
 };

@@ -3,7 +3,8 @@ import Link from "next/link";
 import styles from "./index.module.scss";
 import { useRef } from "react";
 import { useUserContext } from "../../context/UserContext/userContext";
-
+import { useDataContext } from "../../context/DataContext/dataContext";
+import Translator from "../Translator";
 
 const ExpCard = ({ result }) => {
   const { setSelectedActivityByUuid } = useUserContext();
@@ -54,15 +55,17 @@ const ExpCard = ({ result }) => {
               <div className={styles.cartDiv}>
                 <button className={styles.btnCart} >
                   <a>
-                    <p>Add to Cart</p>
+                    <p>{<Translator word="add to cart" type="fwupper" />}</p>
                   </a>
                 </button>
               </div>
               <div className={styles.tags}>
-                {single.verticals.map((item) => (
-                  <div className={styles.slug_item} key={item.id}>
-                    {`${item.name}`}
-                  </div>
+                {single.verticals.map((item, index) => (
+                  index === 0 ?
+                    <div className={styles.slug_item} key={item.id}>
+                      {`${item.name}`}
+                    </div>
+                    : ""
                 ))}
               </div>
             </div>

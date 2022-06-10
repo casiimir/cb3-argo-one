@@ -9,10 +9,10 @@ import {
 import dataReducer from "./dataReducer";
 
 const initialState = {
-  activities: [],
+  activities: null,
   experiences: { cities: [], city1: [], city2: [], city3: [] },
   categories: [],
-  cityData: [],
+  cityData: null,
   latLon: {
     lat: 37.3111,
     lng: 13.6333,
@@ -33,15 +33,15 @@ export const DataContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(dataReducer, initialState);
 
   //AGGIORNA I DATI CATEGORIES NEL CONTEXT CON UNA FETCH
-  const updateCategoriesData = async (value) => {
+  const updateCategoriesData = async (value, lang) => {
     //dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
-      const Categoriesdata = await GetCategories(value);
+      const Categoriesdata = await GetCategories(value, lang);
       dispatch({
         type: "CATEGORIES_FETCH_SUCCESS",
         payload: Categoriesdata,
       });
-      console.log(Categoriesdata);
+ 
     } catch (error) {
       dispatch({
         type: "DATA_FETCH_ERROR",
@@ -66,10 +66,10 @@ export const DataContextProvider = ({ children }) => {
     }
   };
   //AGGIORNA I DATI ACTIVITIES NEL CONTEXT CON UNA FETCH
-  const updateActivitiesData = async (coord, codeType, date) => {
+  const updateActivitiesData = async (coord, codeType, date, lang) => {
     dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
-      const activitiesData = await GetAvailableActivity(coord, codeType, date);
+      const activitiesData = await GetAvailableActivity(coord, codeType, date, lang);
       dispatch({
         type: "ACTIVITIES_FETCH_SUCCESS",
         payload: activitiesData,

@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
-import styles from "./styles.module.scss";
 import Image from "next/image";
-import { useWindowSize } from "../../utils/utils";
+import Translator from "../../components/Translator";
+import styles from "./styles.module.scss";
 
 const oliveBranchImg =
   "https://i.ibb.co/hFkrYbq/vilija-valeisaite-x-TZpip-USEj8-unsplash.jpg";
@@ -44,55 +44,44 @@ export default function About() {
           />
         )}
 
-        <article className={styles.about__descWrapper}>
-          <div className={styles.about__descContainer}>
-            <h2 className={styles.about__descTitle}>Who we are</h2>
-            <p className={styles.about__desc}>
-              Tricily is what happens when five people who love to travel and
-              have a passion for code meet.
-              <br />
-              We thought about our motherland, Sicily, and realized that at some
-              point we all have left it only to come back to it later because we
-              found out there&apos;s something here that you won&apos;t find
-              anywhere else. <br />
-              <br />
-              Either it&apos;s the food or the beautiful, sunny weather, or the
-              joyful predisposition of its people, Sicily is simply a land we
-              are sure you won&apos;t forget.
-              <br />
-              <br /> Our aim is to present to you a fine array of events and
-              experiences to enjoy in and around the best sicilian cities.
-              Whether you choose to take a cooking class in Palermo or to hike
-              on Mount Etna, we are confident you&apos;ll want to come back and
-              have more. <br />
-              <br />
-              <strong>
-                More of our rich history, more of our pristine beaches, more of
-                our colors.
-              </strong>
-            </p>
-
-            <div className={styles.about__photos}>
-              <picture className={styles.about__pic}>
-                <p>Elenia Centamore</p>
-                <a href="https://www.linkedin.com/in/elenia-centamore-ba6200116/">
-                  <img
-                    src={avatar_elenia}
-                    alt="Elenia Centamore"
-                    title="Elenia Centamore"
-                  ></img>
-                </a>
-              </picture>
-              <picture className={styles.about__pic}>
-                <p>Nicolò Piccolo</p>
-                <a href="https://www.linkedin.com/in/nicolo-piccolo-nickpick77/">
-                  <img
-                    src={avatar_nicolo}
-                    alt="Nicolo Piccolo"
-                    title="Nicolò Piccolo"
-                  ></img>
-                </a>
-              </picture>
+				<article className={styles.about__descWrapper}>
+					<div className={styles.about__descContainer}>
+						<h2 className={styles.about__descTitle}>Who we are</h2>
+						<p className={styles.about__desc}>
+						<Translator word="about desc1" type="fwupper"/>
+							<br />
+							<Translator word="about desc2" type="fwupper"/><br />
+							<br />
+							<Translator word="about desc3" type="fwupper"/>
+							<br />
+							<br /> 
+							<Translator word="about desc4" type="fwupper"/><br />
+							<br />
+							<strong>
+							<Translator word="about desc5" type="fwupper"/>
+							</strong>
+						</p>
+						<div className={styles.about__photos}>
+							<picture className={styles.about__pic}>
+								<p>Elenia Centamore</p>
+								<a href="https://www.linkedin.com/in/elenia-centamore-ba6200116/">
+									<img
+										src={avatar_elenia}
+										alt="Elenia Centamore"
+										title="Elenia Centamore"
+									></img>
+								</a>
+							</picture>
+							<picture className={styles.about__pic}>
+								<p>Nicolò Piccolo</p>
+								<a href="https://www.linkedin.com/in/nicolo-piccolo-nickpick77/">
+									<img
+										src={avatar_nicolo}
+										alt="Nicolo Piccolo"
+										title="Nicolò Piccolo"
+									></img>
+								</a>
+							</picture>
 
               <picture className={styles.about__pic}>
                 <p>Paolo Rotondo</p>
