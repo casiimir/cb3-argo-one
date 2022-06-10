@@ -1,16 +1,15 @@
 import { useEffect } from "react";
-
 import { useDataContext } from "../../context/DataContext/dataContext";
-
 import { FaMapMarkerAlt } from "react-icons/fa";
 import { useRouter } from "next/router";
 import Image from "next/image";
-
+import Translator from "../../components/Translator";
 import { useUserContext } from "../../context/UserContext/userContext";
 import styles from "./index.module.scss";
 import Link from "next/link";
 
 const Detail = () => {
+  
   const { storeItemsOnLocal, setRefreshCartBadge } = useUserContext();
   const { dataStore, updateActivityDataByUuid } = useDataContext();
   const { query } = useRouter();
@@ -61,10 +60,10 @@ const Detail = () => {
                     handleAddToCart();
                   }}
                 >
-                  Add to cart
+                 {<Translator word="add to cart" type="fwupper"/>}
                 </button>
                 <Link href={`/experiences`}>
-                  <button className={styles.Button}>Go back</button>
+                  <button className={styles.Button}>{<Translator word="go back" type="fwupper"/>}</button>
                 </Link>
                 <button className={styles.Prices_p} disabled>
                   {dataStore.activity.retail_price.formatted_value}
@@ -87,7 +86,7 @@ const Detail = () => {
               <div className={styles.optionsDiv}>
                 <ul className={styles.included_ul}>
                   <span className={styles.span_title}>
-                    Included with this package:
+                  {<Translator word="included with this package" type="fwupper"/>}
                   </span>
                   {dataStore.activity.included.map((feat, index) => (
                     <li className={styles.included_li} key={index}>
@@ -98,7 +97,7 @@ const Detail = () => {
                 <div className={styles.lang_Container}>
                   <ul className={styles.lang_ul}>
                     <span className={styles.lang_title}>
-                      Available Languages:
+                    {<Translator word="available languages" type="fwupper"/>}
                     </span>
                     {dataStore.activity.languages.map((lang) => (
                       <li className={styles.lang_li} key={lang.code}>

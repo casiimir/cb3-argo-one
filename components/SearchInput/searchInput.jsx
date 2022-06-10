@@ -1,15 +1,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { setFormattingLocalDate } from "../../utils/utils";
-
 import { useDataContext } from "../../context/DataContext/dataContext";
-
 import { cities } from "../../utils/data.js";
-
 import OptionGroup from "../OptionGroup";
 import DatePicker from "../DatePicker";
 import Alert from "../Alert";
-
+import Translator from "../Translator";
 import styles from "./styles.module.scss";
 
 const SearchInput = () => {
@@ -22,7 +19,7 @@ const SearchInput = () => {
     setDateTo,
     setDateFrom,
   } = useDataContext();
-  const [userCategorySelect, setUserCategorySelect] = useState();
+
   const [actualDate, SetActualDate] = useState((date) => [
     { fullDate: date, day: date, month: date },
   ]);
@@ -31,14 +28,13 @@ const SearchInput = () => {
 
   //handling function on cities select
   const handleClickOnCities = async (event) => {
+    localStorage.setItem("language", "it");
     const sentinel = event.target.value === "unselected";
     if (sentinel) {
       setAlert((prev) => !prev);
     } else {
-      //updateCategoriesData(event.target.value);
-      setUserCategorySelect(event.target.value);
+      updateCategoriesData(event.target.value, dataStore.language);
       updateCityData(event.target.value);
-      console.log(event);
     }
   };
 
@@ -76,18 +72,22 @@ const SearchInput = () => {
   }, []);
 
   useEffect(() => {
-    userCategorySelect && updateCategoriesData(userCategorySelect);
-  }, [userCategorySelect]);
+    if (dataStore.cityData !== null) {
+      updateCategoriesData(dataStore.cityData.id, dataStore.language);
+    }
+  }, [dataStore.language]);
 
   return (
     <div className={styles.Filter_Container}>
-      <h2 className={styles.Title}>Looking for an experience?</h2>
+      <h2 className={styles.Title}>
+        {<Translator word="looking for an experience" />}
+      </h2>
       <form className={styles.Form} onSubmit={handleSubmit}>
         <OptionGroup
           data={cities}
           onChangeFn={handleClickOnCities}
           typeValue="cities"
-          defaultText="Select cities"
+          defaultText={<Translator word="select cities" type="fwupper" />}
           textValue="Select a city to start"
           defaultValue="unselected"
         />
@@ -95,7 +95,9 @@ const SearchInput = () => {
           data={dataStore.categories}
           onChangeFn={handleClickOnTipology}
           typeValue="tipology"
-          defaultText="Select activities"
+          defaultText={
+            <Translator word="select your experience" type="fwupper" />
+          }
           textValue="Select an activitiy"
         />
         {alert && (
@@ -114,7 +116,7 @@ const SearchInput = () => {
           secondDateFn={handleDateFromPick}
         />
         <button className={styles.Button} type="submit" value="Search">
-          Search
+          {<Translator word="search" type="fwupper" />}
         </button>
       </form>
     </div>

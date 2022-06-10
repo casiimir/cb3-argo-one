@@ -12,51 +12,52 @@ const NavLinks = (props) => {
   const { userStore } = useUserContext();
   useEffect(() => {
     const item = JSON.parse(localStorage.getItem("cartItems"));
-    console.log(userStore);
     item ? setItemCounter(item.length) : setItemCounter(0);
     //eslint-next-line-disable
   }, [userStore]);
   return (
     <nav>
-      <ul className={props.open ? styles.MenuOpener : null}>
-        <Link href="/">
-          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
-            <Translator word="home" type="upper" />
-          </a>
-        </Link>
-        <Link href="/experiences">
-          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
-            <Translator word="experiences" type="upper" />
-          </a>
-        </Link>
-        <Link href="/about">
-          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
-            <Translator word="about" type="upper" />
-          </a>
-        </Link>
-        <Link href="/contact-us">
-          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
-            <Translator word="contacts" type="upper" />
-          </a>
-        </Link>
-        <Link href="/login">
-          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
-            <RiUser3Fill className={styles.NavbarIcons} />
-          </a>
-        </Link>
+      <div className={styles.navDiv}>
+        <ul className={props.open ? styles.MenuOpener : null}>
+          <Link href="/">
+            <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+              <Translator word="home" type="upper" />
+            </a>
+          </Link>
+          <Link href="/experiences">
+            <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+              <Translator word="experiences" type="upper" />
+            </a>
+          </Link>
+          <Link href="/about">
+            <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+              <Translator word="about" type="upper" />
+            </a>
+          </Link>
+          <Link href="/contact-us">
+            <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+              <Translator word="contacts" type="upper" />
+            </a>
+          </Link>
+          <Link href="/login">
+            <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+              <RiUser3Fill className={styles.NavbarIcons} />
+            </a>
+          </Link>
 
-        <Link href="/cart">
-          <a
-            className={styles.Cart_Container}
-            onClick={() => props.isMobile && props.closeMobileMenu()}
-          >
-            <p className={styles.Cart_Container__Badge}>{itemCounter}</p>
+          <Link href="/cart">
+            <a
+              className={styles.Cart_Container}
+              onClick={() => props.isMobile && props.closeMobileMenu()}
+            >
+              <p className={styles.Cart_Container__Badge}>{itemCounter}</p>
 
-            <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
-          </a>
-        </Link>
-        <Flag />
-      </ul>
+              <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
+            </a>
+          </Link>
+          <Flag />
+        </ul>
+      </div>
     </nav>
   );
 };
