@@ -1,5 +1,4 @@
 import Head from "next/head";
-import dynamic from "next/dynamic";
 import Homepage from "../pages/homepage";
 import { useDataContext } from "../context/DataContext/dataContext";
 import SkeletonLoading from "../components/SkeletonLoading";
