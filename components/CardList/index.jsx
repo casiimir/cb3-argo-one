@@ -19,26 +19,31 @@ const Cardlist = () => {
         dataStore.language
       );
     }
+    //eslint-disable-next-line
   }, [dataStore.language]);
 
-  return dataStore.activities !== null &&
-    dataStore.activities.data.length > 0 ? (
-    <div className={styles.global}>
-      <h2 className={styles.title}>
-        {<Translator word="experiences" type="upper" />}
-      </h2>
-      <div className={styles.card_wrapper}>
-        {dataStore.loading ? (
-          <SkeletonLoading />
-        ) : (
-          dataStore.activities.data.map((card, index) => (
-            <Card card={card} key={index} />
-          ))
-        )}
-      </div>
-    </div>
-  ) : (
-    ""
+  return (
+    <>
+      {dataStore.loading && <SkeletonLoading />}
+      {dataStore.activities !== null && dataStore.activities.data.length > 0 ? (
+        <div className={styles.global}>
+          <h2 className={styles.title}>
+            {<Translator word="experiences" type="upper" />}
+          </h2>
+          <div className={styles.card_wrapper}>
+            {dataStore.loading ? (
+              <SkeletonLoading />
+            ) : (
+              dataStore.activities.data.map((card, index) => (
+                <Card card={card} key={index} />
+              ))
+            )}
+          </div>
+        </div>
+      ) : (
+        ""
+      )}
+    </>
   );
 };
 

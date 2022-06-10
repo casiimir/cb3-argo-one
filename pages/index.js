@@ -5,8 +5,6 @@ import SkeletonLoading from "../components/SkeletonLoading";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const { dataStore } = useDataContext();
-
   return (
     <>
       <Head>
@@ -23,7 +21,6 @@ export default function Home() {
       </Head>
       <main>
         <Homepage />
-        {dataStore.loading && <SkeletonLoading />}
       </main>
     </>
   );

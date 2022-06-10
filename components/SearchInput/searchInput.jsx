@@ -76,6 +76,7 @@ const SearchInput = () => {
     if (dataStore.cityData !== null) {
       updateCategoriesData(dataStore.cityData.id, dataStore.language);
     }
+    //eslint-disable-next-line
   }, [dataStore.language]);
 
   return (
