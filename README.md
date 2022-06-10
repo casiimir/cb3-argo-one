@@ -1,34 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+<h2 align="center">TRICILY</h2>
 
-First, run the development server:
+<p align="center">
+  <img src="https://i.ibb.co/ZN92G7G/smartmockups-l4856npa.jpg" alt="tricily"/>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+<hr>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<h2 align="center">A new project from Edgemony classes</h2>
+<img align="right" src="https://i.ibb.co/x3rF647/smartmockups-l4857339.jpg" alt="tricily" width=150/>
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+<h2>Technologies used</h2>
+  <ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>SASS</li>
+    <li>Javascript</li>
+    <li>React.js</li>
+    <li>Next.js</li>
+    <li>Musement API</li>
+    <li>Made with ❤️</li>
+  </ul>
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+<br>
+<hr>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+<img align="right" src="https://i.ibb.co/4Zn03nJ/smartmockups-l478jrt9.jpg" alt="less-than-3" width=150/>
 
-## Learn More
+<br>
 
-To learn more about Next.js, take a look at the following resources:
+<h2>Features</h2>
+<ol>
+  <li>Designed from zero</li>
+  <li>Mobile First Design</li>
+  <li>UI and UX user friendly</li>
+  <li>Performance oriented</li>
+  <li>Scalable and best practices</li>
+  <li>A lot of effort 🤩</li>
+  <li>Too much ❤️</li>
+</ol>
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<br>
+<h2>Performance</h2>
+  <img width="200" src="https://i.ibb.co/857DpKt/smartmockups-l47844ta.jpg" alt="tricily">
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<hr>
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Presentation day
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<h4>Giugno 13 2022</h4>
+<a href="https://dev-cb3-argo-one.vercel.app">Follow this link to visit it!</a>
+
+<h3>Made by</h3>
+<ul>
+  <li>
+    <a href="https://www.linkedin.com/in/elenia-centamore/">
+      Elenia Centamore
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/federica-centorbi">
+      Federica Centorbi
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/nicolo-piccolo-nickpick77">
+      Nicolò Piccolo
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/paolo-rotondo/">
+      Paolo Rotondo
+    </a>
+  </li>
+  <li>
+    <a href="https://www.linkedin.com/in/cicala-andrea/">
+      Andrea Cicala
+    </a>
+  </li>
+</ul>
+
+<h4>With the special participation of
+  <a href="https://www.linkedin.com/in/casimiro-p-ciancimino"> 
+    Casimiro Pietro Ciancimino
+  </a>
+</h4>
