@@ -45,7 +45,6 @@ const NavLinks = (props) => {
             </a>
           </Link>
 
-<<<<<<< HEAD
           <Link href="/cart">
             <a
               className={styles.Cart_Container}
@@ -59,20 +58,6 @@ const NavLinks = (props) => {
           <Flag />
         </ul>
       </div>
-=======
-        <Link href="/cart">
-          <a
-            className={styles.Cart_Container}
-            onClick={() => props.isMobile && props.closeMobileMenu()}
-          >
-            <p className={styles.Cart_Container__Badge}>{itemCounter}</p>
-
-            <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
-          </a>
-        </Link>
-        <Flag />
-      </ul>
->>>>>>> FIX: some styles
     </nav>
   );
 };
