@@ -18,6 +18,7 @@ const NavLinks = (props) => {
   }, [userStore]);
   return (
     <nav>
+      <div className={styles.navDiv}>
       <ul className={props.open ? styles.MenuOpener : null}>
         <Link href="/">
           <a onClick={() => props.isMobile && props.closeMobileMenu()}>
@@ -50,14 +51,14 @@ const NavLinks = (props) => {
             className={styles.Cart_Container}
             onClick={() => props.isMobile && props.closeMobileMenu()}
           >
-            <div className={styles.Cart_Container__Badge}>
-              <p>{itemCounter}</p>
-            </div>
+            <p className={styles.Cart_Container__Badge}>{itemCounter}</p>
+
             <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
           </a>
         </Link>
         <Flag />
       </ul>
+      </div>
     </nav>
   );
 };

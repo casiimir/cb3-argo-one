@@ -27,18 +27,16 @@ const CategoryOptions = () =>
     prioritized_country_cities_limit: "1",
   }).toString();
 
-export const GetCategories = async (cityId) => {
-  const result = await fetch(CITIES_CATEGORY_URL(cityId), CategoryOptions, {
+export const GetCategories = async (cityId, lang) =>
+  http(CITIES_CATEGORY_URL(cityId), CategoryOptions, {
     method: "GET",
     headers: {
-      "Accept-Language": "en-US",
+      "Accept-Language": lang,
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
-    },
+    }
   });
-  return await result.json();
-};
 
 const ActivityOption = (coord, codeType, date) =>
   new URLSearchParams({
@@ -108,33 +106,33 @@ const ExperienceOption = (cityIn) =>
     //zero_terms_query: 'NONE'
   }).toString();
 
-export const GetCityById = (resource) =>
+export const GetCityById = (resource, lang) =>
   http(CITY_URL, resource, {
     method: "GET",
     headers: {
-      "Accept-Language": "en-US",
+      "Accept-Language": lang,
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
     },
   });
 
-export const GetAvailableActivity = (coord, codeType, date) =>
+export const GetAvailableActivity = (coord, codeType, date, lang) =>
   http(AVAILABLE_ACTIVITY_URL, ActivityOption(coord, codeType, date), {
     method: "GET",
     headers: {
-      "Accept-Language": "en-US",
+      "Accept-Language": lang,
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
     },
   });
 
-export const GetActivitiesByCity = (cityIn) =>
-  http(AVAILABLE_ACTIVITY_URL, ExperienceOption(cityIn), {
+export const GetActivitiesByCity = (cityIn, lang) =>
+  http(AVAILABLE_ACTIVITY_URL, ExperienceOption(cityIn, lang), {
     method: "GET",
     headers: {
-      "Accept-Language": "en-US",
+      "Accept-Language": lang,
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",

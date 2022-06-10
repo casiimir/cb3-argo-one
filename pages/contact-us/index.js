@@ -14,7 +14,7 @@ export default function ContactUs() {
             src="https://i.ibb.co/xML1pGy/lapacontactus.jpg"
             alt="lapacontactus"
             width={2048}
-            height={1152}
+            height={1280}
             layout="responsive"
             className={styles.backimg}
           />
@@ -59,7 +59,12 @@ export default function ContactUs() {
                 autoComplete="off"
                 placeholder="Your message..."
               ></textarea>
-              <button className={styles.button}>Send</button>
+              <button
+                className={styles.button}
+                onClick={(e) => e.preventDefault()}
+              >
+                Send
+              </button>
             </div>
           </form>
         </div>

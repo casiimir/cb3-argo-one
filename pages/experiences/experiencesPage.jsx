@@ -4,8 +4,8 @@ import { cities, mainCities } from "../../utils/data";
 import { GetActivitiesByCity } from "../../utils/utils";
 import ExpCard from "../../components/ExpCard";
 import Image from "next/image";
-import styles from "./index.module.scss";
 import SkeletonLoading from "../../components/SkeletonLoading";
+import styles from "./index.module.scss";
 
 const Experiences = () => {
   const { fetchRequest, dataStore, fetchCompleted } = useDataContext();
@@ -47,7 +47,6 @@ const Experiences = () => {
             priority
             className={styles.Hero_img}
           />
-
           <blockquote className={styles.quote}>
             {`"Io sono nato in Sicilia e lì l’uomo nasce isola nell’isola e rimane tale fino alla morte, anche vivendo lontano dall’aspra terra natìa circondata dal mare immenso e geloso"`}
             <br />
@@ -57,7 +56,7 @@ const Experiences = () => {
         <h2 className={styles.title}>{"Our finds for you"}</h2>
         {dataStore.loading ? (
           <SkeletonLoading />
-        ) : (
+        ) : ( 
           <div className={styles.wrapper}>
             <h2 className={styles.cities}>{"Palermo"}</h2>
             <ExpCard result={fixedActivities1} />
