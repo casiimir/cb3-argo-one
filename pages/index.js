@@ -1,13 +1,12 @@
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import Homepage from "../pages/homepage";
+import { useDataContext } from "../context/DataContext/dataContext";
+import SkeletonLoading from "../components/SkeletonLoading";
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const Map = dynamic(() => import("../components/Map"), {
-    loading: () => <p>A map is loading</p>,
-    ssr: false,
-  });
+  const { dataStore } = useDataContext();
 
   return (
     <>
@@ -25,6 +24,7 @@ export default function Home() {
       </Head>
       <main>
         <Homepage />
+        {dataStore.loading && <SkeletonLoading />}
       </main>
     </>
   );
