@@ -9,6 +9,7 @@ import styles from "./index.module.scss";
 import Link from "next/link";
 
 const Detail = () => {
+  
   const { storeItemsOnLocal, setRefreshCartBadge } = useUserContext();
   const { dataStore, updateActivityDataByUuid } = useDataContext();
   const { query } = useRouter();
@@ -87,12 +88,16 @@ const Detail = () => {
               <div className={styles.optionsDiv}>
                 <ul className={styles.included_ul}>
                   <span className={styles.span_title}>
+<<<<<<< HEAD
                     {
                       <Translator
                         word="included with this package"
                         type="fwupper"
                       />
                     }
+=======
+                  {<Translator word="included with this package" type="fwupper"/>}
+>>>>>>> fix: added translation to the whole app and fix some minor issues
                   </span>
                   {dataStore.activity.included.map((feat, index) => (
                     <li className={styles.included_li} key={index}>
@@ -103,7 +108,11 @@ const Detail = () => {
                 <div className={styles.lang_Container}>
                   <ul className={styles.lang_ul}>
                     <span className={styles.lang_title}>
+<<<<<<< HEAD
                       {<Translator word="available languages" type="fwupper" />}
+=======
+                    {<Translator word="available languages" type="fwupper"/>}
+>>>>>>> fix: added translation to the whole app and fix some minor issues
                     </span>
                     {dataStore.activity.languages.map((lang) => (
                       <li className={styles.lang_li} key={lang.code}>
