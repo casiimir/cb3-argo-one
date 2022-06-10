@@ -32,7 +32,7 @@ export default function Loginpage() {
                         placeholder="Your password..."
                     ></input>
                 </form>
-                <button className={styles.wrapper__button}>Sign in</button>
+                <button className={styles.wrapper__button} onClick={(e) => e.preventDefault()}>Sign in</button>
             </div>
         </div>
     );

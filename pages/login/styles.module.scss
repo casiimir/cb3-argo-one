@@ -8,7 +8,7 @@
 .wrapper {
     display: flex;
     position: absolute;
-    top: 25%;
+    top: 35%;
     width: 20vw;
     height: 50vh;
     align-items: center;
@@ -31,19 +31,20 @@
     &__input {
         display: flex;
         flex-direction: column;
-        font-family: $primary-font;
+        font-family: $white;
          width: 100%;
-         height: 50px;
+         height: 30px;
          margin: 0.5rem 0;
          border: none;
          border-radius: 5px;
     }
 
     ::placeholder {
-        font-size: 1rem;
+        font-size: 0.6rem;
         font-weight: bold;
         color: $light-blue;
-        padding: 8px;
+         padding: 8px;  
+        font-family: $primary-font;
     }
 
     &__button {
@@ -52,7 +53,54 @@
         background-color: $light-blue;
         font-family: $primary-font;
         text-align: center;
-        height: 5vh;
+        font-size: 0.8rem;
+        height: 4vh;
         width: 10vw;
     }
 }
+
+
+@media only screen and (min-width: 320px) and (max-width: 768px){
+    .wrapper{
+        margin-top: -9%;
+        width: 90vw;
+
+        &__title{
+          width: 100vw;
+          font-size:20px ;
+          height: 0vh;
+          color: $white;
+         
+      }
+      &__form{
+          width: 70vw;
+          
+      }
+     
+      ::placeholder{
+          font-size:0.5rem; 
+      }
+      &__button{
+          width: 30%;
+          height: 2vh;
+          font-size: 0.5rem;
+          
+      }
+    
+			
+		
+			
+    }
+}
+@media screen  and (min-width: 2560px){
+     .wrapper{
+         &__title{
+             font-size: 4.6rem;
+         }
+         &__input{
+             height: 7vh;
+             
+         }
+     }
+}
+    

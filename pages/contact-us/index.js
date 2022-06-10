@@ -46,7 +46,7 @@ export default function ContactUs() {
                 autoComplete="off"
                 placeholder="Your message..."
               ></textarea>
-              <button className={styles.button}>Send</button>
+              <button className={styles.button} onClick={(e) => e.preventDefault()}>Send</button>
             </div>
           </form>
         </div>
