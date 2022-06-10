@@ -1,214 +1,206 @@
-@import '../../styles/variables.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .div {
-    background-color: #f5f5f5;
+  background-color: #f5f5f5;
 }
 
 .imgDiv {
-    position: relative;
-    top: 0;
+  position: relative;
+  top: 0;
 }
 
 .Hero_img {
-    filter: drop-shadow(30px 10px 4px #fbfbfb4d);
-    box-shadow: 2px 2px 2px black;
-    object-fit: cover;
+  filter: drop-shadow(30px 10px 4px #fbfbfb4d);
+  box-shadow: 2px 2px 2px black;
+  object-fit: cover;
 }
 
 .title {
-    margin-bottom: 20px;
-    top: 10vh;
-    font-size: 2.9rem;
-    color: #4079b1;
-    text-align: center;
+  margin-bottom: 20px;
+  top: 10vh;
+  font-size: 2.9rem;
+  color: $dark-blue;
+  text-align: center;
 }
 
 .cities {
-    margin-bottom: 0;
-    font-size: 2.2rem;
-    color: #4079b1;
-    text-align: left;
+  margin-bottom: 0;
+  font-size: 2.2rem;
+  color: $dark-blu;
+  text-align: left;
 }
 
 @keyframes test {
-    0% {
-        left: 110vw;
-    }
+  0% {
+    left: 110vw;
+  }
 
-    100% {
-        left: 50vw;
-    }
+  100% {
+    left: 50vw;
+  }
 }
 
 .quote {
-    position: absolute;
-    top: 25vh;
-    left: 70vw;
-    color: $light-blue;
-    text-align: right;
-    font-size: 25px;
-    font-style: italic;
-    width: 20vw;
-    animation-name: test;
-    animation-duration: 2s;
-    animation-iteration-count: 1;
-    transition: all 200ms ease;
+  position: absolute;
+  top: 25vh;
+  left: 70vw;
+  color: $light-blue;
+  text-align: right;
+  font-size: 25px;
+  font-style: italic;
+  width: 20vw;
+  animation-name: test;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  transition: all 200ms ease;
 }
 
 .wrapper {
-    width: 72%;
-    margin: 0 auto;
+  width: 72%;
+  margin: 0 auto;
 }
 
 .lastSlide {
-    margin-bottom: 20vh;
+  margin-bottom: 20vh;
 }
 
 @media all and (min-width: 320px) and (max-width: 424px) {
+  .imgDiv,
+  .Hero_img {
+    display: none;
+  }
 
-    .imgDiv,
-    .Hero_img {
-        display: none;
-    }
+  .cities {
+    text-align: left;
+    margin-left: 4vw;
+  }
 
-    .cities {
-        text-align: left;
-        margin-left: 4vw;
-    }
+  .title {
+    margin-top: 10vh;
+    margin-bottom: 6vh;
+  }
 
-    .title {
-        margin-top: 10vh;
-        margin-bottom: 6vh;
-    }
+  .quote {
+    display: none;
+  }
 
-    .quote {
-        display: none;
-    }
+  .wrapper {
+    width: 100%;
+  }
 
-    .wrapper {
-        width: 100%;
-
-    }
-
-    .lastSlide {
-        margin-bottom: 5vh;
-    }
+  .lastSlide {
+    margin-bottom: 5vh;
+  }
 }
 
 @media all and (min-width: 425px) and (max-width: 767px) {
-    .quote {
-        width: 50vw;
-        font-size: 18px;
-        top: 10vh;
-        left: 40vw;
-        animation-name: test;
-        animation-iteration-count: 0;
-    }
+  .quote {
+    width: 50vw;
+    font-size: 18px;
+    top: 10vh;
+    left: 40vw;
+    animation-name: test;
+    animation-iteration-count: 0;
+  }
 
-    .wrapper {
-        width: 90%
-    }
+  .wrapper {
+    width: 90%;
+  }
 
-    .quote {
-        display: none;
-    }
+  .quote {
+    display: none;
+  }
 
-
-    .lastSlide {
-        margin-bottom: 10vh;
-    }
+  .lastSlide {
+    margin-bottom: 10vh;
+  }
 }
 
 @media all and (min-width: 768px) and (max-width: 819px) {
+  .quote {
+    width: 50vw;
+    font-size: 18px;
+    top: 10vh;
+    left: 40vw;
+    animation-name: test;
+    animation-iteration-count: 0;
+  }
 
-    .quote {
-        width: 50vw;
-        font-size: 18px;
-        top: 10vh;
-        left: 40vw;
-        animation-name: test;
-        animation-iteration-count: 0;
-    }
+  .wrapper {
+    width: 85%;
+  }
 
-    .wrapper {
-        width: 85%
-    }
-
-    .lastSlide {
-        margin-bottom: 10vh;
-    }
-
+  .lastSlide {
+    margin-bottom: 10vh;
+  }
 }
 
 @media all and (min-width: 820px) and (max-width: 1023px) {
-    .quote {
-        width: 50vw;
-        font-size: 18px;
-        top: 5vh;
-        left: 40vw;
-        animation-name: test;
-        animation-iteration-count: 0;
-    }
+  .quote {
+    width: 50vw;
+    font-size: 18px;
+    top: 5vh;
+    left: 40vw;
+    animation-name: test;
+    animation-iteration-count: 0;
+  }
 
-    .wrapper {
-        width: 80%
-    }
+  .wrapper {
+    width: 80%;
+  }
 
-    .lastSlide {
-        margin-bottom: 10vh;
-    }
+  .lastSlide {
+    margin-bottom: 10vh;
+  }
 }
 
 @media all and (min-width: 1024px) and (max-width: 1439px) {
-    .quote {
-        width: 50vw;
-        font-size: 18px;
-        top: 10vh;
-        left: 40vw;
-        animation-name: test;
-        animation-iteration-count: 0;
-        animation-name: test;
+  .quote {
+    width: 50vw;
+    font-size: 18px;
+    top: 10vh;
+    left: 40vw;
+    animation-name: test;
+    animation-iteration-count: 0;
+    animation-name: test;
+  }
 
-    }
-
-    .lastSlide {
-        margin-bottom: 10vh;
-    }
+  .lastSlide {
+    margin-bottom: 10vh;
+  }
 }
 
 @media all and (min-width: 1440px) and (max-width: 2559px) {
-    .quote {
-        width: 45vw;
-        font-size: 22px;
-        top: 25vh;
-        left: 45vw;
-        animation-name: test;
-        animation-iteration-count: 0;
-        animation-name: test;
-    }
-
-   
+  .quote {
+    width: 45vw;
+    font-size: 22px;
+    top: 25vh;
+    left: 45vw;
+    animation-name: test;
+    animation-iteration-count: 0;
+    animation-name: test;
+  }
 }
 
 @media all and (min-width: 2559px) {
-    .quote {
-        width: 30vw;
-        font-size: 25px;
-        top: 25vh;
-        left: 65vw;
-        animation-name: test;
-        animation-iteration-count: 1;
-        animation-name: test;
+  .quote {
+    width: 30vw;
+    font-size: 25px;
+    top: 25vh;
+    left: 65vw;
+    animation-name: test;
+    animation-iteration-count: 1;
+    animation-name: test;
+  }
+
+  @keyframes test {
+    0% {
+      left: 110vw;
     }
 
-    @keyframes test {
-        0% {
-            left: 110vw;
-        }
-
-        100% {
-            left: 65vw;
-        }
+    100% {
+      left: 65vw;
     }
+  }
 }
