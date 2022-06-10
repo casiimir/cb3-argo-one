@@ -163,42 +163,41 @@
     }
     .arrow_dx{
       left: 104%;
-      top: -9vh;
+      top: -10vh;
     }
   }
 
-  @media all and (min-width: 769px) and (max-width: 820px){
-    .arrow_sx{
-      left: -14%;
-      top: -6vh;
-    }
-    .arrow_dx{
-      left: 105%;
-      top: -1vh;
-    }
-  }
-
-  @media all and (min-width: 1024px) and (max-width: 1440px) {
+  @media all and (min-width: 1024px) and (max-width: 1439px){
     .arrow_sx{
       left: -12%;
-      top: -15vh;
-    }
-    .arrow_dx{
-      left: 104%;
-      top: -9vh;
-    }
-  }
-  
-  @media all and (min-width: 1441px) and (max-width: 2560px) {
-    .arrow_sx{
-      left: -6%;
       top: -10vh;
     }
     .arrow_dx{
-      left: 102%;
+      left: 105%;
       top: -4vh;
     }
   }
   
+  @media all and (min-width: 1440px) and (max-width: 2559px) {
+    .arrow_sx{
+      left: -10%;
+      top: -8vh;
+    }
+    .arrow_dx{
+      left: 105%;
+      top: -2vh;
+    }
+  }
+  
+  @media all and (min-width: 2559px) {
+    .arrow_sx{
+      left: -10%;
+      top: -8vh;
+    }
+    .arrow_dx{
+      left: 105%;
+      top: -2vh;
+    }
+  }
       
   

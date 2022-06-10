@@ -1,3 +1,4 @@
+import Translator from "../Translator";
 import styles from "./styles.module.scss";
 
 const OptionGroup = ({
@@ -23,7 +24,7 @@ const OptionGroup = ({
 			>
 				<optgroup
 					className={styles.OptionGroup}
-					label="Sicily's provinces"
+					
 				>
 					<option
 						className={styles.Option}

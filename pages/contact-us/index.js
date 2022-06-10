@@ -14,7 +14,7 @@ export default function ContactUs() {
             src="https://i.ibb.co/xML1pGy/lapacontactus.jpg"
             alt="lapacontactus"
             width={2048}
-            height={1152}
+            height={1280}
             layout="responsive"
             className={styles.backimg}
           />
