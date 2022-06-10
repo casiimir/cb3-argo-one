@@ -60,17 +60,24 @@ const SearchInput = () => {
     event.preventDefault();
     const selectedDateRange = [dataStore.date_to, dataStore.date_from];
 
-    updateActivitiesData(
-      dataStore.latLon,
-      dataStore.selectedCategory,
-      selectedDateRange
-    );
-    // i dati escono da qui e li trovi in dataStore nel context
-  };
+		updateActivitiesData(
+			dataStore.latLon,
+			dataStore.selectedCategory,
+			selectedDateRange, 
+		);
+		// i dati escono da qui e li trovi in dataStore nel context
+	};
 
-  useEffect(() => {
-    setFormattingLocalDate(SetActualDate);
-  }, []);
+	useEffect(() => {
+		setFormattingLocalDate(SetActualDate);
+	}, []);
+	
+	useEffect(() => {
+		if (dataStore.cityData !== null) {
+			updateCategoriesData(dataStore.cityData.id, dataStore.language);
+		}
+		//eslint-disable-next-line
+	}, [dataStore.language]);
 
   useEffect(() => {
     if (dataStore.cityData !== null) {
