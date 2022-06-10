@@ -17,19 +17,16 @@ const Hero = () => {
 
   const handleImgSlide = () => {
     if (imgCount < slideData.imgUrl.length - 1) {
-      setImgCount((prev) => prev + 1);
       setImgClasses(styles.Slide);
       setFadeIn((prev) => !prev);
-
+      setImgCount((prev) => prev + 1);
       setTimeout(() => {
         setImgClasses(styles.Dynamic);
       }, 80);
     } else {
-      setImgCount(0);
-
       setImgClasses(styles.Slide);
       setFadeIn((prev) => !prev);
-
+      setImgCount(0);
       setTimeout(() => {
         setImgClasses(styles.Dynamic);
       }, 80);
@@ -45,7 +42,7 @@ const Hero = () => {
   return (
     <>
       {size.width >= 475 ? (
-        <section>
+        <section className={styles.Wrapper_Hero}>
           <div className={imgClasses}>
             <Image
               src={slideData.imgUrl[imgCount]}
