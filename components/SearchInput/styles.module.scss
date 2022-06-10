@@ -45,12 +45,11 @@
   @include button;
   @include hover;
 }
-@media all and (min-width: 767px) and (max-width: 1919px) {
+@media all and (min-width: 767px) and (max-width: 1023px) {
   .Form {
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 1.5em;
     flex-wrap: nowrap;
   }
 
@@ -59,9 +58,22 @@
     height: 35px;
   }
 }
+@media all and (min-width: 1024px) and (max-width: 1919px) {
+  .Form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .Select {
+    width: 250px;
+  }
+}
+
 @media all and (min-width: 1920px) {
   .Filter_Container {
-    width: 70%;
+    width: fit-content;
   }
   .Form {
     width: 100%;

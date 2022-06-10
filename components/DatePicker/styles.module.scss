@@ -19,22 +19,35 @@
   }
 }
 
-@media all and (min-width: 767px) and (max-width: 1439px) {
+@media all and (min-width: 767px) and (max-width: 1023px) {
   .Container {
     display: flex;
     flex-direction: row;
-    gap: 1.5em;
+    flex-wrap: nowrap;
 
     > input {
       width: 150px;
     }
   }
 }
-
-@media all and (min-width: 1440px) {
+@media all and (min-width: 1024px) and (max-width: 1919px) {
   .Container {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 1.5em;
+
+    > input {
+      width: 200px;
+    }
+  }
+}
+
+@media all and (min-width: 1920px) {
+  .Container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
     gap: 1.5em;
 
     > input {

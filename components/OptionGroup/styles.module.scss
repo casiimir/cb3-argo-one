@@ -19,13 +19,19 @@
   font-size: 1rem;
   outline: none;
 }
-@media all and (min-width: 767px) and (max-width: 1439px) {
+@media all and (min-width: 767px) and (max-width: 1023px) {
   .Select {
     width: 150px;
   }
 }
 
-@media all and (min-width: 1440px) {
+@media all and (min-width: 1024px) and (max-width: 1919px) {
+  .Select {
+    width: 250px;
+  }
+}
+
+@media all and (min-width: 1920px) {
   .Select {
     width: 350px;
     height: 2em;
