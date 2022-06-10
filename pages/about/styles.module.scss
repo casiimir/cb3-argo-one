@@ -11,14 +11,14 @@
     width: 100%;
 
     > span {
-      height: 150vh !important;
+      height: 200vh !important;
     }
   }
 
   &__title {
     position: absolute;
     //width: 100%;
-    top: 8%;
+    top: 7%;
     left: 2%;
     z-index: 5;
     font-size: 3.3vw;
@@ -33,7 +33,7 @@
     background-color: rgba(255, 255, 255, 0.453);
     margin: 0;
     width: 60%;
-    height: 80%;
+    height: fit-content;
     z-index: 2;
     top: 15vw;
     left: 0;
@@ -43,7 +43,7 @@
     font-weight: 400;
     flex-wrap: wrap;
     @include border-radius;
-    overflow: scroll;
+    //overflow: scroll;
   }
 
   &__descContainer {
@@ -124,7 +124,7 @@
     &__title {
       position: absolute;
       width: 50%;
-      top: 7%;
+      top: 8%;
       left: 2%;
       z-index: 5;
       font-size: 30px;
@@ -218,6 +218,13 @@
   .about__desc {
     font-size: 1.3rem;
   }
+  .about__title {
+    top: 4%;
+    left: 2%;
+    z-index: 5;
+    font-size: 50px;
+    color: $dark-blue;
+  }
 
   .about__photos {
     margin-top: 2%;
@@ -235,7 +242,7 @@
 
 @media (min-width: 1281px) {
   .about__title {
-    top: 6%;
+    top: 7%;
     left: 2%;
     z-index: 5;
     font-size: 50px;

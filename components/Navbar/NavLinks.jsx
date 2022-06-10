@@ -50,9 +50,8 @@ const NavLinks = (props) => {
             className={styles.Cart_Container}
             onClick={() => props.isMobile && props.closeMobileMenu()}
           >
-            <div className={styles.Cart_Container__Badge}>
-              <p>{itemCounter}</p>
-            </div>
+            <p className={styles.Cart_Container__Badge}>{itemCounter}</p>
+
             <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
           </a>
         </Link>
