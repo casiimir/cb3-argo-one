@@ -9,6 +9,7 @@ const Alert = ({ text, value, setFn, time, classStyle }) => {
 
   useEffect(() => {
     value && setTimeout(handleShowing, time);
+    //eslint-disable-next-line
   }, [value]);
   return (
     <div className={`${styles.Alert} ${styles[theme]}`}>

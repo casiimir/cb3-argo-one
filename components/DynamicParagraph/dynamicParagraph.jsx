@@ -35,12 +35,17 @@ const DynamicParagraph = () => {
   useEffect(() => {
     setFadeIn(true);
     fadeIn && setTimeout(handleTextSlide, 5000);
+    //eslint-disable-next-line
   }, [fadeIn]);
 
   return (
     <div className={styles.Paragraph_Container}>
-      <p><Translator word="discover sicily" type="fwupper"/></p>
-      <p><Translator word="through" type="lower"/></p>
+      <p>
+        <Translator word="discover sicily" type="fwupper" />
+      </p>
+      <p>
+        <Translator word="through" type="lower" />
+      </p>
       <p className={classes}>{slideText}</p>
     </div>
   );
