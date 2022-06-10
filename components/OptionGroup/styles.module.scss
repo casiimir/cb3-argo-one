@@ -9,51 +9,32 @@
 }
 
 .Select {
-  width: 255px;
-  height: 5vh;
+  width: 300px;
+  height: 2em;
   border: 1px solid $white;
   border-radius: 10px;
-  margin: 0 10px 0 0;
-  padding: 1vh;
+
+  padding: 0 10px;
   font-family: $primary-font;
   font-size: 1rem;
   outline: none;
 }
-
-@media all and (min-width: 320px) and (max-width: 425px) {
+@media all and (min-width: 767px) and (max-width: 1023px) {
   .Select {
-    width: 100vw;
-    margin: 0;
-    margin: 1vh 0 1vh 0;
+    width: 150px;
   }
 }
 
-@media all and (min-width: 426px) and (max-width: 768px) {
+@media all and (min-width: 1024px) and (max-width: 1919px) {
   .Select {
-    width: 15vw;
-    margin: 0;
-    margin: 1vh 1vw 1vh 0;
+    width: 250px;
   }
 }
 
-@media all and (min-width: 769px) and (max-width: 1024px) {
+@media all and (min-width: 1920px) {
   .Select {
-    width: 16vw;
-    margin: 0;
-    margin: 1vh 1vh 1vh 0;
-  }
-}
-@media all and (min-width: 1025px) and (max-width: 1920px) {
-  .Select {
-    width: 15vw;
-    margin: 0;
-    margin: 1vh 1vh 1vh 0;
-  }
-}
-@media all and (min-width: 1921px) and (max-width: 2560px) {
-  .Select {
-    width: 10vw;
-    margin: 0;
-    margin: 1vh 1vh 1vh 0;
+    width: 350px;
+    height: 2em;
+    font-size: 1.5rem;
   }
 }

@@ -2,14 +2,13 @@
 @import "../../styles/variables.scss";
 
 .Filter_Container {
- margin: 0 auto;
+  margin: 0 auto;
   font-family: $primary-font;
-  width: 50%;
+  width: 96%;
   height: fit-content;
   backdrop-filter: blur(2px);
   background-color: rgba(54, 157, 197, 0.505);
   border-radius: 1em;
-  //border: 1px solid $white;
   filter: drop-shadow(0 0 0.75rem rgb(255, 255, 255));
   padding: 1%;
   z-index: 1001;
@@ -18,28 +17,27 @@
 .Title {
   color: $dark-blue;
   text-align: center;
-  line-height: 0px;
+  //line-height: 0px;
 }
 
 .Form {
   width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   justify-content: center;
-  
+  align-items: center;
+  gap: 0.6em;
 }
 
-
 .Button {
-
   background-color: $yellow;
   width: 5vw;
   height: 5vh;
   font-size: 1rem;
   font-weight: 800;
-  margin-left: 10px;
+
   border: none;
   transition: all 0.2s ease-in-out;
   font-family: $primary-font;
@@ -47,82 +45,50 @@
   @include button;
   @include hover;
 }
-
-
-@media all and (min-width: 320px) and (max-width: 425px) {
-  .Filter_Container {
+@media all and (min-width: 767px) and (max-width: 1023px) {
+  .Form {
     width: 100%;
-    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 
   .Button {
-    margin-top: 2vh;
-    width: 50vw;
-    height: 5vh;
+    width: 100px;
+    height: 35px;
   }
 }
-
-@media all and (min-width: 426px) and (max-width: 768px) {
-  .Filter_Container {
+@media all and (min-width: 1024px) and (max-width: 1919px) {
+  .Form {
     width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
 
-  .Button {
-    margin-top: 1vh;
-    width: 9vw;
-    height: 5vh;
-    font-size: 13px;
-  }
-}
-
-@media all and (min-width: 1025px) and (max-width: 1440px) {
-  .Filter_Container {
-    width: 80%;
-  }
-
-  .Button {
-    margin-top: 1vh;
-    width: 8vw;
-    height: 5vh;
-    font-size: 13px;
+  .Select {
+    width: 250px;
   }
 }
 
-@media all and (min-width: 1441px) and (max-width: 1920px) {
+@media all and (min-width: 1920px) {
   .Filter_Container {
-    width: 80%;
+    width: fit-content;
+  }
+  .Form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    flex-wrap: nowrap;
+  }
+  .Title {
+    font-size: 2rem;
   }
 
   .Button {
-    margin-top: 1vh;
-    width: 8vw;
-    height: 5vh;
-    font-size: 13px;
-  }
-}
-
-@media all and (min-width: 1921px) and (max-width: 2559px) {
-  .Filter_Container {
-    width: 70%;
-  }
-
-  .Button {
-    margin-top: 1vh;
-    width: 8vw;
-    height: 5vh;
-    font-size: 13px;
-  }
-}
-
-@media all and (min-width: 2560px) {
-  .Filter_Container {
-    width: 50%;
-  }
-
-  .Button {
-    margin-top: 1vh;
-    width: 6vw;
-    height: 5vh;
-    font-size: 13px;
+    width: 150px;
+    height: 45px;
+    font-size: 1.3rem;
   }
 }

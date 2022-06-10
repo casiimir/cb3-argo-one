@@ -1,6 +1,10 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
+.Wrapper_Hero {
+  overflow-x: hidden;
+}
+
 .Dynamic {
   position: relative;
   animation: 1s ease-out 0s 1 slideImg !important;
@@ -8,8 +12,11 @@
 
 .Slide {
   position: relative;
+  width: 100vw;
+  transition: transform ease-out 1s;
+  overflow: hidden;
 
-  opacity: 0 !important;
+  transform: translateX(100%);
 }
 
 .Static {
@@ -41,5 +48,13 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes slideImgOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

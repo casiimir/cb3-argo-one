@@ -24,9 +24,9 @@ const Detail = () => {
   };
 
   useEffect(() => {
-    query.uuid && updateActivityDataByUuid(query.uuid);
+    query.uuid && updateActivityDataByUuid(query.uuid, dataStore.language);
     //eslint-disable-next-line
-  }, [query.uuid]);
+  }, [query.uuid, dataStore.language]);
 
   return (
     <div className={styles.global}>

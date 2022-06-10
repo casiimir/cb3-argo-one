@@ -113,7 +113,7 @@ const Cart = () => {
               <hr className={styles.Wrapper_Head__Breaker} />
             </div>
             {cart &&
-              cart.cartItems.map((item, index) => (
+              cart.cartItems.sort().map((item, index) => (
                 <div className={styles.Container__Cart__Item} key={index}>
                   <div className={styles.Bagde}>
                     <div className={styles.ImgContainer}>
@@ -156,7 +156,6 @@ const Cart = () => {
                         className={styles.Cart_Button__Minus}
                         onClick={() => handleClickonMinus(item.title)}
                       >
-                        {" "}
                         <ImMinus />
                       </button>
                       <input
