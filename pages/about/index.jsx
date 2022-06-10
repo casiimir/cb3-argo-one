@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useWindowSize } from "../../utils/utils";
 import Image from "next/image";
 import Translator from "../../components/Translator";
 import styles from "./styles.module.scss";

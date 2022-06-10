@@ -1,22 +1,18 @@
 import Hero from "../../components/Hero/hero";
 import CardList from "../../components/CardList";
 import ExperienceFinder from "../../components/ExperienceFinder/ExperienceFinder";
-import SkeletonLoading from "../../components/SkeletonLoading";
-import { useDataContext } from "../../context/DataContext/dataContext";
 import styles from "./styles.module.scss";
+import { useDataContext } from "../../context/DataContext/dataContext";
 
 export default function Homepage() {
-  const { dataStore } = useDataContext();
 
-
-  return (
-    <section className={styles.homepage}>
-      <Hero />
-      <section className={styles.homepage__map}>
-        <ExperienceFinder />
-        {dataStore.loading && <SkeletonLoading />}
-      </section>
-      <CardList />
-    </section>
-  );
+	return (
+		<div className={styles.homepage}>
+			<Hero />
+			<div className={styles.homepage__map}>
+				<ExperienceFinder />
+			</div>
+			<CardList />
+		</div>
+	);
 }

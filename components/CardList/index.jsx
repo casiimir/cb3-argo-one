@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useDataContext } from "../../context/DataContext/dataContext";
+import SkeletonLoading from '../SkeletonLoading'
 import Card from "../Card";
 import Translator from "../Translator";
 import styles from "./index.module.scss";
@@ -26,7 +27,7 @@ const Cardlist = () => {
 		<div className={styles.global}>
 			<h2 className={styles.title}>{<Translator word="experiences" type="upper" />}</h2>
 			<div className={styles.card_wrapper}>
-				{
+				{dataStore.loading ? <SkeletonLoading/> :
 					dataStore.activities.data.map((card, index) => (
 						<Card card={card} key={index} />
 					))
