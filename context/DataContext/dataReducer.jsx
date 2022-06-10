@@ -44,6 +44,7 @@ const dataReducer = (state, action) => {
       return {
         ...state,
         loading: false,
+
         setControl: true,
         activities: action.payload,
       };

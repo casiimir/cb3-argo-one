@@ -141,11 +141,11 @@ export const GetActivitiesByCity = (cityIn) =>
     },
   });
 
-export const GetActivitiesByUuid = (ActivityUuid) =>
+export const GetActivitiesByUuid = (ActivityUuid, lang) =>
   http(ACTIVITY_BY_UUID, ActivityUuid, {
     method: "GET",
     headers: {
-      "Accept-Language": "en-US",
+      "Accept-Language": lang,
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",

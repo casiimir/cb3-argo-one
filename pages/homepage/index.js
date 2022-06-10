@@ -10,10 +10,6 @@ import styles from "./styles.module.scss";
 
 export default function Homepage() {
   const { dataStore } = useDataContext();
-  const Map = dynamic(() => import("../../components/Map"), {
-    loading: () => <p>A map is loading</p>,
-    ssr: false,
-  });
 
   return (
     <section className={styles.homepage}>
@@ -22,7 +18,7 @@ export default function Homepage() {
         <ExperienceFinder />
         {dataStore.loading && <SkeletonLoading />}
       </section>
-      <CardList />
+      {dataStore.setControl && <CardList />}
     </section>
   );
 }

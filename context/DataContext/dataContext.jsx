@@ -81,11 +81,11 @@ export const DataContextProvider = ({ children }) => {
       });
     }
   };
-  const updateActivityDataByUuid = async (ActivityUuid) => {
+  const updateActivityDataByUuid = async (ActivityUuid, lang) => {
     console.log(ActivityUuid);
     dispatch({ type: "DATA_FETCH_REQUEST" });
     try {
-      const activityData = await GetActivitiesByUuid(ActivityUuid);
+      const activityData = await GetActivitiesByUuid(ActivityUuid, lang);
       dispatch({
         type: "ACTIVITY_UUID_FETCH_SUCCESS",
         payload: activityData,

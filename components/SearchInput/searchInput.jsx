@@ -22,7 +22,7 @@ const SearchInput = () => {
     setDateTo,
     setDateFrom,
   } = useDataContext();
-
+  const [userCategorySelect, setUserCategorySelect] = useState();
   const [actualDate, SetActualDate] = useState((date) => [
     { fullDate: date, day: date, month: date },
   ]);
@@ -35,8 +35,10 @@ const SearchInput = () => {
     if (sentinel) {
       setAlert((prev) => !prev);
     } else {
-      updateCategoriesData(event.target.value);
+      //updateCategoriesData(event.target.value);
+      setUserCategorySelect(event.target.value);
       updateCityData(event.target.value);
+      console.log(event);
     }
   };
 
@@ -72,6 +74,10 @@ const SearchInput = () => {
   useEffect(() => {
     setFormattingLocalDate(SetActualDate);
   }, []);
+
+  useEffect(() => {
+    userCategorySelect && updateCategoriesData(userCategorySelect);
+  }, [userCategorySelect]);
 
   return (
     <div className={styles.Filter_Container}>
