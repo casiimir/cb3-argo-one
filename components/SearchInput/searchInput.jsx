@@ -19,7 +19,7 @@ const SearchInput = () => {
     setDateTo,
     setDateFrom,
   } = useDataContext();
-
+  const [userCategorySelect, setUserCategorySelect] = useState();
   const [actualDate, SetActualDate] = useState((date) => [
     { fullDate: date, day: date, month: date },
   ]);
@@ -35,6 +35,7 @@ const SearchInput = () => {
     } else {
       updateCategoriesData(event.target.value, dataStore.language);
       updateCityData(event.target.value);
+      console.log(event);
     }
   };
 
