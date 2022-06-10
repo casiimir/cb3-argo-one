@@ -6,7 +6,7 @@
   width: 100%;
   position: fixed;
   top: 0;
-  z-index: 999;
+  z-index: 1200;
   opacity: 20;
   display: flex;
   justify-content: space-between;
@@ -132,6 +132,7 @@
       border-top: 2px solid $dark-blue;
       padding: 22px;
       gap: 0;
+      background-color: white;
 
       a {
         padding-left: 10px;
