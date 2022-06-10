@@ -1,57 +1,111 @@
-import { useModalContext } from "../../context/ModalContext/modalContext";
-import { useDataContext } from "../../context/DataContext/dataContext";
+import { useModalContext } from "../../context/UserContext/userContext";
 
 import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
 const Modal = () => {
-  const { modalStore, setOpenModal } = useModalContext();
-  const {} = useDataContext();
+  /*const storeItemsOnLocal = (title, price, imgUrl) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-  const activitiesData = modalStore.modalData;
+    cartItems.push({ title: title, price: price, imgUrl: imgUrl });
 
-  const handleClickOnBckground = () => {
-    setOpenModal("", false);
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };*/
+
+  const handleAddToCart = () => {
+    addToCart({
+      title: activitiesData.title,
+      price: activitiesData.retail_price.formatted_value,
+      img: activitiesData.cover_image_url,
+    });
+
+    storeItemsOnLocal(
+      activitiesData.title,
+      activitiesData.retail_price.formatted_value,
+      activitiesData.cover_image_url
+    );
   };
 
   return (
     <>
-      {modalStore.openModal && (
-        <div
-          className={styles.Modal_Background}
-          onClick={() => handleClickOnBckground()}
-        >
-          <div className={styles.Modal_Container}>
-            <div className={styles.Actv_Image}>
+      {/* {modalStore.openModal && (
+        <div className={styles.Modal_Container}>
+          <div className={styles.Modal_Wrapper}>
+            <div className={styles.Actv_Image_Container}>
               <Image
                 src={activitiesData.cover_image_url}
                 alt="welcome to sicily"
-                width={1920}
-                height={1080}
+                width={1200}
+                height={720}
                 layout="responsive"
                 placeholder="empty"
+                className={styles.Actv_Image}
               />
+              <p className={styles.Prices_p}>
+                {activitiesData.retail_price.formatted_value}
+              </p>
             </div>
-            <h2>{activitiesData.title}</h2>
-            <p>{activitiesData.city.country.name}</p>
-            <p>{activitiesData.about}</p>
-            <p>{activitiesData.highlights}</p>
-            <p>{activitiesData.included}</p>
-            {activitiesData.languages.map((lang) => (
-              <p>{lang.name}</p>
-            ))}
-            <p>{activitiesData.retail_price.formatted_value}</p>
-            <div>
-              <button>Add to cart</button>
-              <button>Go back</button>
+            <div className={styles.Info_Container}>
+              <h2 className={styles.Title}>{activitiesData.title}</h2>
+              <p className={styles.Place}>{activitiesData.city.name}</p>
+            </div>
+            <p className={styles.About}>{activitiesData.about}</p>
+            <div className={styles.highlights}>
+              <ul className={styles.highlights_ul}>
+                {activitiesData.highlights.map((highlight) => (
+                  <li className={styles.highlights_li} key={activitiesData.id}>
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+              <ul className={styles.included_ul}>
+                {activitiesData.included.map((feat) => (
+                  <li className={styles.included_li} key={activitiesData.id}>
+                    {feat}
+                  </li>
+                ))}
+              </ul>
+              <div className={styles.lang_Container}>
+                <p className={styles.lang_title}>Available Languages</p>
+                <ul className={styles.lang_ul}>
+                  {activitiesData.languages.map((lang) => (
+                    <li className={styles.lang_li} key={lang.code}>
+                      {lang.name}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            <div className={styles.Button_Container}>
+              <button
+                className={styles.Button}
+                onClick={() => {
+                  handleAddToCart();
+                }}
+              >
+                Add to cart
+              </button>
+              <button
+                className={styles.Button}
+                onClick={() => handleClickOnBckground()}
+              >
+                Go back
+              </button>
             </div>
             {activitiesData.verticals.slice(0, 2).map((vert) => {
-              vert.name;
+              <ul>
+                <li key={vert.code}>{vert.name}</li>
+              </ul>;
             })}
           </div>
+          <div
+            className={styles.Modal_Background}
+            onClick={() => handleClickOnBckground()}
+          ></div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

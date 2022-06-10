@@ -3,21 +3,29 @@ import {
   CATEGORIES_FETCH_SUCCESS,
   ACTIVITIES_FETCH_SUCCESS,
   EXPERIENCE_FETCH_SUCCESS,
+  ACTIVITY_UUID_FETCH_SUCCESS,
   DATA_FETCH_REQUEST,
+  DATA_FETCH_COMPLETED,
   DATA_FETCH_ERROR,
+  DATA_FETCH_SUCCESS,
   DISCARD_ERROR,
   SET_SELECTED_CATEGORY,
   SET_DATE_TO,
   SET_DATE_FROM,
-} from "../constants";
+  SET_LANGUAGE,
+} from "./constants";
 
 const dataReducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case DATA_FETCH_REQUEST:
       return {
         ...state,
         loading: true,
+      };
+    case DATA_FETCH_COMPLETED:
+      return {
+        ...state,
+        loading: false,
       };
     case CATEGORIES_FETCH_SUCCESS:
       return {
@@ -43,9 +51,20 @@ const dataReducer = (state, action) => {
       return {
         ...state,
         loading: false,
-        experiences: action.payload,
+        experiences: { ...state.experiences, cities: action.payload },
+      };
+    case ACTIVITY_UUID_FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        activity: action.payload,
       };
 
+    case DATA_FETCH_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+      };
     case DATA_FETCH_ERROR:
       return {
         ...state,
@@ -68,7 +87,11 @@ const dataReducer = (state, action) => {
         ...state,
         date_from: action.payload,
       };
-
+    case SET_LANGUAGE:
+      return {
+        ...state,
+        language: action.payload,
+      };
     default:
       throw new Error("Controlla bene i parametri scelti");
   }

@@ -1,60 +1,28 @@
-import { useState, useEffect } from "react";
-import Image from "next/image";
-import { slideData } from "../../utils/data";
+import dynamic from "next/dynamic";
+import { useDataContext } from "../../context/DataContext/dataContext";
 
-import DynamicParagraph from "../../components/DynamicParagraph/dynamicParagraph";
+import Hero from "../../components/Hero/hero";
+import CardList from "../../components/CardList";
+import ExperienceFinder from "../../components/ExperienceFinder/ExperienceFinder";
+import SkeletonLoading from "../../components/SkeletonLoading";
 
 import styles from "./styles.module.scss";
 
-export default function Home() {
-  const [imgClasses, setImgClasses] = useState(styles.Dynamic);
-  const [imgCount, setImgCount] = useState(0);
-  const [fadeIn, setFadeIn] = useState(false);
-
-  const handleImgSlide = () => {
-    if (imgCount < slideData.imgUrl.length - 1) {
-      setImgCount((prev) => prev + 1);
-      setImgClasses(styles.Slide);
-      setFadeIn((prev) => !prev);
-
-      setTimeout(() => {
-        setImgClasses(styles.Dynamic);
-      }, 80);
-    } else {
-      setImgCount(0);
-
-      setImgClasses(styles.Slide);
-      setFadeIn((prev) => !prev);
-
-      setTimeout(() => {
-        setImgClasses(styles.Dynamic);
-      }, 80);
-    }
-  };
-
-  useEffect(() => {
-    setFadeIn(true);
-    fadeIn && setTimeout(handleImgSlide, 3000);
-  }, [fadeIn]);
+export default function Homepage() {
+  const { dataStore } = useDataContext();
+  const Map = dynamic(() => import("../../components/Map"), {
+    loading: () => <p>A map is loading</p>,
+    ssr: false,
+  });
 
   return (
-    <div className={styles.homepage}>
-      <section className={imgClasses}>
-        <Image
-          src={slideData.imgUrl[imgCount]}
-          alt="welcome to sicily"
-          width={1280}
-          height={720}
-          layout="fill"
-          placeholder="empty"
-          priority
-          //className={imgClasses}
-        />
+    <section className={styles.homepage}>
+      <Hero />
+      <section className={styles.homepage__map}>
+        <ExperienceFinder />
+        {dataStore.loading && <SkeletonLoading />}
       </section>
-
-      <div className={styles.homepage__desc}>
-        <DynamicParagraph />
-      </div>
-    </div>
+      <CardList />
+    </section>
   );
 }

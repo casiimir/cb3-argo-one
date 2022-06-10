@@ -1,13 +1,14 @@
-import { useModalContext } from "../../context/ModalContext/modalContext";
+import Link from "next/link";
+import { useUserContext } from "../../context/UserContext/userContext";
 
 import styles from "./index.module.scss";
 
 const Card = ({ cards }) => {
-  const { setOpenModal } = useModalContext();
+  const { setSelectedActivityByUuid } = useUserContext();
   const card = cards.data;
 
-  const handleClickOnCard = (cardData) => {
-    setOpenModal(cardData, true);
+  const handleClickOnCard = (ActivityUuiD) => {
+    setSelectedActivityByUuid(ActivityUuiD);
   };
 
   return (
@@ -17,13 +18,17 @@ const Card = ({ cards }) => {
           <div
             className={styles.cards}
             key={index}
-            onClick={() => handleClickOnCard(single)}
+            onClick={() => handleClickOnCard(single.uuid)}
           >
-            <img
-              className={styles.card_img}
-              src={single.cover_image_url}
-              alt={single.title}
-            />
+            <Link href={`/detail/${single.slug_id}?uuid=${single.uuid}`}>
+              <a>
+                <img
+                  className={styles.card_img}
+                  src={single.cover_image_url}
+                  alt={single.title}
+                />
+              </a>
+            </Link>
             <div className={styles.text}>
               <h2 className={styles.title}>
                 {single.title.split(" ").slice(0, 4).join(" ") + "..."}

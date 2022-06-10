@@ -75,28 +75,27 @@ const SearchInput = () => {
 
   return (
     <div className={styles.Filter_Container}>
+      <h2 className={styles.Title}>Looking for an experience?</h2>
       <form className={styles.Form} onSubmit={handleSubmit}>
         <OptionGroup
           data={cities}
           onChangeFn={handleClickOnCities}
           typeValue="cities"
           defaultText="Select cities"
-          textValue="Select a city to Start"
+          textValue="Select a city to start"
           defaultValue="unselected"
         />
-
         <OptionGroup
           data={dataStore.categories}
           onChangeFn={handleClickOnTipology}
           typeValue="tipology"
           defaultText="Select activities"
-          textValue="Select an activities in zone"
+          textValue="Select an activitiy"
         />
-
         {alert && (
           <div className={styles.Alert}>
             <Alert
-              text="Select a cities first !"
+              text="Please, select an options first"
               value={alert}
               setFn={setAlert}
               time={3000}
@@ -104,13 +103,13 @@ const SearchInput = () => {
             />
           </div>
         )}
-
         <DatePicker
           firstDateFn={handleDateToPick}
           secondDateFn={handleDateFromPick}
         />
-
-        <input className={styles.Button} type="submit" value="Search" />
+        <button className={styles.Button} type="submit" value="Search">
+          Search
+        </button>
       </form>
     </div>
   );

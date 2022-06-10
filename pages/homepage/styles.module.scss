@@ -2,62 +2,13 @@
 @import "../../styles/variables.scss";
 
 .homepage {
-  position: relative;
-  overflow: hidden;
 
-  .Dynamic {
+   &__page {
     position: relative;
-    animation: 1s ease-out 0s 1 slideText !important;
-    width: 100vw;
-    height: 100vh;
-  }
-  .Slide {
-    position: relative;
-    opacity: 0 !important;
-    width: 100vw;
-    height: 100vh;
-  }
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} 
 }
 
-.homepage__desc {
-  display: flex;
-  position: absolute;
-  color: $light-blue;
-  z-index: 2;
-  top: 20vh;
-  //width: 25%;
-  height: clamp(60vw, 1vw, 100vh);
-  right: 5%;
-  font-family: $primary-font;
-  //font-size: 3.3vw;
-  text-align: right;
-  font-weight: 700;
-  flex-wrap: wrap;
-}
-@media all and (max-width: 660px) {
-  .homepage {
-    .Dynamic {
-      width: 200vw;
-      height: 100vh;
-      right: 40%;
-    }
-    .Slide {
-      width: 200vw;
-      height: 100vh;
-    }
-  }
-  .homepage__desc {
-    top: 30vh;
 
-    right: 5%;
-  }
-}
-
-@keyframes slideText {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}

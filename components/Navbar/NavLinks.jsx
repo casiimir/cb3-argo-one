@@ -1,64 +1,64 @@
 import Link from "next/link";
-import { useDataContext } from "../../context/DataContext/dataContext";
+import styles from "./styles.module.scss";
 import { FaShoppingCart } from "react-icons/fa";
-
-import { cities } from "../../utils/data";
+import { RiUser3Fill } from "react-icons/ri";
+import Translator from "../Translator";
+import Flag from "../Translator/flag";
+import { useState, useEffect } from "react";
+import { useUserContext } from "../../context/UserContext/userContext";
 
 const NavLinks = (props) => {
-	const { updateExperiencesData } = useDataContext();
+  const [itemCounter, setItemCounter] = useState(0);
+  const { userStore } = useUserContext();
+  useEffect(() => {
+    const item = JSON.parse(localStorage.getItem("cartItems"));
+    console.log(userStore);
+    item ? setItemCounter(item.length) : setItemCounter(0);
+    //eslint-next-line-disable
+  }, [userStore]);
+  return (
+    <nav>
+      <ul className={props.open ? styles.MenuOpener : null}>
+        <Link href="/">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="home" type="upper" />
+          </a>
+        </Link>
+        <Link href="/experiences">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="experiences" type="upper" />
+          </a>
+        </Link>
+        <Link href="/about">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="about" type="upper" />
+          </a>
+        </Link>
+        <Link href="/contact-us">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <Translator word="contacts" type="upper" />
+          </a>
+        </Link>
+        <Link href="/">
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+            <RiUser3Fill className={styles.NavbarIcons} />
+          </a>
+        </Link>
 
-	const handleClickOnExperience = () => {
-		const cityId = cities.map((city) => city.id);
-		updateExperiencesData(cityId);
-		props.isMobile && props.closeMobileMenu();
-	};
+        <Link href="/cart">
+          <a
+            className={styles.Cart_Container}
+            onClick={() => props.isMobile && props.closeMobileMenu()}
+          >
+            <p className={styles.Cart_Container__Badge}>{itemCounter}</p>
 
-	return (
-		<nav>
-			<div>
-				<ul>
-					<Link
-						href="/homepage"
-						onClick={() =>
-							props.isMobile && props.closeMobileMenu()
-						}
-					>
-						<a>HOME</a>
-					</Link>
-					<Link
-						href="/experiences"
-						//onClick={() => props.isMobile && props.closeMobileMenu()} <--- devi wrapparle in una funzione
-					>
-						<a onClick={handleClickOnExperience}>EXPERIENCES</a>
-					</Link>
-					<Link
-						href="/about"
-						onClick={() =>
-							props.isMobile && props.closeMobileMenu()
-						}
-					>
-						<a>ABOUT</a>
-					</Link>
-					<Link
-						href="/contact-us"
-						onClick={() =>
-							props.isMobile && props.closeMobileMenu()
-						}
-					>
-						<a>CONTACTS</a>
-					</Link>
-					<button
-						href="/"
-						onClick={() =>
-							props.isMobile && props.closeMobileMenu()
-						}
-					>
-						<FaShoppingCart size="22px" color="#fff" />
-					</button>
-				</ul>
-			</div>
-		</nav>
-	);
+            <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
+          </a>
+        </Link>
+        <Flag />
+      </ul>
+    </nav>
+  );
 };
 
 export default NavLinks;

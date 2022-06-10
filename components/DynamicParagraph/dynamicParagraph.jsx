@@ -4,7 +4,7 @@ import { slideData } from "../../utils/data";
 import styles from "./styles.module.scss";
 
 const DynamicParagraph = () => {
-  const [slideText, setSlideText] = useState("our history");
+  const [slideText, setSlideText] = useState("our beaches");
   const [txtIndexCounter, setTxtIndexCounter] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
   const [classes, setClasses] = useState(styles.Dynamic);
@@ -33,11 +33,11 @@ const DynamicParagraph = () => {
 
   useEffect(() => {
     setFadeIn(true);
-    fadeIn && setTimeout(handleTextSlide, 3000);
+    fadeIn && setTimeout(handleTextSlide, 5000);
   }, [fadeIn]);
 
   return (
-    <div className={styles.Modal_Container}>
+    <div className={styles.Paragraph_Container}>
       <p>Discover Sicily</p>
       <p>through</p>
       <p className={classes}>{slideText}</p>

@@ -1,12 +1,13 @@
-const CITY_URL = `https://api.musement.com/api/v3/cities/`;
+import { useState, useEffect } from "react";
 
-const CITIES_ACTIVITY_URL = (cityId) =>
-  `https://api.musement.com/api/v3/cities/${cityId}/activities?`;
+const CITY_URL = `https://api.musement.com/api/v3/cities/`;
 
 const CITIES_CATEGORY_URL = (cityId) =>
   `https://api.musement.com/api/v3/cities/${cityId}/categories?`;
 
-const AVAIABLE_ACTIVITY_URL = `https://api.musement.com/api/v3/activities?`;
+const ACTIVITY_BY_UUID = "https://api.musement.com/api/v3/activities/";
+
+const AVAILABLE_ACTIVITY_URL = `https://api.musement.com/api/v3/activities?`;
 
 export const http = async (APIurl, resource = "", options) => {
   const result = await fetch(`${APIurl}${resource}`, options);
@@ -17,7 +18,7 @@ export const http = async (APIurl, resource = "", options) => {
   }
 };
 
-const GetCategoryOptions = () =>
+const CategoryOptions = () =>
   new URLSearchParams({
     //coordinates: `${latLon}`,
     limit: "8",
@@ -27,10 +28,10 @@ const GetCategoryOptions = () =>
   }).toString();
 
 export const GetCategories = async (cityId) => {
-  const result = await fetch(CITIES_CATEGORY_URL(cityId), GetCategoryOptions, {
+  const result = await fetch(CITIES_CATEGORY_URL(cityId), CategoryOptions, {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
@@ -39,7 +40,7 @@ export const GetCategories = async (cityId) => {
   return await result.json();
 };
 
-const GetActivityOption = (coord, codeType, date) =>
+const ActivityOption = (coord, codeType, date) =>
   new URLSearchParams({
     available_from: date[0],
     available_language_in: "en,it",
@@ -73,7 +74,7 @@ const GetActivityOption = (coord, codeType, date) =>
     //zero_terms_query: 'NONE'
   }).toString();
 
-const GetExperienceOption = (cityIn) =>
+const ExperienceOption = (cityIn) =>
   new URLSearchParams({
     //available_from: date[0],
     available_language_in: "en,it",
@@ -111,40 +112,40 @@ export const GetCityById = (resource) =>
   http(CITY_URL, resource, {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
     },
   });
 
-export const GET_ACTIVITY = (cityID, resource) =>
-  http(CITIES_ACTIVITY_URL(cityID), resource, {
+export const GetAvailableActivity = (coord, codeType, date) =>
+  http(AVAILABLE_ACTIVITY_URL, ActivityOption(coord, codeType, date), {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
     },
   });
 
-export const GetAvaiableActivity = (coord, codeType, date) =>
-  http(AVAIABLE_ACTIVITY_URL, GetActivityOption(coord, codeType, date), {
+export const GetActivitiesByCity = (cityIn) =>
+  http(AVAILABLE_ACTIVITY_URL, ExperienceOption(cityIn), {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
     },
   });
 
-export const GetAvaiableExperience = (cityIn) =>
-  http(AVAIABLE_ACTIVITY_URL, GetExperienceOption(cityIn), {
+export const GetActivitiesByUuid = (ActivityUuid) =>
+  http(ACTIVITY_BY_UUID, ActivityUuid, {
     method: "GET",
     headers: {
-      "Accept-Language": "it",
+      "Accept-Language": "en-US",
       "X-Musement-Application": "string",
       "X-Musement-Market": "us",
       "X-Musement-Version": "3.4.0",
@@ -159,4 +160,36 @@ export const setFormattingLocalDate = (setStateCallBack) => {
   const year = date[0].split("-")[0];
   const yearMonth = date[0].split("-")[0] + "-" + date[0].split("-")[1];
   setStateCallBack([{ fullDate: date[0], day: day, month: month, year: year }]);
+};
+
+export const useWindowSize = () => {
+  // Initialize state with undefined width/height so server and client renders match
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // only execute all the code below in client side
+    if (typeof window !== "undefined") {
+      // Handler to call on window resize
+      function handleResize() {
+        // Set window width/height to state
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      }
+
+      // Add event listener
+      window.addEventListener("resize", handleResize);
+
+      // Call handler right away so state gets updated with initial window size
+      handleResize();
+
+      // Remove event listener on cleanup
+      return () => window.removeEventListener("resize", handleResize);
+    }
+  }, []); // Empty array ensures that effect is only run on mount
+  return windowSize;
 };
