@@ -33,19 +33,11 @@
     justify-content: flex-end;
     align-items: center;
   }
-<<<<<<< HEAD
 
   .MobileNavigation {
     display: None;
   }
 
-=======
-
-  .MobileNavigation {
-    display: None;
-  }
-
->>>>>>> dev
   ul {
     padding: 0 1em;
     display: flex;
@@ -82,20 +74,10 @@
       justify-content: center;
       align-items: center;
       z-index: 1002;
-<<<<<<< HEAD
-
       margin: 0;
       padding: 0;
       text-align: center;
       color: white;
-=======
-      > p {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        color: white;
-      }
->>>>>>> dev
     }
     &__NavbarIcons {
       position: relative;
@@ -170,23 +152,14 @@
     }
   }
   .Cart_Container {
-<<<<<<< HEAD
     display: flex;
     flex-direction: column;
     align-items: center;
-=======
-    //padding: 0 20px 0 20px;
-    //margin: 0;
->>>>>>> dev
 
     &__Badge {
       position: relative;
 
-<<<<<<< HEAD
       left: 10px !important;
-=======
-      left: 150px !important;
->>>>>>> dev
       top: 5px;
     }
 
@@ -194,16 +167,6 @@
       position: static !important;
     }
   }
-<<<<<<< HEAD
-=======
-}
-@media all and (max-width: 425px) {
-  .Cart_Container {
-    &__Badge {
-      left: 67px !important;
-    }
-  }
->>>>>>> dev
 }
 
 @media (max-width: 375px) {
@@ -224,14 +187,6 @@
     &__Title {
       font-family: $primary-font;
       font-size: 30px;
-<<<<<<< HEAD
-=======
-    }
-    .Cart_Container {
-      &__Badge {
-        left: 55px !important;
-      }
->>>>>>> dev
     }
   }
 }
