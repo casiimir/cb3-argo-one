@@ -14,6 +14,9 @@
 
 .Static {
   position: relative;
+  > span {
+    height: 100vh !important;
+  }
 }
 
 //passa i valori al paragrafo
