@@ -63,7 +63,7 @@
 
     &__Badge {
       position: relative;
-
+      top: 2px;
       left: 8px;
       width: 20px;
       height: 20px;
@@ -81,7 +81,7 @@
     }
     &__NavbarIcons {
       position: relative;
-      bottom: 10px;
+      bottom: 7px;
       right: 5px;
     }
   }
@@ -135,8 +135,8 @@
       background-color: white;
       animation: 0.5s ease-in-out 0s 1 translateX;
 
-      a {
-        padding-left: 10px;
+      a,
+      span {
         background-color: $white;
         color: $dark-blue;
         width: 100%;
@@ -162,23 +162,24 @@
       position: relative;
 
       left: 10px !important;
-      top: 5px;
+      //top: 5px;
     }
 
     &__NavbarIcons {
-      position: static !important;
+      right: 0px !important;
+      // position: static !important;
     }
   }
 }
 
 @keyframes translateX {
-    0% {
-      opacity: 0;
-      transform: translateX(60px);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translateX(0px);
-    }
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
   }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
