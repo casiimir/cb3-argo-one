@@ -6,6 +6,7 @@ import ExpCard from "../../components/ExpCard";
 import Image from "next/image";
 import SkeletonLoading from "../../components/SkeletonLoading";
 import styles from "./index.module.scss";
+import Translator from "../../components/Translator";
 
 const Experiences = () => {
   const { fetchRequest, dataStore, fetchCompleted } = useDataContext();
@@ -53,7 +54,7 @@ const Experiences = () => {
             {`- Luigi Pirandello`}
           </blockquote>
         </div>
-        <h2 className={styles.title}>{"Our finds for you"}</h2>
+        <h2 className={styles.title}>{<Translator word="our finds for you" type="fwupper"/>}</h2>
         {dataStore.loading ? (
           <SkeletonLoading />
         ) : ( 
@@ -63,7 +64,7 @@ const Experiences = () => {
             <h2 className={styles.cities}>{"Catania"}</h2>
             <ExpCard result={fixedActivities2} />
             <div className={styles.lastSlide}>
-              <h2 className={styles.cities}>{"Other cities"}</h2>
+              <h2 className={styles.cities}>{<Translator word="other cities" type="fwupper"/>}</h2>
               <ExpCard result={activities} />
             </div>
           </div>

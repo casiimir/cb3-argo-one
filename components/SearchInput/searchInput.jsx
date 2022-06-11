@@ -24,7 +24,7 @@ const SearchInput = () => {
     { fullDate: date, day: date, month: date },
   ]);
 
-  const [alert, setAlert] = useState(false);
+	const [alert, setAlert] = useState(false);
 
   //handling function on cities select
   const handleClickOnCities = async (event) => {
@@ -39,38 +39,44 @@ const SearchInput = () => {
     }
   };
 
-  //handling function on tipology select
-  const handleClickOnTipology = async (event) => {
-    const sentinel = event.target.value === "null";
-    if (sentinel) {
-      setAlert((prev) => !prev);
-    } else {
-      setSelectedCategory(event.target.value);
-    }
-  };
+	//handling function on tipology select
+	const handleClickOnTipology = async (event) => {
+		const sentinel = event.target.value === "null";
+		if (sentinel) {
+			setAlert((prev) => !prev);
+		} else {
+			setSelectedCategory(event.target.value);
+		}
+	};
 
-  const handleDateToPick = (event) => {
-    setDateTo(event.target.value);
-  };
-  const handleDateFromPick = (event) => {
-    setDateFrom(event.target.value);
-  };
+	const handleDateToPick = (event) => {
+		setDateTo(event.target.value);
+	};
+	const handleDateFromPick = (event) => {
+		setDateFrom(event.target.value);
+	};
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const selectedDateRange = [dataStore.date_to, dataStore.date_from];
+	const handleSubmit = (event) => {
+		event.preventDefault();
+		const selectedDateRange = [dataStore.date_to, dataStore.date_from];
 
-    updateActivitiesData(
-      dataStore.latLon,
-      dataStore.selectedCategory,
-      selectedDateRange
-    );
-    // i dati escono da qui e li trovi in dataStore nel context
-  };
+		updateActivitiesData(
+			dataStore.latLon,
+			dataStore.selectedCategory,
+			selectedDateRange, 
+		);
+		// i dati escono da qui e li trovi in dataStore nel context
+	};
 
-  useEffect(() => {
-    setFormattingLocalDate(SetActualDate);
-  }, []);
+	useEffect(() => {
+		setFormattingLocalDate(SetActualDate);
+	}, []);
+	
+	useEffect(() => {
+		if (dataStore.cityData !== null) {
+			updateCategoriesData(dataStore.cityData.id, dataStore.language);
+		}
+	}, [dataStore.language]);
 
   useEffect(() => {
     if (dataStore.cityData !== null) {

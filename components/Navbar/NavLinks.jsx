@@ -40,8 +40,11 @@ const NavLinks = (props) => {
             </a>
           </Link>
           <Link href="/login">
-            <a onClick={() => props.isMobile && props.closeMobileMenu()}>
-              <RiUser3Fill className={styles.NavbarIcons} />
+            <a className={styles.loginA} onClick={() => props.isMobile && props.closeMobileMenu()}>
+              <RiUser3Fill className={styles.NavbarIcons}></RiUser3Fill>
+              <div className={styles.loggedUser}>
+                <p>{userStore.username}</p>
+              </div>
             </a>
           </Link>
           <Flag />

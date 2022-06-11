@@ -157,14 +157,9 @@
   }
 
   @media all and (min-width: 769px) and (max-width: 1024px) {
-    .arrow_sx{
-      left: -12%;
-      top: -16vh;
-    }
-    .arrow_dx{
-      left: 104%;
-      top: -10vh;
-    }
+    .arrow_dx, .arrow_sx{
+      display: none;
+  }
   }
 
   @media all and (min-width: 1024px) and (max-width: 1439px){
@@ -174,7 +169,7 @@
     }
     .arrow_dx{
       left: 105%;
-      top: -4vh;
+      top: -5vh;
     }
   }
   
@@ -185,13 +180,13 @@
     }
     .arrow_dx{
       left: 105%;
-      top: -2vh;
+      top: -3vh;
     }
   }
   
   @media all and (min-width: 2559px) {
     .arrow_sx{
-      left: -10%;
+      left: -8%;
       top: -8vh;
     }
     .arrow_dx{

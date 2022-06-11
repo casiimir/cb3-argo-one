@@ -1,8 +1,22 @@
 import styles from "./styles.module.scss";
 import Image from "next/image";
 import { useWindowSize } from "../../utils/utils";
+import { useState } from "react";
+import Translator from "../../components/Translator";
+import { useUserContext } from "../../context/UserContext/userContext";
+import Link from "next/link";
+
 export default function Loginpage() {
+  const { setUsername } = useUserContext();
+  const [user, setUser] = useState('')
   const { width } = useWindowSize();
+
+  const onSub = (e) => {
+    e.preventDefault()
+    setUsername(user)
+    
+  }
+  
   return (
     <div className={styles.login}>
       <div className={styles.loginImg}>
@@ -30,24 +44,26 @@ export default function Loginpage() {
         )}
       </div>
       <div className={styles.wrapper}>
-        <h2 className={styles.wrapper__title}>Sign in</h2>
-        <form className={styles.wrapper__form}>
+        <h2 className={styles.wrapper__title}><Translator word="sign in" type="fwupper" /></h2>
+        <form className={styles.wrapper__form} onSubmit={onSub}>
           <input
             className={styles.wrapper__input}
             type="text"
             id="name"
             autoComplete="off"
-            placeholder="Your name..."
+            placeholder="Your username..."
+            onChange={(e) => setUser(e.target.value)}
           ></input>
           <input
             className={styles.wrapper__input}
-            type="text"
+            type="password"
             id="password"
             autoComplete="off"
             placeholder="Your password..."
           ></input>
+        <button className={styles.wrapper__button} type="submit"><Translator word="sign in" type="fwupper" />
+          </button>
         </form>
-        <button className={styles.wrapper__button}>Sign in</button>
       </div>
     </div>
   );
