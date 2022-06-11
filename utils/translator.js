@@ -31,3 +31,14 @@
 //     })
 // }
 
+
+    export const getLanguage = () => {
+        if (typeof window !== "undefined") { 
+            let lang = localStorage.getItem('language')
+            if (!lang) { 
+                localStorage.setItem('language', 'en')
+            }
+        
+            return localStorage.getItem('language')
+        }
+    }

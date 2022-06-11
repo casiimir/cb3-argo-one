@@ -1,20 +1,32 @@
+/* eslint-disable @next/next/no-img-element */
 import Arrows from "../Arrows";
 import Link from "next/link";
 import styles from "./index.module.scss";
 import { useRef } from "react";
 import { useUserContext } from "../../context/UserContext/userContext";
 import { useDataContext } from "../../context/DataContext/dataContext";
+import Translator from "../Translator";
 
 const ExpCard = ({ result }) => {
-  const { setSelectedActivityByUuid } = useUserContext();
+  const { storeItemsOnLocal, setRefreshCartBadge, setSelectedActivityByUuid } = useUserContext();
+  const { dataStore, updateActivityDataByUuid } = useDataContext();
 
   const handleClickOnCard = (ActivityUuiD) => {
     console.log(ActivityUuiD);
     setSelectedActivityByUuid(ActivityUuiD);
   };
 
-  const data = result;
+  const handleAddToCart = (title, formatted_value, cover_image_url) => {
+    storeItemsOnLocal(
+      title,
+      formatted_value,
+      cover_image_url
+    );
+    setRefreshCartBadge();
+  };
 
+  const data = result;
+  
   const scrl = useRef(null);
   const slide = (cardWidth = 350) => {
     const numberVisibleCard = Math.floor(scrl.current.offsetWidth / cardWidth);
@@ -52,17 +64,19 @@ const ExpCard = ({ result }) => {
             </div>
             <div className={styles.wrapSubItems}>
               <div className={styles.cartDiv}>
-                <button className={styles.btnCart} >
+                <button className={styles.btnCart} onClick={() => handleAddToCart(single.title, single.retail_price.formatted_value, single.cover_image_url)} >
                   <a>
-                    <p>Add to Cart</p>
+                    <p>{<Translator word="add to cart" type="fwupper" />}</p>
                   </a>
                 </button>
               </div>
               <div className={styles.tags}>
-                {single.verticals.map((item) => (
-                  <div className={styles.slug_item} key={item.id}>
-                    {`${item.name}`}
-                  </div>
+                {single.verticals.map((item, index) => (
+                  index === 0 ?
+                    <div className={styles.slug_item} key={item.id}>
+                      {`${item.name}`}
+                    </div>
+                    : ""
                 ))}
               </div>
             </div>

@@ -2,65 +2,64 @@
 @import "../../styles/mixins.scss";
 
 .wrapper {
-	background-color: rgba(0, 0, 0, 0.325);
-	width: 100vw;
-	height: 100vh;
-	position: absolute;
-	z-index: 9999;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-    filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.553));
+  background-color: rgba(0, 0, 0, 0.325);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: center;
+  filter: drop-shadow(0 0 0.75rem rgba(0, 0, 0, 0.553));
 
-	&__modal {
-        position: relative;
-		display: flex;
-        flex-direction: column;
-        justify-content: center;
-		width: 30%;
-		height: 20%;
-		background-color: $light-blue;
-        border: 2px solid $white;
-		@include border-radius;
-        
-	}
+  &__modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
 
-    &__x {
-        font-family: $primary-font;
-        font-weight: bold;
-        font-size: 1.5rem;
-        color: $white;
-        position: absolute;
-        top: -20px;
-        right: 10px;
-        transition: 0.3s;
+    background-color: $light-blue;
+    border: 2px solid $white;
+    @include border-radius;
+  }
 
-        &:hover {
-            color: $yellow;
-            cursor: pointer;
-            
-        }
+  &__x {
+    font-family: $primary-font;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: $white;
+    position: absolute;
+    top: -20px;
+    right: 10px;
+    transition: 0.3s;
+
+    &:hover {
+      color: $yellow;
+      cursor: pointer;
     }
-	&__message {
-        display: flex;
-        align-self: center;
-		color: $white;
-        font-family: $primary-font;
-        font-weight: 400;
-        font-size: 1.7rem;
-        text-align: center;
-        padding: 2%;
-        margin: 0;    
-	}
-    
-    &__par {
-            display: flex;
-            flex-wrap: wrap;
-            align-self: center;
-            color: $white;
-            font-family: $primary-font;
-            font-weight: 400; 
-            font-size: 1.2rem;
-            line-height: 0;
-        }
+  }
+  &__message {
+    display: flex;
+    align-self: center;
+    color: $white;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 1.7rem;
+    text-align: center;
+    padding: 2%;
+    margin: 1em 0;
+  }
+
+  &__par {
+    display: flex;
+    flex-wrap: wrap;
+    align-self: center;
+    color: $white;
+    font-family: $primary-font;
+    font-weight: 400;
+    font-size: 1.2rem;
+  }
 }

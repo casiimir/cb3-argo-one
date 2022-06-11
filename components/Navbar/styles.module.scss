@@ -2,140 +2,194 @@
 @import "../../styles/variables.scss";
 
 .Navbar {
-    height: 90px;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    z-index: 999;
-    opacity: 20;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 2px;
-    font-family: $primary-font;
+  height: 90px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1200;
+  opacity: 20;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2px;
+  font-family: $primary-font;
+  color: $white;
+  font-size: 20px;
+  background-image: linear-gradient(grey, transparent);
+
+  &__NavbarIcons {
+    size: 22px;
     color: $white;
-    font-size: 20px;
-    background-image: linear-gradient(grey, transparent);
+  }
 
+  .Title {
+    font-family: $primary-font;
+    font-size: 36px;
+    padding: 16px;
+  }
+
+  .Navigation {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .MobileNavigation {
+    display: None;
+  }
+
+  ul {
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+
+    a {
+      padding: 22px;
+      transition: 1s;
+      white-space: nowrap;
+
+      &:hover {
+        text-decoration: none;
+        border-bottom: none;
+        color: $yellow;
+      }
+    }
+  }
+  .Cart_Container {
+    //padding: 0 20px 0 20px;
+    margin: 0;
+
+    &__Badge {
+      position: relative;
+
+      left: 8px;
+      width: 20px;
+      height: 20px;
+      background-color: $yellow;
+      border-radius: 36px;
+      font-size: 0.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1002;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: white;
+    }
     &__NavbarIcons {
-        size: 22px;
-        color: $white;
+      position: relative;
+      bottom: 10px;
+      right: 5px;
     }
-
-    .Title {
-        font-family: $primary-font;
-        font-size: 36px;
-        padding: 16px;
-    }
-
-    .Navigation {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-    }
-
-    .MobileNavigation {
-        display: None;
-    }
-
-    ul {
-        padding: 0;
-
-        a {
-            padding: 22px;
-            transition: 1s;
-
-            &:hover {
-                text-decoration: none;
-                border-bottom: none;
-                color: $yellow;
-            }
-        }
-    }
+  }
 }
 
 // MOBILE //
 
-@media (max-width: 840px) {
-    .Navbar {
-        height: 60px;
-        color: $dark-blue;
-        font-size: 20px;
-        background: $white;
-        border-bottom: 2px solid $dark-blue;
+@media all and (max-width: 840px) {
+  .Navbar {
+    height: 60px;
+    color: $dark-blue;
+    font-size: 20px;
+    background: $white;
+    border-bottom: 2px solid $dark-blue;
 
-        .MobileNavigation {
-            display: flex;
-            align-items: center;
-            text-align: center;
-        }
-
-        .Navigation {
-            display: none;
-        }
-
-        .Hamburger {
-            position: absolute;
-            right: 5%;
-            cursor: pointer;
-            margin: 0%;
-        }
-
-        .MenuOpener {
-            width: 50%;
-        }
-
-        ul {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            border-bottom: 2px solid $dark-blue;
-            border-left: 2px solid $dark-blue;
-            top: 40px;
-            right: 0;
-            width: 0;
-            border-top: 2px solid $dark-blue;
-
-            a {
-                padding-left: 10px;
-                background-color: $white;
-                color: $dark-blue;
-                width: 100%;
-
-                &:hover {
-                    border-bottom: none;
-                    color: $yellow;
-                }
-            }
-        }
-
-        &__Title {
-            font-family: $primary-font;
-            font-size: 30px;
-        }
+    .MobileNavigation {
+      display: flex;
+      align-items: center;
+      text-align: center;
     }
+
+    .Navigation {
+      display: none;
+    }
+
+    .Hamburger {
+      position: absolute;
+      right: 5%;
+      cursor: pointer;
+      margin: 0%;
+    }
+
+    .MenuOpener {
+      width: 50%;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      border-bottom: 2px solid $dark-blue;
+      border-left: 2px solid $dark-blue;
+      top: 40px;
+      right: 0;
+      width: 0;
+      border-top: 2px solid $dark-blue;
+      padding: 22px;
+      gap: 0;
+      background-color: white;
+
+      a {
+        padding-left: 10px;
+        background-color: $white;
+        color: $dark-blue;
+        width: 100%;
+
+        &:hover {
+          border-bottom: none;
+          color: $yellow;
+        }
+      }
+    }
+
+    &__Title {
+      font-family: $primary-font;
+      font-size: 30px;
+    }
+  }
+  .Cart_Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__Badge {
+      position: relative;
+
+      left: 10px !important;
+      top: 5px;
+    }
+
+    &__NavbarIcons {
+      position: static !important;
+    }
+  }
 }
 
-@media (max-width: 300px) {
-    .Navbar {
-        color: $dark-blue;
-        font-size: 20px;
-        background: $white;
+@media (max-width: 375px) {
+  .Navbar {
+    color: $dark-blue;
+    font-size: 20px;
+    background: $white;
 
-        .Navigation {
-            display: none;
-        }
-
-        ul {
-            width: 100%;
-            border-left: none;
-        }
-
-        &__Title {
-            font-family: $primary-font;
-            font-size: 30px;
-        }
+    .Navigation {
+      display: none;
     }
+
+    ul {
+      width: 100%;
+      border-left: none;
+    }
+
+    &__Title {
+      font-family: $primary-font;
+      font-size: 30px;
+    }
+  }
 }
 
 // @keyframes scrollLeft {

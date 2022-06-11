@@ -7,7 +7,6 @@ import {
   DATA_FETCH_REQUEST,
   DATA_FETCH_COMPLETED,
   DATA_FETCH_ERROR,
-  DATA_FETCH_SUCCESS,
   DISCARD_ERROR,
   SET_SELECTED_CATEGORY,
   SET_DATE_TO,
@@ -16,7 +15,6 @@ import {
 } from "./constants";
 
 const dataReducer = (state, action) => {
-  console.log(action);
   switch (action.type) {
     case DATA_FETCH_REQUEST:
       return {
@@ -45,6 +43,7 @@ const dataReducer = (state, action) => {
       return {
         ...state,
         loading: false,
+
         setControl: true,
         activities: action.payload,
       };
@@ -59,12 +58,6 @@ const dataReducer = (state, action) => {
         ...state,
         loading: false,
         activity: action.payload,
-      };
-
-    case DATA_FETCH_SUCCESS:
-      return {
-        ...state,
-        loading: false,
       };
     case DATA_FETCH_ERROR:
       return {
@@ -91,8 +84,8 @@ const dataReducer = (state, action) => {
     case SET_LANGUAGE:
       return {
         ...state,
-        language: action.payload
-      }
+        language: action.payload,
+      };
     default:
       throw new Error("Controlla bene i parametri scelti");
   }

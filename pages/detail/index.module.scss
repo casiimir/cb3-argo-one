@@ -1,7 +1,6 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-
 .global {
   display: flex;
   flex-direction: row;
@@ -32,7 +31,7 @@
   object-fit: cover;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.8));
 
-  .Actv_Image{
+  .Actv_Image {
     border-radius: 8px;
   }
 }
@@ -43,8 +42,6 @@
   color: #125d98;
   margin: 20px auto 20px auto;
   border-radius: 10px;
-  ;
-
   .Title {
     text-align: center;
     font-size: clamp(1rem, 5vw, 2rem);
@@ -158,7 +155,6 @@
     }
 
     .lang_ul {
-
       text-align: left;
     }
 
@@ -192,10 +188,7 @@
   transform: scale(1.05);
 }
 
-@media all and (max-width: 320px),
-(max-width: 425px) {
-
-
+@media all and (max-width: 320px), (max-width: 425px) {
   .eleniaèscarsaepurecretina {
     flex-wrap: wrap;
     width: 90%;
@@ -215,7 +208,7 @@
   }
 
   .Actv_Image {
-    width: 60%;
+    width: 80% !important;
   }
 
   .desc {
@@ -239,14 +232,12 @@
 
   .optionsDiv {
     margin-top: 5vh;
-    flex-direction: column
+    flex-direction: column;
   }
 }
 
-@media all and (max-width: 768px),
-(max-width: 1024px) {
-
-  .global{
+@media all and (max-width: 768px), (max-width: 1024px) {
+  .global {
     width: 100%;
   }
 
@@ -254,8 +245,8 @@
     flex-wrap: wrap;
     width: 90%;
   }
-  
-  .Modal_Wrapper{
+
+  .Modal_Wrapper {
     margin: 0 auto;
   }
 
@@ -268,7 +259,7 @@
     width: 100%;
   }
 
-   .sections {
+  .sections {
     width: 100%;
     display: flex;
     flex-direction: column;

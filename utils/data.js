@@ -1,3 +1,6 @@
+import Translator from "../components/Translator";
+
+Translator
 export const cities = [
 	{
 		name: "Palermo",
@@ -55,11 +58,11 @@ export const categories = [
 
 export const slideData = {
 	textData: [
-		"our food",
-		"our nature",
-		"our traditions",
-		"our history",
-		"our beaches",
+		[<Translator word="our food" type="lower" key="1"/>],
+		[<Translator word="our nature" type="lower" key="2"/>],
+		[<Translator word="our traditions" type="lower" key="3"/>],
+		[<Translator word="our history" type="lower" key="4"/>],
+		[<Translator word="our beaches" type="lower" key="5"/>],
 	],
 	imgUrl: [
 		"https://i.ibb.co/S7T1Dgz/2950545139-49f3999480-o.jpg",

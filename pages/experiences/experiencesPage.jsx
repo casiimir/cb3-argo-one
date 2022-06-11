@@ -4,27 +4,32 @@ import { cities, mainCities } from "../../utils/data";
 import { GetActivitiesByCity } from "../../utils/utils";
 import ExpCard from "../../components/ExpCard";
 import Image from "next/image";
-import styles from "./index.module.scss";
 import SkeletonLoading from "../../components/SkeletonLoading";
+import styles from "./index.module.scss";
 
 const Experiences = () => {
-    const { fetchRequest, dataStore, fetchCompleted } = useDataContext();
-    const [fixedActivities1, setFixedActivities1] = useState([]);
-    const [fixedActivities2, setFixedActivities2] = useState([]);
-    const [activities, setActivities] = useState([]);
+  const { fetchRequest, dataStore, fetchCompleted } = useDataContext();
+  const [fixedActivities1, setFixedActivities1] = useState([]);
+  const [fixedActivities2, setFixedActivities2] = useState([]);
+  const [activities, setActivities] = useState([]);
 
-    useEffect(() => {
-        fetchRequest();
-        GetActivitiesByCity(mainCities[0].id, dataStore.language)
-            .then(res => setFixedActivities1(res.data));
-        GetActivitiesByCity(mainCities[1].id, dataStore.language)
-            .then(res => setFixedActivities2(res.data));
-        GetActivitiesByCity(
-            cities.filter((city) => mainCities.indexOf(city.id) === -1).map(city => city.id),
-            dataStore.language
-        ).then(res => setActivities(res.data));
-        setTimeout(() => fetchCompleted(), 80);
-    }, [dataStore.language]);
+  useEffect(() => {
+    fetchRequest();
+    GetActivitiesByCity(mainCities[0].id, dataStore.language).then((res) =>
+      setFixedActivities1(res.data)
+    );
+    GetActivitiesByCity(mainCities[1].id, dataStore.language).then((res) =>
+      setFixedActivities2(res.data)
+    );
+    GetActivitiesByCity(
+      cities
+        .filter((city) => mainCities.indexOf(city.id) === -1)
+        .map((city) => city.id),
+      dataStore.language
+    ).then((res) => setActivities(res.data));
+    setTimeout(() => fetchCompleted(), 80);
+    //eslint-disable-next-line
+  }, [dataStore.language]);
 
   return (
     <div className={styles.div}>
@@ -42,7 +47,6 @@ const Experiences = () => {
             priority
             className={styles.Hero_img}
           />
-
           <blockquote className={styles.quote}>
             {`"Io sono nato in Sicilia e lì l’uomo nasce isola nell’isola e rimane tale fino alla morte, anche vivendo lontano dall’aspra terra natìa circondata dal mare immenso e geloso"`}
             <br />
@@ -52,7 +56,7 @@ const Experiences = () => {
         <h2 className={styles.title}>{"Our finds for you"}</h2>
         {dataStore.loading ? (
           <SkeletonLoading />
-        ) : (
+        ) : ( 
           <div className={styles.wrapper}>
             <h2 className={styles.cities}>{"Palermo"}</h2>
             <ExpCard result={fixedActivities1} />

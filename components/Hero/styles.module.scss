@@ -1,19 +1,29 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
+.Wrapper_Hero {
+  overflow-x: hidden;
+}
+
 .Dynamic {
   position: relative;
-  animation: 1s ease-out 0s 1 slideText !important;
-
+  animation: 1s ease-out 0s 1 slideImg !important;
 }
 
 .Slide {
   position: relative;
-  opacity: 0 !important;
+  width: 100vw;
+  transition: transform ease-out 1s;
+  overflow: hidden;
+
+  transform: translateX(100%);
 }
 
 .Static {
   position: relative;
+  > span {
+    height: 100vh !important;
+  }
 }
 
 //passa i valori al paragrafo
@@ -32,11 +42,19 @@
   flex-wrap: wrap;
 }
 
-@keyframes slideText {
+@keyframes slideImg {
   0% {
     transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes slideImgOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }
