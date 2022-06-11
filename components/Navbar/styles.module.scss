@@ -133,6 +133,7 @@
       padding: 22px;
       gap: 0;
       background-color: white;
+      animation: 0.5s ease-in-out 0s 1 translateX;
 
       a,
       span {
@@ -171,28 +172,14 @@
   }
 }
 
-@media (max-width: 375px) {
-  .Navbar {
-    color: $dark-blue;
-    font-size: 20px;
-    background: $white;
+@keyframes translateX {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
 
-    .Navigation {
-      display: none;
-    }
-
-    ul {
-      width: 100%;
-      border-left: none;
-    }
-
-    &__Title {
-      font-family: $primary-font;
-      font-size: 30px;
-    }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
-
-// @keyframes scrollLeft {
-
-// }
