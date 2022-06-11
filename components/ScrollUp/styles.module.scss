@@ -3,9 +3,14 @@
 
 .ScrollUpWrapper {
     position: fixed;
-    bottom: 18px;
-    right: 18px;
-    font-size: 50px;
+    bottom: 10px;
+    right: 20px;
+    font-size: 40px;
     z-index: 1001;
     color: $dark-blue;
+    &:hover {
+        color: $yellow;
+        transition: 1s;
+        cursor: pointer;
+    }
 }

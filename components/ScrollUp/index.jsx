@@ -1,13 +1,13 @@
 import React, { useEffect, useState, } from 'react';
-// import { useWindowScroll } from 'react';
-import {FaArrowCircleUp} from 'react-icons/fa';
+// import {FaArrowCircleUp} from 'react-icons/fa';
+import {IoIosArrowDropupCircle} from 'react-icons/io';
 import styles from './styles.module.scss';
 
 const ScrollUp = () => {
     const [visible, setVisibility] = useState(false)
 
     const listenScrollEvent = () => {
-        window.scrollY > 10 ? setVisibility(true): setVisibility(false);
+        window.scrollY > 15 ? setVisibility(true): setVisibility(false);
     };
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const ScrollUp = () => {
 
     return (
         <div className={styles.ScrollUpWrapper} onClick={scrollUp}>
-            <FaArrowCircleUp className={styles.SrollUpIcon} />
+            <IoIosArrowDropupCircle className={styles.SrollUpIcon} />
         </div>
     )
 }

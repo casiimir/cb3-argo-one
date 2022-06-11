@@ -1,7 +1,7 @@
 import NavLinks from "./NavLinks";
 import styles from './styles.module.scss';
 import {FiMenu} from 'react-icons/fi';
-import {ImCross} from 'react-icons/im';
+import {MdClose} from 'react-icons/md';
 import {useState} from 'react';
 
 
@@ -11,15 +11,15 @@ const MobileNavigation = () => {
   const hamburgerIcon = (
     <FiMenu
       className={styles.Hamburger}
-      size="40px"
+      size="30px"
       color="#125D98"
       onClick={() => setOpen(!open)}
     />
   );
   const closeBtn = (
-    <ImCross
+    <MdClose
       className={styles.Hamburger}
-      size="35px"
+      size="30px"
       color="#125D98"
       onClick={() => setOpen(!open)}
     />
