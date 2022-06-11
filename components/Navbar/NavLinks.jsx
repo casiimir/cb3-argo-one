@@ -9,12 +9,16 @@ import { useUserContext } from "../../context/UserContext/userContext";
 
 const NavLinks = (props) => {
   const [itemCounter, setItemCounter] = useState(0);
+  const [login, setLogin] = useState("");
+  const localValue = localStorage.getItem("user");
   const { userStore } = useUserContext();
+  
   useEffect(() => {
     const item = JSON.parse(localStorage.getItem("cartItems"));
     item ? setItemCounter(item.length) : setItemCounter(0);
+    setLogin(localValue);
     //eslint-next-line-disable
-  }, [userStore]);
+  }, [userStore, localValue]);
   return (
     <nav>
       <div className={styles.navDiv}>
@@ -43,7 +47,7 @@ const NavLinks = (props) => {
             <a className={styles.loginA} onClick={() => props.isMobile && props.closeMobileMenu()}>
               <RiUser3Fill className={styles.NavbarIcons}></RiUser3Fill>
               <div className={styles.loggedUser}>
-                <p>{userStore.username}</p>
+                <p>{login}</p>
               </div>
             </a>
           </Link>
