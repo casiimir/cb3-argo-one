@@ -44,7 +44,7 @@ const NavLinks = (props) => {
               <RiUser3Fill className={styles.NavbarIcons} />
             </a>
           </Link>
-
+          <Flag />
           <Link href="/cart">
             <a
               className={styles.Cart_Container}
@@ -55,7 +55,6 @@ const NavLinks = (props) => {
               <FaShoppingCart className={styles.Cart_Container__NavbarIcons} />
             </a>
           </Link>
-          <Flag />
         </ul>
       </div>
     </nav>
