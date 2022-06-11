@@ -47,6 +47,7 @@
   display: flex;
   flex-direction: column;
   width: 50%;
+  align-items: flex-end;
 
   a {
     display: flex;
@@ -55,6 +56,7 @@
     justify-content: flex-end;
     font-size: 1.3rem;
     line-height: 40px;
+    transition: 0.5s;
   }
 
   a:first-child {
@@ -88,6 +90,17 @@
     justify-content: center;
     gap: 50%;
     margin-top: 2%;
+  }
+
+  &__facebookIcon {
+    transition: 0.5s;
+  }
+  &__instagramIcon {
+    transition: 0.5s;
+  }
+
+  &__twitterIcon {
+    transition: 0.5s;
   }
 
   &__facebookIcon:hover {

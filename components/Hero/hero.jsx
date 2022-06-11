@@ -17,19 +17,16 @@ const Hero = () => {
 
   const handleImgSlide = () => {
     if (imgCount < slideData.imgUrl.length - 1) {
-      setImgCount((prev) => prev + 1);
       setImgClasses(styles.Slide);
       setFadeIn((prev) => !prev);
-
+      setImgCount((prev) => prev + 1);
       setTimeout(() => {
         setImgClasses(styles.Dynamic);
       }, 80);
     } else {
-      setImgCount(0);
-
       setImgClasses(styles.Slide);
       setFadeIn((prev) => !prev);
-
+      setImgCount(0);
       setTimeout(() => {
         setImgClasses(styles.Dynamic);
       }, 80);
@@ -38,22 +35,25 @@ const Hero = () => {
 
   useEffect(() => {
     setFadeIn(true);
-    fadeIn && setTimeout(handleImgSlide, 3000);
+    fadeIn && setTimeout(handleImgSlide, 5000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fadeIn]);
 
   return (
     <>
       {size.width >= 475 ? (
-        <section>
+        <section className={styles.Wrapper_Hero}>
           <div className={imgClasses}>
             <Image
               src={slideData.imgUrl[imgCount]}
               alt="welcome to sicily"
-              width={2048}
-              height={1152}
+              width={3000}
+              height={2000}
               layout="responsive"
               placeholder="empty"
               priority
+              quality={100}
+              sizes="2048w"
               className={styles.Hero_img}
             />
           </div>
@@ -67,11 +67,13 @@ const Hero = () => {
             <Image
               src={slideData.mobileImgUrl[0]}
               alt="welcome to sicily"
-              width={1152}
-              height={2048}
+              width={1300}
+              height={1847}
               layout="responsive"
               placeholder="empty"
               priority
+              quality={100}
+              sizes="2048w"
               className={styles.Hero_img}
             />
           </div>

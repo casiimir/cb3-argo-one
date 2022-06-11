@@ -1,29 +1,36 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
+.Wrapper_Hero {
+  overflow-x: hidden;
+}
+
 .Dynamic {
   position: relative;
-  animation: 1s ease-out 0s 1 slideText !important;
+  animation: 1s ease-out 0s 1 slideImg !important;
 }
-.Hero_img {
-  filter: drop-shadow(30px 10px 4px #fbfbfb4d);
-  border-radius: 24px;
-  box-shadow: 2px 2px 2px black;
-}
+
 .Slide {
   position: relative;
-  opacity: 0 !important;
+  width: 100vw;
+  transition: transform ease-out 1s;
+  overflow: hidden;
+
+  transform: translateX(100%);
 }
 
 .Static {
   position: relative;
+  > span {
+    height: 100vh !important;
+  }
 }
 
 //passa i valori al paragrafo
 .homepage__desc {
   display: flex;
   position: absolute;
-  color: $light-blue;
+  color: $white;
   z-index: 2;
   top: 10vh;
   height: clamp(60vw, 1vw, 100vh);
@@ -35,11 +42,19 @@
   flex-wrap: wrap;
 }
 
-@keyframes slideText {
+@keyframes slideImg {
   0% {
     transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
+  }
+}
+@keyframes slideImgOut {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
   }
 }

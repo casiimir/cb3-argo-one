@@ -1,105 +1,40 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
 .Label {
-  color: white;
+  color: $dark-blue;
   padding: 10px;
   font-weight: 600;
+  display: none;
 }
+
 .Select {
-  width: 85vmin;
-  height: 6vh;
-  display: flex;
-  justify-content: space-around;
-  gap: 10px;
-  background-color: white;
-  border-radius: 16px;
+  width: 300px;
+  height: 2em;
+  border: 1px solid $white;
+  border-radius: 10px;
+
+  padding: 0 10px;
+  font-family: $primary-font;
+  font-size: 1rem;
   outline: none;
-  border: none;
-  position: relative;
-  text-transform: capitalize;
-  linear-gradient: (
-    to bottom,
-    #e5e5e5,
-    #f4f4f4
-  ); /* Standard syntax; must be last */
-  background-position: center right;
-  background-repeat: no-repeat;
-  border: 1px solid #aaa;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-  color: #555;
-  font-size: inherit;
-  margin: 10px 0 0 0;
-
-  overflow: hidden;
-  padding-top: 2px;
-  padding-bottom: 2px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -webkit-padding-end: 20px;
-  -moz-padding-end: 20px;
-  -webkit-padding-start: 2px;
-  -moz-padding-start: 2px;
-
-  .OptionGroup {
-    border-radius: 12px;
-    padding: 10px;
-    margin-top: 10px;
-  }
-  .Option {
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    //display: none;
-    overflow: hidden;
-    //padding: 10px;
-  }
-  .Option::selection {
-    color: white;
-    -webkit-tap-highlight-color: transparent;
-    background-color: rgb(214, 8, 8);
-    background-attachment: fixed; /*This will give the illusion of being transparent*/
-    background-repeat: no-repeat;
-    background-size: cover;
+}
+@media all and (min-width: 767px) and (max-width: 1023px) {
+  .Select {
+    width: 150px;
   }
 }
 
-.Select::after .Select:active {
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+@media all and (min-width: 1024px) and (max-width: 1919px) {
+  .Select {
+    width: 250px;
+  }
 }
 
-//select {
-//  -webkit-appearance: button;
-//  -moz-appearance: button;
-//  -webkit-user-select: none;
-//  -moz-user-select: none;
-//  -webkit-padding-end: 20px;
-//  -moz-padding-end: 20px;
-//  -webkit-padding-start: 2px;
-//  -moz-padding-start: 2px;
-//  background-color: #f07575; /* Fallback color if gradients are not supported */
-//background-image: url(../images/select-arrow.png),
-//  -webkit-linear-gradient(top, #e5e5e5, #f4f4f4); /* For Chrome and Safari */
-//background-image: url(../images/select-arrow.png),
-//  -moz-linear-gradient(top, #e5e5e5, #f4f4f4); /* For old Firefox (3.6 to 15) */
-//background-image: url(../images/select-arrow.png),
-//  -ms-linear-gradient(top, #e5e5e5, #f4f4f4); /* For pre-releases of Internet Explorer  10*/
-//background-image: url(../images/select-arrow.png),
-//  -o-linear-gradient(top, #e5e5e5, #f4f4f4); /* For old Opera (11.1 to 12.0) */
-//background-image: url(../images/select-arrow.png),
-//  linear-gradient(to bottom, #e5e5e5, #f4f4f4); /* Standard syntax; must be last */
-//background-position: center right;
-//background-repeat: no-repeat;
-//border: 1px solid #aaa;
-//border-radius: 2px;
-//box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-//color: #555;
-//font-size: inherit;
-//margin: 0;
-//overflow: hidden;
-//padding-top: 2px;
-//padding-bottom: 2px;
-//text-overflow: ellipsis;
-//white-space: nowrap;
-//
+@media all and (min-width: 1920px) {
+  .Select {
+    width: 350px;
+    height: 2em;
+    font-size: 1.5rem;
+  }
+}

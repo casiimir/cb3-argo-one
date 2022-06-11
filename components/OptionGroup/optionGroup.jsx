@@ -1,20 +1,18 @@
+import Translator from "../Translator";
 import styles from "./styles.module.scss";
 
 const OptionGroup = ({
-	data,
-	onChangeFn,
-	typeValue,
-	defaultText,
-	textValue,
-	defaultValue,
+  data,
+  onChangeFn,
+  typeValue,
+  defaultText,
+  textValue,
+  defaultValue,
 }) => {
-
-
   return (
-    <div>
+    <>
       <label className={styles.Label} htmlFor={typeValue}>
-        {" "}
-        {textValue}{" "}
+        {textValue}
       </label>
       <select
         className={styles.Select}
@@ -23,7 +21,7 @@ const OptionGroup = ({
         onChange={onChangeFn}
         required
       >
-        <optgroup className={styles.OptionGroup} label="Sicily's provinces">
+        <optgroup className={styles.OptionGroup}>
           <option className={styles.Option} value={defaultValue || "null"}>
             {defaultText}
           </option>
@@ -38,7 +36,7 @@ const OptionGroup = ({
           ))}
         </optgroup>
       </select>
-    </div>
+    </>
   );
 };
 

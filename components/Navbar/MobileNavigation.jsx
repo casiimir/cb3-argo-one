@@ -6,7 +6,7 @@ import {useState} from 'react';
 
 
 const MobileNavigation = () => {
-  const [open, setOpen] = useState(false);
+	const [open, setOpen] = useState(false);
 
   const hamburgerIcon = (
     <FiMenu
@@ -35,4 +35,3 @@ const MobileNavigation = () => {
 };
 
 export default MobileNavigation;
-

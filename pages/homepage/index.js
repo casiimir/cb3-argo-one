@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import { useWindowSize } from "../../utils/utils";
-import Image from "next/image";
-
 import Hero from "../../components/Hero/hero";
-
+import CardList from "../../components/CardList";
+import ExperienceFinder from "../../components/ExperienceFinder/ExperienceFinder";
 import styles from "./styles.module.scss";
+import { useDataContext } from "../../context/DataContext/dataContext";
 
-export default function Home() {
+export default function Homepage() {
   return (
     <div className={styles.homepage}>
       <Hero />
-      <div className={styles.homepage__desc}></div>
+      <div className={styles.homepage__map}>
+        <ExperienceFinder />
+      </div>
+      <CardList />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { slideData } from "../../utils/data";
+import Translator from "../Translator";
 
 import styles from "./styles.module.scss";
 
@@ -33,13 +34,18 @@ const DynamicParagraph = () => {
 
   useEffect(() => {
     setFadeIn(true);
-    fadeIn && setTimeout(handleTextSlide, 3000);
+    fadeIn && setTimeout(handleTextSlide, 5000);
+    //eslint-disable-next-line
   }, [fadeIn]);
 
   return (
     <div className={styles.Paragraph_Container}>
-      <p>Discover Sicily</p>
-      <p>through</p>
+      <p>
+        <Translator word="discover sicily" type="fwupper" />
+      </p>
+      <p>
+        <Translator word="through" type="lower" />
+      </p>
       <p className={classes}>{slideText}</p>
     </div>
   );

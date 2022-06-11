@@ -1,23 +1,50 @@
-import { useDataContext } from '../../context/DataContext/dataContext';
+import { useEffect } from "react";
+import { useDataContext } from "../../context/DataContext/dataContext";
+import SkeletonLoading from "../SkeletonLoading";
 import Card from "../Card";
-import styles from './index.module.scss';
+import Translator from "../Translator";
+import styles from "./index.module.scss";
 
 const Cardlist = () => {
-    const { dataStore } = useDataContext();
-    const activities = [dataStore.activities]
+  const { dataStore, updateActivitiesData } = useDataContext();
 
-    const classes = dataStore.setControl === true ? styles.title : styles.hide;
+  useEffect(() => {
+    if (dataStore.activities !== null) {
+      const selectedDateRange = [dataStore.date_to, dataStore.date_from];
 
-    return (
-        <div>
-            <h2 className={classes}>{"Here's your results:"}</h2>
-            <div className={styles.card_wrapper}>
-                {activities && activities.map((card, index) => (
-                    <Card cards={card} key={index} />
-                ))}
-            </div>
+      updateActivitiesData(
+        dataStore.latLon,
+        dataStore.selectedCategory,
+        selectedDateRange,
+        dataStore.language
+      );
+    }
+    //eslint-disable-next-line
+  }, [dataStore.language]);
+
+  return (
+    <>
+      {dataStore.loading && <SkeletonLoading />}
+      {dataStore.activities !== null && dataStore.activities.data.length > 0 ? (
+        <div className={styles.global}>
+          <h2 className={styles.title}>
+            {<Translator word="experiences" type="upper" />}
+          </h2>
+          <div className={styles.card_wrapper}>
+            {dataStore.loading ? (
+              <SkeletonLoading />
+            ) : (
+              dataStore.activities.data.map((card, index) => (
+                <Card card={card} key={index} />
+              ))
+            )}
+          </div>
         </div>
-    )
-}
+      ) : (
+        ""
+      )}
+    </>
+  );
+};
 
 export default Cardlist;

@@ -1,29 +1,35 @@
-import { useModalContext } from "../../context/ModalContext/modalContext";
+import { useModalContext } from "../../context/UserContext/userContext";
 
 import Image from "next/image";
 
 import styles from "./styles.module.scss";
 
 const Modal = () => {
-  const { modalStore, setOpenModal, addToCart } = useModalContext();
+  /*const storeItemsOnLocal = (title, price, imgUrl) => {
+    const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
-  const activitiesData = modalStore.modalData;
-  console.log(modalStore.cart);
+    cartItems.push({ title: title, price: price, imgUrl: imgUrl });
 
-  const handleClickOnBckground = () => {
-    setOpenModal("", false);
-  };
+    localStorage.setItem("cartItems", JSON.stringify(cartItems));
+  };*/
 
   const handleAddToCart = () => {
     addToCart({
       title: activitiesData.title,
       price: activitiesData.retail_price.formatted_value,
+      img: activitiesData.cover_image_url,
     });
+
+    storeItemsOnLocal(
+      activitiesData.title,
+      activitiesData.retail_price.formatted_value,
+      activitiesData.cover_image_url
+    );
   };
 
   return (
     <>
-      {modalStore.openModal && (
+      {/* {modalStore.openModal && (
         <div className={styles.Modal_Container}>
           <div className={styles.Modal_Wrapper}>
             <div className={styles.Actv_Image_Container}>
@@ -99,7 +105,7 @@ const Modal = () => {
             onClick={() => handleClickOnBckground()}
           ></div>
         </div>
-      )}
+      )} */}
     </>
   );
 };

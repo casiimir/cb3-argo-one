@@ -1,17 +1,89 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
 .card_wrapper{
     display: flex;
     flex-flow: row wrap;
-    gap: 10px;
+ 
     justify-content: space-evenly;
 }
 
 .title{
     display: block;
-    margin: 0 auto;
-    color: #5C9DDE;
+    margin: 2% auto;
+    color: $dark-blue;
     text-align: center;
+    font-size: 2rem;
 }
 
 .hide{
     display: none;
+}
+
+@media all and (min-width: 320px) and (max-width: 424px) {
+
+    .title{
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+}
+
+@media all and (min-width: 425px) and (max-width: 767px) {
+
+    .title{
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+}
+
+@media all and (min-width: 768px) and (max-width: 819px){
+    .title{
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+
+}
+
+@media all and (min-width: 820px) and (max-width: 1023px){
+    .title{
+        margin-top: 50px;
+        margin-bottom: 10px;
+    }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1439px) {
+    .title{
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+    .global{
+        width: 95%;
+        margin: 0 auto;
+    }
+}
+
+@media all and (min-width: 1440px) and (max-width: 2559px) {
+    .title{
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
+    .global{
+        width: 100%;
+        margin: 0 auto;
+    }
+}
+
+@media all and (min-width: 2560px) {
+
+    .global{
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .title{
+        margin-top: 50px;
+        margin-bottom: 20px;
+    }  
 }

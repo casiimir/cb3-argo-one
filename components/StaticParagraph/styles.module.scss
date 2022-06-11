@@ -1,13 +1,24 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
 .Container_Paragraph {
-  text-align: right;
-  font-size: clamp(5vw, 1vw, 5vw);
+  margin-right: 90px;
+  margin-top: 50px;
+  text-align: left;
+  font-size: clamp(10vw, 1vw, 10vw);
+  line-height: 1rem;
   white-space: nowrap;
-  text-shadow: 0.5px 0.5px 1px #000000, -0.5px 0.5px 1px #000000,
-    0.5px -0.5px 1px #000000, -0.5px -0.5px 1px #000000;
+  color: $white;
 }
 
-@media all and (max-width: 425px) {
-  .Paragraph_Container {
-    font-size: clamp(10vw, 1vw, 10vw);
+@media all and (max-width: 320px) {
+  .Container_Paragraph {
+    margin-right: 80px;
+  }
+}
+
+@media all and (min-width: 425px) and (max-width:768px){
+  .Container_Paragraph {
+    margin-right: 100px;
   }
 }

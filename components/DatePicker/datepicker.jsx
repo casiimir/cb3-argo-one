@@ -7,12 +7,14 @@ const DatePicker = ({ firstDateFn, secondDateFn }) => {
         className={styles.Input}
         type="date"
         onChange={firstDateFn}
+        placeholder="Choose a date: "
         required
       />
       <input
         className={styles.Input}
         type="date"
         onChange={secondDateFn}
+        placeholder="Choose a date: "
         required
       />
     </div>
