@@ -25,7 +25,7 @@ const NavLinks = (props) => {
       <div className={styles.navDiv}>
         <ul className={props.open ? styles.MenuOpener : null}>
           <Link href="/">
-            <a onClick={() => props.isMobile && props.closeMobileMenu()}>
+          <a onClick={() => props.isMobile && props.closeMobileMenu()}>
               <Translator word="home" type="upper" />
             </a>
           </Link>

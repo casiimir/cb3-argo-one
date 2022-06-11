@@ -1,9 +1,7 @@
 @import "../../styles/mixins.scss";
 @import "../../styles/variables.scss";
 
-.login {
-  position: relative;
-}
+
 .loginImg {
   > span {
     height: 100vh !important;
@@ -14,11 +12,12 @@
   display: flex;
   position: absolute;
   top: 25%;
+  left: 50%;
+ transform: translate(-50%);
   width: 20vw;
   height: 50vh;
   align-items: center;
   flex-direction: column;
-  left: 5%;
   gap: 0.8em;
 
   &__title {
@@ -31,7 +30,7 @@
   }
 
   &__form {
-    width: 100%;
+    width: 90%;
     padding: 5px;
     display: flex;
     flex-direction: column;
@@ -44,7 +43,7 @@
     font-family: $primary-font;
     width: 100%;
     height: 50px;
-
+    padding: 5px;
     border: none;
     border-radius: 5px;
   }
@@ -66,14 +65,14 @@
     width: 10vw;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 768px) {
+@media only screen and (min-width: 320px) and (max-width: 374px) {
   .wrapper {
-    width: 90vw;
+    width: 100%;
     top: 25%;
 
     &__title {
-      width: 100vw;
-      font-size: 20px;
+      font-size: 30px;
+      margin-bottom: 40px;
       height: 0vh;
       color: $white;
     }
@@ -85,7 +84,274 @@
     }
 
     &__input {
-      height: 7vh;
+      height: 5vh;
+      font-size: 1rem;
+      color: $light-blue;
+    }
+
+    ::placeholder {
+      font-size: 1rem;
+    }
+
+    &__button {
+      margin-top: 10px;
+      width: 45%;
+      height: 4vh;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 375px) and (max-width: 424px) {
+  .wrapper {
+    width: 100%;
+    top: 25%;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      height: 0vh;
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__input {
+      height: 5vh;
+      font-size: 1.1rem;
+      color: $light-blue;
+    }
+
+    ::placeholder {
+      font-size: 20px;
+    }
+
+    &__button {
+      margin-top: 10px;
+      width: 45%;
+      height: 4vh;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 425px) and (max-width: 767px) {
+  .wrapper {
+    width: 100%;
+    top: 25%;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      height: 0vh;
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__input {
+      height: 5vh;
+      font-size: 1rem;
+      color: $light-blue;
+    }
+
+    ::placeholder {
+      font-size: 1rem;
+    }
+
+    &__button {
+      margin-top: 10px;
+      width: 50%;
+      height: 5vh;
+      font-size: 1.3rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 819px) {
+  .wrapper {
+    width: 60%;
+    top: 25%;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      height: 0vh;
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__input {
+      height: 5vh;
+      font-size: 1rem;
+      color: $light-blue;
+    }
+
+    ::placeholder {
+      font-size: 1rem;
+    }
+
+    &__button {
+      margin-top: 10px;
+      width: 45%;
+      height: 4vh;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 820px) and (max-width: 1023px) {
+  .wrapper {
+    width: 60%;
+    top: 25%;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      height: 0vh;
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__input {
+      padding: 10px;
+      height: 5vh;
+      font-size: 1.1rem;
+      color: $light-blue;
+    }
+
+    ::placeholder {
+      font-size: 1.1rem;
+    }
+
+    &__button {
+      margin-top: 10px;
+      width: 45%;
+      height: 4vh;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+  .wrapper {
+    width: 30%;
+    top: 25%;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      height: 0vh;
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__input {
+      height: 5vh;
+      font-size: 1rem;
+      color: $light-blue;
+    }
+
+    ::placeholder {
+      font-size: 1rem;
+    }
+
+    &__button {
+      margin-top: 10px;
+      width: 50%;
+      height: 4vh;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 2559px) {
+  .wrapper {
+    width: 30%;
+    top: 25%;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      height: 0vh;
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__input {
+      padding: 8px;
+      height: 5vh;
+      font-size: 1rem;
+      color: $light-blue;
+    }
+
+    ::placeholder {
+      font-size: 1rem;
+    }
+
+    &__button {
+      margin-top: 10px;
+      width: 45%;
+      height: 4vh;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media only screen and (min-width: 2560px){
+  .wrapper {
+    width: 20%;
+    top: 25%;
+    margin: 0 auto;
+
+    &__title {
+      font-size: 30px;
+      margin-bottom: 40px;
+      height: 0vh;
+      color: $white;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__input {
+      padding: 8px;
+      height: 5vh;
       font-size: 1.2rem;
       color: $light-blue;
     }
@@ -95,25 +361,9 @@
     }
 
     &__button {
-      width: 30%;
+      margin-top: 10px;
+      width: 45%;
       height: 4vh;
-      font-size: 0.5rem;
-    }
-  }
-}
-@media screen and (min-width: 2560px) {
-  .wrapper {
-    &__title {
-      font-size: 4.6rem;
-    }
-    &__input {
-      height: 7vh;
-      font-size: 1.2rem;
-      color: $light-blue;
-      
-    }
-
-    ::placeholder {
       font-size: 1.2rem;
     }
   }
