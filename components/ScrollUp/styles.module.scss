@@ -2,11 +2,15 @@
 @import "../../styles/variables.scss";
 
 .ScrollUpWrapper {
-  position: fixed;
-  bottom: 18px;
-  right: 18px;
-  font-size: 50px;
-  z-index: 1001;
-  color: $dark-blue;
-  cursor: pointer;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 40px;
+    z-index: 1001;
+    color: $dark-blue;
+    &:hover {
+        color: $yellow;
+        transition: 1s;
+        cursor: pointer;
+    }
 }
