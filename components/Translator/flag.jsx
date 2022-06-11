@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 //eslint-disable-next-line
 import { useDataContext } from "../../context/DataContext/dataContext";
 import styles from "./index.module.scss";

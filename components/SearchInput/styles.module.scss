@@ -71,7 +71,7 @@
   }
 }
 
-@media all and (min-width: 1920px) {
+@media all and (min-width: 1920px) and (max-width: 2559px) {
   .Filter_Container {
     width: fit-content;
   }
@@ -95,13 +95,23 @@
 
 @media all and (min-width: 2560px) {
   .Filter_Container {
-    width: 50%;
+    width: fit-content;
+  }
+  .Form {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.5em;
+    flex-wrap: nowrap;
+  }
+  .Title {
+    font-size: 2rem;
+    margin-top: 0;
   }
 
   .Button {
-    margin-top: 1vh;
-    width: 6vw;
-    height: 5vh;
-    font-size: 13px;
+    width: 150px;
+    height: 2.3em;
+    font-size: 1.1rem;
   }
 }

@@ -112,6 +112,7 @@ const Cart = () => {
               <h2 className={styles.Wrapper_Head__Title}>Cart</h2>
               <hr className={styles.Wrapper_Head__Breaker} />
             </div>
+            {cart.cartItems.length === 0 && <p>Il carrello è vuoto</p>}
             {cart &&
               cart.cartItems.sort().map((item, index) => (
                 <div className={styles.Container__Cart__Item} key={index}>
@@ -126,7 +127,7 @@ const Cart = () => {
                         width="2048"
                         layout="fill"
                         alt="Item"
-                        objectFit
+                        objectFit = "cover"
                         sizes="20w"
                         className={styles.ImgContainer__image}
                       />

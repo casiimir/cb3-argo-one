@@ -17,7 +17,7 @@ export default function About() {
   const { width } = useWindowSize();
   return (
     <div className={styles.about}>
-      <h1 className={styles.about__title}>About us</h1>
+      <h1 className={styles.about__title}><Translator word="about us" type="fwupper"/></h1>
       <div className={styles.about__wrapper}>
         {width >= 475 ? (
           <Image
@@ -47,7 +47,7 @@ export default function About() {
 
         <article className={styles.about__descWrapper}>
           <div className={styles.about__descContainer}>
-            <h2 className={styles.about__descTitle}>Who we are</h2>
+            <h2 className={styles.about__descTitle}><Translator word="who we are" type="fwupper"/></h2>
             <p className={styles.about__desc}>
               <Translator word="about desc1" type="fwupper" />
               <br />

@@ -4,6 +4,10 @@ import ScrollUp from "../ScrollUp/index";
 
 const DefaultLayout = ({ children }) => {
 
+	function setLogin(data){
+		console.log(data)
+	}
+
 	return (
 		<div>
 			<Navbar />

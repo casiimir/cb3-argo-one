@@ -132,6 +132,7 @@
 @media all and (min-width: 320px) and (max-width: 424px) {
   .card_img {
     width: 95vw;
+    
 
     &:hover {
       transform: scale(1);
@@ -139,7 +140,7 @@
   }
 
   .cards {
-    width: 95vw;
+    width: 96vw;
     height: 55vh;
   }
 
@@ -171,7 +172,7 @@
   }
 
   .cards {
-    width: 85vw;
+    width: 86vw;
   }
 
   .desc {
@@ -243,9 +244,14 @@
 
 @media all and (min-width: 820px) and (max-width: 1023px) {
   .card_img {
-    width: 79vw;
+    width: 78vw;
     height: 60%;
   }
+
+  .cards{
+    width: 79vw;
+  }
+
 
   .card_title {
     font-size: 22px;
@@ -283,6 +289,10 @@
     -webkit-line-clamp: 5;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .cards{
+    width: 24vw;
   }
 
   .card_img {
@@ -323,7 +333,7 @@
   }
 
   .cards {
-    width: 18vw;
+    width: 19vw;
     height: 100%;
   }
 

@@ -6,6 +6,7 @@ const initialState = {
   cart: [],
   refreshCartBadge: false,
   openModal: false,
+  username: "",
 };
 
 const UserContext = createContext(initialState);
@@ -47,12 +48,20 @@ export const UserContextProvider = ({ children }) => {
     localStorage.setItem("cartItems", JSON.stringify(cartItems));
   };
 
+  const setUsername = (username) => {
+    dispatch({
+      type: "SET_USERNAME",
+      payload: username
+    })
+  }
+
   const userStore = {
     userStore: state,
     setSelectedActivityByUuid,
     setRefreshCartBadge,
     addToCart,
     storeItemsOnLocal,
+    setUsername
   };
 
   return (

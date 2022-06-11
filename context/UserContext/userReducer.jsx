@@ -2,6 +2,7 @@ import {
   SET_USER_SELECTION,
   ADD_TO_CART,
   REFRESH_CART_BADGE,
+  SET_USERNAME,
 } from "./costants";
 
 const userReducer = (state, action) => {
@@ -29,6 +30,11 @@ const userReducer = (state, action) => {
         ],
       };
 
+      case SET_USERNAME:
+        return {
+          ...state,
+          username: action.payload
+        }
     default:
       throw new Error("nessun risultato");
   }

@@ -85,13 +85,15 @@
     }
 
     &__input {
-      width: 60vw;
-      height: 5vh;
+      height: 7vh;
+      font-size: 1.2rem;
+      color: $light-blue;
     }
 
     ::placeholder {
-      font-size: 0.5rem;
+      font-size: 1.2rem;
     }
+
     &__button {
       width: 30%;
       height: 4vh;
@@ -106,6 +108,13 @@
     }
     &__input {
       height: 7vh;
+      font-size: 1.2rem;
+      color: $light-blue;
+      
+    }
+
+    ::placeholder {
+      font-size: 1.2rem;
     }
   }
 }

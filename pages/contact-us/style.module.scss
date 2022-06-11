@@ -13,11 +13,13 @@
     font-size: 3.3vw;
     color: $dark-blue;
   }
+
   .contactImg {
     display: block;
     margin: 0;
     width: 100%;
-    > span {
+
+    >span {
       height: 100vh !important;
     }
   }
@@ -33,9 +35,11 @@
     align-items: center;
     right: 2%;
     width: 50%;
+
     .lapa {
       width: 100%;
     }
+
     ::placeholder {
       color: $light-blue;
       font-family: $primary-font;
@@ -43,6 +47,7 @@
       margin-top: 5px;
       font-size: 1rem;
     }
+
     .input {
       display: flex;
       flex-direction: row;
@@ -59,12 +64,14 @@
         padding: 8px;
       }
     }
+
     .message {
       flex: 0 0 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
       margin: 10px;
+
       textarea {
         width: 100%;
         height: 30vh;
@@ -76,6 +83,7 @@
         resize: none;
       }
     }
+
     button {
       @include hover;
       @include button;
@@ -84,6 +92,7 @@
       font-family: $primary-font;
     }
   }
+
   h1 {
     color: $light-blue;
     border-bottom: none;
@@ -91,6 +100,7 @@
     display: inline-block;
     font-size: clamp(2.6em, 2em, 0.8em);
   }
+
   h2 {
     color: $light-blue;
     border-bottom: none;
@@ -110,6 +120,7 @@
     background: $bg-color;
     background: $bg-gradient;
     resize: none;
+
     &__title {
       top: 15%;
     }
@@ -118,22 +129,27 @@
       top: 30%;
       width: 80vw;
       right: 10%;
+
       h2 {
         font-size: clamp(1.6em, 1em, 0.8em);
       }
+
       .lapa {
         ::placeholder {
           font-size: 0.8rem;
         }
       }
+
       .input {
         align-items: center;
+
         input {
           border: 0;
           border-color: $white;
           height: 4vh;
         }
       }
+
       .message {
         textarea {
           border: 0;
@@ -145,21 +161,40 @@
   }
 }
 
-@media screen and (min-device-width: 2560px) {
+@media screen and (min-width: 2560px) {
   .wrapper {
     h1 {
-      top: 15%;
+      top: 8%;
       font-size: 80px;
     }
+
     .form {
       width: 50vw;
+      font-size: 20px;
+      color: $dark-blue;
+
+      input {
+        font-size: 20px;
+        color: $dark-blue;
+      }
 
       h2 {
         font-size: 70px;
       }
+
       ::placeholder {
-        font-size: 10px;
+        font-size: 20px;
       }
+
+      
+        textarea {
+          font-size: 20px;
+          color: $dark-blue;
+      
+          ::placeholder{
+            padding: 0;
+          }
+        }
 
       .button {
         height: 7vh;
@@ -169,4 +204,3 @@
     }
   }
 }
-
