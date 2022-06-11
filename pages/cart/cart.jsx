@@ -95,7 +95,6 @@ const Cart = () => {
     storeCartOnLocal(groupedItems, cartTotal);
 
     const storedCart = JSON.parse(localStorage.getItem("groupedCart"));
-    console.log(storedCart);
 
     setCart({
       cartItems: storedCart[0].cartItems,
@@ -127,7 +126,7 @@ const Cart = () => {
                         width="2048"
                         layout="fill"
                         alt="Item"
-                        objectFit = "cover"
+                        objectFit="cover"
                         sizes="20w"
                         className={styles.ImgContainer__image}
                       />
