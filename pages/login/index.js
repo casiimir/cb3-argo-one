@@ -12,7 +12,7 @@ export default function Loginpage() {
   const { width } = useWindowSize();
 
   useEffect(() => {
-    JSON.stringify(localStorage.setItem("user", user))
+    (localStorage.setItem("user", user))
   },[user])
   
   return (

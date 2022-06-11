@@ -10,9 +10,10 @@ import { useUserContext } from "../../context/UserContext/userContext";
 const NavLinks = (props) => {
   const [itemCounter, setItemCounter] = useState(0);
   const [login, setLogin] = useState("");
-  const localValue = localStorage.getItem("user");
   const { userStore } = useUserContext();
-  
+
+ const localValue = (typeof window !== 'undefined') ? localValue = (localStorage.getItem("user")) : ""
+   
   useEffect(() => {
     const item = JSON.parse(localStorage.getItem("cartItems"));
     item ? setItemCounter(item.length) : setItemCounter(0);
