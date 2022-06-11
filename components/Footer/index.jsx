@@ -24,7 +24,7 @@ export default function Footer() {
 				</div>
 
 				<div className={styles.upperFooterRight}>
-					<Link href="#">
+					<Link href="/">
 						<a>HOME</a>
 					</Link>
 					<Link href="/about">
