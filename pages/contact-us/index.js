@@ -2,11 +2,16 @@
 import styles from "./style.module.scss";
 import Image from "next/image";
 import { useWindowSize } from "../../utils/utils";
+import Head from "next/head";
 
 export default function ContactUs() {
   const { width } = useWindowSize();
   return (
     <div className={styles.wrapper}>
+       <Head>
+        <title>Contact Us</title>
+        <meta property="og:title" content="Contact Us" key="title" />
+      </Head>
       <h1 className={styles.wrapper__title}>Contact us</h1>
       <div className={styles.contactImg}>
         {width >= 475 ? (

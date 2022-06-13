@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import Translator from "../../components/Translator";
 import { useUserContext } from "../../context/UserContext/userContext";
 import Link from "next/link";
+import Head from "next/head";
 
 export default function Loginpage() {
   const { setUsername } = useUserContext();
@@ -17,6 +18,10 @@ export default function Loginpage() {
   
   return (
     <div className={styles.login}>
+       <Head>
+        <title>Login</title>
+        <meta property="og:title" content="Login" key="title" />
+      </Head>
       <div className={styles.loginImg}>
         {width > 475 ? (
           <Image

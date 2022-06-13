@@ -3,6 +3,7 @@ import { useWindowSize } from "../../utils/utils";
 import Image from "next/image";
 import Translator from "../../components/Translator";
 import styles from "./styles.module.scss";
+import Head from "next/head";
 
 const oliveBranchImg =
   "https://i.ibb.co/hFkrYbq/vilija-valeisaite-x-TZpip-USEj8-unsplash.jpg";
@@ -17,6 +18,10 @@ export default function About() {
   const { width } = useWindowSize();
   return (
     <div className={styles.about}>
+       <Head>
+        <title>About Us</title>
+        <meta property="og:title" content="About Us" key="title" />
+      </Head>
       <h1 className={styles.about__title}><Translator word="about us" type="fwupper"/></h1>
       <div className={styles.about__wrapper}>
         {width >= 475 ? (

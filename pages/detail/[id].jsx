@@ -7,6 +7,7 @@ import Translator from "../../components/Translator";
 import { useUserContext } from "../../context/UserContext/userContext";
 import styles from "./index.module.scss";
 import Link from "next/link";
+import Head from "next/head";
 
 const Detail = () => {
   
@@ -30,6 +31,10 @@ const Detail = () => {
 
   return (
     <div className={styles.global}>
+       <Head>
+        <title>Detail</title>
+        <meta property="og:title" content="Detail" key="title" />
+      </Head>
       {dataStore.activity && (
         <div className={styles.eleniaèscarsaepurecretina}>
           <div className={styles.Modal_Wrapper}>

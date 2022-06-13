@@ -7,8 +7,13 @@ import Image from "next/image";
 import SkeletonLoading from "../../components/SkeletonLoading";
 import styles from "./index.module.scss";
 import Translator from "../../components/Translator";
+import Head from "next/head";
+
+
 
 const Experiences = () => {
+
+
   const { fetchRequest, dataStore, fetchCompleted } = useDataContext();
   const [fixedActivities1, setFixedActivities1] = useState([]);
   const [fixedActivities2, setFixedActivities2] = useState([]);
@@ -34,6 +39,10 @@ const Experiences = () => {
 
   return (
     <div className={styles.div}>
+      <Head>
+        <title>Experiences</title>
+        <meta property="og:title" content="Experiences" key="title" />
+      </Head>
       <div className={styles.global}>
         <div className={styles.imgDiv}>
           <Image
@@ -54,17 +63,17 @@ const Experiences = () => {
             {`- Luigi Pirandello`}
           </blockquote>
         </div>
-        <h2 className={styles.title}>{<Translator word="our finds for you" type="fwupper"/>}</h2>
+        <h2 className={styles.title}>{<Translator word="our finds for you" type="fwupper" />}</h2>
         {dataStore.loading ? (
           <SkeletonLoading />
-        ) : ( 
+        ) : (
           <div className={styles.wrapper}>
             <h2 className={styles.cities}>{"Palermo"}</h2>
             <ExpCard result={fixedActivities1} />
             <h2 className={styles.cities}>{"Catania"}</h2>
             <ExpCard result={fixedActivities2} />
             <div className={styles.lastSlide}>
-              <h2 className={styles.cities}>{<Translator word="other cities" type="fwupper"/>}</h2>
+              <h2 className={styles.cities}>{<Translator word="other cities" type="fwupper" />}</h2>
               <ExpCard result={activities} />
             </div>
           </div>

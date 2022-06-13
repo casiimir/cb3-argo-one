@@ -18,7 +18,9 @@ export default function Home() {
           name="keywords"
           content="travel, sicily, travels in sicily"
         ></meta>
+        
         <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content="About us" key="about" />
       </Head>
       <main>
         <Homepage />
