@@ -7,6 +7,7 @@ import { BsFillBagCheckFill } from "react-icons/bs";
 import { ImPriceTag, ImPlus, ImMinus } from "react-icons/im";
 
 import styles from "./styles.module.scss";
+import Head from "next/head";
 
 const Cart = () => {
   const [cart, setCart] = useState({ cartItems: [], total: [] });
@@ -104,6 +105,10 @@ const Cart = () => {
 
   return (
     <>
+     <Head>
+        <title>Cart</title>
+        <meta property="og:title" content="Cart" key="title" />
+      </Head>
       <section className={styles.CartPage}>
         <div className={styles.Container}>
           <div className={styles.Container__Cart}>
