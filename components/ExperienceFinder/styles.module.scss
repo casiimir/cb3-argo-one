@@ -1,0 +1,25 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.wrapper {
+  position: relative;
+
+  &__map {
+    filter: saturate(2) contrast(1)
+      drop-shadow(0 0 1px rgba($color: #6c6c6c, $alpha: 0.3));
+    box-shadow: 0 0 1px 0 rgba($color: #6c6c6c, $alpha: 0.1);
+    margin: 0.5em 0.4em;
+    //border: 3px solid $light-blue;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  &__finder {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+}

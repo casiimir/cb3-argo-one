@@ -9,9 +9,27 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.6",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@react-google-maps/api": "^2.11.9",
+    "babel-plugin-macros": "^3.1.0",
+    "leaflet": "^1.8.0",
+    "next": "^12.1.7-canary.29",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-css-modules": "^4.7.11",
+    "react-dom": "^18.1.0",
+    "react-icons": "^4.4.0",
+    "react-leaflet": "^4.0.0",
+    "sass": "^1.52.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-regular-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "babel-plugin-macros": "^3.1.0"
   },
   "devDependencies": {
     "eslint": "8.16.0",

@@ -1,0 +1,45 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+.Paragraph_Container {
+  margin-top: 20px;
+  text-align: right;
+  font-size: clamp(3.5vw, 1vw, 3.5vw);
+  white-space: nowrap;
+  color: $white;
+  line-height: 2rem;
+
+  .Dynamic {
+    animation: 1s ease-out 0s 1 slideText;
+  }
+  .Slide {
+    opacity: 0;
+  }
+}
+/*
+@media all and (max-width: 770px) {
+  .Paragraph_Container {
+    font-size: clamp(2rem, 1em, 4em);
+  }
+}*/
+
+@keyframes slideText {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@media all and (min-width: 320px) and (max-width: 768px) {
+  .Paragraph_Container {
+    font-size: 2rem;
+  }
+}
+
+@media all and (min-width: 2560px) {
+  .Paragraph_Container {
+    margin-top: 10%;
+    font-size: 6rem;
+  }
+}

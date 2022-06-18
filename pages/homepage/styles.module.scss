@@ -1,0 +1,14 @@
+@import "../../styles/mixins.scss";
+@import "../../styles/variables.scss";
+
+.homepage {
+
+   &__page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} 
+}
+
+

@@ -1,0 +1,48 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.Label {
+  color: $dark-blue;
+  padding: 10px;
+  font-weight: 600;
+  display: none;
+}
+
+.Select {
+  width: 300px;
+  height: 2em;
+  border: 1px solid $white;
+  border-radius: 10px;
+
+  padding: 0 10px;
+  font-family: $primary-font;
+  font-size: 1rem;
+  outline: none;
+}
+@media all and (min-width: 767px) and (max-width: 1023px) {
+  .Select {
+    width: 150px;
+  }
+}
+
+@media all and (min-width: 1024px) and (max-width: 1919px) {
+  .Select {
+    width: 250px;
+  }
+}
+
+@media all and (min-width: 1920px) and (max-width: 2559) {
+  .Select {
+    width: 350px;
+    height: 2em;
+    font-size: 1.5rem;
+  }
+}
+
+@media all and (min-width: 2560px){
+  .Select {
+    width: 350px;
+    height: 2.4em;
+    font-size: 1.1rem;
+  }
+}
